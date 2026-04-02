@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c8i1q1xahaol6"]
+
+[ext_resource type="Script" uid="uid://crln63nwjusih" path="res://scripts/player.gd" id="1_3vyb7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8vuu"]
+albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3vyb7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
+
+[node name="Player" type="CharacterBody3D" unique_id=367521465]
+script = ExtResource("1_3vyb7")
+
+[node name="Graphics" type="MeshInstance3D" parent="." unique_id=823392933]
+mesh = SubResource("CapsuleMesh_u8vuu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Graphics" unique_id=453039602]
+transform = Transform3D(0.6, 0, 0, 0, 0.2, 0, 0, 0, 0.78220695, 0, 0.7397543, -0.16277902)
+material_override = SubResource("StandardMaterial3D_u8vuu")
+mesh = SubResource("BoxMesh_3vyb7")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1553874400]
+shape = SubResource("CapsuleShape3D_3vyb7")
+
+[node name="CameraHolder" type="Node3D" parent="." unique_id=553807674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72, 0)
+
+[node name="MainCamera" type="Camera3D" parent="CameraHolder" unique_id=1313740333]
+current = true

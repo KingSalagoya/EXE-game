@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cc7wxhldse21p"]
+
+[ext_resource type="Script" uid="uid://cpakvn1j64v86" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://c8i1q1xahaol6" path="res://scenes/player.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dqj5wfj0bcur7" path="res://scenes/level_test.tscn" id="3_tbgi4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
+sky_top_color = Color(0.31456307, 0.3961939, 0.84696305, 1)
+sky_horizon_color = Color(0.7628562, 0.66134405, 0.40881494, 1)
+ground_bottom_color = Color(0.33814627, 0.33973077, 0.5316433, 1)
+ground_horizon_color = Color(0.7647059, 0.6627451, 0.40784314, 1)
+
+[sub_resource type="Sky" id="Sky_uwrxv"]
+sky_material = SubResource("ProceduralSkyMaterial_8cj0n")
+
+[sub_resource type="Environment" id="Environment_yqjtg"]
+background_mode = 2
+sky = SubResource("Sky_uwrxv")
+tonemap_mode = 2
+ssao_enabled = true
+
+[node name="Main" type="Node" unique_id=805243855]
+script = ExtResource("1_sugp2")
+
+[node name="GameEnviroment" type="Node3D" parent="." unique_id=577782268]
+unique_name_in_owner = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GameEnviroment" unique_id=920053309]
+environment = SubResource("Environment_yqjtg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameEnviroment/WorldEnvironment" unique_id=1234819094]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="LevelTest" parent="GameEnviroment" unique_id=1181721314 instance=ExtResource("3_tbgi4")]
+
+[node name="UserInterface" type="Control" parent="." unique_id=94076821]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
