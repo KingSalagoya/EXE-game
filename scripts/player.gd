@@ -14,7 +14,11 @@ var t_bob: float = 0.0
 @onready var camera_holder: Node3D = $CameraHolder
 @onready var main_camera: Camera3D = $CameraHolder/MainCamera
 @onready var graphics: MeshInstance3D = $Graphics
+@onready var chat_ui: Control = $CameraHolder/MainCamera/ChatUI
 
+
+func _ready() -> void:
+	chat_ui.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -29,6 +33,7 @@ func _physics_process(delta: float) -> void:
 	_handle_movement()
 	_handle_head_bob(delta)
 	move_and_slide()
+	_handle_chat()
 
 
 func _handle_jump(delta: float) -> void:
@@ -61,3 +66,12 @@ func _headbob(time: float) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+
+func _handle_chat() -> void:
+	if Input.is_action_just_pressed("Toggle Chat Visibility"):
+		chat_ui.show()
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	if Input.is_action_pressed("exit"):
+		chat_ui.hide()
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

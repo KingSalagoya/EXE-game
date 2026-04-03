@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8i1q1xahaol6"]
 
 [ext_resource type="Script" uid="uid://crln63nwjusih" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="2_g2els"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
 
@@ -30,3 +31,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72, 0)
 
 [node name="MainCamera" type="Camera3D" parent="CameraHolder" unique_id=1313740333]
 current = true
+
+[node name="ChatUI" parent="CameraHolder/MainCamera" unique_id=88991545 instance=ExtResource("2_g2els")]
