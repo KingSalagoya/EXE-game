@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://3lwoniapqd6h"]
 
 [ext_resource type="Script" uid="uid://c582jycf75it0" path="res://scripts/chat_ui.gd" id="1_iluef"]
+[ext_resource type="Script" uid="uid://ckc4wkxvpak0q" path="res://scripts/friend_msg_generator.gd" id="2_xq7rt"]
 
 [node name="ChatUI" type="Control" unique_id=952464027]
 layout_mode = 3
@@ -22,3 +23,9 @@ offset_top = 201.0
 offset_right = 516.0
 offset_bottom = 576.0
 editable = false
+
+[node name="Friend Msg Generator" type="Control" parent="." unique_id=503744490]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_xq7rt")
