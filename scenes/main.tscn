@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpakvn1j64v86" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c8i1q1xahaol6" path="res://scenes/player.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dqj5wfj0bcur7" path="res://scenes/level_test.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://w5ss53vq3ayv" path="res://scenes/level_test_2.tscn" id="3_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
 sky_top_color = Color(0.31456307, 0.3961939, 0.84696305, 1)
@@ -35,7 +35,8 @@ shadow_enabled = true
 [node name="Player" parent="GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="LevelTest" parent="GameEnviroment" unique_id=1181721314 instance=ExtResource("3_tbgi4")]
+[node name="LevelTest2" parent="GameEnviroment" unique_id=2145251298 instance=ExtResource("3_sugp2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="UserInterface" type="Control" parent="." unique_id=94076821]
 unique_name_in_owner = true

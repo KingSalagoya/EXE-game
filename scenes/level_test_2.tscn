@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://w5ss53vq3ayv"]
+
+[ext_resource type="PackedScene" uid="uid://b4fg1jnjlhiql" path="res://assets/models/house.glb" id="1_u1v16"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaqtl"]
+cull_mode = 2
+albedo_color = Color(0.29586652, 0.2958665, 0.2958665, 1)
+
+[node name="LevelTest2" type="Node3D" unique_id=2145251298]
+
+[node name="house" parent="." unique_id=1655284242 instance=ExtResource("1_u1v16")]
+
+[node name="room" parent="house" index="0" unique_id=1573209915]
+material_override = SubResource("StandardMaterial3D_eaqtl")
+
+[node name="cupboard" parent="house" index="1" unique_id=951727682]
+material_override = SubResource("StandardMaterial3D_eaqtl")
+
+[node name="cupboard drawer" parent="house" index="2" unique_id=225943499]
+material_override = SubResource("StandardMaterial3D_eaqtl")
+
+[node name="table" parent="house" index="3" unique_id=1621827570]
+material_override = SubResource("StandardMaterial3D_eaqtl")
+
+[node name="mirror" parent="house" index="4" unique_id=798187298]
+material_override = SubResource("StandardMaterial3D_eaqtl")
+
+[node name="door_frame" parent="house" index="5" unique_id=1472067871]
+material_override = SubResource("StandardMaterial3D_eaqtl")
+
+[node name="door" parent="house" index="6" unique_id=1296122628]
+visible = false
+material_override = SubResource("StandardMaterial3D_eaqtl")
+
+[editable path="house"]
