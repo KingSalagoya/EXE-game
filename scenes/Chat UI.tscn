@@ -5,27 +5,37 @@
 
 [node name="ChatUI" type="Control" unique_id=952464027]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_iluef")
-
-[node name="msg box" type="LineEdit" parent="." unique_id=1730372733]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 580.0
-offset_right = 516.0
-offset_bottom = 620.0
-placeholder_text = "Press 'T' to chat... [Press Enter to send]"
-
-[node name="chat history" type="TextEdit" parent="." unique_id=413722450]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 201.0
-offset_right = 516.0
-offset_bottom = 576.0
-editable = false
 
 [node name="Friend Msg Generator" type="Control" parent="." unique_id=503744490]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_xq7rt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1417162747]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -43.0
+offset_right = 68.0
+grow_vertical = 0
+theme_override_constants/separation = 5
+alignment = 2
+
+[node name="chat history" type="TextEdit" parent="VBoxContainer" unique_id=413722450]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+editable = false
+
+[node name="msg box" type="LineEdit" parent="VBoxContainer" unique_id=1730372733]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+placeholder_text = "Press 'T' to chat... [Press Enter to send]"
+expand_to_text_length = true
