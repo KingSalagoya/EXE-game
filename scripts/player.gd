@@ -15,6 +15,8 @@ var t_bob: float = 0.0
 @onready var main_camera: Camera3D = $CameraHolder/MainCamera
 @onready var graphics: MeshInstance3D = $Graphics
 @onready var chat_ui: Control = $CameraHolder/MainCamera/ChatUI
+@onready var ray_cast: RayCast3D = $CameraHolder/MainCamera/RayCast3D
+@onready var interact_label: Label = $CameraHolder/MainCamera/BoxContainer/Label
 
 
 func _ready() -> void:
@@ -34,6 +36,7 @@ func _physics_process(delta: float) -> void:
 	_handle_head_bob(delta)
 	move_and_slide()
 	_handle_chat()
+	_handle_interact()
 
 
 func _handle_jump(delta: float) -> void:
@@ -75,3 +78,17 @@ func _handle_chat() -> void:
 	if Input.is_action_pressed("exit"):
 		chat_ui.hide()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _handle_interact() -> void:
+	interact_label.hide()
+	if ray_cast.is_colliding():
+		var target = ray_cast.get_collider()
+		# Walk up the tree to see if the collider or ANY of its parents are in the group
+		while target != null and target is Node:
+			if target.is_in_group("interactable"):
+				interact_label.show()
+				if Input.is_action_just_pressed("interact"):
+					target.interact()
+				break
+			target = target.get_parent()
