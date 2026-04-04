@@ -8,25 +8,29 @@ func generate_friend_msg(sent_msg: String) -> void:
 	var lower_msg = sent_msg.to_lower()
 	var friend_msg: String = ""
 	var msg_cache: Array = []
+	var cleaned_msg: String = sent_msg.to_lower().strip_edges()
 	
-	if "hi" in lower_msg or "hello" in lower_msg or "hey" in lower_msg:
-		msg_cache = ["hello!", "hi!", "hey bud...", "yoo! what's up"]
-	elif "how are you" in lower_msg or "hru" in lower_msg or "how r u" in lower_msg:
-		msg_cache = ["im good, wbu?", "not bad", "good, ig", "fine, u?"]
-	elif "what's up" in lower_msg or "whats up" in lower_msg or "sup" in lower_msg:
-		msg_cache = ["not much, just chilling", "hanging out...", "just having some fun", "nothing interesting, u?"]
-	elif "good" in lower_msg or "great" in lower_msg or "fine" in lower_msg or "okay" in lower_msg or "ok" in lower_msg:
-		msg_cache = ["nice", "nc", "fine", "nc nc", "great"]
-	elif "lol" in lower_msg or "lmao" in lower_msg or "haha" in lower_msg:
-		msg_cache = ["lol yeah", "lol", ":D", ":)"]
-	elif "yes" in lower_msg or "yeah" in lower_msg or "yep" in lower_msg or "yup" in lower_msg:
-		msg_cache = ["cool", "yesh...", "nc"]
-	elif "no" in lower_msg or "nah" in lower_msg or "nope" in lower_msg:
-		msg_cache = ["oh ok", "gotcha", "ok ok", "nvm"]
-	elif "bye" in lower_msg or "cya" in lower_msg or "gtg" in lower_msg:
-		msg_cache = ["cya!..", "ok bye then...", "see ya...", "ok bye, come back soon..."]
-	else:
-		msg_cache = [_generate_gibberish()]
+	match cleaned_msg:
+		"hi", "hello", "hey":
+			msg_cache = ["hello!", "hi!", "hey bud...", "yoo! what's up"]
+		"how are you", "hru", "how r u", "how are u":
+			msg_cache = ["im good, wbu?", "not bad", "good, ig", "fine, u?"]
+		"what's up", "whats up", "sup":
+			msg_cache = ["not much, just chilling", "hanging out...", "just having some fun", "nothing interesting, u?"]
+		"good", "great", "fine", "okay", "ok":
+			msg_cache = ["nice", "nc", "fine", "nc nc", "great"]
+		"lol", "lmao", "haha":
+			msg_cache = ["lol yeah", "lol", ":D", ":)"]
+		"yes", "yeah", "yep", "yup":
+			msg_cache = ["cool", "yesh...", "nc"]
+		"no", "nah", "nope":
+			msg_cache = ["oh ok", "gotcha", "ok ok", "nvm"]
+		"bye", "cya", "gtg":
+			msg_cache = ["cya!..", "ok bye then...", "see ya...", "ok bye, come back soon..."]
+		_:
+			# For partial matches in case exact match fails, we can either do a quick fallback or just go straight to gibberish.
+			# Let's keep it simple and clean as requested, defaulting to gibberish.
+			msg_cache = [_generate_gibberish()]
 	
 	friend_msg = msg_cache.pick_random()
 	
