@@ -1,7 +1,7 @@
 extends Control
 
-@onready var msg_box: LineEdit = $"msg box"
-@onready var chat_history: TextEdit = $"chat history"
+@onready var msg_box: LineEdit = $"VBoxContainer/msg box"
+@onready var chat_history: TextEdit = $"VBoxContainer/chat history"
 
 var msg: String
 var usrnm: String = "RAIL"

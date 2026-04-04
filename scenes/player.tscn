@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://c8i1q1xahaol6"]
 
 [ext_resource type="Script" uid="uid://crln63nwjusih" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="2_g2els"]
-[ext_resource type="Script" uid="uid://m3lhyukghh6p" path="res://scripts/stats_displayer.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://bvyollx35vppd" path="res://scripts/interact.gd" id="3_dqkch"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
 
@@ -33,42 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72, 0)
 [node name="MainCamera" type="Camera3D" parent="CameraHolder" unique_id=1313740333]
 current = true
 
-[node name="ChatUI" parent="CameraHolder/MainCamera" unique_id=88991545 instance=ExtResource("2_g2els")]
-
-[node name="RayCast3D" type="RayCast3D" parent="CameraHolder/MainCamera" unique_id=54486172]
+[node name="Interactor" type="RayCast3D" parent="CameraHolder/MainCamera" unique_id=54486172]
 transform = Transform3D(1.9106855e-15, 1.3113416e-07, 1, 1, -1.3113416e-07, 0, 4.371139e-08, 3, -4.371139e-08, 0, 0, 0)
-
-[node name="BoxContainer" type="BoxContainer" parent="CameraHolder/MainCamera" unique_id=1674341892]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -77.0
-offset_top = 87.0
-offset_right = 77.0
-offset_bottom = 110.0
-grow_horizontal = 2
-
-[node name="Label" type="Label" parent="CameraHolder/MainCamera/BoxContainer" unique_id=720343227]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 32
-text = "Press \"E\" to interact"
-
-[node name="Stats" type="Control" parent="CameraHolder/MainCamera" unique_id=1882698432]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_qhqgy")
-
-[node name="BoxContainer" type="BoxContainer" parent="CameraHolder/MainCamera/Stats" unique_id=913844902]
-layout_mode = 0
-offset_left = 851.0
-offset_top = 29.0
-offset_right = 1131.0
-offset_bottom = 69.0
-
-[node name="Objective" type="Label" parent="CameraHolder/MainCamera/Stats/BoxContainer" unique_id=1399441173]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Objective: Grab the DVD"
+script = ExtResource("3_dqkch")
+INTERACT_TEXT = ""

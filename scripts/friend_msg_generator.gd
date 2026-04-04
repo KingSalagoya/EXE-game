@@ -2,7 +2,7 @@ extends Control
 
 var friend_usrnm: String = "Pete123"
 
-@onready var chat_history: TextEdit = $"../chat history"
+@onready var chat_history: TextEdit = $"../VBoxContainer/chat history"
 
 func generate_friend_msg(sent_msg: String) -> void:
 	var lower_msg = sent_msg.to_lower()
@@ -33,7 +33,6 @@ func generate_friend_msg(sent_msg: String) -> void:
 			msg_cache = [_generate_gibberish()]
 	
 	friend_msg = msg_cache.pick_random()
-	
 	# Simulates typing delay
 	await get_tree().create_timer(randf_range(0.8, 2.0)).timeout
 	chat_history.text += friend_usrnm + ": " + str(friend_msg) + "\n"
