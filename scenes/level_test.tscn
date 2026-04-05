@@ -1,12 +1,41 @@
 [gd_scene format=3 uid="uid://dqj5wfj0bcur7"]
 
 [ext_resource type="Texture2D" uid="uid://0tc1gfpw3t8y" path="res://assets/textures/icon.svg" id="1_e73ws"]
+[ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="2_r2no1"]
+[ext_resource type="PackedScene" uid="uid://c8i1q1xahaol6" path="res://scenes/player.tscn" id="2_yvmk3"]
+[ext_resource type="Script" uid="uid://rvtqbuwa5w53" path="res://scripts/user_interface.gd" id="4_7dxvt"]
+[ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="5_6g5uf"]
+[ext_resource type="Script" uid="uid://2b6k1b1qwanw" path="res://scripts/objectives.gd" id="6_vogc1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbogn"]
 albedo_color = Color(0.22310299, 0.22310287, 0.22310287, 1)
 albedo_texture = ExtResource("1_e73ws")
 metallic_specular = 0.15
 uv1_triplanar = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r2no1"]
+data = PackedVector3Array(-0.3535534, -1, -0.35355335, -0.5, -1, -4.371139e-08, 0, -1, 0, -0.5, -1, -4.371139e-08, -0.3535534, -1, -0.35355335, -0.3535534, 1, -0.35355335, 5.9624403e-09, -1, -0.5, -0.3535534, -1, -0.35355335, 0, -1, 0, -0.3535534, -1, -0.35355335, 5.9624403e-09, -1, -0.5, 5.9624403e-09, 1, -0.5, -0.5, -1, -4.371139e-08, -0.35355338, -1, 0.35355338, 0, -1, 0, -0.35355338, -1, 0.35355338, -0.5, -1, -4.371139e-08, -0.5, 1, -4.371139e-08, -0.35355338, -1, 0.35355338, -2.1855694e-08, -1, 0.5, 0, -1, 0, -2.1855694e-08, -1, 0.5, -0.35355338, -1, 0.35355338, -0.35355338, 1, 0.35355338, -0.3535534, 1, -0.35355335, -0.5, 1, -4.371139e-08, -0.5, -1, -4.371139e-08, -0.5, 1, -4.371139e-08, -0.3535534, 1, -0.35355335, 0, 1, 0, 5.9624403e-09, 1, -0.5, -0.3535534, 1, -0.35355335, -0.3535534, -1, -0.35355335, -0.3535534, 1, -0.35355335, 5.9624403e-09, 1, -0.5, 0, 1, 0, -0.5, 1, -4.371139e-08, -0.35355338, 1, 0.35355338, -0.35355338, -1, 0.35355338, -0.35355338, 1, 0.35355338, -0.5, 1, -4.371139e-08, 0, 1, 0, -0.35355338, 1, 0.35355338, -2.1855694e-08, 1, 0.5, -2.1855694e-08, -1, 0.5, -2.1855694e-08, 1, 0.5, -0.35355338, 1, 0.35355338, 0, 1, 0, 0.35355332, -1, -0.35355344, 5.9624403e-09, -1, -0.5, 0, -1, 0, 5.9624403e-09, -1, -0.5, 0.35355332, -1, -0.35355344, 0.35355332, 1, -0.35355344, 0.5, -1, 0, 0.35355332, -1, -0.35355344, 0, -1, 0, 0.35355332, -1, -0.35355344, 0.5, -1, 0, 0.5, 1, 0, -2.1855694e-08, -1, 0.5, 0.35355338, -1, 0.35355338, 0, -1, 0, 0.35355338, -1, 0.35355338, -2.1855694e-08, -1, 0.5, -2.1855694e-08, 1, 0.5, 0.35355338, -1, 0.35355338, 0.5, -1, 0, 0, -1, 0, 0.5, -1, 0, 0.35355338, -1, 0.35355338, 0.35355338, 1, 0.35355338, 0.35355332, 1, -0.35355344, 5.9624403e-09, 1, -0.5, 5.9624403e-09, -1, -0.5, 5.9624403e-09, 1, -0.5, 0.35355332, 1, -0.35355344, 0, 1, 0, 0.5, 1, 0, 0.35355332, 1, -0.35355344, 0.35355332, -1, -0.35355344, 0.35355332, 1, -0.35355344, 0.5, 1, 0, 0, 1, 0, -2.1855694e-08, 1, 0.5, 0.35355338, 1, 0.35355338, 0.35355338, -1, 0.35355338, 0.35355338, 1, 0.35355338, -2.1855694e-08, 1, 0.5, 0, 1, 0, 0.35355338, 1, 0.35355338, 0.5, 1, 0, 0.5, -1, 0, 0.5, 1, 0, 0.35355338, 1, 0.35355338, 0, 1, 0)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yvmk3"]
+data = PackedVector3Array(-0.3535534, -1, -0.35355335, -0.5, -1, -4.371139e-08, 0, -1, 0, -0.5, -1, -4.371139e-08, -0.3535534, -1, -0.35355335, -0.3535534, 1, -0.35355335, 5.9624403e-09, -1, -0.5, -0.3535534, -1, -0.35355335, 0, -1, 0, -0.3535534, -1, -0.35355335, 5.9624403e-09, -1, -0.5, 5.9624403e-09, 1, -0.5, -0.5, -1, -4.371139e-08, -0.35355338, -1, 0.35355338, 0, -1, 0, -0.35355338, -1, 0.35355338, -0.5, -1, -4.371139e-08, -0.5, 1, -4.371139e-08, -0.35355338, -1, 0.35355338, -2.1855694e-08, -1, 0.5, 0, -1, 0, -2.1855694e-08, -1, 0.5, -0.35355338, -1, 0.35355338, -0.35355338, 1, 0.35355338, -0.3535534, 1, -0.35355335, -0.5, 1, -4.371139e-08, -0.5, -1, -4.371139e-08, -0.5, 1, -4.371139e-08, -0.3535534, 1, -0.35355335, 0, 1, 0, 5.9624403e-09, 1, -0.5, -0.3535534, 1, -0.35355335, -0.3535534, -1, -0.35355335, -0.3535534, 1, -0.35355335, 5.9624403e-09, 1, -0.5, 0, 1, 0, -0.5, 1, -4.371139e-08, -0.35355338, 1, 0.35355338, -0.35355338, -1, 0.35355338, -0.35355338, 1, 0.35355338, -0.5, 1, -4.371139e-08, 0, 1, 0, -0.35355338, 1, 0.35355338, -2.1855694e-08, 1, 0.5, -2.1855694e-08, -1, 0.5, -2.1855694e-08, 1, 0.5, -0.35355338, 1, 0.35355338, 0, 1, 0, 0.35355332, -1, -0.35355344, 5.9624403e-09, -1, -0.5, 0, -1, 0, 5.9624403e-09, -1, -0.5, 0.35355332, -1, -0.35355344, 0.35355332, 1, -0.35355344, 0.5, -1, 0, 0.35355332, -1, -0.35355344, 0, -1, 0, 0.35355332, -1, -0.35355344, 0.5, -1, 0, 0.5, 1, 0, -2.1855694e-08, -1, 0.5, 0.35355338, -1, 0.35355338, 0, -1, 0, 0.35355338, -1, 0.35355338, -2.1855694e-08, -1, 0.5, -2.1855694e-08, 1, 0.5, 0.35355338, -1, 0.35355338, 0.5, -1, 0, 0, -1, 0, 0.5, -1, 0, 0.35355338, -1, 0.35355338, 0.35355338, 1, 0.35355338, 0.35355332, 1, -0.35355344, 5.9624403e-09, 1, -0.5, 5.9624403e-09, -1, -0.5, 5.9624403e-09, 1, -0.5, 0.35355332, 1, -0.35355344, 0, 1, 0, 0.5, 1, 0, 0.35355332, 1, -0.35355344, 0.35355332, -1, -0.35355344, 0.35355332, 1, -0.35355344, 0.5, 1, 0, 0, 1, 0, -2.1855694e-08, 1, 0.5, 0.35355338, 1, 0.35355338, 0.35355338, -1, 0.35355338, 0.35355338, 1, 0.35355338, -2.1855694e-08, 1, 0.5, 0, 1, 0, 0.35355338, 1, 0.35355338, 0.5, 1, 0, 0.5, -1, 0, 0.5, 1, 0, 0.35355338, 1, 0.35355338, 0, 1, 0)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7dxvt"]
+data = PackedVector3Array(-0.3535534, -1, -0.35355335, -0.5, -1, -4.371139e-08, 0, -1, 0, -0.5, -1, -4.371139e-08, -0.3535534, -1, -0.35355335, -0.3535534, 1, -0.35355335, 5.9624403e-09, -1, -0.5, -0.3535534, -1, -0.35355335, 0, -1, 0, -0.3535534, -1, -0.35355335, 5.9624403e-09, -1, -0.5, 5.9624403e-09, 1, -0.5, -0.5, -1, -4.371139e-08, -0.35355338, -1, 0.35355338, 0, -1, 0, -0.35355338, -1, 0.35355338, -0.5, -1, -4.371139e-08, -0.5, 1, -4.371139e-08, -0.35355338, -1, 0.35355338, -2.1855694e-08, -1, 0.5, 0, -1, 0, -2.1855694e-08, -1, 0.5, -0.35355338, -1, 0.35355338, -0.35355338, 1, 0.35355338, -0.3535534, 1, -0.35355335, -0.5, 1, -4.371139e-08, -0.5, -1, -4.371139e-08, -0.5, 1, -4.371139e-08, -0.3535534, 1, -0.35355335, 0, 1, 0, 5.9624403e-09, 1, -0.5, -0.3535534, 1, -0.35355335, -0.3535534, -1, -0.35355335, -0.3535534, 1, -0.35355335, 5.9624403e-09, 1, -0.5, 0, 1, 0, -0.5, 1, -4.371139e-08, -0.35355338, 1, 0.35355338, -0.35355338, -1, 0.35355338, -0.35355338, 1, 0.35355338, -0.5, 1, -4.371139e-08, 0, 1, 0, -0.35355338, 1, 0.35355338, -2.1855694e-08, 1, 0.5, -2.1855694e-08, -1, 0.5, -2.1855694e-08, 1, 0.5, -0.35355338, 1, 0.35355338, 0, 1, 0, 0.35355332, -1, -0.35355344, 5.9624403e-09, -1, -0.5, 0, -1, 0, 5.9624403e-09, -1, -0.5, 0.35355332, -1, -0.35355344, 0.35355332, 1, -0.35355344, 0.5, -1, 0, 0.35355332, -1, -0.35355344, 0, -1, 0, 0.35355332, -1, -0.35355344, 0.5, -1, 0, 0.5, 1, 0, -2.1855694e-08, -1, 0.5, 0.35355338, -1, 0.35355338, 0, -1, 0, 0.35355338, -1, 0.35355338, -2.1855694e-08, -1, 0.5, -2.1855694e-08, 1, 0.5, 0.35355338, -1, 0.35355338, 0.5, -1, 0, 0, -1, 0, 0.5, -1, 0, 0.35355338, -1, 0.35355338, 0.35355338, 1, 0.35355338, 0.35355332, 1, -0.35355344, 5.9624403e-09, 1, -0.5, 5.9624403e-09, -1, -0.5, 5.9624403e-09, 1, -0.5, 0.35355332, 1, -0.35355344, 0, 1, 0, 0.5, 1, 0, 0.35355332, 1, -0.35355344, 0.35355332, -1, -0.35355344, 0.35355332, 1, -0.35355344, 0.5, 1, 0, 0, 1, 0, -2.1855694e-08, 1, 0.5, 0.35355338, 1, 0.35355338, 0.35355338, -1, 0.35355338, 0.35355338, 1, 0.35355338, -2.1855694e-08, 1, 0.5, 0, 1, 0, 0.35355338, 1, 0.35355338, 0.5, 1, 0, 0.5, -1, 0, 0.5, 1, 0, 0.35355338, 1, 0.35355338, 0, 1, 0)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tdoqa"]
+sky_top_color = Color(0.31456307, 0.3961939, 0.84696305, 1)
+sky_horizon_color = Color(0.7628562, 0.66134405, 0.40881494, 1)
+ground_bottom_color = Color(0.33814627, 0.33973077, 0.5316433, 1)
+ground_horizon_color = Color(0.7647059, 0.6627451, 0.40784314, 1)
+
+[sub_resource type="Sky" id="Sky_uwrxv"]
+sky_material = SubResource("ProceduralSkyMaterial_tdoqa")
+
+[sub_resource type="Environment" id="Environment_ddr63"]
+background_mode = 2
+sky = SubResource("Sky_uwrxv")
+tonemap_mode = 2
+ssao_enabled = true
 
 [node name="LevelTest" type="Node3D" unique_id=1181721314]
 
@@ -89,3 +118,139 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 14, 
 light_energy = 16.0
 light_specular = 5.252
 spot_range = 7.1861744
+
+[node name="Woods" type="Node3D" parent="." unique_id=260282645]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Woods" unique_id=810362591 node_paths=PackedStringArray("ANIM_PLAYER") groups=["interactable"]]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.967569, 0, 0.59283257)
+script = ExtResource("2_r2no1")
+ANIM_PLAYER = NodePath("../../AnimationPlayer")
+ANIM_NAME = "collect wood"
+INTERACT_TEXT = "collect wood"
+INTERACT_TYPE = 2
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Woods/CSGCylinder3D" unique_id=1794436957]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/CSGCylinder3D/StaticBody3D" unique_id=381045675]
+shape = SubResource("ConcavePolygonShape3D_r2no1")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Woods" unique_id=1272325564 node_paths=PackedStringArray("ANIM_PLAYER") groups=["interactable"]]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.9334686, 0, 2.8616219)
+script = ExtResource("2_r2no1")
+ANIM_PLAYER = NodePath("../../AnimationPlayer")
+ANIM_NAME = "collect wood"
+INTERACT_TEXT = "collect wood"
+INTERACT_TYPE = 2
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Woods/CSGCylinder3D2" unique_id=138516844]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/CSGCylinder3D2/StaticBody3D" unique_id=622110426]
+shape = SubResource("ConcavePolygonShape3D_yvmk3")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Woods" unique_id=453834115 node_paths=PackedStringArray("ANIM_PLAYER") groups=["interactable"]]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.361037, 0, 4.689634)
+script = ExtResource("2_r2no1")
+ANIM_PLAYER = NodePath("../../AnimationPlayer")
+ANIM_NAME = "collect wood"
+INTERACT_TEXT = "collect wood"
+INTERACT_TYPE = 2
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Woods/CSGCylinder3D3" unique_id=502451260]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/CSGCylinder3D3/StaticBody3D" unique_id=1471370075]
+shape = SubResource("ConcavePolygonShape3D_7dxvt")
+
+[node name="GameEnviroment" type="Node3D" parent="." unique_id=1539797717]
+unique_name_in_owner = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GameEnviroment" unique_id=405944951]
+environment = SubResource("Environment_ddr63")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameEnviroment/WorldEnvironment" unique_id=1161215948]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="GameEnviroment" unique_id=367521465 instance=ExtResource("2_yvmk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="UserInterface" type="Control" parent="." unique_id=1927333986]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("4_7dxvt")
+
+[node name="MarginContainer" type="MarginContainer" parent="UserInterface" unique_id=36187627]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HUD" type="Control" parent="UserInterface/MarginContainer" unique_id=1051172484]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Point" type="ColorRect" parent="UserInterface/MarginContainer/HUD" unique_id=1331770887]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="InteractLabel" type="Label" parent="UserInterface/MarginContainer/HUD" unique_id=684249654]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = 17.5
+offset_right = 154.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+theme_override_font_sizes/font_size = 32
+text = "Press \"E\" to interact"
+horizontal_alignment = 1
+
+[node name="ObjectiveLabel" type="Label" parent="UserInterface/MarginContainer/HUD" unique_id=1123284998]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_bottom = 34.0
+grow_horizontal = 0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 24
+text = "Objective: Grab the DVD"
+
+[node name="ChatUI" parent="UserInterface/MarginContainer" unique_id=952464027 instance=ExtResource("5_6g5uf")]
+visible = false
+layout_mode = 2
+
+[node name="Objectives" type="Node" parent="." unique_id=1258298738]
+script = ExtResource("6_vogc1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1911112480]

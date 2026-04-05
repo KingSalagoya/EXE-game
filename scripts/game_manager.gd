@@ -5,5 +5,6 @@ extends Node
 @warning_ignore("unused_signal") signal update_interact_label(text: String)
 @warning_ignore("unused_signal") signal update_objective_label(text: String)
 @warning_ignore("unused_signal") signal next_objective
+@warning_ignore("unused_signal") signal wood_collected
 
 var can_move: bool = true
