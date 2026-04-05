@@ -946,6 +946,7 @@ script = ExtResource("1_36trf")
 ANIM_PLAYER = NodePath("../../AnimationPlayer")
 ANIM_NAME = "drawer_open"
 INTERACT_TEXT = "open drawer"
+TRIGGERS_OBJECTIVE = true
 SECOND_ANIM_NAME = "drawer_close"
 SECOND_INTERACT_TEXT = "close drawer"
 
@@ -1010,6 +1011,7 @@ script = ExtResource("1_36trf")
 ANIM_PLAYER = NodePath("../../../AnimationPlayer")
 ANIM_NAME = "door_open"
 INTERACT_TEXT = "open door"
+TRIGGERS_OBJECTIVE = true
 SECOND_ANIM_NAME = "door_close"
 SECOND_INTERACT_TEXT = "close door"
 
