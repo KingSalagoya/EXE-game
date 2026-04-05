@@ -33,7 +33,7 @@ data = PackedVector3Array(0.77419996, 0.0056, -0.9833, 0.1881, 1.0626999, -0.983
 
 [node name="house" parent="." unique_id=1655284242 instance=ExtResource("1_u1v16")]
 
-[node name="room" parent="house" index="0" unique_id=598199291]
+[node name="room" parent="house" index="0" unique_id=626556669]
 material_override = SubResource("StandardMaterial3D_eaqtl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="house/room" index="0" unique_id=604329273]
@@ -41,7 +41,7 @@ material_override = SubResource("StandardMaterial3D_eaqtl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house/room/StaticBody3D" unique_id=1648471492]
 shape = SubResource("ConcavePolygonShape3D_u1v16")
 
-[node name="cupboard" parent="house" index="1" unique_id=1312307628]
+[node name="cupboard" parent="house" index="1" unique_id=1642455359]
 material_override = SubResource("StandardMaterial3D_eaqtl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="house/cupboard" index="0" unique_id=1794423175]
@@ -49,7 +49,7 @@ material_override = SubResource("StandardMaterial3D_eaqtl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house/cupboard/StaticBody3D" unique_id=1770926787]
 shape = SubResource("ConcavePolygonShape3D_eaqtl")
 
-[node name="cupboard drawer" parent="house" index="2" unique_id=1888751176 groups=["interactable"]]
+[node name="cupboard drawer" parent="house" index="2" unique_id=213488153 groups=["interactable"]]
 material_override = SubResource("StandardMaterial3D_eaqtl")
 script = ExtResource("2_af1bf")
 
@@ -58,7 +58,7 @@ script = ExtResource("2_af1bf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house/cupboard drawer/StaticBody3D" unique_id=1162099125]
 shape = SubResource("ConcavePolygonShape3D_af1bf")
 
-[node name="table" parent="house" index="3" unique_id=1156020498]
+[node name="table" parent="house" index="3" unique_id=1173081508]
 material_override = SubResource("StandardMaterial3D_eaqtl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="house/table" index="0" unique_id=1719211105]
@@ -66,7 +66,7 @@ material_override = SubResource("StandardMaterial3D_eaqtl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house/table/StaticBody3D" unique_id=79801445]
 shape = SubResource("ConcavePolygonShape3D_l5sr0")
 
-[node name="mirror" parent="house" index="4" unique_id=142758718]
+[node name="mirror" parent="house" index="4" unique_id=445017831]
 material_override = SubResource("StandardMaterial3D_eaqtl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="house/mirror" index="0" unique_id=1713590132]
@@ -74,7 +74,7 @@ material_override = SubResource("StandardMaterial3D_eaqtl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house/mirror/StaticBody3D" unique_id=914775948]
 shape = SubResource("ConcavePolygonShape3D_qbpqc")
 
-[node name="door_frame" parent="house" index="5" unique_id=1213535996]
+[node name="door_frame" parent="house" index="5" unique_id=338356213]
 material_override = SubResource("StandardMaterial3D_eaqtl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="house/door_frame" index="0" unique_id=1028261737]
@@ -82,7 +82,7 @@ material_override = SubResource("StandardMaterial3D_eaqtl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house/door_frame/StaticBody3D" unique_id=434739032]
 shape = SubResource("ConcavePolygonShape3D_py6yu")
 
-[node name="door" parent="house" index="6" unique_id=666477211 groups=["interactable"]]
+[node name="door" parent="house" index="6" unique_id=599850039 groups=["interactable"]]
 material_override = SubResource("StandardMaterial3D_eaqtl")
 script = ExtResource("2_eaqtl")
 
