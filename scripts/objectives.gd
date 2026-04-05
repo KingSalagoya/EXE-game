@@ -22,7 +22,10 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var current_text = ""
 	for obj_name in OBJECTIVES:
-		if OBJECTIVES[obj_name] == state.allowed:
+		if OBJECTIVES[obj_name] == state.allowed and obj_name == "collect wood":
+			current_text = "Objective: " + obj_name + " (" + str(current_wood) + "/" + str(needed_wood) + ")"
+			break
+		elif OBJECTIVES[obj_name] == state.allowed:
 			current_text = "Objective: " + obj_name
 			break
 			
