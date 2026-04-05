@@ -6,6 +6,7 @@ extends Node
 @export_category("MAIN DETAILS")
 @export var ANIM_NAME: String = "open"
 @export var INTERACT_TEXT : String = "open"
+@export var TRIGGERS_OBJECTIVE: bool = false
 
 @export_category("ONLY FOR TOGGLE")
 @export var SECOND_ANIM_NAME: String = "close"
@@ -22,6 +23,8 @@ func _enter_tree() -> void:
 
 func interact() -> void:
 	if ANIM_PLAYER and not ANIM_PLAYER.is_playing():
+		if TRIGGERS_OBJECTIVE and not toggled: GameManager.next_objective.emit(INTERACT_TEXT)
+		
 		if not TOGGLE: ANIM_PLAYER.play(ANIM_NAME)
 		elif not is_anim_playing: toggle()
 
