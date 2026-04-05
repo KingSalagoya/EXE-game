@@ -1,14 +1,14 @@
 extends CharacterBody3D
 
 # Main
-const SPEED: float = 5.0
+const SPEED: float = 2.5
 const GRAVITY: float = -9.8
 const JUMP_VELOCITY: float = 4.5
 const SENSITIVITY: float = 0.004
 
 # View Bobbing
 const BOB_FREQ: float = 2.0
-const BOB_AMP: float = 0.08
+const BOB_AMP: float = 0.04
 var t_bob: float = 0.0
 
 @onready var camera_holder: Node3D = $CameraHolder

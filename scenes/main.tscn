@@ -8,10 +8,11 @@
 [ext_resource type="Script" uid="uid://2b6k1b1qwanw" path="res://scripts/objectives.gd" id="5_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
-sky_top_color = Color(0.31456307, 0.3961939, 0.84696305, 1)
-sky_horizon_color = Color(0.7628562, 0.66134405, 0.40881494, 1)
-ground_bottom_color = Color(0.33814627, 0.33973077, 0.5316433, 1)
-ground_horizon_color = Color(0.7647059, 0.6627451, 0.40784314, 1)
+sky_top_color = Color(0.0010405213, 0.0010404979, 0.009608173, 1)
+sky_horizon_color = Color(0.076398365, 0.031221468, 0.19683838, 1)
+ground_bottom_color = Color(0, 0, 0.007843138, 1)
+ground_horizon_color = Color(0.07450981, 0.03137255, 0.19607843, 1)
+sun_curve = 0.029421885
 
 [sub_resource type="Sky" id="Sky_tefeu"]
 sky_material = SubResource("ProceduralSkyMaterial_8cj0n")
@@ -36,7 +37,6 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Player" parent="GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Room" parent="GameEnviroment" unique_id=883977336 instance=ExtResource("4_o6xl0")]
 
@@ -58,10 +58,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="HUD" type="Control" parent="UserInterface/MarginContainer" unique_id=1158560208]
 layout_mode = 2
@@ -74,10 +74,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 1.0
-offset_bottom = 1.0
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -90,14 +90,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -154.0
-offset_top = 17.5
+offset_top = 3.5
 offset_right = 154.0
-offset_bottom = 62.5
+offset_bottom = 48.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 1
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 14
 text = "Press \"E\" to interact"
 horizontal_alignment = 1
 
@@ -110,8 +110,9 @@ offset_left = -280.0
 offset_bottom = 34.0
 grow_horizontal = 0
 mouse_filter = 1
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 12
 text = "Objective: Grab the DVD"
+horizontal_alignment = 2
 
 [node name="ChatUI" parent="UserInterface/MarginContainer" unique_id=952464027 instance=ExtResource("4_jyhfs")]
 layout_mode = 2
