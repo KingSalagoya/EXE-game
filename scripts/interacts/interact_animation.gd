@@ -34,7 +34,13 @@ func interact() -> void:
 		elif not is_anim_playing: toggle()
 	
 	elif INTERACT_TYPE == interact_type.scene_change and next_scene:
-		get_tree().change_scene_to_packed(next_scene)
+		var room = owner
+		var parent = room.get_parent()
+		var new_room = next_scene.instantiate()
+		parent.remove_child(room)
+		room.queue_free()
+		parent.add_child(new_room)
+		GameManager.next_objective.emit(INTERACT_TEXT)
 	
 	elif INTERACT_TYPE == interact_type.wood:
 		GameManager.emit_signal("wood_collected")
