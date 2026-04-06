@@ -26,18 +26,18 @@ anchor_bottom = 1.0
 offset_top = -43.0
 offset_right = 68.0
 grow_vertical = 0
-theme_override_constants/separation = 5
+theme_override_constants/separation = 10
 alignment = 2
 
 [node name="chat history" type="TextEdit" parent="VBoxContainer" unique_id=413722450]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 editable = false
 
 [node name="msg box" type="LineEdit" parent="VBoxContainer" unique_id=1730372733]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 placeholder_text = "Press 'T' to chat... [Press Enter to send]"
 expand_to_text_length = true
