@@ -43,6 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0128775, 1.524365, 1.72589
 
 [node name="DialogueBalloon" parent="GameEnviroment" unique_id=1873835827 instance=ExtResource("4_tipki")]
 visible = false
+auto_start = false
 will_block_other_input = false
 
 [node name="LevelHolder" type="Node3D" parent="GameEnviroment" unique_id=1454569192]

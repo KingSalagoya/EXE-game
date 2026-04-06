@@ -16,6 +16,8 @@ func _special_objectives(_name: String) -> void:
 			change_level(level_test)
 		"collect wood":
 			change_level(level_room)
+		"grab dvd":
+			GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "recall_past")
 
 func change_level(new_scene: PackedScene) -> void:
 	var prev_level = level_holder.get_child(0)
