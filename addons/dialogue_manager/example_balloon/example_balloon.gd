@@ -120,6 +120,7 @@ func start(with_dialogue_resource: DialogueResource = null, title: String = "", 
 		start_from_title = title
 	dialogue_line = await dialogue_resource.get_next_dialogue_line(start_from_title, temporary_game_states)
 	show()
+	
 	GameManager.can_move = false
 
 

@@ -54,11 +54,10 @@ shadow_enabled = true
 
 [node name="Player" parent="GameViewport/SubViewport/GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0128775, 2.2980952, 1.7258921)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0128775, 1.524365, 1.7258921)
 
 [node name="DialogueBalloon" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1873835827 instance=ExtResource("4_tipki")]
 visible = false
-dialogue_resource = null
 auto_start = false
 will_block_other_input = false
 
