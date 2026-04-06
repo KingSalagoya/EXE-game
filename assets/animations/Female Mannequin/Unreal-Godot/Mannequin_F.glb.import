@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bou7syjfgon0v"
-path="res://.godot/imported/UAL2_Standard.glb-497f6720296df40ab65bb9187ede8b54.scn"
+uid="uid://bei8jvccgy2ga"
+path="res://.godot/imported/Mannequin_F.glb-c5e39742dd15379df6578ed2bb31cd6f.scn"
 
 [deps]
 
-source_file="res://assets/Universal Animation Library 2[Standard]/Unreal-Godot/UAL2_Standard.glb"
-dest_files=["res://.godot/imported/UAL2_Standard.glb-497f6720296df40ab65bb9187ede8b54.scn"]
+source_file="res://assets/animations/Female Mannequin/Unreal-Godot/Mannequin_F.glb"
+dest_files=["res://.godot/imported/Mannequin_F.glb-c5e39742dd15379df6578ed2bb31cd6f.scn"]
 
 [params]
 
