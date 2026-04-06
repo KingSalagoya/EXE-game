@@ -12,4 +12,7 @@ extends Node
 @warning_ignore("unused_signal") signal update_interact_label(text: String)
 @warning_ignore("unused_signal") signal update_objective_label(text: String)
 
+
+@warning_ignore("unused_signal") signal handle_dialogue(resourse, title: String)
+
 var can_move: bool = true
