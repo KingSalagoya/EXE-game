@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="1_36trf"]
 [ext_resource type="Texture2D" uid="uid://0tc1gfpw3t8y" path="res://assets/textures/icon.svg" id="1_ffxv4"]
-[ext_resource type="PackedScene" uid="uid://dqj5wfj0bcur7" path="res://scenes/level_test.tscn" id="3_85yof"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20vo2"]
 albedo_color = Color(0.23392546, 0.23392546, 0.23392543, 1)
@@ -1078,9 +1077,10 @@ script = ExtResource("1_36trf")
 ANIM_PLAYER = NodePath("../../AnimationPlayer")
 ANIM_NAME = "drawer_open"
 INTERACT_TEXT = "open drawer"
-TRIGGERS_OBJECTIVE = true
+OBJECTIVE = "open drawer"
 SECOND_ANIM_NAME = "drawer_close"
 SECOND_INTERACT_TEXT = "close drawer"
+TOGGLE_OBJECTIVE = "close drawer"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Drawer/cupboard drawer" unique_id=823923361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00036053034, -2.430752e-07, 0.00057023094)
@@ -1150,11 +1150,10 @@ script = ExtResource("1_36trf")
 ANIM_PLAYER = NodePath("../../../AnimationPlayer")
 ANIM_NAME = "door_open"
 INTERACT_TEXT = "open door"
-TRIGGERS_OBJECTIVE = true
-INTERACT_TYPE = 1
-next_scene = ExtResource("3_85yof")
+OBJECTIVE = "open door"
 SECOND_ANIM_NAME = "door_close"
 SECOND_INTERACT_TEXT = "close door"
+TOGGLE_OBJECTIVE = "close door"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/door_frame/door" unique_id=1038825145]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008791237, 2.831337e-05, 1.8626451e-09)

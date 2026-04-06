@@ -32,6 +32,7 @@ alignment = 2
 [node name="chat history" type="TextEdit" parent="VBoxContainer" unique_id=413722450]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+theme_override_font_sizes/font_size = 8
 editable = false
 
 [node name="msg box" type="LineEdit" parent="VBoxContainer" unique_id=1730372733]
