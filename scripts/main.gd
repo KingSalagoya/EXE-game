@@ -1,7 +1,7 @@
 extends Node
 
-@onready var level_holder: Node3D = $GameEnviroment/LevelHolder
-@onready var dialogue_balloon: DialogueManagerExampleBalloon = $GameEnviroment/DialogueBalloon
+@onready var level_holder: Node3D = $GameViewport/SubViewport/GameEnviroment/LevelHolder
+@onready var dialogue_balloon: DialogueManagerExampleBalloon = $GameViewport/SubViewport/GameEnviroment/LevelHolder/DialogueBalloon
 
 const level_test: PackedScene = preload("res://scenes/level_test.tscn")
 const level_room: PackedScene = preload("res://scenes/room.tscn")

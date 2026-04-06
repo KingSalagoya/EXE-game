@@ -27,31 +27,62 @@ ssao_enabled = true
 [node name="Main" type="Node" unique_id=805243855]
 script = ExtResource("1_sugp2")
 
-[node name="GameEnviroment" type="Node3D" parent="." unique_id=577782268]
+[node name="GameViewport" type="SubViewportContainer" parent="." unique_id=204916823]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+
+[node name="SubViewport" type="SubViewport" parent="GameViewport" unique_id=794923005]
+handle_input_locally = false
+snap_2d_vertices_to_pixel = true
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="GameEnviroment" type="Node3D" parent="GameViewport/SubViewport" unique_id=577782268]
 unique_name_in_owner = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="GameEnviroment" unique_id=920053309]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GameViewport/SubViewport/GameEnviroment" unique_id=920053309]
 environment = SubResource("Environment_yqjtg")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameEnviroment/WorldEnvironment" unique_id=1234819094]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameViewport/SubViewport/GameEnviroment/WorldEnvironment" unique_id=1234819094]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
+[node name="Player" parent="GameViewport/SubViewport/GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0128775, 1.524365, 1.7258921)
 
-[node name="DialogueBalloon" parent="GameEnviroment" unique_id=1873835827 instance=ExtResource("4_tipki")]
+[node name="DialogueBalloon" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1873835827 instance=ExtResource("4_tipki")]
 visible = false
 auto_start = false
 will_block_other_input = false
 
-[node name="LevelHolder" type="Node3D" parent="GameEnviroment" unique_id=1454569192]
+[node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
 
-[node name="Room" parent="GameEnviroment/LevelHolder" unique_id=883977336 instance=ExtResource("4_o6xl0")]
+[node name="Room" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=883977336 instance=ExtResource("4_o6xl0")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="UserInterface" type="Control" parent="." unique_id=94076821]
+[node name="UiViewport" type="SubViewportContainer" parent="." unique_id=1055735002]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="UiViewport" unique_id=671764586]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="UserInterface" type="Control" parent="UiViewport/SubViewport" unique_id=94076821]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -62,38 +93,38 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("4_tefeu")
 
-[node name="MarginContainer" type="MarginContainer" parent="UserInterface" unique_id=602167923]
+[node name="MarginContainer" type="MarginContainer" parent="UiViewport/SubViewport/UserInterface" unique_id=602167923]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="HUD" type="Control" parent="UserInterface/MarginContainer" unique_id=1158560208]
+[node name="HUD" type="Control" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=1158560208]
 layout_mode = 2
 mouse_filter = 1
 
-[node name="Point" type="ColorRect" parent="UserInterface/MarginContainer/HUD" unique_id=1701731186]
+[node name="Point" type="ColorRect" parent="UiViewport/SubViewport/UserInterface/MarginContainer/HUD" unique_id=1701731186]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -0.5
-offset_top = -0.5
-offset_right = 0.5
-offset_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="InteractLabel" type="Label" parent="UserInterface/MarginContainer/HUD" unique_id=226578204]
+[node name="InteractLabel" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/HUD" unique_id=226578204]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -101,18 +132,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -154.0
-offset_top = 3.5
+offset_top = 8.5
 offset_right = 154.0
-offset_bottom = 48.5
+offset_bottom = 53.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 1
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 24
 text = "Press \"E\" to interact"
 horizontal_alignment = 1
 
-[node name="ObjectiveLabel" type="Label" parent="UserInterface/MarginContainer/HUD" unique_id=1092425441]
+[node name="ObjectiveLabel" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/HUD" unique_id=1092425441]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -121,11 +152,11 @@ offset_left = -280.0
 offset_bottom = 34.0
 grow_horizontal = 0
 mouse_filter = 1
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 24
 text = "Objective: Grab the DVD"
 horizontal_alignment = 2
 
-[node name="ChatUI" parent="UserInterface/MarginContainer" unique_id=952464027 instance=ExtResource("4_jyhfs")]
+[node name="ChatUI" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=952464027 instance=ExtResource("4_jyhfs")]
 layout_mode = 2
 
 [node name="Objectives" type="Node" parent="." unique_id=1653358236]
