@@ -1,6 +1,7 @@
 extends Node
 
 @onready var level_holder: Node3D = $GameEnviroment/LevelHolder
+@onready var dialogue_balloon: DialogueManagerExampleBalloon = $GameEnviroment/LevelHolder/DialogueBalloon
 
 const level_test: PackedScene = preload("res://scenes/level_test.tscn")
 const level_room: PackedScene = preload("res://scenes/room.tscn")
@@ -23,8 +24,18 @@ func change_level(new_scene: PackedScene) -> void:
 	%Player.global_position = Vector3.ZERO
 
 func _ready() -> void:
+	GameManager.handle_dialogue.connect(_handle_dialogue)
+	
 	%UserInterface.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	await  get_tree().create_timer(5).timeout
+	GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "start")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit"): get_tree().quit()
+
+func _handle_dialogue(resourse, title):
+	dialogue_balloon.dialogue_resource = resourse 
+	dialogue_balloon.start_from_title = title
+	dialogue_balloon.start()
