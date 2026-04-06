@@ -38,6 +38,10 @@ folder_colors={
 "res://scripts/": "blue"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 interactable="Put this for interactable items"
