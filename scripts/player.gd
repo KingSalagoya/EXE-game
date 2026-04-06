@@ -17,7 +17,7 @@ var t_bob: float = 0.0
 
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		camera_holder.rotate_y(-event.relative.x * SENSITIVITY)
 		graphics.rotate_y(-event.relative.x * SENSITIVITY)
