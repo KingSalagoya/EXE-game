@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="1_36trf"]
 [ext_resource type="Texture2D" uid="uid://0tc1gfpw3t8y" path="res://assets/textures/icon.svg" id="1_ffxv4"]
-[ext_resource type="PackedScene" uid="uid://dqj5wfj0bcur7" path="res://scenes/level_test.tscn" id="3_85yof"]
-[ext_resource type="Script" uid="uid://pwj48onbs1p2" path="res://scripts/mirror.gd" id="4_14vil"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20vo2"]
 albedo_color = Color(0.23392546, 0.23392546, 0.23392543, 1)
@@ -549,6 +547,10 @@ shadow_mesh = SubResource("ArrayMesh_dl4ih")
 [sub_resource type="BoxShape3D" id="BoxShape3D_jn645"]
 size = Vector3(0.017582474, 0.0018846744, 0.031712018)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0am6y"]
+albedo_color = Color(0.23392546, 0.23392546, 0.23392543, 1)
+disable_receive_shadows = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y577q"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_f7cgs"]
@@ -566,7 +568,6 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_38qtx"]
-resource_local_to_scene = true
 resource_name = "Plane_029"
 _surfaces = [{
 "aabb": AABB(-0.0002984619, -0.007279343, -0.008719543, 0.0008546156, 0.014558682, 0.017439108),
@@ -583,18 +584,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_f7cgs")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_14vil"]
-viewport_path = NodePath("Room/mirror/mirror_quad/MirrorViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxe34"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_14vil")
-
-[sub_resource type="QuadMesh" id="QuadMesh_14vil"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_jxe34")
-size = Vector2(0.015, 0.013)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbr04"]
 
@@ -1003,8 +992,6 @@ mesh = SubResource("ArrayMesh_ns6u7")
 transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, -2.4907334, 1.8396116, 1.8060753)
 material_override = SubResource("StandardMaterial3D_20vo2")
 mesh = SubResource("ArrayMesh_xvgsr")
-script = ExtResource("1_36trf")
-INTERACT_TEXT = "interact"
 
 [node name="screen" type="MeshInstance3D" parent="PCTable/monitor" unique_id=267291829]
 transform = Transform3D(1.9106866e-17, 4.3711446e-10, 0.010000002, 0.010000007, -4.3711415e-10, -4.9630837e-24, 4.3711415e-10, 0.010000007, -4.3711426e-10, 0.0020275898, 0, 0.0009770915)
@@ -1090,9 +1077,10 @@ script = ExtResource("1_36trf")
 ANIM_PLAYER = NodePath("../../AnimationPlayer")
 ANIM_NAME = "drawer_open"
 INTERACT_TEXT = "open drawer"
-TRIGGERS_OBJECTIVE = true
+OBJECTIVE = "open drawer"
 SECOND_ANIM_NAME = "drawer_close"
 SECOND_INTERACT_TEXT = "close drawer"
+TOGGLE_OBJECTIVE = "close drawer"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Drawer/cupboard drawer" unique_id=823923361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00036053034, -2.430752e-07, 0.00057023094)
@@ -1162,11 +1150,10 @@ script = ExtResource("1_36trf")
 ANIM_PLAYER = NodePath("../../../AnimationPlayer")
 ANIM_NAME = "door_open"
 INTERACT_TEXT = "open door"
-TRIGGERS_OBJECTIVE = true
-INTERACT_TYPE = 1
-next_scene = ExtResource("3_85yof")
+OBJECTIVE = "open door"
 SECOND_ANIM_NAME = "door_close"
 SECOND_INTERACT_TEXT = "close door"
+TOGGLE_OBJECTIVE = "close door"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/door_frame/door" unique_id=1038825145]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008791237, 2.831337e-05, 1.8626451e-09)
@@ -1177,17 +1164,8 @@ shape = SubResource("BoxShape3D_jn645")
 
 [node name="mirror" type="MeshInstance3D" parent="Room" unique_id=2024413997]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 2.9447603, 2.8099046, 1.7725136)
+material_override = SubResource("StandardMaterial3D_0am6y")
 mesh = SubResource("ArrayMesh_38qtx")
-
-[node name="mirror_quad" type="MeshInstance3D" parent="Room/mirror" unique_id=1218070790]
-transform = Transform3D(1.910687e-15, -4.3711413e-08, -1.0000005, -1.0000007, -4.3711424e-08, 1.2705494e-21, -4.3711424e-08, 1.0000007, -4.3711417e-08, -0.005380798, 0, 3.7252903e-09)
-mesh = SubResource("QuadMesh_14vil")
-script = ExtResource("4_14vil")
-
-[node name="MirrorViewport" type="SubViewport" parent="Room/mirror/mirror_quad" unique_id=1031326075]
-
-[node name="MirrorCamera" type="Camera3D" parent="Room/mirror/mirror_quad/MirrorViewport" unique_id=1484842541]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.7735758, 2.8987727, 2.2135513)
 
 [node name="room" type="MeshInstance3D" parent="Room" unique_id=1225045848]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)

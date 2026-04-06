@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 		handle_jump(delta)
 		handle_movement()
 		handle_head_bob(delta)
-	move_and_slide()
+		move_and_slide()
 
 
 func handle_jump(delta: float) -> void:

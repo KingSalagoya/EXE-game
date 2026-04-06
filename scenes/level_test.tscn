@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqj5wfj0bcur7"]
 
 [ext_resource type="Texture2D" uid="uid://0tc1gfpw3t8y" path="res://assets/textures/icon.svg" id="1_e73ws"]
-[ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="2_r2no1"]
+[ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="2_vbogn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbogn"]
 albedo_color = Color(0.22310299, 0.22310287, 0.22310287, 1)
@@ -21,6 +21,7 @@ data = PackedVector3Array(-0.3535534, -1, -0.35355335, -0.5, -1, -4.371139e-08, 
 [node name="LevelTest" type="Node3D" unique_id=1181721314]
 
 [node name="Level" type="CSGCombiner3D" parent="." unique_id=139073059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 material_override = SubResource("StandardMaterial3D_vbogn")
 use_collision = true
 
@@ -45,6 +46,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.7
 size = Vector3(1, 3, 40)
 
 [node name="Light" type="Node3D" parent="." unique_id=1760456171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Light" unique_id=207450994]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.5737805, 13)
@@ -101,39 +103,31 @@ light_specular = 5.252
 spot_range = 7.1861744
 
 [node name="Woods" type="Node3D" parent="." unique_id=260282645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Woods" unique_id=810362591 groups=["interactable"]]
+[node name="wood1" type="CSGCylinder3D" parent="Woods" unique_id=810362591 groups=["interactable"]]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.967569, 0, 0.59283257)
-script = ExtResource("2_r2no1")
-ANIM_NAME = "collect wood"
-INTERACT_TEXT = "collect wood"
-INTERACT_TYPE = 2
+script = ExtResource("2_vbogn")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Woods/CSGCylinder3D" unique_id=1794436957]
+[node name="StaticBody3D" type="StaticBody3D" parent="Woods/wood1" unique_id=1794436957]
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/CSGCylinder3D/StaticBody3D" unique_id=381045675]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/wood1/StaticBody3D" unique_id=381045675]
 shape = SubResource("ConcavePolygonShape3D_r2no1")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Woods" unique_id=1272325564 groups=["interactable"]]
+[node name="wood2" type="CSGCylinder3D" parent="Woods" unique_id=1272325564 groups=["interactable"]]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.9334686, 0, 2.8616219)
-script = ExtResource("2_r2no1")
-ANIM_NAME = "collect wood"
-INTERACT_TEXT = "collect wood"
-INTERACT_TYPE = 2
+script = ExtResource("2_vbogn")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Woods/CSGCylinder3D2" unique_id=138516844]
+[node name="StaticBody3D" type="StaticBody3D" parent="Woods/wood2" unique_id=138516844]
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/CSGCylinder3D2/StaticBody3D" unique_id=622110426]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/wood2/StaticBody3D" unique_id=622110426]
 shape = SubResource("ConcavePolygonShape3D_yvmk3")
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Woods" unique_id=453834115 groups=["interactable"]]
+[node name="wood3" type="CSGCylinder3D" parent="Woods" unique_id=453834115 groups=["interactable"]]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.361037, 0, 4.689634)
-script = ExtResource("2_r2no1")
-ANIM_NAME = "collect wood"
-INTERACT_TEXT = "collect wood"
-INTERACT_TYPE = 2
+script = ExtResource("2_vbogn")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Woods/CSGCylinder3D3" unique_id=502451260]
+[node name="StaticBody3D" type="StaticBody3D" parent="Woods/wood3" unique_id=502451260]
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/CSGCylinder3D3/StaticBody3D" unique_id=1471370075]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/wood3/StaticBody3D" unique_id=1471370075]
 shape = SubResource("ConcavePolygonShape3D_7dxvt")

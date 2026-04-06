@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bei8jvccgy2ga"
-path="res://.godot/imported/Mannequin_F.glb-418759a3edbddbc9920e22e2ab333907.scn"
+uid="uid://co1w1jvnw36c3"
+path="res://.godot/imported/UAL2_Standard.fbx-23b58a5360a83ec42263745a021fd6e3.scn"
 
 [deps]
 
-source_file="res://assets/Universal Animation Library 2[Standard]/Female Mannequin/Unreal-Godot/Mannequin_F.glb"
-dest_files=["res://.godot/imported/Mannequin_F.glb-418759a3edbddbc9920e22e2ab333907.scn"]
+source_file="res://assets/animations/Unity/UAL2_Standard.fbx"
+dest_files=["res://.godot/imported/UAL2_Standard.fbx-23b58a5360a83ec42263745a021fd6e3.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -38,5 +38,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=2
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
