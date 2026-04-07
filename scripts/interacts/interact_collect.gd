@@ -14,4 +14,10 @@ func interact() -> void:
 
 func _objective_collected(_name: String) -> void:
 	if _name == objective_name and interacted:
+		match _name:
+			"collect wood":
+				GameManager.inventory.wood += 1
+			"grab dvd":
+				GameManager.inventory.dvd += 1
+		print(GameManager.inventory)
 		queue_free()

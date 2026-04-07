@@ -1,7 +1,8 @@
 extends Node
 
 @onready var level_holder: Node3D = $GameViewport/SubViewport/GameEnviroment/LevelHolder
-@onready var dialogue_balloon: DialogueManagerExampleBalloon = $GameViewport/SubViewport/GameEnviroment/LevelHolder/DialogueBalloon
+@onready var dialogue_balloon: DialogueManagerExampleBalloon = $GameViewport/SubViewport/GameEnviroment/DialogueBalloon
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const level_test: PackedScene = preload("res://scenes/level_test.tscn")
 const level_room: PackedScene = preload("res://scenes/room.tscn")
@@ -18,6 +19,7 @@ func _special_objectives(_name: String) -> void:
 			change_level(level_room)
 		"grab dvd":
 			GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "recall_past")
+			#animation_player.play("insert_disk")
 
 func change_level(new_scene: PackedScene) -> void:
 	var prev_level = level_holder.get_child(0)

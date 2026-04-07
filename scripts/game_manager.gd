@@ -16,3 +16,7 @@ extends Node
 @warning_ignore("unused_signal") signal handle_dialogue(resourse, title: String)
 
 var can_move: bool = true
+var inventory:Dictionary [String, int] = {
+	"wood": 0,
+	"disk": 0
+}
