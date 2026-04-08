@@ -1,13 +1,15 @@
 extends Node
 
 @onready var level_holder: Node3D = $GameViewport/SubViewport/GameEnviroment/LevelHolder
-@onready var dialogue_balloon: DialogueManagerExampleBalloon = $GameViewport/SubViewport/GameEnviroment/DialogueBalloon
+@onready var dialogue_balloon: DialogueManagerExampleBalloon = $UiViewport/SubViewport/UserInterface/Dialogue
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var ui: Control = %UserInterface
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
 
 const level_test: PackedScene = preload("res://scenes/level_test.tscn")
 const level_room: PackedScene = preload("res://scenes/room.tscn")
+
+const room_one_dialogue: DialogueResource = preload("res://dialogue/room#1.dialogue")
 
 func _enter_tree() -> void:
 	GameManager.handle_dialogue.connect(_handle_dialogue)
@@ -18,11 +20,11 @@ func _special_objectives(_name: String) -> void:
 		"pick walkie-talkie":
 			GameManager.can_move = false
 			await get_tree().create_timer(2).timeout
-			GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "grab_walkie_talkie")
+			GameManager.handle_dialogue.emit(room_one_dialogue, "grab_walkie_talkie")
 			GameManager.can_move = true
 			#GameManager.chat_dialogue.emit(1)
 		"grab dvd":
-			GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "grab_dvd")
+			GameManager.handle_dialogue.emit(room_one_dialogue, "grab_dvd")
 		"open door":
 			change_level(level_test)
 		"collect wood":
