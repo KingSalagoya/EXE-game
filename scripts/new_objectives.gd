@@ -36,13 +36,13 @@ func _update_objective_list(list: Dictionary[String, int]) -> void:
 func _check_objective_completed(obj_name: String) -> void:
 	if obj_name == current_objective_name:
 		print_debug(current_objective_amount)
+		GameManager.objective_collected.emit(current_objective_name)
 		if current_objective_amount <= 0:
 			_complete_objective()
 			#_update_objective_label()
 		else:
 			current_completed_amount += 1
 			print_debug(current_completed_amount)
-			GameManager.objective_collected.emit(current_objective_name)
 			_update_objective_label(true)
 
 			if current_completed_amount == current_objective_amount:
