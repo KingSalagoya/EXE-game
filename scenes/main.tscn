@@ -56,11 +56,6 @@ shadow_enabled = true
 unique_name_in_owner = true
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -2.0334344, 0.93299425, 1.226963)
 
-[node name="DialogueBalloon" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1873835827 instance=ExtResource("4_tipki")]
-visible = false
-auto_start = false
-will_block_other_input = false
-
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
 
 [node name="Room" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=883977336 instance=ExtResource("4_o6xl0")]
@@ -78,7 +73,6 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="UiViewport" unique_id=671764586]
 disable_3d = true
 transparent_bg = true
-handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
@@ -158,6 +152,11 @@ horizontal_alignment = 2
 
 [node name="ChatUI" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=952464027 instance=ExtResource("4_jyhfs")]
 layout_mode = 2
+
+[node name="Dialogue" parent="UiViewport/SubViewport/UserInterface" unique_id=1873835827 instance=ExtResource("4_tipki")]
+auto_start = false
+will_block_other_input = false
+skip_action = &"ui_accept"
 
 [node name="Objectives" type="Node" parent="." unique_id=1653358236]
 script = ExtResource("6_tefeu")
