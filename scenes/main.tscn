@@ -152,7 +152,7 @@ offset_left = -280.0
 offset_bottom = 34.0
 grow_horizontal = 0
 mouse_filter = 1
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 text = "Objective: Grab the DVD"
 horizontal_alignment = 2
 

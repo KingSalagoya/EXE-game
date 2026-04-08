@@ -15,14 +15,18 @@ func _enter_tree() -> void:
 
 func _special_objectives(_name: String) -> void:
 	match _name:
+		"pick walkie-talkie":
+			GameManager.can_move = false
+			await get_tree().create_timer(2).timeout
+			GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "grab_walkie_talkie")
+			GameManager.can_move = true
+			#GameManager.chat_dialogue.emit(1)
+		"grab dvd":
+			GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "grab_dvd")
 		"open door":
 			change_level(level_test)
 		"collect wood":
 			change_level(level_room)
-		"grab dvd":
-			GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "recall_past")
-		"open drawer":
-			GameManager.chat_dialogue.emit(1)
 				
 
 func change_level(new_scene: PackedScene) -> void:

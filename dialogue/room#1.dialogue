@@ -6,9 +6,14 @@ Rail: Pete used to hate silence. Always had to fill it with something. A joke. A
 
 => END
 
-~ recall_past
+~ grab_walkie_talkie
 
-Rail: Xenon Knight. God. Where did I even find this. 2005. We were... what, seventeen? The year everything was simple.
-Rail: The year everything was simple.
+Rail: He ain’t coming back
+
+=> END
+
+~ grab_dvd
+
+Rail: XENON KNIGHT? I’m not sure what this is but ... I feel like I know it
 
 => END
