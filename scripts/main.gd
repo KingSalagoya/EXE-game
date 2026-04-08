@@ -31,7 +31,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	await  get_tree().create_timer(1).timeout
-	GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "start")
+#	GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "start")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit"): get_tree().quit()
