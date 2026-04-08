@@ -19,6 +19,6 @@ extends Node
 var can_move: bool = true
 var inventory:Dictionary [String, int] = {
 	"wood": 0,
-	"disk": 0,
+	"dvd": 0,
 	"walkie_talkie": 0
 }
