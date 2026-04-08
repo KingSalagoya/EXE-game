@@ -19,5 +19,7 @@ func _objective_collected(_name: String) -> void:
 				GameManager.inventory.wood += 1
 			"grab dvd":
 				GameManager.inventory.dvd += 1
+			"pick walkie-talkie":
+				GameManager.inventory.walkie_talkie += 1
 		print(GameManager.inventory)
 		queue_free()

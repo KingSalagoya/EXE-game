@@ -1,12 +1,12 @@
 extends Node
 
 @export var LIST_OF_OBJECTIVES: Dictionary[String, int] = {
+	"pick walkie-talkie": 0,
 	"open drawer": 0,
-	"open door": 0,
-	"collect wood": 3,
 	"grab dvd": 0,
 	"insert dvd": 0,
-	"Grab Walkie Talkie": 0,
+	"open door": 0,
+	"collect wood": 3,
 	"Build the game": 0
 }
 
@@ -63,7 +63,7 @@ func _complete_objective() -> void:
 
 func _update_objective_label(numberd: bool = false) -> void:
 	var txt: String
-	if numberd: txt = current_objective_name + " ("+str(current_completed_amount)+ "/" +str(current_objective_amount) +")"
-	else: txt = current_objective_name
+	if numberd: txt = "Objective: " + current_objective_name + " ("+str(current_completed_amount)+ "/" +str(current_objective_amount) +")"
+	else: txt = "Objective: " + current_objective_name
 
 	GameManager.update_objective_label.emit(txt)
