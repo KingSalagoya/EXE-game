@@ -2,7 +2,7 @@ extends Node
 
 @onready var level_holder: Node3D = $GameViewport/SubViewport/GameEnviroment/LevelHolder
 @onready var dialogue_balloon: DialogueManagerExampleBalloon = $UiViewport/SubViewport/UserInterface/Dialogue
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+#@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var ui: Control = %UserInterface
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
 

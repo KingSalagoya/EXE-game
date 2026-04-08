@@ -826,6 +826,21 @@ size = Vector3(0.005886885, 0.007957381, 0.0155369025)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85yof"]
 albedo_color = Color(0.23529412, 0.23529412, 0.23529412, 1)
 
+[sub_resource type="Animation" id="Animation_7dqbv"]
+resource_name = " insert-dvd"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PCTable/pc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.1299686, 1.8733017, 2.5251918), Vector3(-2.13, 2.138, 2.525)]
+}
+
 [sub_resource type="Animation" id="Animation_36trf"]
 length = 0.001
 tracks/0/type = "value"
@@ -875,6 +890,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(1.9691829e-14, 4.016014e-15, 0.9865824)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PCTable/pc:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.1299686, 1.8733017, 2.5251918)]
 }
 
 [sub_resource type="Animation" id="Animation_ffxv4"]
@@ -997,6 +1024,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jn645"]
 _data = {
+&" insert-dvd": SubResource("Animation_7dqbv"),
 &"RESET": SubResource("Animation_36trf"),
 &"door_close": SubResource("Animation_ffxv4"),
 &"door_open": SubResource("Animation_85yof"),
@@ -1076,7 +1104,7 @@ material_override = SubResource("StandardMaterial3D_20vo2")
 mesh = SubResource("ArrayMesh_6l3rs")
 script = ExtResource("1_36trf")
 ANIM_PLAYER = NodePath("../../AnimationPlayer")
-ANIM_NAME = "insert_dvd"
+ANIM_NAME = "insert-dvd"
 INTERACT_TEXT = "insert dvd"
 OBJECTIVE = "insert dvd"
 
