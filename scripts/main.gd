@@ -2,7 +2,9 @@ extends Node
 
 @onready var level_holder: Node3D = $GameViewport/SubViewport/GameEnviroment/LevelHolder
 @onready var dialogue_balloon: DialogueManagerExampleBalloon = $UiViewport/SubViewport/UserInterface/Dialogue
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 @onready var ui: Control = %UserInterface
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
 
@@ -14,6 +16,7 @@ const room_one_dialogue: DialogueResource = preload("res://dialogue/room#1.dialo
 func _enter_tree() -> void:
 	GameManager.handle_dialogue.connect(_handle_dialogue)
 	GameManager.objective_completed.connect(_special_objectives)
+	GameManager.change_scene.connect(change_level)
 
 func _special_objectives(_name: String) -> void:
 	match _name:
@@ -29,7 +32,15 @@ func _special_objectives(_name: String) -> void:
 			change_level(level_test)
 		"collect wood":
 			change_level(level_room)
-				
+		"insert dvd":
+			GameManager.handle_dialogue.emit(room_one_dialogue, "insert_dvd")
+			GameManager.can_move = false
+			await get_tree().create_timer(4).timeout
+			$AnimationPlayer.play_backwards("blink")
+			await get_tree().create_timer(3).timeout
+			GameManager.can_move = true
+			change_level(level_test)
+			$AnimationPlayer.play("blink")
 
 func change_level(new_scene: PackedScene) -> void:
 	var prev_level = level_holder.get_child(0)
@@ -42,7 +53,10 @@ func _ready() -> void:
 	%UserInterface.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	await  get_tree().create_timer(1).timeout
+	GameManager.can_move = false
+	$AnimationPlayer.play("blink")
+	await get_tree().create_timer(3).timeout
+	GameManager.can_move= true
 	GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "start")
 
 func _unhandled_input(event: InputEvent) -> void:

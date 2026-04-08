@@ -939,6 +939,9 @@ tracks/0/keys = {
 "values": [Vector3(2.2374609, 1.1643002, 1.7651572), Vector3(1.5108359, 1.1643002, 1.7651572)]
 }
 
+[sub_resource type="Animation" id="Animation_7dqbv"]
+resource_name = "insert_dvd"
+
 [sub_resource type="Animation" id="Animation_jn645"]
 resource_name = "window_close"
 length = 0.5
@@ -1002,6 +1005,7 @@ _data = {
 &"door_open": SubResource("Animation_85yof"),
 &"drawer_close": SubResource("Animation_14vil"),
 &"drawer_open": SubResource("Animation_jxe34"),
+&"insert_dvd": SubResource("Animation_7dqbv"),
 &"window_close": SubResource("Animation_jn645"),
 &"window_open": SubResource("Animation_qvc4m")
 }

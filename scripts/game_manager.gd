@@ -16,6 +16,9 @@ extends Node
 @warning_ignore("unused_signal") signal handle_dialogue(resourse, title: String)
 @warning_ignore("unused_signal") signal chat_dialogue(num: int)
 
+
+@warning_ignore("unused_signal") signal change_scene(level: String)
+
 var can_move: bool = true
 var inventory:Dictionary [String, int] = {
 	"wood": 0,

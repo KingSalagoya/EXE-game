@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://hy5mmsg3wjvc" path="res://scenes/room.tscn" id="4_o6xl0"]
 [ext_resource type="Script" uid="uid://rvtqbuwa5w53" path="res://scripts/user_interface.gd" id="4_tefeu"]
-[ext_resource type="PackedScene" uid="uid://dnsgsrd41dx7r" path="res://dialogue/small_example_balloon.tscn" id="4_tipki"]
 [ext_resource type="Script" uid="uid://cyre2l60h5tyq" path="res://scripts/new_objectives.gd" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
 sky_top_color = Color(0.0010405213, 0.0010404979, 0.009608173, 1)
@@ -23,6 +23,84 @@ background_mode = 2
 sky = SubResource("Sky_tefeu")
 tonemap_mode = 2
 ssao_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_o6xl0"]
+offsets = PackedFloat32Array(0.686747, 0.8614458, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.6862745, 0.16924527, 0.16924533, 0.16924518, 0.31647062)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o6xl0"]
+gradient = SubResource("Gradient_o6xl0")
+width = 1920
+height = 535
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tipki"]
+gradient = SubResource("Gradient_o6xl0")
+width = 1920
+height = 535
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_tipki"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiViewport/Blink/TextureRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UiViewport/Blink/TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_85g3d"]
+resource_name = "blink"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiViewport/Blink/TextureRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.93333334, 1.55, 1.5666667, 2, 2.2666667, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-91, 406), Vector2(-97, 1084), Vector2(-91.1579, 418.00012), Vector2(-91, 400), Vector2(-97, 1084), Vector2(-91, 400), Vector2(-97, 1084)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UiViewport/Blink/TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.96666664, 1.5333333, 2.0333333, 2.3, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-138, 0), Vector2(-30, -690), Vector2(-138, 0), Vector2(-30, -690), Vector2(-138, 0), Vector2(-30, -690)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_choun"]
+_data = {
+&"RESET": SubResource("Animation_tipki"),
+&"blink": SubResource("Animation_85g3d")
+}
 
 [node name="Main" type="Node" unique_id=805243855]
 script = ExtResource("1_sugp2")
@@ -73,6 +151,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="UiViewport" unique_id=671764586]
 disable_3d = true
 transparent_bg = true
+handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
@@ -153,10 +232,24 @@ horizontal_alignment = 2
 [node name="ChatUI" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=952464027 instance=ExtResource("4_jyhfs")]
 layout_mode = 2
 
-[node name="Dialogue" parent="UiViewport/SubViewport/UserInterface" unique_id=1873835827 instance=ExtResource("4_tipki")]
-auto_start = false
-will_block_other_input = false
-skip_action = &"ui_accept"
+[node name="Dialogue" parent="UiViewport/SubViewport/UserInterface" unique_id=1434168376 instance=ExtResource("7_o6xl0")]
+
+[node name="Blink" type="Node" parent="UiViewport" unique_id=1314773972]
+
+[node name="TextureRect2" type="TextureRect" parent="UiViewport/Blink" unique_id=2000454986]
+offset_left = 11.0
+offset_top = 400.0
+offset_right = 2078.0
+offset_bottom = 1076.0002
+texture = SubResource("GradientTexture2D_o6xl0")
+
+[node name="TextureRect" type="TextureRect" parent="UiViewport/Blink" unique_id=939740145]
+offset_right = 2140.0
+offset_bottom = 676.0
+texture = SubResource("GradientTexture2D_tipki")
 
 [node name="Objectives" type="Node" parent="." unique_id=1653358236]
 script = ExtResource("6_tefeu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=438755435]
+libraries/ = SubResource("AnimationLibrary_choun")

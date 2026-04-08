@@ -23,3 +23,11 @@ Rail: XENON KNIGHT? I’m not sure what this is but ... I feel like I know it
 Rail: (Yawns) Not the ideal time to play a game but... when you can’t sleep, you gotta do something...
 
 => END
+
+~ insert_dvd
+
+Rail: (Yawns) Not the ideal time to play a game but... when you can’t sleep, you gotta do something.
+
+# do GameManager.change_scene.emit(level_test)
+
+=> END

@@ -5,7 +5,7 @@ extends Node
 	"open drawer": 0,
 	"grab dvd": 0,
 	"insert dvd": 0,
-	"open door": 0,
+	#"open door": 0,
 	"collect wood": 3,
 	"Build the game": 0
 }
