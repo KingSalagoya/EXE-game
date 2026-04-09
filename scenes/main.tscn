@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://hy5mmsg3wjvc" path="res://scenes/room.tscn" id="3_tipki"]
 [ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://rvtqbuwa5w53" path="res://scripts/user_interface.gd" id="4_tefeu"]
+[ext_resource type="Theme" uid="uid://ca62n5ve5nsxc" path="res://assets/styles/horror_default.tres" id="5_tipki"]
 [ext_resource type="Script" uid="uid://cyre2l60h5tyq" path="res://scripts/new_objectives.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
 
@@ -171,10 +172,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 
 [node name="HUD" type="Control" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=1158560208]
 layout_mode = 2
@@ -210,7 +211,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 1
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("5_tipki")
 text = "Press \"E\" to interact"
 horizontal_alignment = 1
 
@@ -223,9 +224,10 @@ offset_left = -280.0
 offset_bottom = 34.0
 grow_horizontal = 0
 mouse_filter = 1
-theme_override_font_sizes/font_size = 30
+theme = ExtResource("5_tipki")
 text = "Objective: Grab the DVD"
-horizontal_alignment = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ChatUI" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=952464027 instance=ExtResource("4_jyhfs")]
 layout_mode = 2

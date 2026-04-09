@@ -49,7 +49,6 @@ func _check_objective_completed(obj_name: String) -> void:
 				_complete_objective()
 				#_update_objective_label(true)
 
-
 func _complete_objective() -> void:
 	current_completed_amount = 0
 	if objective_names_list.is_empty() or objective_amounts_list.is_empty():
@@ -57,6 +56,7 @@ func _complete_objective() -> void:
 	else:
 		if current_objective_name != "": GameManager.objective_completed.emit(current_objective_name)
 		current_objective_name = objective_names_list.pop_front() # THESE ARE THE NEXT OBJECTIVES
+		GameManager.current_objective = current_objective_name
 		current_objective_amount = objective_amounts_list.pop_front()
 		_update_objective_label(current_objective_amount > 0)
 

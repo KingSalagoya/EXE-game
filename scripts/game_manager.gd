@@ -23,6 +23,7 @@ extends Node
 @warning_ignore("unused_signal") signal unhandled_input(input: String)
 
 var can_move: bool = true
+var current_objective: String = ""
 var inventory:Dictionary [String, int] = {
 	"wood": 0,
 	"dvd": 0,
