@@ -14,8 +14,10 @@ var t_bob: float = 0.0
 @onready var camera_holder: Node3D = $CameraHolder
 @onready var main_camera: Camera3D = $CameraHolder/MainCamera
 @onready var graphics: MeshInstance3D = $Graphics
+@onready var interactor: RayCast3D = $CameraHolder/MainCamera/Interactor
 
-
+@export var hp: int = 20
+@export var damage:int = 10
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

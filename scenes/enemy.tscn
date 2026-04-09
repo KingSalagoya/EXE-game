@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://blwbxhogbdelp"]
 
 [ext_resource type="Script" uid="uid://c0ehf0r74bxhq" path="res://scripts/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://dwn0122urv1dt" path="res://scripts/hurt_box.gd" id="2_md0e3"]
+[ext_resource type="Script" uid="uid://b6afotnygprho" path="res://scripts/hit_box.gd" id="3_4ra3w"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8tegq"]
 
@@ -9,7 +11,7 @@ albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
 
-[node name="Enemy" type="CharacterBody3D" unique_id=221704819]
+[node name="Enemy" type="CharacterBody3D" unique_id=221704819 groups=["Enemy"]]
 script = ExtResource("1_7p1mj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=816245651]
@@ -20,3 +22,19 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7p1mj")
 shape = SubResource("CapsuleShape3D_md0e3")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=784660603]
+
+[node name="hurt_box" type="Area3D" parent="." unique_id=184880710 node_paths=PackedStringArray("owner_character")]
+script = ExtResource("2_md0e3")
+owner_character = NodePath("..")
+metadata/_custom_type_script = "uid://dwn0122urv1dt"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="hurt_box" unique_id=157826442]
+shape = SubResource("CapsuleShape3D_md0e3")
+
+[node name="hit_box" type="Area3D" parent="." unique_id=1040575142]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+script = ExtResource("3_4ra3w")
+metadata/_custom_type_script = "uid://b6afotnygprho"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="hit_box" unique_id=211387928]
+shape = SubResource("CapsuleShape3D_md0e3")
