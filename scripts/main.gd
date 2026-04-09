@@ -4,6 +4,7 @@ extends Node
 @onready var dialogue_balloon: DialogueManagerExampleBalloon = $UiViewport/SubViewport/UserInterface/Dialogue
 
 @onready var blink_anim: AnimationPlayer = $UiViewport/SubViewport/Blink/blink_anim
+@onready var cinamatics_player: AnimationPlayer = $GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticsPlayer
 
 @onready var ui: Control = %UserInterface
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
@@ -18,6 +19,19 @@ func _enter_tree() -> void:
 	GameManager.handle_dialogue.connect(_handle_dialogue)
 	GameManager.objective_completed.connect(_special_objectives)
 	GameManager.change_scene.connect(change_level)
+	GameManager.play_cinamatic.connect(play_cinamatic)
+
+func _ready() -> void:
+	%UserInterface.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	GameManager.can_move = false
+	cinamatics_player.play("wake up")
+	blink_anim.play("blink")
+	await get_tree().create_timer(8).timeout
+	GameManager.can_move= true
+	GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "start")
+
 
 func _special_objectives(_name: String) -> void:
 	match _name:
@@ -50,15 +64,9 @@ func change_level(new_scene: PackedScene) -> void:
 	level_holder.add_child(new_level)
 	%Player.global_position = Vector3.ZERO
 
-func _ready() -> void:
-	%UserInterface.visible = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	GameManager.can_move = false
-	blink_anim.play("blink")
-	await get_tree().create_timer(3).timeout
-	GameManager.can_move= true
-	GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "start")
+func play_cinamatic(anim_name: String) -> void:
+	if cinamatics_player.has_animation(anim_name):
+		cinamatics_player.play(anim_name)
 
 func _handle_dialogue(resourse, title):
 	dialogue_balloon.dialogue_resource = resourse 

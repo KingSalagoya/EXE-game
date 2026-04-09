@@ -25,9 +25,158 @@ sky = SubResource("Sky_tefeu")
 tonemap_mode = 2
 ssao_enabled = true
 
+[sub_resource type="Animation" id="Animation_choun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CinamaticCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CinamaticCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CinamaticCamera:current")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Player:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CinamaticCamera:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ya4ey"]
+resource_name = "wake up"
+length = 7.1333
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%GameEnviroment/../../../UiViewport/SubViewport/Blink/blink_anim")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("blink", "blink_once"),
+"times": PackedFloat32Array(0, 5.766667)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CinamaticCamera:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.65, 2.4666667, 2.8333333, 3.7, 4.56),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-2.2828488, 1.3221102, -1.9921095), Vector3(-2.0303576, 1.8316659, -1.9963338), Vector3(-1.8428993, 1.9767332, -2.0007615), Vector3(-2.0303576, 1.8316659, -1.9963338), Vector3(-2.0303576, 1.8316659, -1.9963338), Vector3(-0.41491485, 2.7152295, -2.0365186), Vector3(-0.41491485, 2.7152295, -2.0365186)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CinamaticCamera:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.65, 2.4666667, 2.8333333, 3.7, 4.56, 6.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5114921, -1.7645631, 0), Vector3(1.3125644, -1.7122046, 0), Vector3(1.1386192, -1.6933619, 0), Vector3(1.3125644, -1.7122046, 0), Vector3(1.3125644, -1.7122046, 0), Vector3(-0.22768901, -1.5813054, 0), Vector3(-0.22768901, -1.5813054, 0), Vector3(-0.43712986, -3.1390092, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CinamaticCamera:current")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%Player:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CinamaticCamera:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eb6dy"]
+_data = {
+&"RESET": SubResource("Animation_choun"),
+&"wake up": SubResource("Animation_ya4ey")
+}
+
 [sub_resource type="Gradient" id="Gradient_o6xl0"]
 offsets = PackedFloat32Array(0.686747, 0.8614458, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.6862745, 0.16924527, 0.16924533, 0.16924518, 0.31647062)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tipki"]
+gradient = SubResource("Gradient_o6xl0")
+width = 1920
+height = 535
+fill_to = Vector2(0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o6xl0"]
 gradient = SubResource("Gradient_o6xl0")
@@ -36,70 +185,94 @@ height = 535
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tipki"]
-gradient = SubResource("Gradient_o6xl0")
-width = 1920
-height = 535
-fill_to = Vector2(0, 1)
-
 [sub_resource type="Animation" id="Animation_tipki"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UiViewport/SubViewport/Blink/TextureRect2:position")
+tracks/0/path = NodePath("UiViewport/SubViewport/Blink/Up:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(11, 400)]
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UiViewport/SubViewport/Blink/TextureRect:position")
+tracks/1/path = NodePath("UiViewport/SubViewport/Blink/Down:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_85g3d"]
 resource_name = "blink"
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UiViewport/SubViewport/Blink/TextureRect2:position")
+tracks/0/path = NodePath("UiViewport/SubViewport/Blink/Down:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.93333334, 1.55, 1.5666667, 2, 2.2666667, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.94, 1.56, 1.99, 2.27, 2.5),
+"transitions": PackedFloat32Array(1, 1, 2, 1, 2, 1),
 "update": 0,
-"values": [Vector2(-91, 406), Vector2(-97, 1084), Vector2(-91.1579, 418.00012), Vector2(-91, 400), Vector2(-97, 1084), Vector2(-91, 400), Vector2(-97, 1084)]
+"values": [Vector2(1, 1.16), Vector2(1, 1e-05), Vector2(1, 1.16), Vector2(1, 1e-05), Vector2(1, 1.16), Vector2(1, 1e-05)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UiViewport/SubViewport/Blink/TextureRect:position")
+tracks/1/path = NodePath("UiViewport/SubViewport/Blink/Up:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.96666664, 1.5333333, 2.0333333, 2.3, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.94, 1.56, 1.99, 2.27, 2.5),
+"transitions": PackedFloat32Array(1, 1, 2, 1, 2, 1),
 "update": 0,
-"values": [Vector2(-138, 0), Vector2(-30, -690), Vector2(-138, 0), Vector2(-30, -690), Vector2(-138, 0), Vector2(-30, -690)]
+"values": [Vector2(1, 1.16), Vector2(1, 1e-05), Vector2(1, 1.16), Vector2(1, 1e-05), Vector2(1, 1.16), Vector2(1, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_eb6dy"]
+resource_name = "blink_once"
+length = 0.84
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiViewport/SubViewport/Blink/Up:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.43333334, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1e-05), Vector2(1, 1.16), Vector2(1, 1.16), Vector2(1, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UiViewport/SubViewport/Blink/Down:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.43333334, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1e-05), Vector2(1, 1.16), Vector2(1, 1.16), Vector2(1, 1e-05)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_choun"]
 _data = {
 &"RESET": SubResource("Animation_tipki"),
-&"blink": SubResource("Animation_85g3d")
+&"blink": SubResource("Animation_85g3d"),
+&"blink_once": SubResource("Animation_eb6dy")
 }
 
 [node name="Main" type="Node" unique_id=805243855]
@@ -132,11 +305,19 @@ shadow_enabled = true
 
 [node name="Player" parent="GameViewport/SubViewport/GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
 unique_name_in_owner = true
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -2.0334344, 0.93299425, 1.226963)
+transform = Transform3D(-0.999826, 0, -0.01863911, 0, 1, 0, 0.01863911, 0, -0.999826, -0.4025761, 0.17814648, -0.22819781)
 
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
 
 [node name="Room" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=883977336 instance=ExtResource("3_tipki")]
+
+[node name="Cinamatic" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1467429672]
+
+[node name="CinamaticCamera" type="Camera3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic" unique_id=810135207]
+visible = false
+
+[node name="CinamaticsPlayer" type="AnimationPlayer" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic" unique_id=1876807748]
+libraries/ = SubResource("AnimationLibrary_eb6dy")
 
 [node name="UiViewport" type="SubViewportContainer" parent="." unique_id=1055735002]
 anchors_preset = 15
@@ -212,7 +393,6 @@ grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 1
 theme = ExtResource("5_tipki")
-text = "Press \"E\" to interact"
 horizontal_alignment = 1
 
 [node name="ObjectiveLabel" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/HUD" unique_id=1092425441]
@@ -225,7 +405,6 @@ offset_bottom = 34.0
 grow_horizontal = 0
 mouse_filter = 1
 theme = ExtResource("5_tipki")
-text = "Objective: Grab the DVD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -233,6 +412,7 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="Dialogue" parent="UiViewport/SubViewport/UserInterface" unique_id=1434168376 instance=ExtResource("7_o6xl0")]
+visible = false
 will_block_other_input = false
 next_action = &"jump"
 skip_action = &"jump"
@@ -245,19 +425,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="UiViewport/SubViewport/Blink" unique_id=2000454986]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 400.0
-offset_right = 2078.0
-offset_bottom = 1076.0024
-texture = SubResource("GradientTexture2D_o6xl0")
-
-[node name="TextureRect" type="TextureRect" parent="UiViewport/SubViewport/Blink" unique_id=939740145]
-layout_mode = 0
-offset_right = 2140.0
-offset_bottom = 676.0
+[node name="Up" type="TextureRect" parent="UiViewport/SubViewport/Blink" unique_id=939740145]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 535.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0)
 texture = SubResource("GradientTexture2D_tipki")
+
+[node name="Down" type="TextureRect" parent="UiViewport/SubViewport/Blink" unique_id=2000454986]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -535.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 1)
+texture = SubResource("GradientTexture2D_o6xl0")
 
 [node name="blink_anim" type="AnimationPlayer" parent="UiViewport/SubViewport/Blink" unique_id=438755435]
 root_node = NodePath("../../../..")
