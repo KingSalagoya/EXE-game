@@ -1226,6 +1226,7 @@ ANIM_PLAYER = NodePath("../../../AnimationPlayer")
 ANIM_NAME = "door_open"
 INTERACT_TEXT = "open door"
 OBJECTIVE = "open door"
+ACCES_ONLY_WHEN_RELATED_OBJECTIVE = false
 SECOND_ANIM_NAME = "door_close"
 SECOND_INTERACT_TEXT = "close door"
 TOGGLE_OBJECTIVE = "close door"
@@ -1281,6 +1282,7 @@ script = ExtResource("1_36trf")
 ANIM_PLAYER = NodePath("../../../AnimationPlayer")
 ANIM_NAME = "window_open"
 INTERACT_TEXT = "open window"
+ACCES_ONLY_WHEN_RELATED_OBJECTIVE = false
 SECOND_ANIM_NAME = "window_close"
 SECOND_INTERACT_TEXT = "close window"
 
@@ -1298,6 +1300,7 @@ script = ExtResource("1_36trf")
 ANIM_PLAYER = NodePath("../../../AnimationPlayer")
 ANIM_NAME = "window_open"
 INTERACT_TEXT = "open window"
+ACCES_ONLY_WHEN_RELATED_OBJECTIVE = false
 SECOND_ANIM_NAME = "window_close"
 SECOND_INTERACT_TEXT = "close window"
 

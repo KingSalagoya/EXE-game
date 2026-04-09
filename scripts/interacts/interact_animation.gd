@@ -7,6 +7,7 @@ extends Node
 @export var ANIM_NAME: String = "open"
 @export var INTERACT_TEXT: String = "open"
 @export var OBJECTIVE: String = ""
+@export var ACCES_ONLY_WHEN_RELATED_OBJECTIVE: bool = true
 @export var ONE_TIME: bool = false
 
 @export_category("ONLY FOR TOGGLE")
@@ -25,11 +26,16 @@ func _enter_tree() -> void:
 	ANIM_PLAYER.animation_finished.connect(_anim_finished)
 
 func interact() -> void:
-	if ONE_TIME and one_time: return
-	one_time = true
+	if not check_security(): return
 	if ANIM_PLAYER and not ANIM_PLAYER.is_playing():
 		if not TOGGLE: ANIM_PLAYER.play(ANIM_NAME)
 		elif not is_anim_playing: toggle()
+
+func check_security() -> bool:
+	if ACCES_ONLY_WHEN_RELATED_OBJECTIVE and OBJECTIVE != GameManager.current_objective and not one_time: return false
+	if ONE_TIME and one_time: return false
+	one_time = true
+	return true
 
 func toggle() -> void:
 	is_anim_playing = true
