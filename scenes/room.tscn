@@ -1080,9 +1080,11 @@ material_override = SubResource("StandardMaterial3D_20vo2")
 mesh = SubResource("ArrayMesh_6l3rs")
 script = ExtResource("1_36trf")
 ANIM_PLAYER = NodePath("../../AnimationPlayer")
+TOGGLE = false
 ANIM_NAME = "insert_dvd"
 INTERACT_TEXT = "insert dvd"
 OBJECTIVE = "insert dvd"
+ONE_TIME = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PCTable/pc" unique_id=2108267665]
 

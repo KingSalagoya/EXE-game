@@ -3,7 +3,7 @@ extends Node
 @onready var level_holder: Node3D = $GameViewport/SubViewport/GameEnviroment/LevelHolder
 @onready var dialogue_balloon: DialogueManagerExampleBalloon = $UiViewport/SubViewport/UserInterface/Dialogue
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var blink_anim: AnimationPlayer = $UiViewport/SubViewport/Blink/blink_anim
 
 @onready var ui: Control = %UserInterface
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
@@ -37,11 +37,11 @@ func _special_objectives(_name: String) -> void:
 			GameManager.handle_dialogue.emit(room_one_dialogue, "insert_dvd")
 			GameManager.can_move = false
 			await get_tree().create_timer(4).timeout
-			$AnimationPlayer.play_backwards("blink")
+			blink_anim.play_backwards("blink")
 			await get_tree().create_timer(3).timeout
-			GameManager.can_move = true
 			change_level(level_test)
-			$AnimationPlayer.play("blink")
+			GameManager.can_move = true
+			blink_anim.play("blink")
 
 func change_level(new_scene: PackedScene) -> void:
 	var prev_level = level_holder.get_child(0)
@@ -55,13 +55,10 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	GameManager.can_move = false
-	$AnimationPlayer.play("blink")
+	blink_anim.play("blink")
 	await get_tree().create_timer(3).timeout
 	GameManager.can_move= true
 	GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "start")
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit"): get_tree().quit()
 
 func _handle_dialogue(resourse, title):
 	dialogue_balloon.dialogue_resource = resourse 

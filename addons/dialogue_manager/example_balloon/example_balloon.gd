@@ -73,6 +73,7 @@ var mutation_cooldown: Timer = Timer.new()
 
 
 func _ready() -> void:
+	GameManager.unhandled_input.connect(unhandled_input)
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
@@ -192,6 +193,7 @@ func _on_mutated(mutation: Dictionary) -> void:
 
 
 func _on_balloon_gui_input(event: InputEvent) -> void:
+	pass
 	# See if we need to skip typing of the dialogue
 	if dialogue_label.is_typing:
 		var mouse_was_clicked: bool = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed()
@@ -209,8 +211,16 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		next(dialogue_line.next_id)
-	elif event.is_action_pressed(next_action): #and get_viewport().gui_get_focus_owner() == balloon:
+	elif event.is_action_pressed(next_action) and get_viewport().gui_get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
+
+func unhandled_input(text: String) -> void:
+	if text == "jump":
+		if dialogue_label and dialogue_label.is_typing:
+			dialogue_label.skip_typing()
+		elif dialogue_label and dialogue_line != null:
+			next(dialogue_line.next_id)
+	pass
 
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:

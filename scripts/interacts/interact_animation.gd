@@ -7,6 +7,7 @@ extends Node
 @export var ANIM_NAME: String = "open"
 @export var INTERACT_TEXT: String = "open"
 @export var OBJECTIVE: String = ""
+@export var ONE_TIME: bool = false
 
 @export_category("ONLY FOR TOGGLE")
 @export var SECOND_ANIM_NAME: String = "close"
@@ -17,12 +18,15 @@ var toggled: bool = false
 var is_anim_playing: bool = false
 var interact_text: String
 var next_text: String
+var one_time: bool = false
 
 func _enter_tree() -> void:
 	interact_text = INTERACT_TEXT
 	ANIM_PLAYER.animation_finished.connect(_anim_finished)
 
 func interact() -> void:
+	if ONE_TIME and one_time: return
+	one_time = true
 	if ANIM_PLAYER and not ANIM_PLAYER.is_playing():
 		if not TOGGLE: ANIM_PLAYER.play(ANIM_NAME)
 		elif not is_anim_playing: toggle()
