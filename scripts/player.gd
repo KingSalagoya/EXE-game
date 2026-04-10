@@ -79,7 +79,7 @@ func handle_jump(delta: float) -> void:
 
 func handle_movement() -> void:
 	var input_dir := Input.get_vector("left", "right", "up", "down")
-	var direction := (camera_holder.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction := (camera_holder.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	if direction:
 		velocity.x = direction.x * SPEED
