@@ -11,7 +11,9 @@ extends Node
 
 
 const level_test: PackedScene = preload("res://scenes/level_test.tscn")
-const level_room: PackedScene = preload("res://scenes/room.tscn")
+const level_zero: PackedScene = preload("res://scenes/room.tscn")
+const level_one: PackedScene = preload("res://scenes/room2.tscn")
+
 
 const room_one_dialogue: DialogueResource = preload("res://dialogue/room#1.dialogue")
 
@@ -38,8 +40,10 @@ func wake_up() -> void:
 func _special_objectives(_name: String) -> void:
 	match _name:
 		"stab":
-			$GameViewport/SubViewport/GameEnviroment/LevelHolder/Room/Rail.queue_free()
+			GameManager.can_move = false
+			await(get_tree().create_timer(11).timeout)
 			%Player.global_position = Vector3(-1.08, 0.914, -1.83)
+			change_level(level_one)
 			wake_up()
 		"pick walkie-talkie":
 			GameManager.can_move = false
@@ -53,7 +57,7 @@ func _special_objectives(_name: String) -> void:
 			pass
 			#change_level(level_test)
 		"collect wood":
-			change_level(level_room)
+			change_level(level_one)
 		"insert dvd":
 			GameManager.can_move = false
 			cinamatics_player.play("play_computer")

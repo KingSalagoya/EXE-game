@@ -11,7 +11,7 @@ var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = true
 
 func _enter_tree() -> void:
 	OBJECTIVE = objective_name
-	GameManager.objective_collected.connect(_objective_collected)
+
 
 func interact() -> void:
 	interacted = true
@@ -19,6 +19,7 @@ func interact() -> void:
 	interacted = false
 
 func _objective_collected(_name: String) -> void:
+	print("HIII")
 	if _name == objective_name and interacted:
 		match _name:
 			"collect wood":
