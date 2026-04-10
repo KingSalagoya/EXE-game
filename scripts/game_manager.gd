@@ -18,18 +18,31 @@ extends Node
 @warning_ignore("unused_signal") signal play_cinamatic (anim_name: String)
 @warning_ignore("unused_signal") signal handle_dialogue (resourse, title: String)
 @warning_ignore("unused_signal") signal chat_dialogue (num: int)
-
+@warning_ignore("unused_signal") signal dialogue_finished
 
 @warning_ignore("unused_signal") signal change_scene (level: String)
 @warning_ignore("unused_signal") signal unhandled_input (input: String)
 
 var can_move: bool = true
+var can_interact: bool = true
 var current_objective: String = ""
+var current_objective_clone: String = ""
+
+var encounterd_objectives: Array[String] = []
+
 var inventory:Dictionary [String, int] = {
 	"wood": 0,
 	"dvd": 0,
 	"walkie_talkie": 0
 }
+
+func _enter_tree() -> void:
+	current_objective_clone = current_objective
+
+func _physics_process(_delta: float) -> void:
+	if current_objective != "" and current_objective_clone != current_objective:
+		encounterd_objectives.append(current_objective)
+		current_objective_clone = current_objective
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Enter"): unhandled_input.emit("enter")

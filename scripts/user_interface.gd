@@ -4,10 +4,11 @@ extends Control
 @onready var interact_label: Label = $MarginContainer/HUD/InteractLabel
 @onready var objective_label: Label = $MarginContainer/HUD/ObjectiveLabel
 
+var stored_objective_label: String
 
 func _enter_tree() -> void:
 	GameManager.update_interact_label.connect(update_interact_label)
-	GameManager.update_objective_label.connect(update_objective_label)
+	GameManager.update_objective_label.connect(update_objective_text)
 
 func _ready() -> void:
 	toggle_chat_display()
@@ -22,11 +23,16 @@ func update_interact_label(text: String) -> void:
 	interact_label.text = text
 
 
-func update_objective_label(text: String) -> void:
-	if text == "" : objective_label.hide()
-	else: objective_label.show()
-	objective_label.text = text
+func update_objective_text(text: String) -> void:
+	stored_objective_label = text
+	update_objective_label()
+	#objective_label.text = text
 
+func update_objective_label() -> void:
+	if stored_objective_label == "" : objective_label.hide()
+	else: objective_label.show()
+	if stored_objective_label != "":
+		objective_label.text = stored_objective_label
 
 func toggle_chat_display() -> void:
 	if not chat_ui.visible:

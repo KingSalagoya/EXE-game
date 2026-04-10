@@ -87,6 +87,104 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%UserInterface/MarginContainer/HUD/Point:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_trceg"]
+resource_name = "play_computer"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CinamaticCamera:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.71, 2.02, 2.6333334, 3, 3.6333334, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.60703325, 2.3530633, 0.8674114), Vector3(-0.60703325, 2.3530633, 0.8674114), Vector3(-1.0624776, 2.5625403, 1.6948153), Vector3(-1.0627232, 2.2499647, 1.6948441), Vector3(-1.0627232, 2.2499647, 1.6948441), Vector3(-1.0627232, 2.2499647, 1.6948441), Vector3(-1.776, 2.044, 1.754)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CinamaticCamera:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.71, 2.02, 2.6333334, 3, 3.6333334, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.49225906, 2.3718777, 0), Vector3(-0.49225906, 2.3718777, 0), Vector3(-0.29154655, 1.6170248, 0), Vector3(0.09678929, 1.5821179, 0), Vector3(-0.18246342, 1.5733908, 0), Vector3(-0.18246342, 1.5733908, 0), Vector3(-0.15192014, 1.5777539, 0)]
+}
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%GameEnviroment/../../../UiViewport/SubViewport/Blink/blink_anim")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("blink_once"),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CinamaticCamera:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.42),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CinamaticCamera:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.42),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%Player:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%UserInterface/MarginContainer/HUD/Point:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ya4ey"]
 resource_name = "wake up"
@@ -161,10 +259,23 @@ tracks/5/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%UserInterface/MarginContainer/HUD/Point:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eb6dy"]
 _data = {
 &"RESET": SubResource("Animation_choun"),
+&"play_computer": SubResource("Animation_trceg"),
 &"wake up": SubResource("Animation_ya4ey")
 }
 
@@ -305,7 +416,7 @@ shadow_enabled = true
 
 [node name="Player" parent="GameViewport/SubViewport/GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
 unique_name_in_owner = true
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.5789931, 0.93299425, -2.151298)
+transform = Transform3D(-0.9982819, 0, 0.058592025, 0, 1, 0, -0.058592025, 0, -0.9982819, -0.22784078, 0.079019785, -0.26195675)
 damage = 5
 
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
@@ -413,7 +524,6 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="Dialogue" parent="UiViewport/SubViewport/UserInterface" unique_id=1434168376 instance=ExtResource("7_o6xl0")]
-visible = false
 will_block_other_input = false
 next_action = &"jump"
 skip_action = &"jump"

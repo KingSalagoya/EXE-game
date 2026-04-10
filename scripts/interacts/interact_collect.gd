@@ -5,7 +5,12 @@ extends Node
 
 var interacted: bool = false
 
+#USELESS VARIABLES BUT NECESSARY TO RUN
+var OBJECTIVE
+var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = true
+
 func _enter_tree() -> void:
+	OBJECTIVE = objective_name
 	GameManager.objective_collected.connect(_objective_collected)
 
 func interact() -> void:
