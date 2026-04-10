@@ -23,6 +23,8 @@ extends Node
 @warning_ignore("unused_signal") signal change_scene (level: String)
 @warning_ignore("unused_signal") signal unhandled_input (input: String)
 
+@warning_ignore("unused_signal") signal unlock_achievement (achievement: String)
+
 var can_move: bool = true
 var can_interact: bool = true
 var current_objective: String = ""
