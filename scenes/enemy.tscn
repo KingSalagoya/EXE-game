@@ -31,9 +31,10 @@ metadata/_custom_type_script = "uid://dwn0122urv1dt"
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="hurt_box" unique_id=157826442]
 shape = SubResource("CapsuleShape3D_md0e3")
 
-[node name="hit_box" type="Area3D" parent="." unique_id=1040575142]
+[node name="hit_box" type="Area3D" parent="." unique_id=1040575142 node_paths=PackedStringArray("owner_character")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 script = ExtResource("3_4ra3w")
+owner_character = NodePath("..")
 metadata/_custom_type_script = "uid://b6afotnygprho"
 
 [node name="CollisionShape" type="CollisionShape3D" parent="hit_box" unique_id=211387928]
