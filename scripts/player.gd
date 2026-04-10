@@ -19,6 +19,7 @@ var t_bob: float = 0.0
 @export var hp: int = 20
 @export var damage:int = 10
 @export var knockback_force: float = 8.0
+@export var is_player: bool = true
 
 var knockback_velocity := Vector3.ZERO
 

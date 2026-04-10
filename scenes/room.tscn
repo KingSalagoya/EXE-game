@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="1_36trf"]
 [ext_resource type="Texture2D" uid="uid://0tc1gfpw3t8y" path="res://assets/textures/icon.svg" id="1_ffxv4"]
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="3_85yof"]
+[ext_resource type="PackedScene" uid="uid://c8i1q1xahaol6" path="res://scenes/player.tscn" id="4_14vil"]
+[ext_resource type="Script" uid="uid://dvvn8o370cbf2" path="res://scripts/interacts/reached_area.gd" id="5_jxe34"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20vo2"]
 albedo_color = Color(0.23392546, 0.23392546, 0.23392543, 1)
@@ -826,6 +828,12 @@ size = Vector3(0.005886885, 0.007957381, 0.0155369025)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85yof"]
 albedo_color = Color(0.23529412, 0.23529412, 0.23529412, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jn645"]
+albedo_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvc4m"]
+albedo_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
+
 [sub_resource type="Animation" id="Animation_36trf"]
 length = 0.001
 tracks/0/type = "value"
@@ -1009,6 +1017,9 @@ _data = {
 &"window_close": SubResource("Animation_jn645"),
 &"window_open": SubResource("Animation_qvc4m")
 }
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jn645"]
+radius = 1.9907227
 
 [node name="Room" type="Node3D" unique_id=883977336]
 
@@ -1315,5 +1326,33 @@ transform = Transform3D(6.9000144, 0, 0, 0, 0.22264278, 0, 0, 0, 6.384648, 0, 4.
 visible = false
 material = SubResource("StandardMaterial3D_85yof")
 
+[node name="Corridoor" type="Node3D" parent="Room" unique_id=1777008758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.16184139)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Room/Corridoor" unique_id=1271304553]
+transform = Transform3D(1, 0, 0, 0, 3.3433957, 0, 0, 0, 1, 1.3205106, 2.1257036, -6.8767223)
+use_collision = true
+size = Vector3(4.2387695, 1.4053726, 7.257324)
+material = SubResource("StandardMaterial3D_jn645")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Room/Corridoor/CSGBox3D" unique_id=2127195232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01526165, -0.1394499, 0.17729092)
+operation = 2
+size = Vector3(1.7766571, 0.9943253, 7.528244)
+material = SubResource("StandardMaterial3D_qvc4m")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=209413142]
 libraries/ = SubResource("AnimationLibrary_jn645")
+
+[node name="Rail" parent="." unique_id=367521465 instance=ExtResource("4_14vil")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0, 0, 2.1586962)
+script = ExtResource("3_85yof")
+interact_text = "stab"
+objective_name = "stab"
+
+[node name="Area" type="Area3D" parent="Rail" unique_id=945159066]
+script = ExtResource("5_jxe34")
+objective_name = "reach the person"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rail/Area" unique_id=1049022528]
+shape = SubResource("CylinderShape3D_jn645")
