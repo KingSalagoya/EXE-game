@@ -57,7 +57,7 @@ func _special_objectives(_name: String) -> void:
 			pass
 			#change_level(level_test)
 		"collect wood":
-			change_level(level_one)
+			GameManager.unlock_achievement.emit("graveyard")
 		"insert dvd":
 			GameManager.can_move = false
 			cinamatics_player.play("play_computer")
