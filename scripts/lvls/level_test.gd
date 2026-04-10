@@ -8,11 +8,12 @@ var enemy = preload("res://scenes/enemy.tscn")
 var spawn_enemies_count: int = 0
 
 func _ready() -> void:
-	GameManager.unlock_achievement.emit()
+	GameManager.unlock_achievement.connect(unlock_achievement)
 
 func _process(_delta: float) -> void:
 	if objectives.current_objective_name == "kill enemies" and spawn_enemies_count <= 5:
-		await spawn_enemies()
+		#await spawn_enemies()
+		pass
 
 func spawn_enemies() -> void:
 	for i in range(5):
