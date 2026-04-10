@@ -14,6 +14,7 @@ const SPEED = 2
 var attaked: bool = false
 var knockback_velocity := Vector3.ZERO
 var knockback_force: float = 8.0
+var attackable: bool = false
 
 func apply_knockback(force: Vector3) -> void:
 	knockback_velocity = force
@@ -29,6 +30,15 @@ func _ready() -> void:
 		return
 
 func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	if attackable:
+		_handle_movement(delta)
+
+	move_and_slide()
+
+func _handle_movement(delta: float) -> void:
 	if player == null:
 		return
 
@@ -39,9 +49,6 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 		move_and_slide()
 		return
-
-	if not is_on_floor():
-		velocity += get_gravity() * delta
 
 	navigation_agent.set_target_position(player.global_position)
 
@@ -72,4 +79,11 @@ func _physics_process(delta: float) -> void:
 
 	look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
 
-	move_and_slide()
+
+func _on_attackable_area_body_entered(body: CharacterBody3D) -> void:
+	if body == player:
+		attackable = true
+
+func _on_attackable_area_body_exited(body: CharacterBody3D) -> void:
+	if body == player:
+		attackable = false
