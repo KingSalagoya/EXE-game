@@ -416,9 +416,7 @@ shadow_enabled = true
 
 [node name="Player" parent="GameViewport/SubViewport/GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
 unique_name_in_owner = true
-
-transform = Transform3D(-0.9982819, 0, 0.058592025, 0, 1, 0, -0.058592025, 0, -0.9982819, -0.22784078, 0.079019785, -0.26195675)
-
+transform = Transform3D(-0.9982819, 0, 0.058592025, 0, 1, 0, -0.058592025, 0, -0.9982819, 0.8112594, 0.079019785, -6.8178525)
 damage = 5
 
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
