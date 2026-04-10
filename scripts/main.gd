@@ -25,6 +25,9 @@ func _ready() -> void:
 	%UserInterface.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
+	blink_anim.play("blink")
+
+func wake_up() -> void:
 	GameManager.can_move = false
 	cinamatics_player.play("wake up")
 	blink_anim.play("blink")
@@ -32,9 +35,12 @@ func _ready() -> void:
 	GameManager.can_move= true
 	GameManager.handle_dialogue.emit(preload("res://dialogue/room#1.dialogue"), "start")
 
-
 func _special_objectives(_name: String) -> void:
 	match _name:
+		"stab":
+			$GameViewport/SubViewport/GameEnviroment/LevelHolder/Room/Rail.queue_free()
+			%Player.global_position = Vector3(-1.08, 0.914, -1.83)
+			wake_up()
 		"pick walkie-talkie":
 			GameManager.can_move = false
 			await get_tree().create_timer(2).timeout
@@ -44,7 +50,8 @@ func _special_objectives(_name: String) -> void:
 		"grab dvd":
 			GameManager.handle_dialogue.emit(room_one_dialogue, "grab_dvd")
 		"open door":
-			change_level(level_test)
+			pass
+			#change_level(level_test)
 		"collect wood":
 			change_level(level_room)
 		"insert dvd":

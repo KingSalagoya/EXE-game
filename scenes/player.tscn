@@ -53,8 +53,8 @@ shape = SubResource("CapsuleShape3D_3vyb7")
 
 [node name="hit_box" type="Area3D" parent="." unique_id=1801271959 node_paths=PackedStringArray("owner_character")]
 script = ExtResource("4_dqkch")
-passive_damage = false
 owner_character = NodePath("..")
+passive_damage = false
 metadata/_custom_type_script = "uid://b6afotnygprho"
 
 [node name="Collider" type="CollisionShape3D" parent="hit_box" unique_id=633623127]

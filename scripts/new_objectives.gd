@@ -1,11 +1,13 @@
 extends Node
 
 @export var LIST_OF_OBJECTIVES: Dictionary[String, int] = {
+	"open door": 0,
+	"reach the person": 0,
+	"stab": 0,
 	"pick walkie-talkie": 0,
 	"open drawer": 0,
 	"grab dvd": 0,
 	"insert dvd": 0,
-	#"open door": 0,
 	"collect wood": 3,
 	"Build the game": 0
 }
