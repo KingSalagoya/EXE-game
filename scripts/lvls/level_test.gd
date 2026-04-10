@@ -8,7 +8,7 @@ var enemy = preload("res://scenes/enemy.tscn")
 var spawn_enemies_count: int = 0
 
 func _ready() -> void:
-	pass
+	GameManager.unlock_achievement.emit()
 
 func _process(_delta: float) -> void:
 	if objectives.current_objective_name == "kill enemies" and spawn_enemies_count <= 5:
@@ -21,3 +21,10 @@ func spawn_enemies() -> void:
 		e.global_position = Vector3(14, 1.6637, 7)
 		spawn_enemies_count += 1
 		await get_tree().create_timer(1).timeout
+
+func unlock_achievement(achievement: String) -> void:
+	match achievement:
+		"graveyard":
+			$Boundaries/graveyard.queue_free()
+		"village":
+			$Boundaries/village.queue_free()
