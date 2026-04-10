@@ -170,3 +170,18 @@ shape = SubResource("ConcavePolygonShape3D_7dxvt")
 
 [node name="Enemy" parent="." unique_id=221704819 instance=ExtResource("3_d5kir")]
 transform = Transform3D(-0.5734335, 0, 0.81925213, 0, 1, 0, -0.81925213, 0, -0.5734335, 12.911472, 1.9742031, 10.368666)
+
+[node name="Enemy2" parent="." unique_id=878072181 instance=ExtResource("3_d5kir")]
+transform = Transform3D(-0.5734335, 0, 0.81925213, 0, 1, 0, -0.81925213, 0, -0.5734335, -2.3916197, 1.9742031, 14.109453)
+
+[node name="Enemy3" parent="." unique_id=183663759 instance=ExtResource("3_d5kir")]
+transform = Transform3D(-0.5734335, 0, 0.81925213, 0, 1, 0, -0.81925213, 0, -0.5734335, 0.7809124, 1.9742022, -11.53532)
+
+[node name="Enemy4" parent="." unique_id=1446564331 instance=ExtResource("3_d5kir")]
+transform = Transform3D(-0.5734335, 0, 0.81925213, 0, 1, 0, -0.81925213, 0, -0.5734335, 15.94121, 1.9742031, 2.2529907)
+
+[node name="Enemy5" parent="." unique_id=659281351 instance=ExtResource("3_d5kir")]
+transform = Transform3D(-0.5734335, 0, 0.81925213, 0, 1, 0, -0.81925213, 0, -0.5734335, -10.638659, 1.9742031, -2.311758)
+
+[node name="Enemy6" parent="." unique_id=1755792829 instance=ExtResource("3_d5kir")]
+transform = Transform3D(-0.5734335, 0, 0.81925213, 0, 1, 0, -0.81925213, 0, -0.5734335, 3.7776566, 1.9742031, 17.478077)

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://crln63nwjusih" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bvyollx35vppd" path="res://scripts/interact.gd" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://dwn0122urv1dt" path="res://scripts/hurt_box.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://b6afotnygprho" path="res://scripts/hit_box.gd" id="4_dqkch"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
 height = 3.0
@@ -47,5 +48,15 @@ owner_character = NodePath("..")
 metadata/_custom_type_script = "uid://dwn0122urv1dt"
 
 [node name="Collider" type="CollisionShape3D" parent="hurt_box" unique_id=1366437850]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9873047, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4968262, 0)
+shape = SubResource("CapsuleShape3D_3vyb7")
+
+[node name="hit_box" type="Area3D" parent="." unique_id=1801271959 node_paths=PackedStringArray("owner_character")]
+script = ExtResource("4_dqkch")
+passive_damage = false
+owner_character = NodePath("..")
+metadata/_custom_type_script = "uid://b6afotnygprho"
+
+[node name="Collider" type="CollisionShape3D" parent="hit_box" unique_id=633623127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4968262, 0)
 shape = SubResource("CapsuleShape3D_3vyb7")

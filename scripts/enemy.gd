@@ -12,6 +12,11 @@ const SPEED = 2
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
 var attaked: bool = false
+var knockback_velocity := Vector3.ZERO
+var knockback_force: float = 8.0
+
+func apply_knockback(force: Vector3) -> void:
+	knockback_velocity = force
 
 func _ready() -> void:
 	player_path = "/root/Main/GameViewport/SubViewport/GameEnviroment/Player"
@@ -25,6 +30,14 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if player == null:
+		return
+
+	if knockback_velocity.length() > 0.1:
+		knockback_velocity = knockback_velocity.lerp(Vector3.ZERO, delta * 5.0)
+		velocity = knockback_velocity
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+		move_and_slide()
 		return
 
 	if not is_on_floor():
