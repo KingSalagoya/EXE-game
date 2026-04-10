@@ -11,6 +11,10 @@ albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4ra3w"]
+height = 13.708008
+radius = 9.478516
+
 [node name="Enemy" type="CharacterBody3D" unique_id=221704819 groups=["Enemy"]]
 script = ExtResource("1_7p1mj")
 
@@ -39,3 +43,12 @@ metadata/_custom_type_script = "uid://b6afotnygprho"
 
 [node name="CollisionShape" type="CollisionShape3D" parent="hit_box" unique_id=211387928]
 shape = SubResource("CapsuleShape3D_md0e3")
+
+[node name="AttackableArea" type="Area3D" parent="." unique_id=1656667283]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackableArea" unique_id=623856641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8803711, 0)
+shape = SubResource("CylinderShape3D_4ra3w")
+
+[connection signal="body_entered" from="AttackableArea" to="." method="_on_attackable_area_body_entered"]
+[connection signal="body_exited" from="AttackableArea" to="." method="_on_attackable_area_body_exited"]
