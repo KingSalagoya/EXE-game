@@ -20,3 +20,4 @@ func _on_area_entered(area: Area3D) -> void:
 		GameManager.request_objective_completed.emit(objective_name)
 		GameManager.can_move = false
 		print("Player Reached")
+		#GameManager.request_objective_completed.emit("stab")
