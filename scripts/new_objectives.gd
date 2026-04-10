@@ -8,8 +8,8 @@ extends Node
 	"open drawer": 0,
 	"grab dvd": 0,
 	"insert dvd": 0,
-	"collect wood": 3,
-	"Build the game": 0
+	#"open door": 0,
+	"collect wood": 3
 }
 
 var objective_names_list: Array[String] # The 0 Objective is the current objective here

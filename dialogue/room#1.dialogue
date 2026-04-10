@@ -1,6 +1,6 @@
 ~ start
 
-Rail: Can't sleep again. Third night this week. The doctor says it's stress — too much work, not enough rest. Simple as that. He's probably right. He usually is.
+Rail: Can't sleep again. Third night this week. The doctor says it's stress too much work, not enough rest. Simple as that. He's probably right. He usually is.
 Rail: Funny thing about silence. Most people are afraid of it. I never was. Silence just means... no one's asking questions.
 Rail: Pete used to hate silence. Always had to fill it with something. A joke. A story. That laugh of his...
 
@@ -27,7 +27,8 @@ Rail: (Yawns) Not the ideal time to play a game but... when you can’t sleep, y
 ~ insert_dvd
 
 Rail: (Yawns) Not the ideal time to play a game but... when you can’t sleep, you gotta do something.
+do GameManager.dialogue_finished.emit()
+Rail: (Yawwwn) Im Getting Sle..epy....
 
-# do GameManager.change_scene.emit(level_test)
 
 => END

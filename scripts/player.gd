@@ -63,8 +63,9 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 
+	handle_jump(delta)
+
 	if GameManager.can_move:
-		handle_jump(delta)
 		handle_movement()
 		handle_head_bob(delta)
 		move_and_slide()
@@ -74,8 +75,8 @@ func handle_jump(delta: float) -> void:
 	if not is_on_floor():
 		velocity += Vector3(0, GRAVITY, 0) * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("jump") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
 
 
 func handle_movement() -> void:

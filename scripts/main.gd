@@ -55,11 +55,14 @@ func _special_objectives(_name: String) -> void:
 		"collect wood":
 			change_level(level_room)
 		"insert dvd":
-			GameManager.handle_dialogue.emit(room_one_dialogue, "insert_dvd")
 			GameManager.can_move = false
-			await get_tree().create_timer(4).timeout
+			cinamatics_player.play("play_computer")
+			await get_tree().create_timer(5).timeout
+			GameManager.handle_dialogue.emit(room_one_dialogue, "insert_dvd")
+			await GameManager.dialogue_finished
 			blink_anim.play_backwards("blink")
 			await get_tree().create_timer(3).timeout
+			cinamatics_player.play("RESET")
 			change_level(level_test)
 			GameManager.can_move = true
 			blink_anim.play("blink")
