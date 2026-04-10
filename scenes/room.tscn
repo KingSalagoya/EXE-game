@@ -1019,7 +1019,8 @@ _data = {
 }
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jn645"]
-radius = 1.9907227
+height = 4.2617188
+radius = 1.7329102
 
 [node name="Room" type="Node3D" unique_id=883977336]
 
@@ -1344,15 +1345,18 @@ material = SubResource("StandardMaterial3D_qvc4m")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=209413142]
 libraries/ = SubResource("AnimationLibrary_jn645")
 
-[node name="Rail" parent="." unique_id=367521465 instance=ExtResource("4_14vil")]
-transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0, 0, 2.1586962)
+[node name="Player" parent="." unique_id=367521465 instance=ExtResource("4_14vil")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.1425761, 0, 2.1969619)
 script = ExtResource("3_85yof")
 interact_text = "stab"
 objective_name = "stab"
 
-[node name="Area" type="Area3D" parent="Rail" unique_id=945159066]
+[node name="reached_area" type="Area3D" parent="Player" unique_id=434523203]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0, 1.1624005, 2.1586962)
 script = ExtResource("5_jxe34")
 objective_name = "reach the person"
+metadata/_custom_type_script = "uid://dvvn8o370cbf2"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rail/Area" unique_id=1049022528]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/reached_area" unique_id=1049022528]
+transform = Transform3D(0.9999961, 0, 0, 0, 1, 0, 0, 0, 0.9999961, -1.7686677, 1.9199219, 1.1388934)
 shape = SubResource("CylinderShape3D_jn645")
