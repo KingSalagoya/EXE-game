@@ -4,6 +4,7 @@ extends Control
 @onready var interact_label: Label = $MarginContainer/HUD/InteractLabel
 @onready var objective_label: Label = $MarginContainer/HUD/ObjectiveLabel
 @onready var achievement_label: Label = $MarginContainer/HUD/AchievementLabel
+@onready var player_count_label: Label = $MarginContainer/HUD/Player_Count_Label
 
 var stored_objective_label: String
 
@@ -11,6 +12,7 @@ func _enter_tree() -> void:
 	GameManager.update_interact_label.connect(update_interact_label)
 	GameManager.update_objective_label.connect(update_objective_text)
 	GameManager.unlock_achievement.connect(update_achievement_label)
+	GameManager.update_player_count.connect(update_player_count_label)
 
 func _ready() -> void:
 	toggle_chat_display()
@@ -22,8 +24,14 @@ func _unhandled_input(event: InputEvent) -> void:
 func update_interact_label(text: String) -> void:
 	if text == "" : interact_label.hide()
 	else: interact_label.show()
-	text = "Press E to " + text
+	#text = "Press E to " + text
 	interact_label.text = text
+
+func update_player_count_label(count: int) -> void:
+	if count <= 0 : player_count_label.hide()
+	else: player_count_label.show()
+	var text = "Players online:  " + str(count)
+	player_count_label.text = text
 
 func update_achievement_label(achievement: String) -> void:
 	if achievement == "" : achievement_label.hide()

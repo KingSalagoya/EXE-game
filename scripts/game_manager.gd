@@ -9,6 +9,7 @@ extends Node
 @warning_ignore("unused_signal") signal objective_collected (objective_name: String)
 @warning_ignore("unused_signal") signal next_objective
 @warning_ignore("unused_signal") signal wood_collected
+@warning_ignore("unused_signal") signal update_player_count(count: int)
 
 #Labels
 @warning_ignore("unused_signal") signal update_interact_label(text: String)
@@ -24,6 +25,8 @@ extends Node
 @warning_ignore("unused_signal") signal unhandled_input (input: String)
 
 @warning_ignore("unused_signal") signal unlock_achievement (achievement: String)
+@warning_ignore("unused_signal") signal spawn_boss_enemy ()
+
 
 var can_move: bool = true
 var can_interact: bool = true
