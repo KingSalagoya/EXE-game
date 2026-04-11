@@ -50,7 +50,6 @@ func _special_objectives(_name: String) -> void:
 			await get_tree().create_timer(2).timeout
 			GameManager.handle_dialogue.emit(room_one_dialogue, "grab_walkie_talkie")
 			GameManager.can_move = true
-			#GameManager.chat_dialogue.emit(1)
 		"grab dvd":
 			GameManager.handle_dialogue.emit(room_one_dialogue, "grab_dvd")
 		"open door":
@@ -74,6 +73,9 @@ func _special_objectives(_name: String) -> void:
 		"kill enemies":
 			GameManager.spawn_boss_enemy.emit()
 			GameManager.update_player_count.emit(2)
+			GameManager.spawn_friend.emit()
+		"kill boss enemy":
+			GameManager.chat_dialogue.emit(1)
 
 func change_level(new_scene: PackedScene) -> void:
 	var prev_level = level_holder.get_child(0)

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bebc6ehdirn37"]
+
+[ext_resource type="Script" uid="uid://c0ehf0r74bxhq" path="res://scripts/enemy.gd" id="1_mykxq"]
+[ext_resource type="Script" uid="uid://dwn0122urv1dt" path="res://scripts/hurt_box.gd" id="2_bmgde"]
+[ext_resource type="Script" uid="uid://b6afotnygprho" path="res://scripts/hit_box.gd" id="3_nn1pv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8tegq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p1mj"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4ra3w"]
+height = 13.708008
+radius = 54.421387
+
+[node name="Friend" type="CharacterBody3D" unique_id=221704819 groups=["Enemy"]]
+script = ExtResource("1_mykxq")
+character = 2
+SPEED = 5
+hp = 20
+damage = 800
+target_path_str = "/root/Main/GameViewport/SubViewport/GameEnviroment/LevelHolder/LevelTest/Enemy_Holder/Enemy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=816245651]
+mesh = SubResource("CapsuleMesh_8tegq")
+surface_material_override/0 = SubResource("StandardMaterial3D_7p1mj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=15591395]
+shape = SubResource("CapsuleShape3D_md0e3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=784660603]
+
+[node name="hurt_box" type="Area3D" parent="." unique_id=184880710 node_paths=PackedStringArray("owner_character")]
+script = ExtResource("2_bmgde")
+owner_character = NodePath("..")
+metadata/_custom_type_script = "uid://dwn0122urv1dt"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="hurt_box" unique_id=157826442]
+shape = SubResource("CapsuleShape3D_md0e3")
+
+[node name="hit_box" type="Area3D" parent="." unique_id=1040575142 node_paths=PackedStringArray("owner_character")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+script = ExtResource("3_nn1pv")
+owner_character = NodePath("..")
+metadata/_custom_type_script = "uid://b6afotnygprho"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="hit_box" unique_id=211387928]
+shape = SubResource("CapsuleShape3D_md0e3")
+
+[node name="AttackableArea" type="Area3D" parent="." unique_id=1656667283]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackableArea" unique_id=623856641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8803711, 0)
+shape = SubResource("CylinderShape3D_4ra3w")
+
+[connection signal="body_entered" from="AttackableArea" to="." method="_on_attackable_area_body_entered"]
+[connection signal="body_exited" from="AttackableArea" to="." method="_on_attackable_area_body_exited"]
