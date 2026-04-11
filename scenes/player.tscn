@@ -18,6 +18,7 @@ height = 2.9936523
 
 [node name="Player" type="CharacterBody3D" unique_id=367521465 groups=["Player"]]
 script = ExtResource("1_3vyb7")
+damage = 800
 
 [node name="Graphics" type="MeshInstance3D" parent="." unique_id=823392933]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

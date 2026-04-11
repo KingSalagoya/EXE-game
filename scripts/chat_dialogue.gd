@@ -11,7 +11,7 @@ func _decide_msg(num) -> void:
 		1:
 			chat_dialogue(first_dialogue)
 
-func chat_dialogue(msg_array: Array) -> void:
+func chat_dialogue(msg_array: Array):
 	GameManager.can_move = false
 	chat_ui.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
@@ -30,7 +30,7 @@ func chat_dialogue(msg_array: Array) -> void:
 	chat_ui.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _send_msg(usrnm: String, msg: String) -> void:
+func _send_msg(usrnm: String, msg: String):
 				var clean_msg = msg
 				var colon_pos = msg.find(":")
 				if colon_pos != -1:

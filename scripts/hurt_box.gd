@@ -24,10 +24,10 @@ func take_damage(damage: int, knockback: Vector3 = Vector3.ZERO) -> void:
 		# add hurt animation here
 		if owner_character.hp <= 0:
 			if owner_character.name != "Player":
-				owner_character.queue_free()
 				if owner_character.character and owner_character.character == owner_character.CHARACTER.boss:
 					GameManager.request_objective_completed.emit("kill boss enemy")
 				else:
 					GameManager.request_objective_completed.emit("kill enemies")
+				owner_character.queue_free()
 			else:
 				get_tree().quit()

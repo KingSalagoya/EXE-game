@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bebc6ehdirn37"]
 
-[ext_resource type="Script" uid="uid://c0ehf0r74bxhq" path="res://scripts/enemy.gd" id="1_mykxq"]
+[ext_resource type="Script" uid="uid://b72kmyfkyfl14" path="res://scripts/friend.gd" id="1_mykxq"]
 [ext_resource type="Script" uid="uid://dwn0122urv1dt" path="res://scripts/hurt_box.gd" id="2_bmgde"]
 [ext_resource type="Script" uid="uid://b6afotnygprho" path="res://scripts/hit_box.gd" id="3_nn1pv"]
 
@@ -17,11 +17,9 @@ radius = 54.421387
 
 [node name="Friend" type="CharacterBody3D" unique_id=221704819 groups=["Enemy"]]
 script = ExtResource("1_mykxq")
-character = 2
 SPEED = 5
 hp = 20
-damage = 800
-target_path_str = "/root/Main/GameViewport/SubViewport/GameEnviroment/LevelHolder/LevelTest/Enemy_Holder/Enemy"
+damage = 500
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=816245651]
 mesh = SubResource("CapsuleMesh_8tegq")
@@ -55,5 +53,7 @@ shape = SubResource("CapsuleShape3D_md0e3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8803711, 0)
 shape = SubResource("CylinderShape3D_4ra3w")
 
+[connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="hit_box" to="." method="_on_hit_box_body_exited"]
 [connection signal="body_entered" from="AttackableArea" to="." method="_on_attackable_area_body_entered"]
 [connection signal="body_exited" from="AttackableArea" to="." method="_on_attackable_area_body_exited"]
