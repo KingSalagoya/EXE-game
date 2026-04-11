@@ -18,11 +18,12 @@ enum CHARACTER {friend}
 @export var player_path_str: String = "/root/Main/GameViewport/SubViewport/GameEnviroment/Player"
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var hit_box: hit_box = $hit_box
 
 var attaked: bool = false
 var knockback_velocity := Vector3.ZERO
 var knockback_force: float = 8.0
-var attackable: bool = false
+var chasable: bool = false
 
 func apply_knockback(force: Vector3) -> void:
 	knockback_velocity = force
@@ -52,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if attackable:
+	if chasable:
 		_handle_movement(delta)
 
 	move_and_slide()
@@ -101,16 +102,16 @@ func _handle_movement(delta: float) -> void:
 
 func _on_attackable_area_body_entered(body: CharacterBody3D) -> void:
 	if body == target:
-		attackable = true
+		chasable = true
 
 func _on_attackable_area_body_exited(body: CharacterBody3D) -> void:
 	if body == target:
-		attackable = false
+		chasable = false
 
 func _on_hit_box_body_entered(body: CharacterBody3D) -> void:
 	if body == player:
-		attackable = false
+		hit_box.attackable = false
 
 func _on_hit_box_body_exited(body: CharacterBody3D) -> void:
 	if body == player:
-		attackable = true
+		hit_box.attackable = true
