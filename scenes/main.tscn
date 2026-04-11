@@ -654,11 +654,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
 visible = false
 
 [node name="knife_pivot" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera" unique_id=574641702]
-transform = Transform3D(1, 0, 0, 0, 0.986572, -0.16332595, 0, 0.16332595, 0.986572, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.98657185, -0.16332592, 0, 0.16332592, 0.98657185, 0, 0, 0)
 visible = false
 
 [node name="knife" type="CSGBox3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot" unique_id=1434838203]
-transform = Transform3D(0.87643373, 0.034370366, 0.48029056, -0.16550657, 0.958179, 0.23344359, -0.45218512, -0.2840907, 0.8454642, 0.22, -0.005, -0.72)
+transform = Transform3D(0.8764338, 0.03437035, 0.48029053, -0.16550656, 0.95817894, 0.23344363, -0.4521851, -0.2840907, 0.8454643, 0.22, -0.005, -0.72)
 visible = false
 size = Vector3(0.02709961, 0.061523438, 0.5283203)
 
@@ -773,6 +773,21 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -280.0
 offset_bottom = 34.0
+grow_horizontal = 0
+mouse_filter = 1
+theme = ExtResource("5_tipki")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player_Count_Label" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/HUD" unique_id=358244141]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_top = 66.0
+offset_bottom = 100.0
 grow_horizontal = 0
 mouse_filter = 1
 theme = ExtResource("5_tipki")

@@ -9,7 +9,8 @@ extends Node
 	"grab dvd": 0,
 	"insert dvd": 0,
 	"collect wood": 3,
-	"kill enemies": 6
+	"kill enemies": 6,
+	"kill boss enemy": 0
 }
 
 var objective_names_list: Array[String] # The 0 Objective is the current objective here

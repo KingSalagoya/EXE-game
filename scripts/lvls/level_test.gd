@@ -9,6 +9,7 @@ var spawn_enemies_count: int = 0
 
 func _ready() -> void:
 	GameManager.unlock_achievement.connect(unlock_achievement)
+	GameManager.spawn_boss_enemy.connect(spawn_enemies)
 
 func _process(_delta: float) -> void:
 	if objectives.current_objective_name == "kill enemies" and spawn_enemies_count <= 5:
@@ -16,10 +17,13 @@ func _process(_delta: float) -> void:
 		pass
 
 func spawn_enemies() -> void:
-	for i in range(5):
+	for i in range(1):
 		var e = enemy.instantiate()
 		enemy_holder.add_child(e)
-		e.global_position = Vector3(14, 1.6637, 7)
+		e.global_position = Vector3(9.222, 1.974, 18.00)
+		e.hp = 1000
+		e.damage = 1
+		e.knockback_force = 16.0
 		spawn_enemies_count += 1
 		await get_tree().create_timer(1).timeout
 

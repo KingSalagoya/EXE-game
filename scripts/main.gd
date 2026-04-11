@@ -70,6 +70,10 @@ func _special_objectives(_name: String) -> void:
 			change_level(level_test)
 			GameManager.can_move = true
 			blink_anim.play("blink")
+			GameManager.update_player_count.emit(1)
+		"kill enemies":
+			GameManager.spawn_boss_enemy.emit()
+			GameManager.update_player_count.emit(2)
 
 func change_level(new_scene: PackedScene) -> void:
 	var prev_level = level_holder.get_child(0)
