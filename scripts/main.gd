@@ -72,9 +72,13 @@ func _special_objectives(_name: String) -> void:
 			GameManager.update_player_count.emit(1)
 		"kill enemies":
 			GameManager.spawn_boss_enemy.emit()
-			GameManager.update_player_count.emit(2)
 			GameManager.spawn_friend.emit()
 		"kill boss enemy":
+			var friend = $GameViewport/SubViewport/GameEnviroment/LevelHolder/LevelTest/Friend
+			var Player = %Player
+			Player.look_at(Vector3(friend.global_position.x, Player.global_position.y, friend.global_position.z), Vector3.UP)
+			friend.look_at(Vector3(Player.global_position.x, friend.global_position.y, Player.global_position.z), Vector3.UP)
+			
 			GameManager.chat_dialogue.emit(1)
 
 func change_level(new_scene: PackedScene) -> void:

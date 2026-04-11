@@ -27,6 +27,7 @@ func spawn_enemies() -> void:
 	for i in range(1):
 		var e = enemy.instantiate()
 		enemy_holder.add_child(e)
+		GameManager.update_player_count.emit(2)
 		e.global_position = Vector3(9.222, 1.974, 18.00)
 		e.character = e.CHARACTER.boss
 		e.hp = 1000

@@ -1,9 +1,10 @@
 extends CharacterBody3D
 
 var target = null
+var player = null
 
-enum CHARACTER {enemy, boss}
-@export var character: CHARACTER = CHARACTER.enemy
+enum CHARACTER {friend}
+@export var character: CHARACTER = CHARACTER.friend
 
 @export var SPEED = 2
 
@@ -11,11 +12,14 @@ enum CHARACTER {enemy, boss}
 @export var damage: int = 1
 
 @export var target_path: NodePath
-@export var target_path_str: String = "/root/Main/GameViewport/SubViewport/GameEnviroment/Player"
+@export var target_path_str: String = "/root/Main/GameViewport/SubViewport/GameEnviroment/LevelHolder/LevelTest/Enemy_Holder/Enemy"
+
+@export var player_path: NodePath
+@export var player_path_str: String = "/root/Main/GameViewport/SubViewport/GameEnviroment/Player"
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
-#var attaked: bool = false
+var attaked: bool = false
 var knockback_velocity := Vector3.ZERO
 var knockback_force: float = 8.0
 var attackable: bool = false
@@ -26,11 +30,21 @@ func apply_knockback(force: Vector3) -> void:
 func _ready() -> void:
 	target_path = target_path_str
 	if target_path.is_empty():
-		push_error("player_path is not set!")
+		push_error("enemy_path is not set!")
 		return
 	target = get_node_or_null(target_path)
 	if target == null:
-		push_error("Could not find player at path: " + str(target_path))
+		push_error("Could not find enemy at path: " + str(target_path))
+		return
+
+
+	player_path = player_path_str
+	if player_path.is_empty():
+		push_error("enemy_path is not set!")
+		return
+	player = get_node_or_null(player_path)
+	if player == null:
+		push_error("Could not find enemy at path: " + str(player_path))
 		return
 	
 
@@ -92,3 +106,11 @@ func _on_attackable_area_body_entered(body: CharacterBody3D) -> void:
 func _on_attackable_area_body_exited(body: CharacterBody3D) -> void:
 	if body == target:
 		attackable = false
+
+func _on_hit_box_body_entered(body: CharacterBody3D) -> void:
+	if body == player:
+		attackable = false
+
+func _on_hit_box_body_exited(body: CharacterBody3D) -> void:
+	if body == player:
+		attackable = true

@@ -54,10 +54,15 @@ func _check_objective_completed(obj_name: String) -> void:
 
 func _complete_objective() -> void:
 	current_completed_amount = 0
+	
+	if current_objective_name != "": 
+		GameManager.objective_completed.emit(current_objective_name)
+		
 	if objective_names_list.is_empty() or objective_amounts_list.is_empty():
+		current_objective_name = ""
+		GameManager.current_objective = ""
 		GameManager.update_objective_label.emit("No objectives at the moment")
 	else:
-		if current_objective_name != "": GameManager.objective_completed.emit(current_objective_name)
 		current_objective_name = objective_names_list.pop_front() # THESE ARE THE NEXT OBJECTIVES
 		GameManager.current_objective = current_objective_name
 		current_objective_amount = objective_amounts_list.pop_front()
