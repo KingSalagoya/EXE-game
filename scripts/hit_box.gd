@@ -6,6 +6,7 @@ extends Area3D
 @export var default_knockback: float = 8.0
 @export var owner_character: CharacterBody3D
 @export var passive_damage: bool = true
+@export var attackable: bool = true
 
 func _ready() -> void:
 	if owner_character == null:
@@ -17,7 +18,7 @@ func _ready() -> void:
 		area_entered.connect(_on_area_entered)
 
 func _on_area_entered(area: Area3D) -> void:
-	if area is hurt_box:
+	if area is hurt_box and attackable:
 		#don't hurt ourselves if both belong to the same character
 		if owner_character and area.owner_character == owner_character:
 			return

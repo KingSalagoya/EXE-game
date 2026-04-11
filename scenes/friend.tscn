@@ -17,9 +17,14 @@ radius = 54.421387
 
 [node name="Friend" type="CharacterBody3D" unique_id=221704819 groups=["Enemy"]]
 script = ExtResource("1_mykxq")
+character = null
 SPEED = 5
 hp = 20
 damage = 500
+target_path = null
+target_path_str = null
+player_path = null
+player_path_str = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=816245651]
 mesh = SubResource("CapsuleMesh_8tegq")
