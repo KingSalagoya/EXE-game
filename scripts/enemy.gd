@@ -1,13 +1,17 @@
 extends CharacterBody3D
 
-var player = null
+var target = null
 
-const SPEED = 2
+enum CHARACTER {enemy, boss, friend}
+@export var character: CHARACTER = CHARACTER.enemy
+
+@export var SPEED = 2
 
 @export var hp: int = 10
 @export var damage: int = 1
 
-@export var player_path: NodePath
+@export var target_path: NodePath
+@export var target_path_str: String = "/root/Main/GameViewport/SubViewport/GameEnviroment/Player"
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
@@ -20,14 +24,15 @@ func apply_knockback(force: Vector3) -> void:
 	knockback_velocity = force
 
 func _ready() -> void:
-	player_path = "/root/Main/GameViewport/SubViewport/GameEnviroment/Player"
-	if player_path.is_empty():
+	target_path = target_path_str
+	if target_path.is_empty():
 		push_error("player_path is not set!")
 		return
-	player = get_node_or_null(player_path)
-	if player == null:
-		push_error("Could not find player at path: " + str(player_path))
+	target = get_node_or_null(target_path)
+	if target == null:
+		push_error("Could not find player at path: " + str(target_path))
 		return
+	
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -39,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _handle_movement(delta: float) -> void:
-	if player == null:
+	if target == null:
 		return
 
 	if knockback_velocity.length() > 0.1:
@@ -50,11 +55,11 @@ func _handle_movement(delta: float) -> void:
 		move_and_slide()
 		return
 
-	navigation_agent.set_target_position(player.global_position)
+	navigation_agent.set_target_position(target.global_position)
 
 	if not navigation_agent.is_target_reachable():
 		# print("Warning: Target not reachable. Falling back to direct movement.")
-		var dir = (player.global_position - global_position)
+		var dir = (target.global_position - global_position)
 		dir.y = 0
 		if dir.length() > 0.1:
 			dir = dir.normalized()
@@ -77,13 +82,13 @@ func _handle_movement(delta: float) -> void:
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
 
-	look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
+	look_at(Vector3(target.global_position.x, global_position.y, target.global_position.z), Vector3.UP)
 
 
 func _on_attackable_area_body_entered(body: CharacterBody3D) -> void:
-	if body == player:
+	if body == target:
 		attackable = true
 
 func _on_attackable_area_body_exited(body: CharacterBody3D) -> void:
-	if body == player:
+	if body == target:
 		attackable = false

@@ -26,6 +26,7 @@ extends Node
 
 @warning_ignore("unused_signal") signal unlock_achievement (achievement: String)
 @warning_ignore("unused_signal") signal spawn_boss_enemy ()
+@warning_ignore("unused_signal") signal spawn_friend ()
 
 
 var can_move: bool = true

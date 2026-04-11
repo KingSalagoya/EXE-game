@@ -135,18 +135,6 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../LevelHolder/Room/Rail:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -2.3561945, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_trceg"]
 resource_name = "play_computer"
@@ -345,35 +333,23 @@ tracks/8/keys = {
 "update": 1,
 "values": [true, false]
 }
-tracks/9/type = "value"
+tracks/9/type = "animation"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../LevelHolder/Room/Rail:rotation")
-tracks/9/interp = 2
+tracks/9/path = NodePath("%GameEnviroment/../../../UiViewport/SubViewport/Blink/blink_anim")
+tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(6.165669, 9.133333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, -2.3561945, 0), Vector3(0, 0.43633232, 0)]
-}
-tracks/10/type = "animation"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("%GameEnviroment/../../../UiViewport/SubViewport/Blink/blink_anim")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
 "clips": PackedStringArray("blink_once", "fast_blink"),
 "times": PackedFloat32Array(0, 9.7)
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("%Player:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("%Player:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0, 9.83034),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -654,11 +630,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
 visible = false
 
 [node name="knife_pivot" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera" unique_id=574641702]
-transform = Transform3D(1, 0, 0, 0, 0.98657185, -0.16332592, 0, 0.16332592, 0.98657185, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9865718, -0.1633259, 0, 0.1633259, 0.9865718, 0, 0, 0)
 visible = false
 
 [node name="knife" type="CSGBox3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot" unique_id=1434838203]
-transform = Transform3D(0.8764338, 0.03437035, 0.48029053, -0.16550656, 0.95817894, 0.23344363, -0.4521851, -0.2840907, 0.8454643, 0.22, -0.005, -0.72)
+transform = Transform3D(0.87643385, 0.034370326, 0.48029047, -0.16550657, 0.95817894, 0.23344368, -0.45218506, -0.28409073, 0.8454643, 0.22, -0.005, -0.72)
 visible = false
 size = Vector3(0.02709961, 0.061523438, 0.5283203)
 
