@@ -21,7 +21,52 @@ var t_bob: float = 0.0
 @export var knockback_force: float = 8.0
 @export var is_player: bool = true
 
+# Player movement recording 👇
+var rec_count: int = 0
+var play_count: int = 0
+var can_record: bool = false
+var can_play_recording: bool = false
+var save_data: Dictionary = {0: [Vector3(0,0,0)]}
+var load_data: Dictionary = Dictionary()
+
 var knockback_velocity := Vector3.ZERO
+
+func _ready() -> void:
+	load_data = load_file()
+
+func do_record():
+	if can_record:
+		rec_count += 1
+		save_data[str(rec_count)] = [global_position]
+	
+	if Input.is_action_just_pressed("record"):
+		var path = "res://recordings/rec1.json"
+		var f = FileAccess.open(path, FileAccess.WRITE)
+		
+		print("Saving to: ", path)
+		f.store_string(JSON.stringify(save_data))
+		
+		if f == null:
+			push_error("Recording file not found. -player.gd :D")
+
+func load_file():
+	var path = "res://recordings/rec1.json"
+	var f = FileAccess.open(path, FileAccess.READ)
+	
+	var json = JSON.new()
+	var error = json.parse(f.get_as_text())
+	
+	if error != OK:
+		push_error("JSON Parse Error")
+		return
+
+	return json.data
+
+func get_recording():
+	play_count += 1
+	var test = load_data.get(str(play_count))
+	if test != null:
+		global_position = str_to_var("Vector3" + test[0])
 
 func apply_knockback(force: Vector3) -> void:
 	knockback_velocity = force
@@ -55,6 +100,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if can_record:
+		do_record()
+	
+	if can_play_recording:
+		get_recording()
+	
 	if knockback_velocity.length() > 0.1:
 		knockback_velocity = knockback_velocity.lerp(Vector3.ZERO, delta * 5.0)
 		velocity = knockback_velocity
