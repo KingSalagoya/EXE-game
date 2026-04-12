@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c582jycf75it0" path="res://scripts/chat_ui.gd" id="1_iluef"]
 [ext_resource type="Script" uid="uid://ckc4wkxvpak0q" path="res://scripts/friend_msg_generator.gd" id="2_xq7rt"]
 [ext_resource type="Script" uid="uid://bn717v6x76l7k" path="res://scripts/chat_dialogue.gd" id="3_r4b0e"]
+[ext_resource type="FontFile" uid="uid://bacn8mekru541" path="res://assets/fonts/Undead Pixel 8.ttf" id="4_mjhe2"]
 
 [node name="ChatUI" type="Control" unique_id=952464027]
 layout_mode = 3
@@ -36,12 +37,15 @@ alignment = 2
 [node name="chat history" type="TextEdit" parent="VBoxContainer" unique_id=413722450]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_mjhe2")
 theme_override_font_sizes/font_size = 30
 editable = false
+wrap_mode = 1
 
 [node name="msg box" type="LineEdit" parent="VBoxContainer" unique_id=1730372733]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_mjhe2")
 theme_override_font_sizes/font_size = 30
 placeholder_text = "Press 'T' to chat... [Press Enter to send]"
-expand_to_text_length = true
+clear_button_enabled = true
