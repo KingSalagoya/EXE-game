@@ -5,7 +5,7 @@ var friend_usrnm: String = "Pete123"
 @onready var chat_history: TextEdit = $"../VBoxContainer/chat history"
 
 func generate_friend_msg(sent_msg: String) -> void:
-	var lower_msg = sent_msg.to_lower()
+	#var lower_msg = sent_msg.to_lower()
 	var friend_msg: String = ""
 	var msg_cache: Array = []
 	var cleaned_msg: String = sent_msg.to_lower().strip_edges()

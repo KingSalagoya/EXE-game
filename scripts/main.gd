@@ -48,7 +48,8 @@ func _special_objectives(_name: String) -> void:
 		"pick walkie-talkie":
 			GameManager.can_move = false
 			await get_tree().create_timer(2).timeout
-			GameManager.handle_dialogue.emit(room_one_dialogue, "grab_walkie_talkie")
+			GameManager.chat_dialogue.emit(1) #remove this line and unhash the below line.
+			#GameManager.handle_dialogue.emit(room_one_dialogue, "grab_walkie_talkie")
 			GameManager.can_move = true
 		"grab dvd":
 			GameManager.handle_dialogue.emit(room_one_dialogue, "grab_dvd")
