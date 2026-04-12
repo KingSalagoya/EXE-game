@@ -3,6 +3,8 @@ extends Node
 @onready var chat_ui: Control = $".."
 @onready var msg_box: LineEdit = $"../VBoxContainer/msg box"
 
+var msg_cache: String = ""
+
 func _enter_tree() -> void:
 	GameManager.chat_dialogue.connect(_decide_msg)
 
@@ -24,6 +26,7 @@ func chat_dialogue(msg_array: Array):
 				await _send_msg("Pete123", msg)
 			"M":
 				await _send_msg("Mia", msg)
+		await get_tree().create_timer(randf_range(0.5 , 3)).timeout
 	
 	await get_tree().create_timer(1).timeout
 	GameManager.can_move = true
@@ -31,16 +34,30 @@ func chat_dialogue(msg_array: Array):
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _send_msg(usrnm: String, msg: String):
-				var clean_msg = msg
-				var colon_pos = msg.find(":")
-				if colon_pos != -1:
-					clean_msg = msg.substr(colon_pos + 1).strip_edges()
-				chat_ui.usrnm = usrnm
-				msg_box.text = clean_msg
-				if usrnm == "Rail":
-					await get_tree().create_timer(1).timeout
-				chat_ui.send_msg()
-				await get_tree().create_timer(1).timeout
+	var clean_msg = msg
+	var colon_pos = msg.find(":")
+	if colon_pos != -1:
+		clean_msg = msg.substr(colon_pos + 1).strip_edges()
+	chat_ui.usrnm = usrnm
+	
+	msg_box.text = ""
+	msg_cache = ""
+	
+	for i in range(clean_msg.length()):
+		if usrnm == "Rail":
+			msg_box.text += clean_msg[i]
+		else:
+			msg_cache += clean_msg[i]
+			
+		await get_tree().create_timer(randf_range(0.05, 0.1)).timeout
+		
+	if usrnm == "Rail":
+		await get_tree().create_timer(0.5).timeout
+	else:
+		msg_box.text = msg_cache
+	
+	chat_ui.send_msg()
+	await get_tree().create_timer(1).timeout
 
 var first_dialogue: Array = [
 	"PETE123: bro you actually bought this game lmaooo",
