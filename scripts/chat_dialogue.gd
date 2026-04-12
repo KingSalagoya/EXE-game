@@ -46,6 +46,7 @@ func _send_msg(usrnm: String, msg: String):
 	for i in range(clean_msg.length()):
 		if usrnm == "Rail":
 			msg_box.text += clean_msg[i]
+			msg_box.set_caret_column(msg_box.text.length())
 		else:
 			msg_cache += clean_msg[i]
 			
