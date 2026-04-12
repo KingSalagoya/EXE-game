@@ -28,11 +28,12 @@ var can_record: bool = false
 var can_play_recording: bool = false
 var save_data: Dictionary = {0: [Vector3(0,0,0)]}
 var load_data: Dictionary = Dictionary()
+var recording_loaded: bool = false
 
 var knockback_velocity := Vector3.ZERO
 
 func _ready() -> void:
-	load_data = load_file()
+	pass
 
 func do_record():
 	if can_record:
@@ -51,22 +52,47 @@ func do_record():
 
 func load_file():
 	var path = "res://recordings/rec1.json"
-	var f = FileAccess.open(path, FileAccess.READ)
+	if path:
+		var f = FileAccess.open(path, FileAccess.READ)
 	
-	var json = JSON.new()
-	var error = json.parse(f.get_as_text())
+		var json = JSON.new()
+		var error = json.parse(f.get_as_text())
 	
-	if error != OK:
-		push_error("JSON Parse Error")
-		return
+		if error != OK:
+			push_error("JSON Parse Error")
+			return
 
-	return json.data
+		recording_loaded = true
+		return json.data
 
 func get_recording():
+	if recording_loaded == false:
+		load_file()
+		recording_loaded = true
 	play_count += 1
 	var test = load_data.get(str(play_count))
 	if test != null:
 		global_position = str_to_var("Vector3" + test[0])
+
+func handle_recording_movement():
+	if Input.is_action_just_pressed("start recording"):
+		if can_record:
+			can_record = false
+		else:
+			can_record = true
+	
+	if Input.is_action_just_pressed("play recording"):
+		if can_play_recording:
+			can_play_recording = false
+		else:
+			can_play_recording = true
+	
+	if can_record:
+		do_record()
+	
+	if can_play_recording:
+		load_data = load_file()
+		get_recording()
 
 func apply_knockback(force: Vector3) -> void:
 	knockback_velocity = force
@@ -100,11 +126,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if can_record:
-		do_record()
-	
-	if can_play_recording:
-		get_recording()
+	handle_recording_movement()
 	
 	if knockback_velocity.length() > 0.1:
 		knockback_velocity = knockback_velocity.lerp(Vector3.ZERO, delta * 5.0)
