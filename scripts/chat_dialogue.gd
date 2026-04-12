@@ -60,16 +60,22 @@ func _send_msg(usrnm: String, msg: String):
 	await get_tree().create_timer(1).timeout
 
 var first_dialogue: Array = [
-	"PETE123: bro you actually bought this game lmaooo",
-	"RAIL: found it in a box. don't judge me",
-	"PETE123: I'm judging you so hard right now",
-	"PETE123: also... Rail? Is that actually you?",
-	"RAIL: Pete Evans in the flesh. Or pixels I guess",
-	"PETE123: this is insane. how long has it been",
-	"RAIL: too long",
-	"PETE123: you look terrible btw. your avatar does",
-	"RAIL: thanks. you look like you haven't changed at all",
-	"PETE123: lol same old Rail. hey I found a dagger in that shack over there. wolf head handle. go grab one, I'll wait",
-	"RAIL_: you always did find the good stuff first",
-	"PETE123: someone had to"
+	"PETE: Hi",
+	"RAIL: PETE? Are you PETE EVANS?",
+	"PETE: Yes, how do u know?",
+	"RAIL: I’m ARU RAIL. Can U remember? We were in the same class 17 years ago!",
+	"PETE: ARU! Wow! After all this time! I missed you, man. Bro, where did u find this game?",
+	"RAIL: I found it inside my cupboard. I didn’t even know what this game was until I played it. I miss good old days.",
+	"PETE: Me too. BTW How are U? OMG. I miss oldtimes. So how are U?",
+	"RAIL: Never been better.lol.",
+	"PETE: Same here. BTW, you didn’t tell anyone my secret right?",
+	# Suddenly everything starts to echo....
+	"RAIL: N-no ... I didn’t. You can trust me.",
+	"PETE: I know it. U R my best friend btw",
+	"RAIL: That sounded a bit cheesy, ngl.",
+	"PETE: lol. But u know i always been like that. You were the only one who actually listened to me. Tbh that is why I told you my secret.",
+	"RAIL: Uh ... yeah ... um ... BTW, that is a nice dagger you have. The one with the wolf head. Where did you get it, dude?",
+	"PETE: Oh, I found it in a shack nearby. Bro, the good thing about this game? There is loot everywhere.",
+	"RAIL: I also want a dagger like that. Is there anymore?",
+	"PETE: Yes, in the shack. Go get it. I’ll wait."
 ]
