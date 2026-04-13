@@ -69,6 +69,7 @@ func _special_objectives(_name: String) -> void:
 			GameManager.can_move = true
 			blink_anim.play("blink")
 			GameManager.update_player_count.emit(1)
+			%Player.SPEED = 5
 		"kill enemies":
 			GameManager.spawn_boss_enemy.emit()
 			GameManager.spawn_friend.emit()
