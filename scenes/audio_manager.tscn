@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://biya3k8ajbcu8"]
 
 [ext_resource type="Script" uid="uid://npu146etfi6p" path="res://scripts/audio_manager.gd" id="1_8qd8g"]
+[ext_resource type="PackedScene" uid="uid://c04j8phaq4gio" path="res://scenes/audio_one_shot.tscn" id="2_02gw7"]
 [ext_resource type="AudioStream" uid="uid://ctcek4uqt4wh0" path="res://assets/sfx/door/opening-door (2).ogg" id="2_3asnw"]
 [ext_resource type="AudioStream" uid="uid://bvn61pqvquom1" path="res://assets/sfx/door/door-close.mp3" id="3_m6ggh"]
 [ext_resource type="AudioStream" uid="uid://b282uea5ipkf0" path="res://assets/sfx/fight/knife-stab-sound-effect.ogg" id="4_m6ggh"]
@@ -10,6 +11,7 @@
 
 [node name="AudioManager" type="Node" unique_id=382790275]
 script = ExtResource("1_8qd8g")
+one_shot_scene = ExtResource("2_02gw7")
 
 [node name="Clips" type="Node" parent="." unique_id=1411344535]
 
@@ -30,3 +32,5 @@ stream = ExtResource("6_02gw7")
 
 [node name="gravel-footsteps" type="AudioStreamPlayer" parent="Clips" unique_id=2110952493]
 stream = ExtResource("7_ujhup")
+
+[node name="One Shots" type="Node" parent="." unique_id=2128177606]

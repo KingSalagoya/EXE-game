@@ -30,6 +30,14 @@
 [ext_resource type="ArrayMesh" uid="uid://33xcmsfm5lat" path="res://assets/models/edited/window_frame.res" id="26_geot1"]
 [ext_resource type="ArrayMesh" uid="uid://bua8xirydq26y" path="res://assets/models/edited/right_window.res" id="27_1s4n5"]
 [ext_resource type="ArrayMesh" uid="uid://dc2kqrusueuhd" path="res://assets/models/edited/left_window.res" id="28_bahpm"]
+[ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/room_animation_player.gd" id="29_7r6do"]
+[ext_resource type="Script" uid="uid://bn8l5qhjloveu" path="res://scripts/audio_path_holder.gd" id="32_1wmww"]
+[ext_resource type="AudioStream" uid="uid://ctcek4uqt4wh0" path="res://assets/sfx/door/opening-door (2).ogg" id="33_qwukm"]
+[ext_resource type="AudioStream" uid="uid://bvn61pqvquom1" path="res://assets/sfx/door/door-close.mp3" id="34_frp7b"]
+[ext_resource type="AudioStream" uid="uid://b282uea5ipkf0" path="res://assets/sfx/fight/knife-stab-sound-effect.ogg" id="35_yo4w0"]
+[ext_resource type="AudioStream" uid="uid://c6b4f3cul0b7e" path="res://assets/sfx/footsteps/footsteps-in-a-hallway.mp3" id="36_wg1up"]
+[ext_resource type="AudioStream" uid="uid://b4ftfrw1rgy" path="res://assets/sfx/wake-up/man-waking-up-from-sleep.mp3" id="37_wkj6l"]
+[ext_resource type="AudioStream" uid="uid://dtvlitstwq5bk" path="res://assets/sfx/yawn/male-yawning.mp3" id="38_ns543"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20vo2"]
 albedo_color = Color(0.23392546, 0.23392546, 0.23392543, 1)
@@ -164,6 +172,21 @@ albedo_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvc4m"]
 albedo_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_14vil"]
+height = 3.1032715
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
+height = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8vuu"]
+albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3vyb7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jn645"]
+height = 1.1639404
+radius = 1.7329102
+
 [sub_resource type="Animation" id="Animation_36trf"]
 length = 0.001
 tracks/0/type = "value"
@@ -229,6 +252,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 1.4835298), Vector3(0, 0, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioPathHolder")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["door_close"],
+"method": &"play_one_shot"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_85yof"]
 resource_name = "door_open"
@@ -244,6 +281,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(2, 0.5),
 "update": 0,
 "values": [Vector3(1.4210853e-14, 0, 0), Vector3(0, 0, 1.4835298)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioPathHolder")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["door_open"],
+"method": &"play_one_shot"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_14vil"]
@@ -348,21 +399,6 @@ _data = {
 &"window_close": SubResource("Animation_jn645"),
 &"window_open": SubResource("Animation_qvc4m")
 }
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_14vil"]
-height = 3.1032715
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
-height = 3.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8vuu"]
-albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_3vyb7"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_jn645"]
-height = 1.1639404
-radius = 1.7329102
 
 [node name="Room" type="Node3D" unique_id=883977336]
 
@@ -730,9 +766,6 @@ operation = 2
 size = Vector3(1.7766571, 0.9943253, 7.528244)
 material = SubResource("StandardMaterial3D_qvc4m")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=209413142]
-libraries/ = SubResource("AnimationLibrary_jn645")
-
 [node name="Rail" type="Node3D" parent="." unique_id=2073489903 groups=["interactable"]]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.16142976, 0, 2.1101809)
 script = ExtResource("4_jxe34")
@@ -761,3 +794,17 @@ metadata/_custom_type_script = "uid://dvvn8o370cbf2"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rail/reached_area" unique_id=1049022528]
 transform = Transform3D(0.9999929, 0, 0, 0, 1, 0, 0, 0, 0.9999929, -1.5390425, -1.0398262, 1.5667542)
 shape = SubResource("CylinderShape3D_jn645")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=209413142]
+libraries/ = SubResource("AnimationLibrary_jn645")
+script = ExtResource("29_7r6do")
+
+[node name="AudioPathHolder" type="Node" parent="." unique_id=1961793253]
+script = ExtResource("32_1wmww")
+door_open = ExtResource("33_qwukm")
+door_close = ExtResource("34_frp7b")
+stab = ExtResource("35_yo4w0")
+hallway_footsteps = ExtResource("36_wg1up")
+wake_up = ExtResource("37_wkj6l")
+yawn = ExtResource("38_ns543")
+metadata/_custom_type_script = "uid://bn8l5qhjloveu"
