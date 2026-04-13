@@ -44,6 +44,10 @@ transform = Transform3D(1.9106855e-15, 1.3113416e-07, 1, 1, -1.3113416e-07, 0, 4
 script = ExtResource("3_dqkch")
 INTERACT_text = ""
 
+[node name="AudioListener3D" type="AudioListener3D" parent="CameraHolder/MainCamera" unique_id=568452195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45074177, 0)
+current = true
+
 [node name="hurt_box" type="Area3D" parent="." unique_id=679508422 node_paths=PackedStringArray("owner_character")]
 script = ExtResource("3_qhqgy")
 owner_character = NodePath("..")
