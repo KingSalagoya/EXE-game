@@ -53,7 +53,7 @@ func _special_objectives(_name: String) -> void:
 		"grab dvd":
 			GameManager.handle_dialogue.emit(room_one_dialogue, "grab_dvd")
 		"open door":
-			AudioManager.play("DoorOpen", 0)
+			pass
 		"collect wood":
 			GameManager.unlock_achievement.emit("graveyard")
 		"insert dvd":
