@@ -28,6 +28,7 @@
 [ext_resource type="ArrayMesh" uid="uid://33xcmsfm5lat" path="res://assets/models/edited/window_frame.res" id="26_ax6wb"]
 [ext_resource type="ArrayMesh" uid="uid://bua8xirydq26y" path="res://assets/models/edited/right_window.res" id="27_qko0w"]
 [ext_resource type="ArrayMesh" uid="uid://dc2kqrusueuhd" path="res://assets/models/edited/left_window.res" id="28_6b8h6"]
+[ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="29_sn845"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rdh41"]
 albedo_color = Color(0.23392546, 0.23392546, 0.23392543, 1)
@@ -723,3 +724,4 @@ material = SubResource("StandardMaterial3D_wghjf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1612400525]
 libraries/ = SubResource("AnimationLibrary_fj4wg")
+script = ExtResource("29_sn845")

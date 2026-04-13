@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 
 @export var ANIM_PLAYER: AnimationPlayer
 @export var TOGGLE: bool = true
@@ -28,8 +28,13 @@ func _enter_tree() -> void:
 func interact() -> void:
 	if not check_security(): return
 	if ANIM_PLAYER and not ANIM_PLAYER.is_playing():
-		if not TOGGLE: ANIM_PLAYER.play(ANIM_NAME)
-		elif not is_anim_playing: toggle()
+		#AudioManager.play_audio_one_shot("door open", global_position)
+		if not TOGGLE:
+			ANIM_PLAYER.pos = global_position
+			ANIM_PLAYER.play(ANIM_NAME)
+		elif not is_anim_playing:
+			ANIM_PLAYER.pos = global_position
+			toggle()
 
 func check_security() -> bool:
 	if ACCES_ONLY_WHEN_RELATED_OBJECTIVE and OBJECTIVE != GameManager.current_objective and not one_time: return false
@@ -47,6 +52,7 @@ func toggle() -> void:
 	else:
 		ANIM_PLAYER.play(SECOND_ANIM_NAME)
 		next_text = INTERACT_TEXT
+
 
 func _anim_finished(anim) -> void:
 	if anim == ANIM_NAME or anim == SECOND_ANIM_NAME:

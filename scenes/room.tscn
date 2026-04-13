@@ -30,14 +30,7 @@
 [ext_resource type="ArrayMesh" uid="uid://33xcmsfm5lat" path="res://assets/models/edited/window_frame.res" id="26_geot1"]
 [ext_resource type="ArrayMesh" uid="uid://bua8xirydq26y" path="res://assets/models/edited/right_window.res" id="27_1s4n5"]
 [ext_resource type="ArrayMesh" uid="uid://dc2kqrusueuhd" path="res://assets/models/edited/left_window.res" id="28_bahpm"]
-[ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/room_animation_player.gd" id="29_7r6do"]
-[ext_resource type="Script" uid="uid://bn8l5qhjloveu" path="res://scripts/audio_path_holder.gd" id="32_1wmww"]
-[ext_resource type="AudioStream" uid="uid://ctcek4uqt4wh0" path="res://assets/sfx/door/opening-door (2).ogg" id="33_qwukm"]
-[ext_resource type="AudioStream" uid="uid://bvn61pqvquom1" path="res://assets/sfx/door/door-close.mp3" id="34_frp7b"]
-[ext_resource type="AudioStream" uid="uid://b282uea5ipkf0" path="res://assets/sfx/fight/knife-stab-sound-effect.ogg" id="35_yo4w0"]
-[ext_resource type="AudioStream" uid="uid://c6b4f3cul0b7e" path="res://assets/sfx/footsteps/footsteps-in-a-hallway.mp3" id="36_wg1up"]
-[ext_resource type="AudioStream" uid="uid://b4ftfrw1rgy" path="res://assets/sfx/wake-up/man-waking-up-from-sleep.mp3" id="37_wkj6l"]
-[ext_resource type="AudioStream" uid="uid://dtvlitstwq5bk" path="res://assets/sfx/yawn/male-yawning.mp3" id="38_ns543"]
+[ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="29_7r6do"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20vo2"]
 albedo_color = Color(0.23392546, 0.23392546, 0.23392543, 1)
@@ -254,7 +247,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "method"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("AudioPathHolder")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -266,10 +259,23 @@ tracks/1/keys = {
 "method": &"play_one_shot"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["door close", 0.0, 0.0],
+"method": &"play_sfx"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_85yof"]
 resource_name = "door_open"
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -284,7 +290,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "method"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("AudioPathHolder")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -294,6 +300,20 @@ tracks/1/keys = {
 "values": [{
 "args": ["door_open"],
 "method": &"play_one_shot"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["door open", 0.0, 0.0],
+"method": &"play_sfx"
 }]
 }
 
@@ -799,12 +819,5 @@ shape = SubResource("CylinderShape3D_jn645")
 libraries/ = SubResource("AnimationLibrary_jn645")
 script = ExtResource("29_7r6do")
 
-[node name="AudioPathHolder" type="Node" parent="." unique_id=1961793253]
-script = ExtResource("32_1wmww")
-door_open = ExtResource("33_qwukm")
-door_close = ExtResource("34_frp7b")
-stab = ExtResource("35_yo4w0")
-hallway_footsteps = ExtResource("36_wg1up")
-wake_up = ExtResource("37_wkj6l")
-yawn = ExtResource("38_ns543")
-metadata/_custom_type_script = "uid://bn8l5qhjloveu"
+[node name="Node3D" type="Marker3D" parent="." unique_id=908629565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76977956, 1.6972513, -3.0134308)
