@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://biya3k8ajbcu8"]
+
+[ext_resource type="Script" uid="uid://npu146etfi6p" path="res://scripts/audio_manager.gd" id="1_8qd8g"]
+[ext_resource type="AudioStream" uid="uid://ctcek4uqt4wh0" path="res://assets/sfx/door/opening-door (2).ogg" id="2_3asnw"]
+[ext_resource type="AudioStream" uid="uid://bvn61pqvquom1" path="res://assets/sfx/door/door-close.mp3" id="3_m6ggh"]
+[ext_resource type="AudioStream" uid="uid://b282uea5ipkf0" path="res://assets/sfx/fight/knife-stab-sound-effect.ogg" id="4_m6ggh"]
+[ext_resource type="AudioStream" uid="uid://u68p1llr2ru1" path="res://assets/sfx/footsteps/concrete-footsteps-1.mp3" id="5_kq7b2"]
+[ext_resource type="AudioStream" uid="uid://c6b4f3cul0b7e" path="res://assets/sfx/footsteps/footsteps-in-a-hallway.mp3" id="6_02gw7"]
+[ext_resource type="AudioStream" uid="uid://cqxdewfo725vt" path="res://assets/sfx/footsteps/footsteps.mp3" id="7_ujhup"]
+
+[node name="AudioManager" type="Node" unique_id=382790275]
+script = ExtResource("1_8qd8g")
+
+[node name="Clips" type="Node" parent="." unique_id=1411344535]
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="Clips" unique_id=2053798010]
+stream = ExtResource("2_3asnw")
+
+[node name="DoorClose" type="AudioStreamPlayer" parent="Clips" unique_id=1410420438]
+stream = ExtResource("3_m6ggh")
+
+[node name="Stab" type="AudioStreamPlayer" parent="Clips" unique_id=2055876912]
+stream = ExtResource("4_m6ggh")
+
+[node name="concrete-footsteps" type="AudioStreamPlayer" parent="Clips" unique_id=114562290]
+stream = ExtResource("5_kq7b2")
+
+[node name="hallway-footsteps" type="AudioStreamPlayer" parent="Clips" unique_id=125506676]
+stream = ExtResource("6_02gw7")
+
+[node name="gravel-footsteps" type="AudioStreamPlayer" parent="Clips" unique_id=2110952493]
+stream = ExtResource("7_ujhup")
