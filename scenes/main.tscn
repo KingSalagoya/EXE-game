@@ -685,7 +685,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
 visible = false
 
 [node name="knife_pivot" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera" unique_id=574641702]
-transform = Transform3D(1, 0, 0, 0, 0.98657143, -0.16332585, 0, 0.16332585, 0.98657143, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9865714, -0.16332585, 0, 0.16332585, 0.9865714, 0, 0, 0)
 visible = false
 
 [node name="knife" type="CSGBox3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot" unique_id=1434838203]
@@ -695,6 +695,7 @@ size = Vector3(0.02709961, 0.061523438, 0.5283203)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot/knife" unique_id=1101515992]
 transform = Transform3D(1.0000349, 3.4738332e-07, -4.8056245e-07, -1.2945384e-07, 1.0000002, -8.940697e-08, -7.1525574e-07, -5.9604645e-08, 1, -5.9604645e-08, -4.7683716e-07, 0.18042016)
+visible = false
 size = Vector3(0.095703125, 0.13452148, 0.1977539)
 
 [node name="CinamaticsPlayer" type="AnimationPlayer" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic" unique_id=1876807748]
