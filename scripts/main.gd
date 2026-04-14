@@ -28,6 +28,8 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	blink_anim.play("blink")
+	
+	#cinamatics_player.play_with_temp_length("play_computer", 5, false)
 
 func wake_up() -> void:
 	GameManager.can_move = false
