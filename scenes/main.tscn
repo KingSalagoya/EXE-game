@@ -137,6 +137,106 @@ tracks/8/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_muem4"]
+resource_name = "die"
+length = 2.0
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%GameEnviroment/../../../UiViewport/SubViewport/Blink/blink_anim")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("blink", "blink_once"),
+"times": PackedFloat32Array(0, 5.766667)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CinamaticCamera:current")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Player:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CinamaticCamera:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%UserInterface/MarginContainer/HUD/Point:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CinamaticsPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["wake up", 0.0, 0.0],
+"method": &"play_sfx"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CinamaticCamera:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.19396907, 2.697381, 1.9598742), Vector3(-0.19396907, 2.697381, 1.9598742)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CinamaticCamera:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.11333334, 0.78333336, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.41846108, -2.8953452, -0.117360085), Vector3(-0.41846108, -2.8953452, -0.117360085), Vector3(0.0065108743, -2.9169707, -0.014088799), Vector3(0.006510876, -0.21895365, -0.014088798)]
+}
+
 [sub_resource type="Animation" id="Animation_trceg"]
 resource_name = "play_computer"
 length = 10.0
@@ -497,12 +597,114 @@ tracks/7/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_jbj1t"]
+resource_name = "wake_up_2"
+length = 5.0
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%GameEnviroment/../../../UiViewport/SubViewport/Blink/blink_anim")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("blink", "blink_once"),
+"times": PackedFloat32Array(0, 5.766667)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CinamaticCamera:current")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Player:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CinamaticCamera:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%UserInterface/MarginContainer/HUD/Point:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 6.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CinamaticsPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["wake up", 0.0, 0.0],
+"method": &"play_sfx"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CinamaticCamera:rotation")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.01, 1.67, 3.72, 4.27, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.6878012, -0.07534565, 1.8127823), Vector3(-0.8570207, -0.08895328, 1.8322111), Vector3(-0.9515263, 0.078091376, 1.8467185), Vector3(-0.43109632, 1.6423548, 0), Vector3(-0.5009095, 1.6441002, 0), Vector3(-0.43109632, 1.6423548, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CinamaticCamera:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.01, 1.67, 3.72, 4.27, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.9960499, 1.6705537, 2.286246), Vector3(-1.9960499, 1.9011612, 2.286246), Vector3(-1.9960499, 1.7911518, 2.286246), Vector3(-1.3982501, 2.2343078, 1.7558165), Vector3(-1.3982501, 2.2343078, 1.7558165), Vector3(-1.3982501, 2.2343078, 1.7558165)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eb6dy"]
 _data = {
 &"RESET": SubResource("Animation_choun"),
+&"die": SubResource("Animation_muem4"),
 &"play_computer": SubResource("Animation_trceg"),
 &"stab": SubResource("Animation_a8y0u"),
-&"wake up": SubResource("Animation_ya4ey")
+&"wake up": SubResource("Animation_ya4ey"),
+&"wake_up_2": SubResource("Animation_jbj1t")
 }
 
 [sub_resource type="Gradient" id="Gradient_o6xl0"]
@@ -681,15 +883,15 @@ damage = 5
 [node name="Cinamatic" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1467429672]
 
 [node name="CinamaticCamera" type="Camera3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic" unique_id=810135207]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 visible = false
 
 [node name="knife_pivot" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera" unique_id=574641702]
-transform = Transform3D(1, 0, 0, 0, 0.9865713, -0.16332583, 0, 0.16332583, 0.9865713, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.98657113, -0.1633258, 0, 0.1633258, 0.98657113, 0, 0, 0)
 visible = false
 
 [node name="knife" type="CSGBox3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot" unique_id=1434838203]
-transform = Transform3D(0.87643385, 0.03437035, 0.48029053, -0.16550657, 0.9581788, 0.23344362, -0.45218512, -0.28409064, 0.8454643, 0.22, -0.005, -0.72)
+transform = Transform3D(0.87643385, 0.034370344, 0.48029047, -0.16550657, 0.9581788, 0.23344366, -0.45218506, -0.28409064, 0.8454643, 0.22, -0.005, -0.72)
 visible = false
 size = Vector3(0.02709961, 0.061523438, 0.5283203)
 

@@ -788,6 +788,7 @@ material = SubResource("StandardMaterial3D_qvc4m")
 
 [node name="Rail" type="Node3D" parent="." unique_id=2073489903 groups=["interactable"]]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.16142976, 0, 2.1101809)
+visible = false
 script = ExtResource("29_33rt5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rail" unique_id=1180072661]
