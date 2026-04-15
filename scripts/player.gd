@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 # Main
-var SPEED: float = 2.5
+var SPEED: float = 5
 const GRAVITY: float = -9.8
 const JUMP_VELOCITY: float = 4.5
 const SENSITIVITY: float = 0.004
