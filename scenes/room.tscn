@@ -47,21 +47,21 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_14vil")
 size = Vector2(0.8, 0.55)
 
-[sub_resource type="Gradient" id="Gradient_5o3hq"]
+[sub_resource type="Gradient" id="Gradient_7r6do"]
 offsets = PackedFloat32Array(0, 0.3493976, 0.9939759, 1)
 colors = PackedColorArray(0.11764706, 0, 0.11764706, 1, 0.039215688, 0, 0.039215688, 1, 0.20370372, 0.20370372, 0.20370372, 1, 0.56723034, 0.56723034, 0.56723034, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qtoah"]
-gradient = SubResource("Gradient_5o3hq")
+gradient = SubResource("Gradient_7r6do")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="Gradient" id="Gradient_7r6do"]
+[sub_resource type="Gradient" id="Gradient_1wmww"]
 offsets = PackedFloat32Array(0.3493976, 0.9939759, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.20370372, 0.20370372, 0.20370372, 1, 0.56723034, 0.56723034, 0.56723034, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_eom3m"]
-gradient = SubResource("Gradient_7r6do")
+gradient = SubResource("Gradient_1wmww")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
