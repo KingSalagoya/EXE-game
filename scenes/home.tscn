@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dbef7ovwfqemw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4wd2"]
+albedo_color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fsr8q"]
+material = SubResource("StandardMaterial3D_u4wd2")
+size = Vector2(100, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fsr8q"]
+data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+
+[node name="Home" type="Node3D" unique_id=1172181076]
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=265152515]
+mesh = SubResource("PlaneMesh_fsr8q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=1603656800]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=539900636]
+shape = SubResource("ConcavePolygonShape3D_fsr8q")
+
+[node name="House" type="Node3D" parent="." unique_id=439115484]
+transform = Transform3D(1.5398849, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.62914, -19.553837)
+
+[node name="House" type="CSGBox3D" parent="House" unique_id=1027467385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.94634247, 0)
+use_collision = true
+size = Vector3(10, 5.9794464, 16.820374)
+
+[node name="Roof" type="CSGBox3D" parent="House" unique_id=67094065]
+transform = Transform3D(1.4357724, 0, 0, 0, 1, 0, 0, 0, 1.152906, 0.096264355, 5.4466105, 0)
+use_collision = true
+size = Vector3(9.0269165, 7.1773453, 16.820374)
+
+[node name="Roof2" type="CSGBox3D" parent="House/Roof" unique_id=667695799]
+transform = Transform3D(0.71890104, 0.48424372, 0, -1.0087744, 0.7115127, 0, 0, 0, 1.0000001, 2.9930634, 2.2004232, 0)
+operation = 2
+use_collision = true
+size = Vector3(8.910828, 5.3720245, 16.820374)
+
+[node name="Roof3" type="CSGBox3D" parent="House/Roof" unique_id=15227959]
+transform = Transform3D(-0.6468529, 0.54311895, 0, -0.9863497, -0.71777564, 0, 0, 0, 1.0000001, -3.2362857, 3.642932, 0)
+operation = 2
+use_collision = true
+size = Vector3(10.401306, 7.4365005, 16.820374)
+
+[node name="Door" type="CSGBox3D" parent="House" unique_id=1912229249]
+transform = Transform3D(0.12018027, 0, 0, 0, 2.141362, 0, 0, 0, 1.152906, 1.4869981, -1.7117262, 8.5769415)
+use_collision = true
+size = Vector3(10, 1.7663116, 0.39749146)
+
+[node name="Window" type="CSGBox3D" parent="House" unique_id=1265363034]
+transform = Transform3D(0.12018027, 0, 0, 0, 2.141362, 0, 0, 0, 1.152906, -1.9758871, 0.44390726, 8.5769415)
+use_collision = true
+size = Vector3(14.568909, 0.78647614, 0.39749146)
+
+[node name="Vehicle" type="Node3D" parent="." unique_id=1457381826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.218531, 0, 8.046394)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Vehicle" unique_id=1503328071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9113059, 1.728468, -2.3527143)
+use_collision = true
+size = Vector3(6.005432, 2.8775024, 2.4110107)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Vehicle" unique_id=1454988394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0220885, 1.1091518, -2.3527143)
+use_collision = true
+size = Vector3(8.541466, 1.6388702, 2.4110107)
+
+[node name="Current Line" type="Node3D" parent="." unique_id=481562064]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Current Line" unique_id=582884119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.35467, 4.5097046, 0.6972339)
+size = Vector3(0.2, 10.019, 0.2)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Current Line" unique_id=723786597]
+transform = Transform3D(0.9115881, 0.40721467, 0.056419913, -0.076216474, 0.30226484, -0.9501723, -0.40397793, 0.86186564, 0.30657744, 6.7030435, 5.88483, -9.054131)
+radius = 0.05
+height = 23.017212
