@@ -30,6 +30,8 @@ extends Node
 
 @warning_ignore("unused_signal") signal handle_exit ()
 
+@warning_ignore("unused_signal") signal special_area_entered ()
+
 
 var can_move: bool = true
 var can_interact: bool = true

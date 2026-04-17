@@ -808,7 +808,7 @@ mesh = SubResource("BoxMesh_3vyb7")
 [node name="reached_area" type="Area3D" parent="Rail" unique_id=434523203]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0, 1.1624005, 2.1586962)
 script = ExtResource("5_jxe34")
-objective_name = "reach the person"
+emit_name = "stab"
 metadata/_custom_type_script = "uid://dvvn8o370cbf2"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rail/reached_area" unique_id=1049022528]
