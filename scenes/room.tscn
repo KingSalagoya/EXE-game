@@ -176,10 +176,6 @@ albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3vyb7"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_jn645"]
-height = 4.0097046
-radius = 1.7329102
-
 [sub_resource type="Animation" id="Animation_36trf"]
 length = 0.001
 tracks/0/type = "value"
@@ -419,6 +415,10 @@ _data = {
 &"window_close": SubResource("Animation_jn645"),
 &"window_open": SubResource("Animation_qvc4m")
 }
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jn645"]
+height = 4.0097046
+radius = 1.7329102
 
 [node name="Room" type="Node3D" unique_id=883977336]
 
@@ -713,7 +713,7 @@ material_override = SubResource("StandardMaterial3D_0am6y")
 mesh = ExtResource("22_ns543")
 
 [node name="room" type="MeshInstance3D" parent="Room" unique_id=1225045848]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0.00934267, -0.0070257187, -0.0032901764)
 material_override = SubResource("StandardMaterial3D_20vo2")
 mesh = ExtResource("23_g8dr5")
 
@@ -805,19 +805,23 @@ transform = Transform3D(0.6, 0, 0, 0, 0.2, 0, 0, 0, 0.78220695, 0, 1.1012625, -0
 material_override = SubResource("StandardMaterial3D_u8vuu")
 mesh = SubResource("BoxMesh_3vyb7")
 
-[node name="reached_area" type="Area3D" parent="Rail" unique_id=434523203]
-transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0, 1.1624005, 2.1586962)
-script = ExtResource("5_jxe34")
-emit_name = "stab"
-metadata/_custom_type_script = "uid://dvvn8o370cbf2"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rail/reached_area" unique_id=1049022528]
-transform = Transform3D(0.99998003, 0, 0, 0, 1, 0, 0, 0, 0.99998003, -1.5390425, 0.38305593, 1.566754)
-shape = SubResource("CylinderShape3D_jn645")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=209413142]
 libraries/ = SubResource("AnimationLibrary_jn645")
 script = ExtResource("29_7r6do")
 
 [node name="Node3D" type="Marker3D" parent="." unique_id=908629565]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76977956, 1.6972513, -3.0134308)
+
+[node name="SpecialAreas" type="Node3D" parent="." unique_id=1489280186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0029078126, 0, 2.2223396)
+
+[node name="stab" type="Area3D" parent="SpecialAreas" unique_id=771830427]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0, 1.1624005, 2.1586962)
+script = ExtResource("5_jxe34")
+area_id = "stab"
+count = 2
+metadata/_custom_type_script = "uid://dvvn8o370cbf2"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpecialAreas/stab" unique_id=1158339052]
+transform = Transform3D(0.99998003, 0, 0, 0, 1, 0, 0, 0, 0.99998003, -1.5390425, 0.38305593, 1.566754)
+shape = SubResource("CylinderShape3D_jn645")
