@@ -177,7 +177,7 @@ albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_3vyb7"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jn645"]
-height = 1.1639404
+height = 4.0097046
 radius = 1.7329102
 
 [sub_resource type="Animation" id="Animation_36trf"]
@@ -788,7 +788,6 @@ material = SubResource("StandardMaterial3D_qvc4m")
 
 [node name="Rail" type="Node3D" parent="." unique_id=2073489903 groups=["interactable"]]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.16142976, 0, 2.1101809)
-visible = false
 script = ExtResource("4_jxe34")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rail" unique_id=1180072661]
@@ -813,7 +812,7 @@ objective_name = "reach the person"
 metadata/_custom_type_script = "uid://dvvn8o370cbf2"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rail/reached_area" unique_id=1049022528]
-transform = Transform3D(0.9999929, 0, 0, 0, 1, 0, 0, 0, 0.9999929, -1.5390425, -1.0398262, 1.5667542)
+transform = Transform3D(0.99998003, 0, 0, 0, 1, 0, 0, 0, 0.99998003, -1.5390425, 0.38305593, 1.566754)
 shape = SubResource("CylinderShape3D_jn645")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=209413142]
