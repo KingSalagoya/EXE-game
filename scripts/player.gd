@@ -126,6 +126,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if GameManager.torch:
+		$CameraHolder/MainCamera/Torch.show()
+	else:
+		$CameraHolder/MainCamera/Torch.hide()
+	
 	handle_recording_movement()
 	
 	if knockback_velocity.length() > 0.1:

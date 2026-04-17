@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cpakvn1j64v86" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c8i1q1xahaol6" path="res://scenes/player.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://baagym8vrmwab" path="res://scenes/maze.tscn" id="3_85g3d"]
+[ext_resource type="PackedScene" uid="uid://hy5mmsg3wjvc" path="res://scenes/room.tscn" id="3_choun"]
 [ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="4_85g3d"]
 [ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://rvtqbuwa5w53" path="res://scripts/user_interface.gd" id="4_tefeu"]
 [ext_resource type="Theme" uid="uid://ca62n5ve5nsxc" path="res://assets/styles/horror_default.tres" id="5_tipki"]
 [ext_resource type="Script" uid="uid://cyre2l60h5tyq" path="res://scripts/new_objectives.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://b1gmh1y6ojj4j" path="res://scenes/main_menu.tscn" id="8_choun"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
 sky_top_color = Color(0.0010405213, 0.0010404979, 0.009608173, 1)
@@ -878,7 +879,7 @@ damage = 5
 
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
 
-[node name="Maze" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=31652223 instance=ExtResource("3_85g3d")]
+[node name="Room" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=883977336 instance=ExtResource("3_choun")]
 
 [node name="Cinamatic" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1467429672]
 
@@ -911,7 +912,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="UiViewport" unique_id=671764586]
@@ -1033,6 +1033,10 @@ vertical_alignment = 1
 [node name="ChatUI" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=952464027 instance=ExtResource("4_jyhfs")]
 layout_mode = 2
 
+[node name="Main Menu" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=135534202 instance=ExtResource("8_choun")]
+visible = false
+layout_mode = 2
+
 [node name="Dialogue" parent="UiViewport/SubViewport/UserInterface" unique_id=1434168376 instance=ExtResource("7_o6xl0")]
 visible = false
 will_block_other_input = false
@@ -1046,6 +1050,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Up" type="TextureRect" parent="UiViewport/SubViewport/Blink" unique_id=939740145]
 layout_mode = 1
@@ -1054,6 +1059,7 @@ anchor_right = 1.0
 offset_bottom = 535.0
 grow_horizontal = 2
 pivot_offset_ratio = Vector2(0.5, 0)
+mouse_filter = 2
 texture = SubResource("GradientTexture2D_tipki")
 
 [node name="Down" type="TextureRect" parent="UiViewport/SubViewport/Blink" unique_id=2000454986]
@@ -1066,6 +1072,7 @@ offset_top = -535.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 1)
+mouse_filter = 2
 texture = SubResource("GradientTexture2D_o6xl0")
 
 [node name="blink_anim" type="AnimationPlayer" parent="UiViewport/SubViewport/Blink" unique_id=438755435]

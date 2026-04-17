@@ -31,6 +31,12 @@ func _ready() -> void:
 	
 	#cinamatics_player.play_with_temp_length("play_computer", 5, false)
 
+func _process(delta: float) -> void:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		$UiViewport.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	else:
+		$UiViewport.mouse_filter = Control.MOUSE_FILTER_PASS
+
 func wake_up() -> void:
 	GameManager.can_move = false
 	cinamatics_player.play("wake up")
