@@ -22,16 +22,15 @@ func _enter_tree() -> void:
 	GameManager.objective_completed.connect(_special_objectives)
 	GameManager.change_scene.connect(change_level)
 	GameManager.play_cinamatic.connect(play_cinamatic)
+	GameManager.special_area_entered.connect(_handle_special_area)
 
 func _ready() -> void:
 	%UserInterface.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	blink_anim.play("blink")
-	
-	#cinamatics_player.play_with_temp_length("play_computer", 5, false)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		$UiViewport.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	else:
@@ -104,3 +103,10 @@ func _handle_dialogue(resourse, title):
 	dialogue_balloon.dialogue_resource = resourse 
 	dialogue_balloon.start_from_title = title
 	dialogue_balloon.start()
+
+func _handle_special_area(emit_name) -> void:
+	match emit_name:
+		"stab":
+			GameManager.can_move = false
+			GameManager.request_objective_completed.emit("reach the person")
+			
