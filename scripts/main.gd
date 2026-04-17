@@ -89,6 +89,8 @@ func _handle_special_area(_name: String) -> void:
 		"stab", "Stab":
 			GameManager.can_move = false
 			GameManager.request_objective_completed.emit("reach the person")
+		"reach the telephone line":
+			GameManager.request_objective_completed.emit("reach the current line")
 
 func wake_up() -> void:
 	GameManager.can_move = false
