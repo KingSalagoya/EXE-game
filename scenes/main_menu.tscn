@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://b1gmh1y6ojj4j"]
+
+[ext_resource type="Script" uid="uid://4x3qcdfiwg2j" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://dvduoeoa45h66" path="res://assets/fonts/DoubleHomicide.ttf" id="1_l6cm7"]
+
+[sub_resource type="Gradient" id="Gradient_vue75"]
+offsets = PackedFloat32Array(0.047169812, 0.3301887, 0.6415094, 0.990566)
+colors = PackedColorArray(0, 0, 0, 1, 0.05762711, 0.05762711, 0.05762711, 1, 0.105144195, 0.105144195, 0.105144195, 1, 0.2833333, 0.2833333, 0.2833333, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l6cm7"]
+gradient = SubResource("Gradient_vue75")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[node name="Main Menu" type="Control" unique_id=135534202]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_ekxnf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1852920197]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -973.0
+offset_top = -542.5
+offset_right = 973.0
+offset_bottom = 542.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_l6cm7")
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1127041463]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -364.0
+offset_top = -208.0
+offset_right = 364.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="Buttons" unique_id=1189768975]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 128
+text = "Start"
+
+[node name="Options" type="Button" parent="Buttons" unique_id=965780661]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 128
+text = "Options"
+
+[node name="Quit" type="Button" parent="Buttons" unique_id=1388439018]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 128
+text = "Quit"
+
+[node name="Options" type="VBoxContainer" parent="." unique_id=54802333]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -606.0
+offset_top = -343.0
+offset_right = -412.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Audio" type="VBoxContainer" parent="Options" unique_id=1670056168]
+layout_mode = 2
+
+[node name="Audio" type="Label" parent="Options/Audio" unique_id=1365884846]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 100
+text = "Audio"
+
+[node name="music2" type="Label" parent="Options/Audio" unique_id=615989114]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 64
+text = "     Music"
+
+[node name="HSlider" type="HSlider" parent="Options/Audio/music2" unique_id=378935597]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 28.0
+offset_right = 1033.0
+offset_bottom = 52.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="sfx2" type="Label" parent="Options/Audio" unique_id=1409355729]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 64
+text = "     SFX"
+
+[node name="HSlider" type="HSlider" parent="Options/Audio/sfx2" unique_id=591320806]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 25.0
+offset_right = 1032.0
+offset_bottom = 49.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Exit" type="Button" parent="Options" unique_id=798569335]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 64
+text = "Exit"
+
+[connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Options/Exit" to="." method="_on_exit_pressed"]

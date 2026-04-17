@@ -28,11 +28,15 @@ extends Node
 @warning_ignore("unused_signal") signal spawn_boss_enemy ()
 @warning_ignore("unused_signal") signal spawn_friend ()
 
+@warning_ignore("unused_signal") signal handle_exit ()
+
 
 var can_move: bool = true
 var can_interact: bool = true
 var current_objective: String = ""
 var current_objective_clone: String = ""
+
+var torch: bool = false
 
 var encounterd_objectives: Array[String] = []
 
@@ -53,4 +57,4 @@ func _physics_process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Enter"): unhandled_input.emit("enter")
 	if event.is_action_pressed("jump"): unhandled_input.emit("jump")
-	if event.is_action_pressed("exit"): get_tree().quit()
+	if event.is_action_pressed("exit"): handle_exit.emit()
