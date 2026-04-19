@@ -4,6 +4,7 @@ extends Area3D
 @export_enum("Player", "idk") var target_group: String = "Player"
 @export var area_id: String = ""
 @export var count: int = 1
+@export var enable_after_this_objective: String = "none"
 
 
 #@export var is_not_player: bool = true
@@ -11,6 +12,17 @@ extends Area3D
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	if area_id == "": area_id = name
+
+	if enable_after_this_objective != "none":
+		monitoring = false
+		monitorable = false
+		GameManager.objective_completed.connect(check_objective)
+
+func check_objective() -> void:
+	await(get_tree().create_timer(0.3).timeout)
+	if GameManager.current_objective != enable_after_this_objective:
+		monitoring = true
+		monitorable = true
 
 func _on_body_entered(body: Node3D) -> void:
 	if count > 0 and body.is_in_group(target_group) and area_id != "":

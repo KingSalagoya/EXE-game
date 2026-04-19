@@ -30,10 +30,8 @@ func interact() -> void:
 	if ANIM_PLAYER and not ANIM_PLAYER.is_playing():
 		#AudioManager.play_audio_one_shot("door open", global_position)
 		if not TOGGLE:
-			ANIM_PLAYER.pos = global_position
 			ANIM_PLAYER.play(ANIM_NAME)
 		elif not is_anim_playing:
-			ANIM_PLAYER.pos = global_position
 			toggle()
 
 func check_security() -> bool:
