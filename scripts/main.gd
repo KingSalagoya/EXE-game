@@ -10,9 +10,9 @@ extends Node
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
 
 
-const level_test: PackedScene = preload("res://scenes/level_test.tscn")
-const level_zero: PackedScene = preload("res://scenes/room.tscn")
-const level_one: PackedScene = preload("res://scenes/room2.tscn")
+const level_test: PackedScene = preload("res://scenes/levels/level_test.tscn")
+const level_zero: PackedScene = preload("res://scenes/levels/room.tscn")
+const level_one: PackedScene = preload("res://scenes/levels/room2.tscn")
 
 
 const room_one_dialogue: DialogueResource = preload("res://dialogue/room#1.dialogue")

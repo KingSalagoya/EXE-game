@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://dbef7ovwfqemw"]
 
-[ext_resource type="PackedScene" uid="uid://hy5mmsg3wjvc" path="res://scenes/room.tscn" id="1_krot7"]
+[ext_resource type="PackedScene" uid="uid://hy5mmsg3wjvc" path="res://scenes/levels/room.tscn" id="1_krot7"]
 [ext_resource type="ArrayMesh" uid="uid://cc0kfc7k44ink" path="res://assets/models/edited/door_frame.res" id="1_reixx"]
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="2_u4wd2"]
 [ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="2_uhids"]
-[ext_resource type="Script" uid="uid://dvvn8o370cbf2" path="res://scripts/interacts/reached_area.gd" id="3_uhids"]
+[ext_resource type="Script" uid="uid://dvvn8o370cbf2" path="res://scripts/interacts/special_area.gd" id="3_uhids"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4wd2"]
 albedo_color = Color(0.13682577, 0.13682574, 0.13682571, 1)
@@ -59,6 +59,9 @@ size = Vector3(0.017582474, 0.0018846744, 0.031712018)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yxilm"]
 height = 6.2163086
 radius = 4.6186523
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uge0f"]
+size = Vector3(1.2563477, 0.3581543, 0.576416)
 
 [sub_resource type="Animation" id="Animation_w18ys"]
 length = 0.001
@@ -394,12 +397,18 @@ omni_range = 973.854
 
 [node name="Room" parent="." unique_id=883977336 instance=ExtResource("1_krot7")]
 
-[node name="knife" type="CSGBox3D" parent="." unique_id=1511696525]
+[node name="knife" type="CSGBox3D" parent="." unique_id=1511696525 groups=["interactable"]]
 transform = Transform3D(0.6620709, 0, -0.74944127, 0, 1, 0, 0.74944127, 0, 0.6620709, 15.558702, 2.9119415, -15.226196)
 size = Vector3(1.5227051, 0.37097168, 0.61279297)
 script = ExtResource("2_u4wd2")
 interact_text = "pickup knife"
 objective_name = "grab the knife"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="knife" unique_id=1767178186]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="knife/StaticBody3D" unique_id=316315400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12817478, -0.01940918, -0.010135651)
+shape = SubResource("BoxShape3D_uge0f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=245251069]
 libraries/ = SubResource("AnimationLibrary_w18ys")
