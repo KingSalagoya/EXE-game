@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="2_u4wd2"]
 [ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="2_uhids"]
 [ext_resource type="Script" uid="uid://dvvn8o370cbf2" path="res://scripts/interacts/special_area.gd" id="3_uhids"]
+[ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="6_yskkl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4wd2"]
 albedo_color = Color(0.13682577, 0.13682574, 0.13682571, 1)
@@ -250,8 +251,8 @@ tracks/6/keys = {
 "values": [14.0, 14.0, 6.9204597]
 }
 
-[sub_resource type="Animation" id="Animation_reixx"]
-resource_name = "open door"
+[sub_resource type="Animation" id="Animation_d1b6h"]
+resource_name = "door_close"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -260,16 +261,60 @@ tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, -2.8797932), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["door close", 0.0, 0.0],
+"method": &"play_sfx"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_reixx"]
+resource_name = "door_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("House/door_frame/door:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 0.5),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -2.8797932)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["door open", 0.0, 0.0],
+"method": &"play_sfx"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w18ys"]
 _data = {
 &"RESET": SubResource("Animation_w18ys"),
 &"cut the wire": SubResource("Animation_u4wd2"),
-&"open door": SubResource("Animation_reixx")
+&"door_close": SubResource("Animation_d1b6h"),
+&"door_open": SubResource("Animation_reixx")
 }
 
 [node name="Home" type="Node3D" unique_id=1172181076]
@@ -317,7 +362,6 @@ size = Vector3(10.401306, 7.4365005, 16.820374)
 
 [node name="Door" type="CSGBox3D" parent="House" unique_id=1912229249]
 transform = Transform3D(0.12018027, 0, 0, 0, 2.141362, 0, 0, 0, 1.152906, 1.4869981, -1.7117262, 8.5769415)
-visible = false
 size = Vector3(10, 1.7663116, 0.39749146)
 
 [node name="Window" type="CSGBox3D" parent="House" unique_id=1265363034]
@@ -335,11 +379,10 @@ material_override = SubResource("StandardMaterial3D_yxilm")
 mesh = SubResource("ArrayMesh_mahjx")
 script = ExtResource("2_uhids")
 ANIM_PLAYER = NodePath("../../../AnimationPlayer")
-ANIM_NAME = "open door"
+ANIM_NAME = "door_open"
 INTERACT_TEXT = "open door"
 OBJECTIVE = "open door"
 ACCES_ONLY_WHEN_RELATED_OBJECTIVE = false
-ONE_TIME = true
 SECOND_ANIM_NAME = "door_close"
 SECOND_INTERACT_TEXT = "close door"
 TOGGLE_OBJECTIVE = "close door"
@@ -384,12 +427,12 @@ height = 1.5373077
 [node name="reach the telephone line" type="Area3D" parent="Current Line" unique_id=108141822]
 transform = Transform3D(-0.19212803, 0, -0.98137, 0, 1, 0, 0.98137, 0, -0.19212803, 1.1959102, 2.3841858e-07, -19.722559)
 script = ExtResource("3_uhids")
-area_id = "reach the telephone line"
+area_id = "reach telephone line"
 enable_after_this_objective = "grab the knife"
 metadata/_custom_type_script = "uid://dvvn8o370cbf2"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Current Line/reach the telephone line" unique_id=252240756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.554207, 2.1081543, -13.992954)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.186245, 2.1081543, -13.766502)
 shape = SubResource("CylinderShape3D_yxilm")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=770477996]
@@ -413,3 +456,4 @@ shape = SubResource("BoxShape3D_uge0f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=245251069]
 libraries/ = SubResource("AnimationLibrary_w18ys")
+script = ExtResource("6_yskkl")

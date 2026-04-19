@@ -820,7 +820,7 @@ transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.
 script = ExtResource("5_jxe34")
 area_id = "stab"
 count = 2
-enable_after_this_objective = "open door"
+enable_after_this_objective = "go inside the house"
 metadata/_custom_type_script = "uid://dvvn8o370cbf2"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpecialAreas/stab" unique_id=1158339052]
