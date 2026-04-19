@@ -1,9 +1,10 @@
 extends Node
 
 @export var LIST_OF_OBJECTIVES: Dictionary[String, int] = {
-	"reach the current line": 0,
 	"grab the knife": 0,
+	"reach the telephone line": 0,
 	"cut the telephone line": 0,
+	"go inside the house": 0,
 	"open door": 1,
 	"reach the person": 0,
 	"stab": 0,

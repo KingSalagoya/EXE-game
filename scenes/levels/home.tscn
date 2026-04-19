@@ -75,7 +75,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(15.558702, 2.9119415, -15.226196)]
+"values": [Vector3(5.8337746, 0.32412243, -19.172606)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -372,7 +372,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.35467, 4.5097046, 0.697233
 size = Vector3(0.2, 10.019, 0.2)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Current Line" unique_id=723786597]
-transform = Transform3D(0.91160315, 0.40721825, 0.056420065, -0.07621732, 0.30226773, -0.95018023, -0.4039831, 0.8618762, 0.30657947, 7.9358673, 6.799919, -6.444889)
+transform = Transform3D(0.9116031, 0.4072201, 0.056420073, -0.076217316, 0.3022691, -0.95018035, -0.40398303, 0.8618801, 0.3065795, 7.9358673, 6.799919, -6.444889)
 radius = 0.05
 height = 6.9204597
 
@@ -381,13 +381,14 @@ transform = Transform3D(0.91159296, 0.40721515, 0.05641963, -0.076216474, 0.3022
 radius = 0.05
 height = 1.5373077
 
-[node name="reached_area" type="Area3D" parent="Current Line" unique_id=108141822]
+[node name="reach the telephone line" type="Area3D" parent="Current Line" unique_id=108141822]
 transform = Transform3D(-0.19212803, 0, -0.98137, 0, 1, 0, 0.98137, 0, -0.19212803, 1.1959102, 2.3841858e-07, -19.722559)
 script = ExtResource("3_uhids")
 area_id = "reach the telephone line"
+enable_after_this_objective = "grab the knife"
 metadata/_custom_type_script = "uid://dvvn8o370cbf2"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Current Line/reached_area" unique_id=252240756]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Current Line/reach the telephone line" unique_id=252240756]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.554207, 2.1081543, -13.992954)
 shape = SubResource("CylinderShape3D_yxilm")
 
@@ -398,7 +399,7 @@ omni_range = 973.854
 [node name="Room" parent="." unique_id=883977336 instance=ExtResource("1_krot7")]
 
 [node name="knife" type="CSGBox3D" parent="." unique_id=1511696525 groups=["interactable"]]
-transform = Transform3D(0.6620709, 0, -0.74944127, 0, 1, 0, 0.74944127, 0, 0.6620709, 15.558702, 2.9119415, -15.226196)
+transform = Transform3D(0.6620709, 0, -0.74944127, 0, 1, 0, 0.74944127, 0, 0.6620709, 5.8337746, 0.32412243, -19.172606)
 size = Vector3(1.5227051, 0.37097168, 0.61279297)
 script = ExtResource("2_u4wd2")
 interact_text = "pickup knife"

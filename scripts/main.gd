@@ -42,6 +42,13 @@ func exit_game() -> void:
 #region main_situations
 func _special_objectives(_name: String) -> void:
 	match _name:
+		"reach the telephone line":
+			print("yeeeeeeeeeeeeeeeeeee!")
+			var animation_player: AnimationPlayer = get_node_or_null("GameViewport/SubViewport/GameEnviroment/LevelHolder/Home/AnimationPlayer")
+			animation_player.play("cut the wire")
+			await animation_player.animation_finished
+			await get_tree().create_timer(1).timeout
+			GameManager.request_objective_completed.emit("cut the telephone line")
 		"stab":
 			GameManager.can_move = false
 			await(get_tree().create_timer(11).timeout)
