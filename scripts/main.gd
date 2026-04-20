@@ -44,6 +44,8 @@ func _special_objectives(_name: String) -> void:
 	match _name:
 		"reach the telephone line":
 			print("yeeeeeeeeeeeeeeeeeee!")
+			var knife: Node3D = get_node_or_null("GameViewport/SubViewport/GameEnviroment/LevelHolder/Home/knife")
+			knife.show()
 			var animation_player: AnimationPlayer = get_node_or_null("GameViewport/SubViewport/GameEnviroment/LevelHolder/Home/AnimationPlayer")
 			animation_player.play("cut the wire")
 			await animation_player.animation_finished
