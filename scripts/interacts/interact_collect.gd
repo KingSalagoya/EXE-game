@@ -2,6 +2,7 @@ extends Node
 
 @export var interact_text = "pickup wood"
 @export var objective_name = "collect wood"
+@export var delete: bool = true
 
 var interacted: bool = false
 
@@ -30,4 +31,7 @@ func _objective_collected(_name: String) -> void:
 			"pick walkie-talkie":
 				GameManager.inventory.walkie_talkie += 1
 		print(GameManager.inventory)
-		queue_free()
+		if delete:
+			queue_free()
+		else:
+			self.visible = false
