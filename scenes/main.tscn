@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpakvn1j64v86" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c8i1q1xahaol6" path="res://scenes/player.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" path="res://scenes/levels/home.tscn" id="3_choun"]
+[ext_resource type="PackedScene" uid="uid://dbef7ovwfqemw" path="res://scenes/levels/home.tscn" id="3_choun"]
 [ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="4_85g3d"]
 [ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://rvtqbuwa5w53" path="res://scripts/user_interface.gd" id="4_tefeu"]
@@ -716,13 +716,13 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.6862745, 0.16924527, 0.16924533
 gradient = SubResource("Gradient_o6xl0")
 width = 1920
 height = 535
+fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o6xl0"]
 gradient = SubResource("Gradient_o6xl0")
 width = 1920
 height = 535
-fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
 [sub_resource type="Animation" id="Animation_tipki"]

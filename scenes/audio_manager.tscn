@@ -40,8 +40,8 @@ stream_0/stream = ExtResource("6_02gw7")
 [node name="AudioManager" type="Node" unique_id=382790275 node_paths=PackedStringArray("music_clips", "one_shots")]
 process_mode = 3
 script = ExtResource("1_8qd8g")
-music_clips = NodePath("Clips")
-one_shots = NodePath("One Shots")
+music_clips = NodePath("MusicClips")
+one_shots = NodePath("OneShots")
 audio_one_shot_scene = ExtResource("2_02gw7")
 audio_one_shot_clips = Dictionary[String, AudioStream]({
 "door close": SubResource("AudioStreamRandomizer_if78k"),
@@ -52,6 +52,6 @@ audio_one_shot_clips = Dictionary[String, AudioStream]({
 "yawn": ExtResource("10_cuol6")
 })
 
-[node name="Clips" type="Node" parent="." unique_id=1411344535]
+[node name="MusicClips" type="Node" parent="." unique_id=1411344535]
 
-[node name="One Shots" type="Node" parent="." unique_id=70827441]
+[node name="OneShots" type="Node" parent="." unique_id=70827441]
