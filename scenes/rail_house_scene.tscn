@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bt5atkfjohash"]
+
+[ext_resource type="PackedScene" uid="uid://dlk4a3v06w2cj" path="res://assets/models/rail-house.fbx" id="1_wiq44"]
+[ext_resource type="ArrayMesh" uid="uid://c58kdcb6oa3hj" path="res://assets/models/edited/flower_pot_large.res" id="2_668kv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4arla"]
+albedo_color = Color(0.2819191, 0.28191912, 0.28191912, 1)
+
+[node name="RailHouseScene" unique_id=1957032565 instance=ExtResource("1_wiq44")]
+
+[node name="electricity_box" parent="." index="0" unique_id=147165527]
+material_override = SubResource("StandardMaterial3D_4arla")
+
+[node name="flowerpot" parent="." index="1" unique_id=367260622]
+material_override = SubResource("StandardMaterial3D_4arla")
+
+[node name="flowerpot3" type="MeshInstance3D" parent="." index="2" unique_id=1783415805]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 9.156672, 0, 6.1580405)
+material_override = SubResource("StandardMaterial3D_4arla")
+mesh = ExtResource("2_668kv")
+
+[node name="flowerpot2" parent="." index="3" unique_id=170814672]
+material_override = SubResource("StandardMaterial3D_4arla")
+
+[node name="ground" parent="." index="4" unique_id=1711169092]
+material_override = SubResource("StandardMaterial3D_4arla")
+
+[node name="house" parent="." index="5" unique_id=318557817]
+material_override = SubResource("StandardMaterial3D_4arla")
+
+[node name="roof" parent="." index="6" unique_id=1418880833]
+material_override = SubResource("StandardMaterial3D_4arla")
+
+[node name="roof2" parent="." index="7" unique_id=1107676007]
+material_override = SubResource("StandardMaterial3D_4arla")
+
+[node name="telephone towers" parent="." index="8" unique_id=368155070]
+material_override = SubResource("StandardMaterial3D_4arla")
+
+[node name="telephone towers_001" parent="." index="9" unique_id=439249690]
+material_override = SubResource("StandardMaterial3D_4arla")
+
+[node name="wires" parent="." index="10" unique_id=1710953715]
+material_override = SubResource("StandardMaterial3D_4arla")
+
+[node name="wires2" parent="." index="11" unique_id=760285397]
+material_override = SubResource("StandardMaterial3D_4arla")

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgml8y0hppsfo"
-path="res://.godot/imported/new_world_map.glb-77e7d2cb9cfc5562bfcb1b9c1a6947ce.scn"
+uid="uid://bxb1aafw2pkix"
+path="res://.godot/imported/new_world_map.fbx-bad9f42bdd6a49253aabfe9937bf18b5.scn"
 
 [deps]
 
-source_file="res://assets/models/new_world_map.glb"
-dest_files=["res://.godot/imported/new_world_map.glb-77e7d2cb9cfc5562bfcb1b9c1a6947ce.scn"]
+source_file="res://assets/models/new_world_map.fbx"
+dest_files=["res://.godot/imported/new_world_map.fbx-bad9f42bdd6a49253aabfe9937bf18b5.scn"]
 
 [params]
 
@@ -30,25 +30,27 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 materials/extract=0
-materials/extract_format=1
-materials/extract_path="res://assets/models"
+materials/extract_format=0
+materials/extract_path=""
 _subresources={
 "meshes": {
-"new_world_map_Landscape_001": {
+"Landscape_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/new_world_map_Landscape_001.res",
-"save_to_file/path": "uid://biyo5rq15vefl"
+"save_to_file/fallback_path": "res://assets/models/edited/new_map.res",
+"save_to_file/path": "uid://dyvh20cm1juys"
 }
 }
 }
-gltf/naming_version=2
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
