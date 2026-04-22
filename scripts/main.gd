@@ -20,6 +20,7 @@ const room_one_dialogue: DialogueResource = preload("res://dialogue/room#1.dialo
 
 func _enter_tree() -> void:
 	GameManager.handle_exit.connect(exit_game)
+	GameManager.recieve_spawn_point.connect(set_spawn_point)
 	GameManager.handle_dialogue.connect(_handle_dialogue)
 	GameManager.objective_completed.connect(_special_objectives)
 	GameManager.change_scene.connect(_change_level)
@@ -29,6 +30,7 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	%UserInterface.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	GameManager.request_spawn_point.emit()
 	blink_anim.play("blink")
 
 func _process(_delta: float) -> void:
@@ -54,11 +56,9 @@ func _special_objectives(_name: String) -> void:
 		"enter the house":
 			_change_level(ROOM_BEGINNING)
 			# Put Y as 73 on the final build
-			%Player.global_position = Vector3(1.329, 0.079, -15.01)
 		"stab":
 			GameManager.can_move = false
 			await(get_tree().create_timer(11).timeout)
-			%Player.global_position = Vector3(-1.08, 0.914, -1.83)
 			_change_level(ROOM_DREAM)
 			wake_up()
 		"pick walkie-talkie":
@@ -120,7 +120,7 @@ func _change_level(new_scene: PackedScene) -> void:
 	prev_level.queue_free()
 	var new_level = new_scene.instantiate()
 	level_holder.add_child(new_level)
-	%Player.global_position = Vector3.ZERO
+	GameManager.request_spawn_point.emit()
 
 func _play_cinamatic(anim_name: String) -> void:
 	if cinamatics_player.has_animation(anim_name):
@@ -130,4 +130,11 @@ func _handle_dialogue(resourse, title):
 	dialogue_balloon.dialogue_resource = resourse 
 	dialogue_balloon.start_from_title = title
 	dialogue_balloon.start()
+
+func set_spawn_point(_position: Vector3, _rotation: Vector3) -> void:
+	if _position: %Player.global_position = _position
+	if _rotation:
+		#%Player/CameraHolder/MainCamera.global_rotation.y = _rotation.y
+		%Player/CameraHolder.global_rotation.y = _rotation.y
+
 #endregion

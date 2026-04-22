@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ccpiiqvau8ym2" path="res://scenes/levels/base_room.tscn" id="1_ajufy"]
 [ext_resource type="Script" uid="uid://dvvn8o370cbf2" path="res://scripts/interacts/special_area.gd" id="1_ukwrm"]
+[ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="3_eyqxf"]
 [ext_resource type="Script" uid="uid://dal4jm8np30kc" path="res://scripts/interacts/interact_cinamatic.gd" id="3_fknfx"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8j031"]
@@ -35,6 +36,9 @@ metadata/_custom_type_script = "uid://dvvn8o370cbf2"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpecialAreas/stab" unique_id=1087130068]
 transform = Transform3D(0.99998003, 0, 0, 0, 1, 0, 0, 0, 0.99998003, -1.5390425, 0.38305593, 1.566754)
 shape = SubResource("CylinderShape3D_8j031")
+
+[node name="SpawnPoint" parent="SpecialAreas" unique_id=524540920 instance=ExtResource("3_eyqxf")]
+transform = Transform3D(-0.9999999, 0, 8.742276e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -0.99999976, 1.6499968, -0.001240015, -13.584056)
 
 [node name="Rail" type="Node3D" parent="." unique_id=125284050 groups=["interactable"]]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.16142976, 0, 2.1101809)

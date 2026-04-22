@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bcf3qla672j7s"]
+
+[ext_resource type="Script" uid="uid://c1goc4w5yva3y" path="res://scripts/spawn_point.gd" id="1_q3k3w"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cchwu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8768l"]
+
+[node name="SpawnPoint" type="Marker3D" unique_id=524540920]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999998, 0, 0, 0)
+script = ExtResource("1_q3k3w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=637210383]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_cchwu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1668592948]
+transform = Transform3D(0.61827666, 0, 0, 0, 0.40240026, 0, 0, 0, 0.9999997, 0, 1.4709053, 0.17420143)
+mesh = SubResource("BoxMesh_8768l")
