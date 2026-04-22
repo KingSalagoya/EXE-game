@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cwnsrsxhmbg6v"]
+
+[ext_resource type="PackedScene" uid="uid://ccpiiqvau8ym2" path="res://scenes/levels/base_room.tscn" id="1_xj7gt"]
+
+[node name="RoomDream" type="Node3D" unique_id=1284998890]
+
+[node name="BaseRoom" parent="." unique_id=1582295487 instance=ExtResource("1_xj7gt")]

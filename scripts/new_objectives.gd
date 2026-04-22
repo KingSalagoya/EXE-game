@@ -6,7 +6,6 @@ extends Node
 	#"cut the telephone line": 0,
 	"enter the house": 0,
 	"open door": 1,
-	"reach the person": 0,
 	"stab": 0,
 	"pick walkie-talkie": 0,
 	"open drawer": 0,

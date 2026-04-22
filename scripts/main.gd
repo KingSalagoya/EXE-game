@@ -10,9 +10,10 @@ extends Node
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
 
 
-const level_test: PackedScene = preload("res://scenes/levels/level_test.tscn")
-const level_zero: PackedScene = preload("res://scenes/levels/room.tscn")
-const level_one: PackedScene = preload("res://scenes/levels/room2.tscn")
+const ROOM_BEGINNING = preload("res://scenes/levels/room_beginning.tscn")
+const ROOM_DREAM = preload("res://scenes/levels/room_dream.tscn")
+const LEVEL_TEST = preload("res://scenes/levels/level_test.tscn")
+
 
 
 const room_one_dialogue: DialogueResource = preload("res://dialogue/room#1.dialogue")
@@ -43,7 +44,6 @@ func exit_game() -> void:
 func _special_objectives(_name: String) -> void:
 	match _name:
 		"reach the telephone line":
-			print("yeeeeeeeeeeeeeeeeeee!")
 #			var knife: Node3D = get_node_or_null("GameViewport/SubViewport/GameEnviroment/LevelHolder/Home/knife")
 #			knife.show()
 #			var animation_player: AnimationPlayer = get_node_or_null("GameViewport/SubViewport/GameEnviroment/LevelHolder/Home/AnimationPlayer")
@@ -52,13 +52,14 @@ func _special_objectives(_name: String) -> void:
 			await get_tree().create_timer(1).timeout
 			GameManager.request_objective_completed.emit("cut the telephone line")
 		"enter the house":
-			_change_level(level_zero)
-			%Player.global_position = Vector3(1.329, 0.079, -83.01)
+			_change_level(ROOM_BEGINNING)
+			# Put Y as 73 on the final build
+			%Player.global_position = Vector3(1.329, 0.079, -15.01)
 		"stab":
 			GameManager.can_move = false
 			await(get_tree().create_timer(11).timeout)
 			%Player.global_position = Vector3(-1.08, 0.914, -1.83)
-			_change_level(level_one)
+			_change_level(ROOM_DREAM)
 			wake_up()
 		"pick walkie-talkie":
 			GameManager.can_move = false
@@ -80,7 +81,7 @@ func _special_objectives(_name: String) -> void:
 			blink_anim.play_backwards("blink")
 			await get_tree().create_timer(3).timeout
 			cinamatics_player.play("RESET")
-			_change_level(level_test)
+			_change_level(LEVEL_TEST)
 			GameManager.can_move = true
 			blink_anim.play("blink")
 			GameManager.update_player_count.emit(1)
