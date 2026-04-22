@@ -51,6 +51,9 @@ func _special_objectives(_name: String) -> void:
 #			await animation_player.animation_finished
 			await get_tree().create_timer(1).timeout
 			GameManager.request_objective_completed.emit("cut the telephone line")
+		"enter the house":
+			_change_level(level_zero)
+			%Player.global_position = Vector3(1.329, 0.079, -83.01)
 		"stab":
 			GameManager.can_move = false
 			await(get_tree().create_timer(11).timeout)
