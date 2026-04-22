@@ -1,7 +1,30 @@
 [gd_scene format=3 uid="uid://cwnsrsxhmbg6v"]
 
 [ext_resource type="PackedScene" uid="uid://ccpiiqvau8ym2" path="res://scenes/levels/base_room.tscn" id="1_xj7gt"]
+[ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="2_f8fxg"]
+[ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="3_m0ox0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f8fxg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f8fxg"]
 
 [node name="RoomDream" type="Node3D" unique_id=1284998890]
 
 [node name="BaseRoom" parent="." unique_id=1582295487 instance=ExtResource("1_xj7gt")]
+
+[node name="SpawnPoint" parent="." unique_id=524540920 instance=ExtResource("2_f8fxg")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999998, -0.6228658, 1.7881393e-07, -0.2916059)
+
+[node name="Items" type="Node3D" parent="." unique_id=2120466619]
+
+[node name="WalkieTalkie" type="CSGMesh3D" parent="Items" unique_id=361871462 groups=["interactable"]]
+transform = Transform3D(0.37606707, 0, -0.12669271, 0, 0.20999998, 0, 0.26490295, 0, 0.17985813, -1.9925256, 1.4072434, 0)
+mesh = SubResource("BoxMesh_f8fxg")
+script = ExtResource("3_m0ox0")
+interact_text = "pickup walkie talkie"
+objective_name = "pick walkie-talkie"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Items/WalkieTalkie" unique_id=353312881]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Items/WalkieTalkie/StaticBody3D" unique_id=1777152071]
+shape = SubResource("BoxShape3D_f8fxg")

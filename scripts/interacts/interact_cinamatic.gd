@@ -9,4 +9,4 @@ extends Node
 func interact() -> void:
 	interact_text = " "
 	GameManager.request_objective_completed.emit(OBJECTIVE)
-	GameManager.play_cinamatic.emit("stab")
+	GameManager.play_cinamatic.emit(CINAMATIC_NAME)
