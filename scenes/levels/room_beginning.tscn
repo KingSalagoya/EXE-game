@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bwmlhoyua1l17"]
+
+[ext_resource type="PackedScene" uid="uid://ccpiiqvau8ym2" path="res://scenes/levels/base_room.tscn" id="1_ajufy"]
+[ext_resource type="Script" uid="uid://dvvn8o370cbf2" path="res://scripts/interacts/special_area.gd" id="1_ukwrm"]
+[ext_resource type="Script" uid="uid://dal4jm8np30kc" path="res://scripts/interacts/interact_cinamatic.gd" id="3_fknfx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8j031"]
+height = 4.0097046
+radius = 1.7329102
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eyqxf"]
+height = 3.1032715
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mdng0"]
+height = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdulx"]
+albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ri00i"]
+
+[node name="RoomBeginning" type="Node3D" unique_id=1918707169]
+
+[node name="BaseRoom" parent="." unique_id=1582295487 instance=ExtResource("1_ajufy")]
+
+[node name="SpecialAreas" type="Node3D" parent="." unique_id=419169634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0029078126, 0, 2.2223396)
+
+[node name="stab" type="Area3D" parent="SpecialAreas" unique_id=1140919985]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0, 1.1624005, 2.1586962)
+script = ExtResource("1_ukwrm")
+area_id = "stab"
+metadata/_custom_type_script = "uid://dvvn8o370cbf2"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpecialAreas/stab" unique_id=1087130068]
+transform = Transform3D(0.99998003, 0, 0, 0, 1, 0, 0, 0, 0.99998003, -1.5390425, 0.38305593, 1.566754)
+shape = SubResource("CylinderShape3D_8j031")
+
+[node name="Rail" type="Node3D" parent="." unique_id=125284050 groups=["interactable"]]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.16142976, 0, 2.1101809)
+script = ExtResource("3_fknfx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rail" unique_id=1931513217]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rail/StaticBody3D" unique_id=217760889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.455457, 0)
+shape = SubResource("CapsuleShape3D_eyqxf")
+
+[node name="Graphics" type="MeshInstance3D" parent="Rail" unique_id=1360528268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("CapsuleMesh_mdng0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rail/Graphics" unique_id=1999477979]
+transform = Transform3D(0.6, 0, 0, 0, 0.2, 0, 0, 0, 0.78220695, 0, 1.1012625, -0.16277902)
+material_override = SubResource("StandardMaterial3D_pdulx")
+mesh = SubResource("BoxMesh_ri00i")
