@@ -36,6 +36,7 @@ extends Node
 @warning_ignore("unused_signal") signal request_spawn_point()
 @warning_ignore("unused_signal") signal recieve_spawn_point(_position: Vector3, _rotation: Vector3)
 
+var can_toggle_chat: bool = false
 var can_move: bool = true
 var can_interact: bool = true
 var current_objective: String = ""

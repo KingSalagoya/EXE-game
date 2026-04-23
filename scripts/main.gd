@@ -32,6 +32,8 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GameManager.request_spawn_point.emit()
 	blink_anim.play("blink")
+	
+	ui.set_chat_mode("off")
 
 func _process(_delta: float) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -82,6 +84,8 @@ func _special_objectives(_name: String) -> void:
 			await get_tree().create_timer(3).timeout
 			cinamatics_player.play("RESET")
 			_change_level(LEVEL_TEST)
+			ui.set_chat_mode("on")
+			GameManager.can_toggle_chat = true
 			GameManager.can_move = true
 			blink_anim.play("blink")
 			GameManager.update_player_count.emit(1)

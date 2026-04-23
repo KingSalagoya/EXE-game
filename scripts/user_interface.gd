@@ -1,6 +1,9 @@
 extends Control
 
 @onready var chat_ui: Control = $MarginContainer/ChatUI
+@onready var msg_box: LineEdit = $"MarginContainer/ChatUI/VBoxContainer/msg box"
+@onready var chat_history: TextEdit = $"MarginContainer/ChatUI/VBoxContainer/chat history"
+
 @onready var interact_label: Label = $MarginContainer/HUD/InteractLabel
 @onready var objective_label: Label = $MarginContainer/HUD/ObjectiveLabel
 @onready var achievement_label: Label = $MarginContainer/HUD/AchievementLabel
@@ -15,7 +18,8 @@ func _enter_tree() -> void:
 	GameManager.update_player_count.connect(update_player_count_label)
 
 func _ready() -> void:
-	toggle_chat_display()
+	#set_chat_mode("off")
+	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Toggle Chat Visibility"): toggle_chat_display()
@@ -53,11 +57,25 @@ func update_objective_label() -> void:
 		objective_label.text = stored_objective_label
 
 func toggle_chat_display() -> void:
-	if not chat_ui.visible:
-		chat_ui.show()
-		GameManager.can_move = false
-		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-	else:
-		chat_ui.hide()
-		GameManager.can_move = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if GameManager.can_toggle_chat:
+		if not msg_box.visible:
+			msg_box.show()
+			chat_history.modulate.a = 1.0
+			GameManager.can_move = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+		else:
+			msg_box.hide()
+			chat_history.modulate.a = 0.78
+			GameManager.can_move = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func set_chat_mode(state: String) -> void:
+	match state:
+		"on":
+			chat_ui.show()
+			msg_box.hide()
+			chat_history.modulate.a = 0.78
+		"off":
+			chat_ui.hide()
+			msg_box.show()
+			chat_history.modulate.a = 1.0

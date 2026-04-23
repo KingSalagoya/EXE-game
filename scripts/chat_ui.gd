@@ -4,7 +4,7 @@ extends Control
 @onready var chat_history: TextEdit = $"VBoxContainer/chat history"
 
 var msg: String
-var usrnm: String
+var usrnm: String = "Rail"
 
 signal msg_sent
 
@@ -16,8 +16,11 @@ func _process(_delta: float) -> void:
 		send_msg()
 		msg_sent.emit(msg_box.text)
 
-func send_msg() -> void:
-	msg = usrnm + ": " + str(msg_box.text)
+func send_msg(is_user: bool = true) -> void:
+	if is_user:
+		msg = usrnm + ": " + str(msg_box.text)
+	else:
+		msg = str(msg_box.text)
 	chat_history.text += msg + "\n"
 	chat_history.set_caret_line(chat_history.get_line_count() - 1)
 	msg_box.text = ""

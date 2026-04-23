@@ -35,10 +35,14 @@ theme_override_constants/separation = 10
 alignment = 2
 
 [node name="chat history" type="TextEdit" parent="VBoxContainer" unique_id=413722450]
+modulate = Color(1, 1, 1, 0.654902)
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_mjhe2")
 theme_override_font_sizes/font_size = 30
+text = "Welcome to XEON KNIGHT!
+
+"
 editable = false
 wrap_mode = 1
 
