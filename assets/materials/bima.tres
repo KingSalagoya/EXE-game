@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cdnomgep3i73n"]
+
+[ext_resource type="Texture2D" uid="uid://dokl2lyuwmklh" path="res://assets/textures/textures/tile1.jpg" id="1_wk2fp"]
+
+[resource]
+resource_name = "bima "
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_wk2fp")

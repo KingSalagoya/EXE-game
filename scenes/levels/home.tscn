@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="2_u4wd2"]
 [ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="2_uhids"]
+[ext_resource type="ArrayMesh" uid="uid://bua8xirydq26y" path="res://assets/models/edited/right_window.res" id="4_58gng"]
 [ext_resource type="PackedScene" uid="uid://bt5atkfjohash" path="res://scenes/rail_house_scene.tscn" id="5_snitx"]
-[ext_resource type="Texture2D" uid="uid://bqm85c4e2qly6" path="res://assets/models/house.fbm/Seamless-Wood-Texture-3-1024x768.jpg" id="6_cchwu"]
+[ext_resource type="Material" uid="uid://b6dafg0f2schg" path="res://assets/materials/orange_wood.tres" id="6_58gng"]
+[ext_resource type="ArrayMesh" uid="uid://h4yiv88t1hy5" path="res://assets/models/edited/bed.res" id="6_lqded"]
 [ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="6_yskkl"]
-[ext_resource type="ArrayMesh" uid="uid://brjc37kv67h57" path="res://assets/models/edited/drawer_slice.res" id="7_8768l"]
-[ext_resource type="ArrayMesh" uid="uid://rnm0r8kuo6xd" path="res://assets/models/edited/vase.res" id="9_58gng"]
+[ext_resource type="ArrayMesh" uid="uid://brjc37kv67h57" path="res://assets/models/edited/door.res" id="7_8768l"]
+[ext_resource type="ArrayMesh" uid="uid://rnm0r8kuo6xd" path="res://assets/models/edited/window_frame.res" id="9_58gng"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="9_8768l"]
-[ext_resource type="ArrayMesh" uid="uid://33xcmsfm5lat" path="res://assets/models/edited/window_frame.res" id="10_lqded"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpn4t"]
 resource_name = "Material.027"
@@ -16,10 +17,13 @@ vertex_color_use_as_albedo = true
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 emission_enabled = true
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8768l"]
+load_path = "res://.godot/imported/Seamless-Wood-Texture-3-1024x768.jpg-b1d51958d789b0f0c2c2a5879db6688b.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_285tx"]
 resource_name = "Material.030"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("6_cchwu")
+albedo_texture = SubResource("CompressedTexture2D_8768l")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_abt8k"]
@@ -83,26 +87,6 @@ shadow_mesh = SubResource("ArrayMesh_abt8k")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ff52r"]
 size = Vector3(0.016520394, 0.00201374, 0.015460307)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvvpu"]
-resource_name = "Material.020"
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("6_cchwu")
-emission_enabled = true
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_51tve"]
-_surfaces = [{
-"aabb": AABB(-0.010468676, -0.0008861947, -0.016493466, 0.02093735, 0.0017723787, 0.033923678),
-"format": 34359742465,
-"index_count": 96,
-"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABQAEAAAABAAGAAEAAQAGAAcABgAEAAgACAAEAAUACAAJAAYABwAGAAkACQAIAAMAAwACAAkAAwAIAAoABQAKAAgACgAFAAcACQALAAcACwAJAAIABwALAAoACgAMAAMADAAKAAsADQAAAAMAAwAMAA0AAAANAAUACwAOAAwADQAMAA4AAgAOAAsABQANAA8ADgAPAA0ADwAOAAIADwAHAAUAAgABAA8ABwAPAAEA"),
-"name": "Material.020",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("HQkQPB8/W7psHHw8HQkQPGY+WzpsHHw8IAkQvGY+WzpsHHw8IAkQvB8/W7psHHw8HQkQPB8/W7q2uoW8zIQrPIVPaLpOHYe8HQkQPGY+Wzq2uoW8zIQrPM1OaDpOHYe8IAkQvB8/W7q2uoW8IAkQvGY+Wzq2uoW8z4QrvIVPaLpOHYe8z4QrvM1OaDpOHYe8z4QrvIVPaLrPyY48zIQrPIVPaLrPyY48z4QrvM1OaDrPyY48zIQrPM1OaDrPyY48")
-}]
-blend_shape_mode = 0
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_58gng"]
 resource_name = "Plane_009"
 _surfaces = [{
@@ -111,7 +95,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 96,
 "index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwA"),
-"material": SubResource("StandardMaterial3D_fvvpu"),
+"material": ExtResource("6_58gng"),
 "name": "Material.020",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -119,7 +103,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("HQkQPB8/W7psHHw8HQkQPGY+WzpsHHw8IAkQvGY+WzpsHHw8IAkQvB8/W7psHHw8IAkQvB8/W7psHHw8IAkQvGY+WzpsHHw8IAkQvGY+Wzq2uoW8IAkQvB8/W7q2uoW8z4QrvIVPaLrPyY48z4QrvIVPaLpOHYe8z4QrvM1OaDpOHYe8z4QrvM1OaDrPyY48zIQrPIVPaLpOHYe8zIQrPIVPaLrPyY48zIQrPM1OaDrPyY48zIQrPM1OaDpOHYe8zIQrPIVPaLrPyY48z4QrvIVPaLrPyY48z4QrvM1OaDrPyY48zIQrPM1OaDrPyY48z4QrvIVPaLpOHYe8zIQrPIVPaLpOHYe8zIQrPM1OaDpOHYe8z4QrvM1OaDpOHYe8zIQrPM1OaDpOHYe8zIQrPM1OaDrPyY48HQkQPGY+WzpsHHw8HQkQPGY+Wzq2uoW8zIQrPM1OaDpOHYe8HQkQPGY+Wzq2uoW8IAkQvGY+Wzq2uoW8z4QrvM1OaDpOHYe8z4QrvM1OaDpOHYe8IAkQvGY+Wzq2uoW8IAkQvGY+WzpsHHw8z4QrvM1OaDrPyY48zIQrPM1OaDrPyY48z4QrvM1OaDrPyY48IAkQvGY+WzpsHHw8HQkQPGY+WzpsHHw8zIQrPIVPaLpOHYe8HQkQPB8/W7q2uoW8HQkQPB8/W7psHHw8zIQrPIVPaLrPyY48zIQrPIVPaLpOHYe8z4QrvIVPaLpOHYe8IAkQvB8/W7q2uoW8HQkQPB8/W7q2uoW8z4QrvIVPaLpOHYe8z4QrvIVPaLrPyY48IAkQvB8/W7psHHw8IAkQvB8/W7q2uoW8zIQrPIVPaLrPyY48HQkQPB8/W7psHHw8IAkQvB8/W7psHHw8z4QrvIVPaLrPyY48HQkQPB8/W7q2uoW8HQkQPGY+Wzq2uoW8HQkQPGY+WzpsHHw8HQkQPB8/W7psHHw8IAkQvB8/W7q2uoW8IAkQvGY+Wzq2uoW8HQkQPGY+Wzq2uoW8HQkQPB8/W7q2uoW8//////9//////////3//////////f/////////9///////9//38AgP///3//fwCA////f/9/AID///9//38AgAAA/3//f///AAD/f/9///8AAP9//3///wAA/3//f///////f/9/AID///9//38AgP///3//fwCA////f/9/AID/f/9//3////9//3//f////3//f/9/////f/9//3//////////f/////////9//////////3//////////f///TnxN/BH818FOfE38EfzXwU58TfwR/NfBTnxN/BH818H/f9vi////v/9/2+L///+//3/b4v///7//f9vi////v7CDTfxP/Ai+sINN/E/8CL6wg038T/wIvrCDTfxP/Ai+C4P//////78Lg///////vwuD//////+/C4P//////79OfLEDrwP1wU58sQOvA/XBTnyxA68D9cFOfLEDrwP1wf9/Ix0AAP+//38jHQAA/7//fyMdAAD/v/9/Ix0AAP+/sIOxA+0DJ76wg7ED7QMnvrCDsQPtAye+sIOxA+0DJ74LgwAAAAD/vwuDAAAAAP+/C4MAAAAA/78LgwAAAAD/vwAA/3//f///AAD/f/9///8AAP9//3///wAA/3//f////3//f/9/////f/9//3////9//3//f////3//f/9///8=")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_51tve")
+shadow_mesh = ExtResource("6_lqded")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lqded"]
 size = Vector3(0.022951394, 0.0060961004, 0.031712018)
@@ -225,7 +209,7 @@ mesh = SubResource("ArrayMesh_ssoy3")
 
 [node name="window-right" type="MeshInstance3D" parent="RailHouseScene/window-frame" unique_id=1471866969]
 transform = Transform3D(0.28031486, 0.9599086, 2.2886005e-07, -0.9599086, 0.28031483, -1.7158635e-07, -2.2885988e-07, -1.7158641e-07, 1.0000007, -0.008133123, 8.5003674e-05, 0)
-mesh = ExtResource("10_lqded")
+mesh = ExtResource("4_58gng")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RailHouseScene/window-frame" unique_id=812769920]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.032657e-09, 0)
