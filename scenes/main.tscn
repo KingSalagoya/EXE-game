@@ -870,6 +870,7 @@ environment = SubResource("Environment_yqjtg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameViewport/SubViewport/GameEnviroment/WorldEnvironment" unique_id=1234819094]
 transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.31879273, -0.09299916, 0.94325095, -0.38518992, 0.8965774, 0.21858096, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="Player" parent="GameViewport/SubViewport/GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
