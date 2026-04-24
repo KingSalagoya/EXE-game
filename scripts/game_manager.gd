@@ -42,6 +42,13 @@ var can_interact: bool = true
 var current_objective: String = ""
 var current_objective_clone: String = ""
 
+#region npc_vars
+
+var has_spoke: bool = false
+var needed_woods: int = 3
+
+#endregion
+
 var torch: bool = false
 
 var encounterd_objectives: Array[String] = []
