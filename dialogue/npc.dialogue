@@ -5,7 +5,9 @@ if not GameManager.has_spoke:
 	Salagoya: Just kidding,nvm. Lemme offer you the first official quest.
 	Salagoya: Go grab some wood and I will offer you a nice nice weapon in exchange...
 	
+	set GameManager.has_spoke = true
 	do GameManager.unlock_achievement.emit("forest")
+	do GameManager.request_objective_completed.emit("speak with wizard 1")
 
 else:
 	set GameManager.needed_woods = 3 - GameManager.inventory.wood
@@ -13,6 +15,9 @@ else:
 	if GameManager.needed_woods <= 0:
 		Salagoya: Amazing! You got all the wood. Here is that weapon I promised!
 		#do GameManager.give_item("nice_weapon")
+		Salagoya: Go, have fun killing enemies...
+		do GameManager.unlock_achievement.emit("graveyard")
+		
 	else:
 		% Salagoya: You have {{GameManager.inventory.wood}} wood, but that's not enough!
 		% Salagoya: You still need {{GameManager.needed_woods}} [if GameManager.needed_woods == 1]more piece[else]more pieces[/if] of wood. Get moving!

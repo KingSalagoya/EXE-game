@@ -1,7 +1,7 @@
 extends Node
 
 @export var LIST_OF_OBJECTIVES: Dictionary[String, int] = {
-	#"grab the knife": 0,
+	"grab the knife": 0,
 	#"reach the telephone line": 0,
 	"cut the telephone line": 0,
 	"enter the house": 0,
@@ -11,9 +11,12 @@ extends Node
 	"open drawer": 0,
 	"grab dvd": 0,
 	"insert dvd": 0,
+	"speak with wizard 1": 0,
 	"collect wood": 3,
+	"speak with wizard 2": 0,
 	"kill enemies": 6,
-	"kill boss enemy": 0
+	#"kill boss enemy": 0,
+	"speak with wizard 3": 0
 }
 
 var objective_names_list: Array[String] # The 0 Objective is the current objective here
