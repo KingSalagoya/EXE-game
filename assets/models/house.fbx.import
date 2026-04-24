@@ -215,7 +215,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/carpet.res",
+"save_to_file/fallback_path": "res://assets/models/edited/chair.res",
 "save_to_file/path": "uid://bb5m60kvx6ei4"
 },
 "Plane_008": {
@@ -224,7 +224,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/chair.res",
+"save_to_file/fallback_path": "res://assets/models/edited/drawer.res",
 "save_to_file/path": "uid://c8vv1qq10aao3"
 },
 "Plane_011": {
@@ -233,7 +233,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/drawer.res",
+"save_to_file/fallback_path": "res://assets/models/edited/drawer_slice.res",
 "save_to_file/path": "uid://dnmhnc6yo31le"
 },
 "Plane_024": {
@@ -242,7 +242,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/drawer_slice.res",
+"save_to_file/fallback_path": "res://assets/models/edited/door.res",
 "save_to_file/path": "uid://brjc37kv67h57"
 },
 "Plane_027": {
@@ -251,7 +251,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/door.res",
+"save_to_file/fallback_path": "res://assets/models/edited/cupboard.res",
 "save_to_file/path": "uid://da6pqq7n6b1ox"
 },
 "Plane_028": {
@@ -260,7 +260,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/door_frame.res",
+"save_to_file/fallback_path": "res://assets/models/edited/keyboard.res",
 "save_to_file/path": "uid://cc0kfc7k44ink"
 },
 "Plane_029": {
@@ -269,7 +269,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/book_storer.res",
+"save_to_file/fallback_path": "res://assets/models/edited/mirror.res",
 "save_to_file/path": "uid://dc5hoa4mo7pg4"
 },
 "Plane_030": {
@@ -278,7 +278,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/keyboard.res",
+"save_to_file/fallback_path": "res://assets/models/edited/computer_monitor.res",
 "save_to_file/path": "uid://cbm5cdrr36sg3"
 },
 "Plane_031": {
@@ -287,7 +287,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/mirror.res",
+"save_to_file/fallback_path": "res://assets/models/edited/mouse.res",
 "save_to_file/path": "uid://bfirobvhy1dp8"
 },
 "Plane_032": {
@@ -296,7 +296,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/computer_screen.res",
+"save_to_file/fallback_path": "res://assets/models/edited/paper.res",
 "save_to_file/path": "uid://4nduufs21dhr"
 },
 "Plane_033": {
@@ -305,7 +305,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/computer_mouse.res",
+"save_to_file/fallback_path": "res://assets/models/edited/computer.res",
 "save_to_file/path": "uid://co2tueetukfyo"
 },
 "Plane_034": {
@@ -314,7 +314,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/paper1.res",
+"save_to_file/fallback_path": "res://assets/models/edited/room_rail.res",
 "save_to_file/path": "uid://b3duntpjso6xt"
 },
 "Plane_035": {
@@ -323,7 +323,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/computer.res",
+"save_to_file/fallback_path": "res://assets/models/edited/stool.res",
 "save_to_file/path": "uid://c84c6dx1co6m4"
 },
 "Plane_036": {
@@ -332,7 +332,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/room_liar.res",
+"save_to_file/fallback_path": "res://assets/models/edited/computer_desk.res",
 "save_to_file/path": "uid://duk5s18y5p6l0"
 },
 "Plane_037": {
@@ -341,7 +341,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/stool.res",
+"save_to_file/fallback_path": "res://assets/models/edited/vase2.res",
 "save_to_file/path": "uid://cwuf0kmxvd7hw"
 },
 "Plane_038": {
@@ -359,7 +359,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/vase.res",
+"save_to_file/fallback_path": "res://assets/models/edited/window_frame.res",
 "save_to_file/path": "uid://rnm0r8kuo6xd"
 },
 "Plane_040": {
