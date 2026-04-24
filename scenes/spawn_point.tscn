@@ -15,5 +15,5 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_cchwu")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1668592948]
-transform = Transform3D(0.61827666, 0, 0, 0, 0.40240026, 0, 0, 0, 0.9999997, 0, 1.4709053, 0.17420143)
+transform = Transform3D(0.61827666, 0, 0, 0, 0.40240023, 0, 0, 0, 0.99999964, 0, 1.4709052, -0.22627532)
 mesh = SubResource("BoxMesh_8768l")
