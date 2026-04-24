@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bspqeguby62my"]
+
+[ext_resource type="Texture2D" uid="uid://32xew451qovp" path="res://assets/textures/textures/metal_tile.jpg" id="1_3uu3e"]
+
+[resource]
+resource_name = "Material.003"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_3uu3e")

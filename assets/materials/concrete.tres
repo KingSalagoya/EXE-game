@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bw62bh4r2wd5j"]
+
+[ext_resource type="Texture2D" uid="uid://di1fqmf6dg0va" path="res://assets/textures/textures/concrete.jpg" id="1_4y412"]
+
+[resource]
+resource_name = "Material.009"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_4y412")

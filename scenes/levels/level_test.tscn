@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dahplsnh6awtn" path="res://scripts/lvls/level_test.gd" id="1_plvai"]
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="2_vbogn"]
 [ext_resource type="PackedScene" uid="uid://blwbxhogbdelp" path="res://scenes/enemy.tscn" id="3_d5kir"]
-[ext_resource type="ArrayMesh" uid="uid://dyvh20cm1juys" path="res://assets/models/edited/new_map.res" id="3_ycf23"]
+[ext_resource type="ArrayMesh" uid="uid://dyvh20cm1juys" path="res://assets/models/edited/old_world_map2.res" id="3_ycf23"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="6_uh3ll"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_vkcgd"]

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dq72fkyk0b74e"]
+
+[ext_resource type="Texture2D" uid="uid://cnqc778g2bjp2" path="res://assets/textures/textures/roof.jpg" id="1_agh2s"]
+
+[resource]
+resource_name = "Material.006"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_agh2s")

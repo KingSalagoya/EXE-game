@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4yp30jd4ylac"]
+
+[ext_resource type="Texture2D" uid="uid://b7gtgoqkhqxa4" path="res://assets/textures/textures/dark_wood.jpg" id="1_16cv7"]
+
+[resource]
+resource_name = "Material.025"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_16cv7")
