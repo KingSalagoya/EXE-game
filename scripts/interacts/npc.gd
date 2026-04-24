@@ -5,7 +5,6 @@ extends Node3D
 
 @export var LIST_OF_NPC_OBJECTIVES: Dictionary[String, int] = {
 	"unlock forest": 1,
-	"offer weapon": 1,
 	"unlock graveyard": 1
 }
 
@@ -21,6 +20,9 @@ var objective_amounts_list: Array[int]
 var current_objective_name: String
 var current_objective_amount: int
 var current_completed_amount: int = 0
+
+func _enter_tree() -> void:
+	GameManager.update_npc_objective.connect(_update_current_objective)
 
 func _ready() -> void:
 	interact_text = INTERACT_TEXT
@@ -68,5 +70,3 @@ func _play_dialogue(objective: String) -> void:
 			if GameManager.inventory.wood >= 3:
 				_update_current_objective()
 			GameManager.handle_dialogue.emit(NPC_Dialogue, "unlock_forest")
-			if not GameManager.has_spoke:
-				GameManager.has_spoke = true

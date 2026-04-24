@@ -10,6 +10,7 @@ extends Node
 @warning_ignore("unused_signal") signal next_objective
 @warning_ignore("unused_signal") signal wood_collected
 @warning_ignore("unused_signal") signal update_player_count(count: int)
+@warning_ignore("unused_signal") signal update_npc_objective
 
 #Labels
 @warning_ignore("unused_signal") signal update_interact_label(text: String)

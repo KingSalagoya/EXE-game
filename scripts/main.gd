@@ -73,7 +73,7 @@ func _special_objectives(_name: String) -> void:
 		"open door":
 			pass
 		"collect wood":
-			GameManager.unlock_achievement.emit("graveyard")
+			pass
 		"insert dvd":
 			GameManager.can_move = false
 			cinamatics_player.play("play_computer")
@@ -93,6 +93,7 @@ func _special_objectives(_name: String) -> void:
 		"kill enemies":
 			GameManager.spawn_boss_enemy.emit()
 			GameManager.spawn_friend.emit()
+			GameManager.update_npc_objective.emit()
 		"kill boss enemy":
 			var friend = $GameViewport/SubViewport/GameEnviroment/LevelHolder/LevelTest/Friend
 			var Player = %Player
