@@ -56,7 +56,7 @@ func _special_objectives(_name: String) -> void:
 			await get_tree().create_timer(1).timeout
 			GameManager.request_objective_completed.emit("cut the telephone line")
 		"enter the house":
-			_change_level(ROOM_BEGINNING)
+			_change_level(LEVEL_TEST)
 			# Put Y as 73 on the final build
 		"stab":
 			GameManager.can_move = false

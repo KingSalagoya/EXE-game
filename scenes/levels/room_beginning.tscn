@@ -38,7 +38,7 @@ transform = Transform3D(0.99998003, 0, 0, 0, 1, 0, 0, 0, 0.99998003, -1.5390425,
 shape = SubResource("CylinderShape3D_8j031")
 
 [node name="SpawnPoint" parent="SpecialAreas" unique_id=524540920 instance=ExtResource("3_eyqxf")]
-transform = Transform3D(-0.9999999, 0, 8.742276e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -0.99999976, 1.6499968, -0.001240015, -65.50479)
+transform = Transform3D(-0.9999999, 0, 8.742276e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -0.99999976, 1.6499968, -0.001240015, -29.007427)
 
 [node name="Rail" type="Node3D" parent="." unique_id=125284050 groups=["interactable"]]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.16142976, 0, 2.1101809)
