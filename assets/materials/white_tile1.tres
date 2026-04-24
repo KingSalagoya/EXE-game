@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bd2kk84lj5vk5"]
+
+[ext_resource type="Texture2D" uid="uid://bbxhatyjp3r44" path="res://assets/textures/textures/white_tile3.jpg" id="1_2fquh"]
+
+[resource]
+resource_name = "Material.008"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_2fquh")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://donfyhf2l272u"]
+
+[ext_resource type="Texture2D" uid="uid://l4rcexkop7ts" path="res://assets/textures/textures/dirty_wall.jpeg" id="1_7y3n2"]
+
+[resource]
+resource_name = "Material.006"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_7y3n2")

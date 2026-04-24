@@ -38,6 +38,133 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"materials": {
+"Material.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/grass.tres",
+"use_external/path": "uid://duvlql7fsgqne"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/road.tres",
+"use_external/path": "uid://cso3mctd4wdab"
+},
+"Material.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/brick_walk_area.tres",
+"use_external/path": "uid://ceysvbpdmcsye"
+},
+"Material.004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/brick.tres",
+"use_external/path": "uid://dncfg6qpbgoy2"
+},
+"Material.006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/roof.tres",
+"use_external/path": "uid://dq72fkyk0b74e"
+},
+"Material.007": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/roof.tres",
+"use_external/path": "uid://dq72fkyk0b74e"
+},
+"Material.008": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/white_tile1.tres",
+"use_external/path": "uid://bd2kk84lj5vk5"
+},
+"Material.009": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/soil.tres",
+"use_external/path": "uid://khk6xdmfgtsg"
+},
+"Material.010": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/soil.tres",
+"use_external/path": "uid://khk6xdmfgtsg"
+},
+"Material.011": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/white_tile1.tres",
+"use_external/path": "uid://bd2kk84lj5vk5"
+},
+"Material.012": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/wire.tres",
+"use_external/path": "uid://dsmqnh0aopvdi"
+},
+"Material.013": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/wire.tres",
+"use_external/path": "uid://dsmqnh0aopvdi"
+},
+"Material.014": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/white_part.tres",
+"use_external/path": "uid://bspqeguby62my"
+},
+"Material.015": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/dark_wood.tres",
+"use_external/path": "uid://c4yp30jd4ylac"
+},
+"Material.016": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/white_part.tres",
+"use_external/path": "uid://bspqeguby62my"
+},
+"Material.017": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/dark_wood.tres",
+"use_external/path": "uid://c4yp30jd4ylac"
+},
+"Material.018": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/light_grey.tres",
+"use_external/path": "uid://dgfrusgd2xyih"
+},
+"Material.019": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/light_grey.tres",
+"use_external/path": "uid://dgfrusgd2xyih"
+},
+"Material.021": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/wire.tres",
+"use_external/path": "uid://dsmqnh0aopvdi"
+},
+"Material.022": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/dark_grey.tres",
+"use_external/path": "uid://b88ynwk1yccjx"
+},
+"Material.023": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/wire.tres",
+"use_external/path": "uid://dsmqnh0aopvdi"
+},
+"Material.024": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/white_tile1.tres",
+"use_external/path": "uid://bd2kk84lj5vk5"
+},
+"Material.025": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/dark_wood.tres",
+"use_external/path": "uid://c4yp30jd4ylac"
+},
+"Material.026": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/dark_wood.tres",
+"use_external/path": "uid://c4yp30jd4ylac"
+},
+"Material.028": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/dark_wood.tres",
+"use_external/path": "uid://c4yp30jd4ylac"
+}
+},
 "meshes": {
 "BézierCurve_001": {
 "generate/lightmap_uv": 0,

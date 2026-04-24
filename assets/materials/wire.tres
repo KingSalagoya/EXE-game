@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dsmqnh0aopvdi"]
+
+[ext_resource type="Texture2D" uid="uid://c11jxpgnidlr8" path="res://assets/textures/textures/black-line.jpg" id="1_erhad"]
+
+[resource]
+resource_name = "Material.021"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_erhad")
