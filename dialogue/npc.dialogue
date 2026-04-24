@@ -1,0 +1,9 @@
+~ start
+
+Salagoya: [[Hey | Hi | Hello]], @Rail! You look some knida familiar to me, have u been here earlier?
+Salagoya: Just kidding,nvm. Lemme offer you the first official quest.
+Salagoya: Go grab some wood and I will offer you a nice nice weapon in exchange...
+
+do GameManager.unlock_achievement.emit("forest")
+
+=> END
