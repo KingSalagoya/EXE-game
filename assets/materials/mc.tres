@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2a3kywdwhawx"]
+
+[ext_resource type="Texture2D" uid="uid://brr7cwn4sk84y" path="res://assets/textures/textures/man_t256.png" id="1_360rx"]
+[ext_resource type="Texture2D" uid="uid://c8qrpp8ux2f52" path="res://assets/textures/textures/internal_ground_ao_texture.jpeg" id="2_clmri"]
+
+[resource]
+albedo_texture = ExtResource("1_360rx")
+metallic_specular = 0.0
+ao_enabled = true
+ao_texture = ExtResource("2_clmri")
