@@ -18,6 +18,7 @@ albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 emission_enabled = true
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8768l"]
+load_path = "res://.godot/imported/Seamless-Wood-Texture-3-1024x768.jpg-b1d51958d789b0f0c2c2a5879db6688b.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_285tx"]
 resource_name = "Material.030"
@@ -109,12 +110,6 @@ size = Vector3(0.022951394, 0.0060961004, 0.031712018)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uge0f"]
 size = Vector3(1.2563477, 0.3581543, 0.576416)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58gng"]
-albedo_color = Color(0.33660775, 0.33660758, 0.3366077, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqded"]
-albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_w18ys"]
 length = 0.001
@@ -286,21 +281,6 @@ objective_name = "grab the knife"
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Interactable/knife/StaticBody3D" unique_id=316315400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12817478, -0.01940918, -0.010135651)
 shape = SubResource("BoxShape3D_uge0f")
-
-[node name="Corridoor" type="Node3D" parent="." unique_id=877358083]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.16184139)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Corridoor" unique_id=216351102]
-transform = Transform3D(1, 0, 0, 0, 3.3433957, 0, 0, 0, 1, -0.49963284, 2.6236706, -6.759549)
-use_collision = true
-size = Vector3(3.307495, 1.4053726, 10.715807)
-material = SubResource("StandardMaterial3D_58gng")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Corridoor/CSGBox3D" unique_id=1104193687]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38404834, -0.23358488, -1.3486214)
-operation = 2
-size = Vector3(2.28538, 1.1834948, 11.320793)
-material = SubResource("StandardMaterial3D_lqded")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=245251069]
 libraries/ = SubResource("AnimationLibrary_w18ys")

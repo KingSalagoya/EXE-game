@@ -172,7 +172,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/wires_powerbox.res",
+"save_to_file/fallback_path": "res://assets/models/edited/wires_power_box.res",
 "save_to_file/path": "uid://u4n5aj6hxebk"
 },
 "Plane_003": {
@@ -190,7 +190,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/flowerpot_large.res",
+"save_to_file/fallback_path": "res://assets/models/edited/flower_pot_large.res",
 "save_to_file/path": "uid://c58kdcb6oa3hj"
 },
 "Plane_005": {
@@ -199,7 +199,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/flowerpot_small.res",
+"save_to_file/fallback_path": "res://assets/models/edited/flower_pot_small.res",
 "save_to_file/path": "uid://b3qyywyxw6p7u"
 },
 "Plane_007": {
@@ -253,7 +253,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/models/edited/wires_telephone_tower.res",
+"save_to_file/fallback_path": "res://assets/models/edited/wires_telepone_tower.res",
 "save_to_file/path": "uid://bbir4u0ioiqp0"
 }
 }
