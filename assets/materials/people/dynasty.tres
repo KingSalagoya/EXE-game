@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7mvl643j4wfy"]
+
+[ext_resource type="Texture2D" uid="uid://bohcha2w3f4ie" path="res://assets/textures/textures/PERSONAGENS CASTLEVANIA 3_GRANT DINASTY COLOR TEXTURES.png" id="1_p30mt"]
+[ext_resource type="Texture2D" uid="uid://c8qrpp8ux2f52" path="res://assets/textures/textures/internal_ground_ao_texture.jpeg" id="2_ooou7"]
+
+[resource]
+albedo_texture = ExtResource("1_p30mt")
+metallic_specular = 0.0
+ao_enabled = true
+ao_texture = ExtResource("2_ooou7")

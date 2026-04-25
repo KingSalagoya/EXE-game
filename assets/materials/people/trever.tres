@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://rugre0wlqcsj"]
+
+[ext_resource type="Texture2D" uid="uid://d1bld0s10lfh8" path="res://assets/textures/textures/PERSONAGENS CASTLEVANIA 3_TREVOR BELMONT COLOR.png" id="1_gw1mo"]
+[ext_resource type="Texture2D" uid="uid://c8qrpp8ux2f52" path="res://assets/textures/textures/internal_ground_ao_texture.jpeg" id="2_th6js"]
+
+[resource]
+albedo_texture = ExtResource("1_gw1mo")
+metallic_specular = 0.0
+ao_enabled = true
+ao_texture = ExtResource("2_th6js")
