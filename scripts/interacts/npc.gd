@@ -28,13 +28,11 @@ func _ready() -> void:
 	interact_text = INTERACT_TEXT
 	_update_objective_list()
 	_set_current_objective()
-	print(objective_amounts_list)
-	print(objective_names_list)
 
 func interact() -> void:
 	if GameManager.can_interact:
 		_set_current_objective(LIST_OF_NPC_OBJECTIVES)
-		_play_dialogue(current_objective_name)
+		_check_objective_completed(current_objective_name)
 
 func _update_objective_list(list: Dictionary[String, int] = LIST_OF_NPC_OBJECTIVES) -> void:
 	if list.is_empty(): return
@@ -54,19 +52,25 @@ func _set_current_objective(list: Dictionary[String, int] = LIST_OF_NPC_OBJECTIV
 
 func _update_current_objective(list: Dictionary[String, int] = LIST_OF_NPC_OBJECTIVES) -> void:
 	if list.is_empty(): return
-	current_completed_amount = 0
-	for i in list.values():
-		if i == 1:
-			i = 0
-			current_objective_amount = i + 1
-			current_objective_name = objective_names_list[current_completed_amount]
+	for key in list:
+		if list[key] == 1:
+			list[key] = 0
 			break
-		else:
-			current_completed_amount += 1
+	_set_current_objective(list)
 
-func _play_dialogue(objective: String) -> void:
+func _check_objective_completed(objective: String) -> void:
 	match objective:
 		"unlock forest":
 			if GameManager.inventory.wood >= 3:
 				_update_current_objective()
+		"unlock graveyard":
+			pass
+	_play_dialogue(current_objective_name)
+
+func _play_dialogue(objective: String) -> void:
+	print(current_objective_name)
+	match objective:
+		"unlock forest":
 			GameManager.handle_dialogue.emit(NPC_Dialogue, "unlock_forest")
+		"unlock graveyard":
+			GameManager.handle_dialogue.emit(NPC_Dialogue, "unlock_graveyard")

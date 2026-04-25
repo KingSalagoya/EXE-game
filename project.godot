@@ -21,6 +21,10 @@ GameManager="*uid://cpd6uhpyj8aut"
 AudioManager="*uid://biya3k8ajbcu8"
 DialogueManager="*uid://c3rodes2l3gxb"
 
+[dialogue_manager]
+
+runtime/state_autoload_shortcuts=["GameM"]
+
 [display]
 
 window/size/viewport_width=1920
