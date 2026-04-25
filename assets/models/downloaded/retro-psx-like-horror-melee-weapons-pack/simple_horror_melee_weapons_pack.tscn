@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://k0b3ltr68oad"]
+
+[ext_resource type="PackedScene" uid="uid://0dwc88n2alry" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/Simple Horror Melee Weapons Pack.fbx" id="1_annkg"]
+[ext_resource type="Texture2D" uid="uid://dcv8vw2fmpupk" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/machete_TEX.png" id="2_40qv7"]
+[ext_resource type="Texture2D" uid="uid://digaclyptu58t" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/bat_TEX.png" id="2_thw8b"]
+[ext_resource type="Texture2D" uid="uid://dl18gmhehv8qd" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/axe_TEX.png" id="3_nvh7w"]
+[ext_resource type="Texture2D" uid="uid://dp4i05dvdd5rd" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/kitchenKnife_TEX.png" id="4_f268a"]
+[ext_resource type="Texture2D" uid="uid://dgx0jye6mod2l" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/hammer_TEX.png" id="6_ck0us"]
+[ext_resource type="Texture2D" uid="uid://yicpcqbih7ty" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/cleaver_TEX.png" id="7_hyygt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hj0y"]
+albedo_texture = ExtResource("2_thw8b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3bd7"]
+albedo_texture = ExtResource("3_nvh7w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1bvu"]
+albedo_texture = ExtResource("4_f268a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jl6ku"]
+albedo_texture = ExtResource("2_40qv7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq20b"]
+albedo_texture = ExtResource("6_ck0us")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gg3u5"]
+albedo_texture = ExtResource("7_hyygt")
+
+[node name="Simple Horror Melee Weapons Pack" unique_id=641041434 instance=ExtResource("1_annkg")]
+
+[node name="bat" parent="." index="1" unique_id=507902665]
+surface_material_override/0 = SubResource("StandardMaterial3D_8hj0y")
+
+[node name="axe" parent="." index="2" unique_id=522166855]
+surface_material_override/0 = SubResource("StandardMaterial3D_m3bd7")
+
+[node name="kitchenKnife" parent="." index="4" unique_id=1380404464]
+surface_material_override/0 = SubResource("StandardMaterial3D_e1bvu")
+
+[node name="machete" parent="." index="7" unique_id=402039295]
+surface_material_override/0 = SubResource("StandardMaterial3D_jl6ku")
+
+[node name="hammer" parent="." index="8" unique_id=837120519]
+surface_material_override/0 = SubResource("StandardMaterial3D_xq20b")
+
+[node name="cleaver" parent="." index="11" unique_id=1339630216]
+surface_material_override/0 = SubResource("StandardMaterial3D_gg3u5")

@@ -1,0 +1,2 @@
+Weapons:
+	"Retro / PSX-like Horror Melee Weapons Pack" (https://skfb.ly/oV6QH) by turnip_liker is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
