@@ -13,8 +13,10 @@ var t_bob: float = 0.0
 
 @onready var camera_holder: Node3D = $CameraHolder
 @onready var main_camera: Camera3D = $CameraHolder/MainCamera
-@onready var graphics: MeshInstance3D = $Graphics
+@onready var graphics: MeshInstance3D = %Graphics
 @onready var interactor: RayCast3D = $CameraHolder/MainCamera/Interactor
+@onready var playeranimations: AnimationPlayer = %Graphics/hero/playeranimations
+
 
 @export var hp: int = 20
 @export var damage:int = 10
@@ -100,7 +102,7 @@ func apply_knockback(force: Vector3) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		camera_holder.rotate_y(-event.relative.x * SENSITIVITY)
-		graphics.rotate_y(-event.relative.x * SENSITIVITY)
+		#graphics.rotate_y(-event.relative.x * SENSITIVITY)
 		main_camera.rotate_x(-event.relative.y * SENSITIVITY)
 		main_camera.rotation.x = clamp(main_camera.rotation.x, deg_to_rad(-70), deg_to_rad(70))
 	elif event.is_action_pressed("attack"):
@@ -164,7 +166,10 @@ func handle_movement() -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if velocity.z > 0: playeranimations.play("main-character/running")
+		elif velocity.z < 0: playeranimations.play("main-character/running-backwards")
 	else:
+		playeranimations.play("main-character/idle")
 		velocity.x = 0.0
 		velocity.z = 0.0
 
@@ -176,6 +181,6 @@ func handle_head_bob(delta: float) -> void:
 
 func _headbob(time: float) -> Vector3:
 	var pos = Vector3.ZERO
-	pos.y = sin(time * BOB_FREQ) * BOB_AMP
-	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+#	pos.y = sin(time * BOB_FREQ) * BOB_AMP
+#	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
