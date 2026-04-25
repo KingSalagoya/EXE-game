@@ -893,7 +893,7 @@ transform = Transform3D(1, 0, 0, 0, 0.98657113, -0.1633258, 0, 0.1633258, 0.9865
 visible = false
 
 [node name="knife" type="CSGBox3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot" unique_id=1434838203]
-transform = Transform3D(0.87643385, 0.03437035, 0.48029047, -0.16550657, 0.9581788, 0.23344365, -0.45218506, -0.28409064, 0.8454643, 0.22, -0.005, -0.72)
+transform = Transform3D(0.8764338, 0.03437036, 0.48029056, -0.16550659, 0.9581788, 0.23344359, -0.45218515, -0.2840906, 0.8454642, 0.22, -0.005, -0.72)
 visible = false
 size = Vector3(0.02709961, 0.061523438, 0.5283203)
 
