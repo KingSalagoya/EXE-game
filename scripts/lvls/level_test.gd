@@ -44,7 +44,9 @@ func spawn_friend() -> void:
 
 func unlock_achievement(achievement: String) -> void:
 	match achievement:
+		"forest":
+			if $Boundaries/forest:
+				$Boundaries/forest.queue_free()
 		"graveyard":
-			$Boundaries/graveyard.queue_free()
-		"village":
-			$Boundaries/village.queue_free()
+			if $Boundaries/graveyard:
+				$Boundaries/graveyard.queue_free()

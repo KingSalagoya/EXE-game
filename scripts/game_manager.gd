@@ -60,6 +60,16 @@ var inventory:Dictionary [String, int] = {
 	"walkie_talkie": 0
 }
 
+#region dialogue_manager
+
+func get_wood() -> int:
+	return inventory["wood"]
+
+func get_needed_wood() -> int:
+	return 3 - inventory["wood"]
+
+#endregion
+
 func _enter_tree() -> void:
 	current_objective_clone = current_objective
 

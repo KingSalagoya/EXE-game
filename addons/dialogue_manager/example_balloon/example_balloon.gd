@@ -46,6 +46,7 @@ var dialogue_line: DialogueLine:
 		else:
 			# The dialogue has finished so close the balloon
 			GameManager.can_move = true
+			GameManager.can_interact = true
 			if owner == null:
 				queue_free()
 			else:
@@ -123,6 +124,7 @@ func start(with_dialogue_resource: DialogueResource = null, title: String = "", 
 	show()
 	
 	GameManager.can_move = false
+	GameManager.can_interact = false
 
 
 ## Apply any changes to the balloon given a new [DialogueLine].
