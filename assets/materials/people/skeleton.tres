@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://nnt6lqn43v5k"]
+
+[ext_resource type="Texture2D" uid="uid://bjnyi2ekap2gx" path="res://assets/textures/textures/skeleton_d.png" id="1_plmgw"]
+[ext_resource type="Texture2D" uid="uid://c8qrpp8ux2f52" path="res://assets/textures/textures/internal_ground_ao_texture.jpeg" id="2_cnlle"]
+
+[resource]
+albedo_texture = ExtResource("1_plmgw")
+metallic_specular = 0.0
+ao_enabled = true
+ao_texture = ExtResource("2_cnlle")
