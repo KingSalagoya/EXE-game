@@ -201,7 +201,7 @@ bones/4/parent = 3
 bones/4/rest = Transform3D(1, -7.397371e-08, -1.1766278e-08, 7.397373e-08, 0.9506492, 0.31026813, -1.1766083e-08, -0.3102682, 0.950649, 1.8899615e-16, 0.00068418164, 7.9995954e-10)
 bones/4/enabled = true
 bones/4/position = Vector3(3.8238952e-17, 0.00068418257, 1.6763807e-10)
-bones/4/rotation = Quaternion(-0.11031108, -0.0005457805, 0.00659415, 0.9938752)
+bones/4/rotation = Quaternion(-0.14967325, -0.003865268, 0.009374404, 0.9886836)
 bones/4/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/5/name = "head_end"
 bones/5/parent = 4
@@ -285,7 +285,6 @@ bones/16/parent = 15
 bones/16/rest = Transform3D(-0.09961163, 0.06380868, -0.99297833, 0.9265446, 0.3697679, -0.06918606, 0.3627568, -0.92693055, -0.095954776, 4.688416e-06, 0.0019602699, -0.00016137482)
 bones/16/enabled = true
 bones/16/position = Vector3(4.6884643e-06, 0.00196027, -0.00016137565)
-
 bones/16/rotation = Quaternion(-0.22655316, -0.70849967, 0.53881717, 0.3954465)
 bones/16/scale = Vector3(1, 1.0000001, 1)
 bones/17/name = "forearm_right"
@@ -377,7 +376,6 @@ bones/29/parent = 28
 bones/29/rest = Transform3D(0.9992726, 0.03518616, -0.014699846, -0.034493685, 0.99839276, 0.044967283, 0.016258443, -0.044427525, 0.9988803, 1.875704e-10, 0.005184569, 1.6591431e-10)
 bones/29/enabled = true
 bones/29/position = Vector3(1.3271347e-10, 0.005184569, 0)
-
 bones/29/rotation = Quaternion(0.05173606, 0.07740278, 0.012522413, 0.99557793)
 bones/29/scale = Vector3(1, 0.99999994, 1)
 bones/30/name = "foot_right"
@@ -385,7 +383,6 @@ bones/30/parent = 29
 bones/30/rest = Transform3D(0.99784464, 0.01563875, 0.06373212, -0.06519057, 0.3475192, 0.935404, -0.007519587, -0.93754244, 0.34778965, -4.5340334e-10, 0.0042443853, -1.2353152e-10)
 bones/30/enabled = true
 bones/30/position = Vector3(-2.2584573e-10, 0.0042443858, -7.5669956e-11)
-
 bones/30/rotation = Quaternion(-0.5928849, 0.02409188, -0.003946729, 0.80491704)
 bones/30/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/31/name = "foot_right_end"
@@ -403,7 +400,6 @@ skeleton = NodePath("..")
 
 [node name="playeranimations" type="AnimationPlayer" parent="CameraHolder/Graphics/hero" unique_id=1458125914]
 libraries/main-character = SubResource("AnimationLibrary_3v2ag")
-autoplay = &"main-character/idle"
 
 [node name="hurt_box" type="Area3D" parent="." unique_id=679508422 node_paths=PackedStringArray("owner_character")]
 script = ExtResource("3_qhqgy")
@@ -423,3 +419,6 @@ metadata/_custom_type_script = "uid://b6afotnygprho"
 [node name="Collider" type="CollisionShape3D" parent="hit_box" unique_id=633623127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4968262, 0)
 shape = SubResource("CapsuleShape3D_3vyb7")
+
+[node name="FootstepsDetector" type="RayCast3D" parent="." unique_id=528483260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34581852, 0)

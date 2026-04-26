@@ -15,7 +15,10 @@ var t_bob: float = 0.0
 @onready var main_camera: Camera3D = $CameraHolder/MainCamera
 @onready var graphics: MeshInstance3D = %Graphics
 @onready var interactor: RayCast3D = $CameraHolder/MainCamera/Interactor
+
 @onready var playeranimations: AnimationPlayer = %Graphics/hero/playeranimations
+
+@onready var footsteps_detector: RayCast3D = $FootstepsDetector
 
 
 @export var hp: int = 20
@@ -23,7 +26,7 @@ var t_bob: float = 0.0
 @export var knockback_force: float = 8.0
 @export var is_player: bool = true
 
-# Player movement recording 👇
+# Player movement recording
 var rec_count: int = 0
 var play_count: int = 0
 var can_record: bool = false
@@ -31,12 +34,15 @@ var can_play_recording: bool = false
 var save_data: Dictionary = {0: [Vector3(0,0,0)]}
 var load_data: Dictionary = Dictionary()
 var recording_loaded: bool = false
+var prev_ground
 
 var knockback_velocity := Vector3.ZERO
 
 func _ready() -> void:
-	AudioManager.change_footsteps("hallway")
+	pass
+	#AudioManager.change_footsteps("concrete")
 
+#region recording
 func do_record():
 	if can_record:
 		rec_count += 1
@@ -95,9 +101,8 @@ func handle_recording_movement():
 	if can_play_recording:
 		load_data = load_file()
 		get_recording()
+#endregion
 
-func apply_knockback(force: Vector3) -> void:
-	knockback_velocity = force
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -128,12 +133,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if GameManager.torch:
-		$CameraHolder/MainCamera/Torch.show()
-	else:
-		$CameraHolder/MainCamera/Torch.hide()
+	if GameManager.torch: $CameraHolder/MainCamera/Torch.show()
+	else: $CameraHolder/MainCamera/Torch.hide()
 	
 	handle_recording_movement()
+	handle_footstep_sound()
 	
 	if knockback_velocity.length() > 0.1:
 		knockback_velocity = knockback_velocity.lerp(Vector3.ZERO, delta * 5.0)
@@ -149,7 +153,6 @@ func _physics_process(delta: float) -> void:
 		handle_movement()
 		handle_head_bob(delta)
 		move_and_slide()
-
 
 func handle_jump(delta: float) -> void:
 	if not is_on_floor():
@@ -176,13 +179,31 @@ func handle_movement() -> void:
 		velocity.z = 0.0
 
 
+#region other
 func handle_head_bob(delta: float) -> void:
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	main_camera.transform.origin = _headbob(t_bob)
 
+func apply_knockback(force: Vector3) -> void:
+	knockback_velocity = force
 
-func _headbob(time: float) -> Vector3:
+func _headbob(_time: float) -> Vector3:
 	var pos = Vector3.ZERO
 #	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 #	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func handle_footstep_sound() -> void:
+	if footsteps_detector.is_colliding():
+		var ground = footsteps_detector.get_collider()
+		if ground == prev_ground: return
+		prev_ground = footsteps_detector.get_collider()
+		if ground != null:
+			for groups in ground.get_groups():
+				match groups:
+					"grass": 
+						AudioManager.change_footsteps("grass", 20)
+						print("hiagain")
+					"concrete": AudioManager.change_footsteps("concrete")
+
+#endregion

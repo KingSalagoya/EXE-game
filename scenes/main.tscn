@@ -18,12 +18,12 @@ ground_bottom_color = Color(0, 0, 0.007843138, 1)
 ground_horizon_color = Color(0.07450981, 0.03137255, 0.19607843, 1)
 sun_curve = 0.029421885
 
-[sub_resource type="Sky" id="Sky_tefeu"]
+[sub_resource type="Sky" id="Sky_choun"]
 sky_material = SubResource("ProceduralSkyMaterial_8cj0n")
 
 [sub_resource type="Environment" id="Environment_yqjtg"]
 background_mode = 2
-sky = SubResource("Sky_tefeu")
+sky = SubResource("Sky_choun")
 tonemap_mode = 2
 ssao_enabled = true
 
@@ -865,12 +865,8 @@ render_target_update_mode = 4
 [node name="GameEnviroment" type="Node3D" parent="GameViewport/SubViewport" unique_id=577782268]
 unique_name_in_owner = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="GameViewport/SubViewport/GameEnviroment" unique_id=920053309]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1520878319]
 environment = SubResource("Environment_yqjtg")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameViewport/SubViewport/GameEnviroment/WorldEnvironment" unique_id=1234819094]
-transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.31879273, -0.09299916, 0.94325095, -0.38518992, 0.8965774, 0.21858096, 0, 0, 0)
-shadow_enabled = true
 
 [node name="Player" parent="GameViewport/SubViewport/GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
 unique_name_in_owner = true
@@ -892,7 +888,7 @@ transform = Transform3D(1, 0, 0, 0, 0.98657113, -0.1633258, 0, 0.1633258, 0.9865
 visible = false
 
 [node name="knife" type="CSGBox3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot" unique_id=1434838203]
-transform = Transform3D(0.87643385, 0.034370374, 0.48029053, -0.16550659, 0.9581788, 0.2334436, -0.45218512, -0.28409064, 0.8454643, 0.22, -0.005, -0.72)
+transform = Transform3D(0.87643385, 0.03437035, 0.48029047, -0.16550657, 0.9581788, 0.23344365, -0.45218506, -0.28409064, 0.8454643, 0.22, -0.005, -0.72)
 visible = false
 size = Vector3(0.02709961, 0.061523438, 0.5283203)
 
