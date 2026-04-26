@@ -37,6 +37,7 @@ func _ready() -> void:
 		push_error("Could not find player at path: " + str(target_path))
 		return
 	
+	look_at(Vector3(target.global_position.x, global_position.y, target.global_position.z), Vector3.UP)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -44,8 +45,10 @@ func _physics_process(delta: float) -> void:
 
 	if attackable:
 		_handle_movement(delta)
+	
 	else: animation_player.play("zombie/zombie_idle", -1, animation_multiplier)
-	move_and_slide()
+	
+	if attackable: move_and_slide()
 
 func _handle_movement(delta: float) -> void:
 	if target == null:
@@ -95,7 +98,9 @@ func _handle_movement(delta: float) -> void:
 func _on_attackable_area_body_entered(body: CharacterBody3D) -> void:
 	if body == target:
 		attackable = true
+		print("attackable")
 
 func _on_attackable_area_body_exited(body: CharacterBody3D) -> void:
 	if body == target:
 		attackable = false
+		print("unattackable")

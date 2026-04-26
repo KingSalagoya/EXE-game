@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://dwn0122urv1dt" path="res://scripts/hurt_box.gd" id="2_md0e3"]
 [ext_resource type="Script" uid="uid://b6afotnygprho" path="res://scripts/hit_box.gd" id="3_4ra3w"]
 [ext_resource type="Material" uid="uid://nnt6lqn43v5k" path="res://assets/materials/people/skeleton.tres" id="4_xwavj"]
-[ext_resource type="Animation" uid="uid://ieuow31ajisl" path="res://assets/animations/res/zombie_idle.res" id="5_nenq2"]
-[ext_resource type="Animation" uid="uid://c43spvgdmexwo" path="res://assets/animations/res/zombie_running.res" id="6_md484"]
+[ext_resource type="Animation" uid="uid://by4ylnifomgf2" path="res://assets/animations/res/zombie_idle.res" id="5_nenq2"]
+[ext_resource type="Animation" uid="uid://bx3okyyio73a1" path="res://assets/animations/res/zombie_running.res" id="6_md484"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
 radius = 0.40722656
