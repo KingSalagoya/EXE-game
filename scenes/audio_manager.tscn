@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cyl2ygh8xmsdx" path="res://assets/sfx/door/close-door-sound.mp3" id="9_064dn"]
 [ext_resource type="AudioStream" uid="uid://b4ftfrw1rgy" path="res://assets/sfx/wake-up/man-waking-up-from-sleep.mp3" id="9_oucy0"]
 [ext_resource type="AudioStream" uid="uid://dtvlitstwq5bk" path="res://assets/sfx/yawn/male-yawning.mp3" id="10_cuol6"]
+[ext_resource type="AudioStream" uid="uid://bm4olc2iddi0w" path="res://assets/sfx/footsteps/footsteps-dirt-gravel.mp3" id="14_2y2jw"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_if78k"]
 random_pitch = 1.005793
@@ -37,6 +38,10 @@ random_volume_offset_db = 0.2
 streams_count = 1
 stream_0/stream = ExtResource("6_02gw7")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2y5yn"]
+streams_count = 1
+stream_0/stream = ExtResource("14_2y2jw")
+
 [node name="AudioManager" type="Node" unique_id=382790275 node_paths=PackedStringArray("music_clips", "one_shots")]
 process_mode = 3
 script = ExtResource("1_8qd8g")
@@ -52,6 +57,7 @@ audio_one_shot_clips = Dictionary[String, AudioStream]({
 "yawn": ExtResource("10_cuol6")
 })
 footsteps_clips = Dictionary[String, AudioStream]({
+"dirt": SubResource("AudioStreamRandomizer_2y5yn"),
 "hallway": SubResource("AudioStreamRandomizer_8igv3")
 })
 
