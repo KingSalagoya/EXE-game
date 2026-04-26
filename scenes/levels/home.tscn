@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="2_u4wd2"]
 [ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="2_uhids"]
 [ext_resource type="ArrayMesh" uid="uid://bua8xirydq26y" path="res://assets/models/edited/right_window.res" id="4_58gng"]
+[ext_resource type="Texture2D" uid="uid://l0gs2enqdd5r" path="res://assets/textures/textures/brick-wall.png" id="5_lqded"]
 [ext_resource type="PackedScene" uid="uid://bt5atkfjohash" path="res://scenes/rail_house_scene.tscn" id="5_snitx"]
 [ext_resource type="Material" uid="uid://b6dafg0f2schg" path="res://assets/materials/orange_wood.tres" id="6_58gng"]
 [ext_resource type="ArrayMesh" uid="uid://h4yiv88t1hy5" path="res://assets/models/edited/bed.res" id="6_lqded"]
@@ -87,6 +88,13 @@ shadow_mesh = SubResource("ArrayMesh_abt8k")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ff52r"]
 size = Vector3(0.016520394, 0.00201374, 0.015460307)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58gng"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("5_lqded")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssoy3"]
+size = Vector3(9.641113, 9.546875, 1)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_58gng"]
 resource_name = "Plane_009"
 _surfaces = [{
@@ -125,6 +133,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RailHouseScene/Corridoor:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_d1b6h"]
 resource_name = "door_close"
@@ -154,6 +174,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(5.0093856e-08, 4.324292e-08, -1.7173342), Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RailHouseScene/Corridoor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_reixx"]
 resource_name = "door_open"
@@ -182,6 +214,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(5.0093856e-08, 4.324292e-08, -1.7173342)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RailHouseScene/Corridoor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w18ys"]
@@ -230,6 +274,23 @@ size = Vector3(6.005432, 2.8775024, 2.4110107)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0220885, 1.1091518, -2.3527143)
 use_collision = true
 size = Vector3(8.541466, 1.6388702, 2.4110107)
+
+[node name="Corridoor" type="Node3D" parent="RailHouseScene" unique_id=466250499]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.195367, 0, 1.4556196)
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RailHouseScene/Corridoor" unique_id=77241609 groups=["concrete"]]
+transform = Transform3D(1, 0, 0, 0, 3.3433957, 0, 0, 0, 1, 1.3205106, 2.4852242, -12.815878)
+use_collision = true
+flip_faces = true
+size = Vector3(4.2387695, 1.3044682, 19.135626)
+material = SubResource("StandardMaterial3D_58gng")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RailHouseScene/Corridoor" unique_id=425496925 groups=["concrete"]]
+
+[node name="Barrier" type="CollisionShape3D" parent="RailHouseScene/Corridoor/StaticBody3D" unique_id=2109635153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34022903, 2.9545078, -78.351585)
+shape = SubResource("BoxShape3D_ssoy3")
 
 [node name="Lights" type="Node3D" parent="." unique_id=1393697127]
 

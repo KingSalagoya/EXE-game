@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="2_4arla"]
 [ext_resource type="ArrayMesh" uid="uid://c58kdcb6oa3hj" path="res://assets/models/edited/flowerpot_large.res" id="2_668kv"]
 [ext_resource type="ArrayMesh" uid="uid://ba17qklw4fdlb" path="res://assets/models/edited/telephone_tower.res" id="4_b2fm2"]
+[ext_resource type="ArrayMesh" uid="uid://b2h1vljx4u6ix" path="res://assets/models/edited/birch_tree1.res" id="5_c05f3"]
+[ext_resource type="ArrayMesh" uid="uid://ctj4rkfmionf6" path="res://assets/models/edited/birch_tree2.res" id="6_ccmen"]
+[ext_resource type="ArrayMesh" uid="uid://b48relnhky4g4" path="res://assets/models/edited/birch_tree3.res" id="7_3nx3f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b2fm2"]
 size = Vector3(0.017603565, 0.005765181, 0.01891103)
@@ -46,13 +49,13 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_668kv"]
-size = Vector3(0.5587623, 0.53316987, 0.0029838828)
+size = Vector3(0.56356084, 0.5434404, 0.0029838828)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hnnrd"]
 size = Vector3(0.5587623, 0.98277974, 0.0029838828)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dq35g"]
-size = Vector3(0.0864058, 0.619124, 0.0029838828)
+size = Vector3(0.08324946, 0.619124, 0.0029838828)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c05f3"]
 size = Vector3(0.0822654, 0.619124, 0.0029838828)
@@ -97,6 +100,24 @@ points = PackedVector3Array(0.12241269, 0.0031718067, 0.08412698, 0.08190711, -0
 height = 0.19341144
 radius = 0.0043945313
 
+[sub_resource type="MultiMesh" id="MultiMesh_c05f3"]
+transform_format = 1
+instance_count = 30
+mesh = ExtResource("5_c05f3")
+buffer = PackedFloat32Array(-1.001, 5.2122236e-15, -1.1924178e-07, -51.064552, -1.1924178e-07, -4.37551e-08, 1.001, -0.09562039, 0, 1.001, 4.37551e-08, -86.43046, -1.001, 5.2194056e-15, -1.1940608e-07, -69.61289, -1.1940608e-07, -4.37551e-08, 1.001, -0.0956226, 0, 1.001, 4.37551e-08, -85.9732, -1.001, 5.2194056e-15, -1.1940608e-07, -66.67703, -1.1940608e-07, -4.37551e-08, 1.001, -0.09562224, 0, 1.001, 4.37551e-08, -81.8879, -1.3512125e-21, -1.001, -1.6308361e-07, -24.315796, 1.1334792e-14, -1.6308361e-07, 1.001, -0.39561722, -1.001, -4.954595e-22, 1.1334792e-14, -84.17778, -0.006544931, -1.0009787, -1.6308512e-07, -3.54777, -7.619015e-10, -1.6308363e-07, 1.0010002, -0.11561473, -1.0009787, 0.006544931, 3.0441943e-10, -49.80137, 0.59523, 0.80479956, -8.495605e-08, -24.798655, 7.0940956e-08, 5.3199358e-08, 1.001, -0.11561725, 0.80479956, -0.59523, -2.5401995e-08, -23.835426, 1.001, 5.214784e-15, -1.1930037e-07, -4.9735794, 1.1930037e-07, -4.37551e-08, 1.001, -0.11561489, 0, -1.001, -4.37551e-08, -43.111404, -0.97517776, 0.2258971, -1.0995854e-07, -26.242071, -1.16095414e-07, -1.3923025e-08, 1.0010002, -0.39561746, 0.2258971, 0.97517776, 3.9763275e-08, -58.85671, -0.707814, -0.7078139, -1.4857024e-07, -34.410164, -8.431667e-08, -1.2579336e-07, 1.001, -0.095618404, -0.707814, 0.7078139, 2.932846e-08, -51.58298, 1.001, 5.214784e-15, -1.1930037e-07, 12.577759, 1.1930037e-07, -4.37551e-08, 1.001, -0.115612805, 0, -1.001, -4.37551e-08, -5.6120744, 0.0065449276, 1.0009787, -7.5576835e-08, -15.421184, 7.798479e-10, 7.5573354e-08, 1.0010002, -0.11561614, 1.0009787, -0.0065449276, -2.857033e-10, -82.50156, 1.0001609, -0.040978402, -1.2073406e-07, -19.556229, 1.1873705e-07, -5.121314e-08, 1.001, -0.11561662, -0.040978402, -1.0001609, -4.6309417e-08, -48.908524, 1.001, 5.2194056e-15, -1.1940608e-07, -69.208, 1.1940608e-07, -4.37551e-08, 1.001, -0.09562255, 0, -1.001, -4.37551e-08, -75.09323, 1.001, 5.2194056e-15, -1.1940608e-07, -69.88037, 1.1940608e-07, -4.37551e-08, 1.001, -0.09562263, 0, -1.001, -4.37551e-08, -73.2384, 1.001, 5.214784e-15, -1.1930037e-07, -2.785747, 1.1930037e-07, -4.37551e-08, 1.001, -0.11561463, 0, -1.001, -4.37551e-08, -45.639324, 0.5952291, 0.8048003, -8.495584e-08, -33.451904, 7.094085e-08, 5.3199216e-08, 1.001, -0.11561828, 0.8048003, -0.5952291, -2.5402091e-08, -17.140532, 0.5952291, 0.8048003, -8.495584e-08, -35.5394, 7.094085e-08, 5.3199216e-08, 1.001, -0.115618534, 0.8048003, -0.5952291, -2.5402091e-08, -13.172765, 1.001, 5.214784e-15, -1.1930037e-07, 4.679348, 1.1930037e-07, -4.37551e-08, 1.001, -0.11561374, 0, -1.001, -4.37551e-08, -34.6107, -6.074129e-18, -1.001, -1.6308361e-07, -72.84568, 5.0953488e-11, -1.6308361e-07, 1.001, -0.11562299, -1.001, -2.2272477e-18, 5.0953488e-11, -18.877691, 1.001, 5.214784e-15, -1.1930037e-07, -7.7733593, 1.1930037e-07, -4.37551e-08, 1.001, -0.11561522, 0, -1.001, -4.37551e-08, -36.85365, 0.5952291, 0.8048003, -8.495584e-08, -56.82345, 7.094085e-08, 5.3199216e-08, 1.001, -0.115621075, 0.8048003, -0.5952291, -2.5402091e-08, -20.380045, 0.7194196, -0.6960147, -1.491523e-07, -14.903717, 8.582939e-08, -1.2579346e-07, 1.001, -0.11561608, -0.6960147, -0.7194196, -3.0729037e-08, -0.92928815, 0, -1.001, -1.6308361e-07, 13.02994, 0, -1.6308361e-07, 1.001, -0.115612745, -1.001, 0, 0, -75.081436, -0.2258957, 0.97517806, -7.9135866e-08, -31.07297, -2.442452e-08, 7.557349e-08, 1.001, -0.39561802, 0.97517806, 0.2258957, 6.739789e-09, -33.857708, 0.7194197, -0.6960146, -1.491523e-07, -10.900534, 8.5829406e-08, -1.2579345e-07, 1.001, -0.11561561, -0.69601464, -0.71941966, -3.0729048e-08, 4.7977667, -6.074129e-18, -1.001, -1.6308361e-07, -64.21803, 5.0953488e-11, -1.6308361e-07, 1.001, -0.115621954, -1.001, -2.2272477e-18, 5.0953488e-11, 2.3609495, -4.3881323e-17, 1.001, -7.55734e-08, -54.238148, 3.6810321e-10, 7.55734e-08, 1.001, -0.39562076, 1.001, 1.6090302e-17, -3.6810321e-10, -29.399878, -1.193285e-07, -1.001, -1.6308361e-07, -67.09058, 5.0939242e-11, -1.6308361e-07, 1.001, -0.115622304, -1.001, 1.193285e-07, 5.0958685e-11, -1.964005, 0.5952291, 0.8048003, -8.495584e-08, -53.583694, 7.094085e-08, 5.3199216e-08, 1.001, -0.11562069, 0.8048003, -0.5952291, -2.5402091e-08, -20.722374, -1.001, 5.2122236e-15, -1.1924178e-07, -41.19255, -1.1924178e-07, -4.37551e-08, 1.001, -0.09561921, 0, 1.001, 4.37551e-08, -83.574066)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c05f3"]
+size = Vector3(26.96, 1, 98.925)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ccmen"]
+size = Vector3(26.96, 1, 68.365)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3nx3f"]
+size = Vector3(26.96, 1, 49.035)
+
+[sub_resource type="BoxMesh" id="BoxMesh_381na"]
+size = Vector3(17.29, 1, 48.955)
+
 [node name="RailHouseScene" unique_id=1957032565 instance=ExtResource("1_wiq44")]
 
 [node name="electricity_box" parent="." index="0" unique_id=858232816 node_paths=PackedStringArray("ANIM_PLAYER") groups=["interactable"]]
@@ -130,7 +151,7 @@ transform = Transform3D(-4.3711393e-06, -100.00001, -1.1920929e-05, 0, -1.192092
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06692281, -0.07112539, -0.0014919414)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D" index="0" unique_id=1034305909]
-transform = Transform3D(1.0000174, -1.0658141e-14, -2.9646153e-21, 3.1974423e-14, 1, 2.2777158e-22, 5.2092526e-20, 2.2777148e-22, 1, 0.21412025, 0.21137589, 2.3283064e-10)
+transform = Transform3D(1.000021, -1.0658141e-14, -2.9646153e-21, 4.6185278e-14, 1, 2.2777158e-22, 6.352747e-20, 2.2777148e-22, 1, 0.21172105, 0.20624062, 1.1641532e-10)
 shape = SubResource("BoxShape3D_668kv")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="ground/StaticBody3D" index="1" unique_id=1789245689]
@@ -145,7 +166,7 @@ shape = SubResource("BoxShape3D_hnnrd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06692281, -0.07112539, -0.0014919414)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D2" index="0" unique_id=93981145]
-transform = Transform3D(1.0000398, -1.0658141e-14, -2.9646153e-21, 1.2789769e-13, 1, 2.2777158e-22, 1.2493736e-19, 2.2777148e-22, 1, -0.10766907, 0.16839911, 3.4924597e-10)
+transform = Transform3D(1.0000457, -1.0658141e-14, -2.9646153e-21, 1.4210855e-13, 1, 2.2777158e-22, 1.4314857e-19, 2.2777148e-22, 1, -0.109982476, 0.16839924, 4.656613e-10)
 shape = SubResource("BoxShape3D_dq35g")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="ground/StaticBody3D2" index="1" unique_id=1110062276]
@@ -205,7 +226,7 @@ transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1
 mesh = ExtResource("4_b2fm2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="telephone towers_001" index="0" unique_id=1356040857]
-transform = Transform3D(1.0000002, 0, 0, 0, -4.3711395e-08, 1.0000002, 0, -1.0000002, -4.3711395e-08, 0.00024115294, 0.16555524, 0.09270385)
+transform = Transform3D(1.0000004, 0, 0, 0, -4.371141e-08, 1.0000004, 0, -1.0000004, -4.371141e-08, 0.00024115294, 0.009472132, 0.092703834)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="telephone towers_001/StaticBody3D" index="0" unique_id=1033873719]
 transform = Transform3D(1.0000005, 0, 0, 0, 1.0000007, -9.947598e-14, 0, 9.947598e-14, 1.0000007, 0, 0, 0)
@@ -218,3 +239,39 @@ transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -0.3740969, -0.9316752, -14.042934)
 
 [node name="Models" type="Node3D" parent="." index="12" unique_id=19478504]
+
+[node name="Trees" type="Node3D" parent="." index="13" unique_id=1860551466]
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Trees" index="0" unique_id=2848561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.124306, 0.0956192, 48.90761)
+multimesh = SubResource("MultiMesh_c05f3")
+
+[node name="BirchTree1" type="MeshInstance3D" parent="Trees" index="1" unique_id=105283618]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 37.670223, 0, 49.90543)
+mesh = ExtResource("5_c05f3")
+
+[node name="BirchTree2" type="MeshInstance3D" parent="Trees" index="2" unique_id=540079319]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 29.113445, 0, 45.34169)
+mesh = ExtResource("6_ccmen")
+
+[node name="BirchTree3" type="MeshInstance3D" parent="Trees" index="3" unique_id=1476269495]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 36.946426, 0, 44.485493)
+mesh = ExtResource("7_3nx3f")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Trees" index="4" unique_id=1156325203]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Trees/CSGCombiner3D" index="0" unique_id=1226308723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.29054, 0, 6.747875)
+mesh = SubResource("BoxMesh_c05f3")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Trees/CSGCombiner3D" index="1" unique_id=1257077082]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.709461, 0, 42.747875)
+mesh = SubResource("BoxMesh_ccmen")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Trees/CSGCombiner3D" index="2" unique_id=2123478547]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -26.709461, 0, -18.252125)
+mesh = SubResource("BoxMesh_3nx3f")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Trees/CSGCombiner3D" index="3" unique_id=1558840874]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.7346153, 0, -18.252125)
+mesh = SubResource("BoxMesh_381na")

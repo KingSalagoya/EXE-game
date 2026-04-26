@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://f4lm3n2jdg05"]
+
+[ext_resource type="Texture2D" uid="uid://bgx8kkhfdtl3" path="res://assets/textures/textures/Tree_Birch.png" id="1_nwggw"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_nwggw")
+metallic_specular = 0.0
