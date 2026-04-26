@@ -1,5 +1,7 @@
 extends Node
 
+@onready var footsteps_holder: Node = $Footsteps_Holder
+
 var active_music_stream: AudioStreamPlayer
 
 @export_group("Main")
@@ -7,6 +9,7 @@ var active_music_stream: AudioStreamPlayer
 @export var one_shots: Node
 @export var audio_one_shot_scene: PackedScene
 @export var audio_one_shot_clips: Dictionary[String, AudioStream]
+@export var footsteps_clips: Dictionary[String, AudioStream]
 
 
 func play_music(audio_name:String, from_position: float = 0.0, restart: bool = false) -> void:
@@ -28,3 +31,29 @@ func play_audio_one_shot(audio_name: String, pos: Vector3 = Vector3.ZERO, volume
 	
 	one_shots.add_child(audio_one_shot)
 	return audio_one_shot
+
+#region footsteps
+
+func change_footsteps(new_footsteps: String, volume_db: float = 10.0) -> void:
+	for child in footsteps_holder.get_children():
+		child.queue_free()
+		
+	if footsteps_clips.has(new_footsteps) == false: return
+	
+	var new_footsteps_audio = AudioStreamPlayer.new()
+	new_footsteps_audio.stream = footsteps_clips.get(new_footsteps)
+	new_footsteps_audio.bus = "sfx"
+	new_footsteps_audio.volume_db = volume_db
+	
+	footsteps_holder.add_child(new_footsteps_audio)
+	
+	new_footsteps_audio.play()
+
+func toggle_footsteps_pause(state: bool) -> void:
+	for child in footsteps_holder.get_children():
+		if child is AudioStreamPlayer and not child.is_queued_for_deletion():
+			if not state and not child.playing:
+				child.play()
+			child.stream_paused = state
+
+#endregion

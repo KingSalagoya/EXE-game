@@ -51,7 +51,12 @@ audio_one_shot_clips = Dictionary[String, AudioStream]({
 "walk hallway": SubResource("AudioStreamRandomizer_8igv3"),
 "yawn": ExtResource("10_cuol6")
 })
+footsteps_clips = Dictionary[String, AudioStream]({
+"hallway": SubResource("AudioStreamRandomizer_8igv3")
+})
 
 [node name="MusicClips" type="Node" parent="." unique_id=1411344535]
 
 [node name="OneShots" type="Node" parent="." unique_id=70827441]
+
+[node name="Footsteps_Holder" type="Node" parent="." unique_id=469555441]
