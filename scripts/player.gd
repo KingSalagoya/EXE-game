@@ -35,7 +35,7 @@ var recording_loaded: bool = false
 var knockback_velocity := Vector3.ZERO
 
 func _ready() -> void:
-	pass
+	AudioManager.change_footsteps("hallway")
 
 func do_record():
 	if can_record:
@@ -168,8 +168,10 @@ func handle_movement() -> void:
 		velocity.z = direction.z * SPEED
 		if velocity.z > 0: playeranimations.play("main-character/running")
 		elif velocity.z < 0: playeranimations.play("main-character/running-backwards")
+		AudioManager.toggle_footsteps_pause(false)
 	else:
 		playeranimations.play("main-character/idle")
+		AudioManager.toggle_footsteps_pause(true)
 		velocity.x = 0.0
 		velocity.z = 0.0
 
