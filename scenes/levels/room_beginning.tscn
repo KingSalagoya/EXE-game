@@ -2,8 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://ccpiiqvau8ym2" path="res://scenes/levels/base_room.tscn" id="1_ajufy"]
 [ext_resource type="Script" uid="uid://dvvn8o370cbf2" path="res://scripts/interacts/special_area.gd" id="1_ukwrm"]
+[ext_resource type="AudioStream" uid="uid://ddb1sjn1a12ca" path="res://assets/sfx/ambients/cursed_church_improved.mp3" id="2_eyqxf"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="3_eyqxf"]
 [ext_resource type="Script" uid="uid://dal4jm8np30kc" path="res://scripts/interacts/interact_cinamatic.gd" id="3_fknfx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mdng0"]
+viewport_path = NodePath("PCTable/monitor/screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ri00i"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_mdng0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3h8c4"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ri00i")
+size = Vector2(0.8, 0.55)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8j031"]
 height = 4.0097046
@@ -23,6 +36,16 @@ albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
 [node name="RoomBeginning" type="Node3D" unique_id=1918707169]
 
 [node name="BaseRoom" parent="." unique_id=1582295487 instance=ExtResource("1_ajufy")]
+
+[node name="screen" parent="BaseRoom/Props/monitor" parent_id_path=PackedInt32Array(1582295487, 1327782251) index="0" unique_id=1620209071]
+mesh = SubResource("QuadMesh_3h8c4")
+
+[node name="AudioStreamPlayer3D" parent="BaseRoom" index="4" unique_id=810829630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.442703, 1.7869306, -71.55354)
+stream = ExtResource("2_eyqxf")
+unit_size = 2.02
+autoplay = true
+max_distance = 53.0
 
 [node name="SpecialAreas" type="Node3D" parent="." unique_id=419169634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0029078126, 0, 2.2223396)
@@ -58,3 +81,5 @@ mesh = SubResource("CapsuleMesh_mdng0")
 transform = Transform3D(0.6, 0, 0, 0, 0.2, 0, 0, 0, 0.78220695, 0, 1.1012625, -0.16277902)
 material_override = SubResource("StandardMaterial3D_pdulx")
 mesh = SubResource("BoxMesh_ri00i")
+
+[editable path="BaseRoom"]

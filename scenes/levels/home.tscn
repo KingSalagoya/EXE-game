@@ -12,6 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://rnm0r8kuo6xd" path="res://assets/models/edited/window_frame.res" id="9_58gng"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="9_8768l"]
 [ext_resource type="Texture2D" uid="uid://dp4i05dvdd5rd" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/kitchenKnife_TEX.png" id="11_ssoy3"]
+[ext_resource type="AudioStream" uid="uid://dax4eksb0eyl5" path="res://assets/sfx/ambients/soundreality-wind-blowing-457954.mp3" id="13_ff52r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpn4t"]
 resource_name = "Material.027"
@@ -325,16 +326,16 @@ shape = SubResource("BoxShape3D_ssoy3")
 
 [node name="Lights" type="Node3D" parent="." unique_id=1393697127]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=770477996]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96902525, 6.490882, -13.491591)
-omni_range = 973.854
-
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=818519205]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.215477, 9.246051, -0.9663155)
 omni_range = 973.854
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=853794846]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.82663, 9.246051, -0.9663165)
+omni_range = 973.854
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=2025249550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1326493, 6.490882, -13.491591)
 omni_range = 973.854
 
 [node name="Interactable" type="Node3D" parent="." unique_id=1729091026]
@@ -382,3 +383,10 @@ shape = SubResource("BoxShape3D_uge0f")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=245251069]
 libraries/ = SubResource("AnimationLibrary_w18ys")
 script = ExtResource("6_yskkl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1970363915]
+stream = ExtResource("13_ff52r")
+volume_db = -12.0
+autoplay = true
+bus = &"music"
+parameters/looping = true
