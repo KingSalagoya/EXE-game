@@ -11,6 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://brjc37kv67h57" path="res://assets/models/edited/door.res" id="7_8768l"]
 [ext_resource type="ArrayMesh" uid="uid://rnm0r8kuo6xd" path="res://assets/models/edited/window_frame.res" id="9_58gng"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="9_8768l"]
+[ext_resource type="Texture2D" uid="uid://dp4i05dvdd5rd" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/kitchenKnife_TEX.png" id="11_ssoy3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpn4t"]
 resource_name = "Material.027"
@@ -115,6 +116,49 @@ shadow_mesh = ExtResource("6_lqded")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lqded"]
 size = Vector3(0.022951394, 0.0060961004, 0.031712018)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1l6a"]
+resource_name = "KitchenKnife_MAT"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4lphl"]
+_surfaces = [{
+"aabb": AABB(-0.0011608158, -0.00053823995, -0.009780305, 0.0033640517, 0.0010763837, 0.024253406),
+"format": 34359742465,
+"index_count": 192,
+"index_data": PackedByteArray("AAAKAAsAEgAKAAAACwAKAAEACgASABMAEwABAAoAAQAUAAsAAwABABMADwAUAAEAAQADAA8AFAAPABUAFQACABQAFAACABYAFQAWAAIAFgALABQAEAAVAA8AFQAQABYABgAPAAMADwAGABAAEQALABYACwARAAAAFgAFABEAFwAFABYAEQAFABcAEAAXABYAFwAOABEADgAXABAAAAARAA4AEAAGAA4ADgAHAAAABwAOAAYAAwANAAYABgANAAcADQADABgAEwAYAAMABwANABkAGAAZAA0AGgAAAAcAAAAaABIAGQAbAAcABwAbABoACQAZABgAHAAbABkAGQAJABwAHQAaABsAEgAaAB0AGwAcAB0ABAAdABwAHQAEABIAHAAJAAQACQAYAAgACAAYABMADAATABIAEwAMAAgADAASAAQABAAJAB4ACAAMAB8AHwAMAAQACQAIACAAHwAgAAgACQAgAB4AHwAEACEAIAAfACEAHgAhAAQAIQAeACAA"),
+"lods": [0.0014420466, PackedByteArray("AAAKAAsACwAKAAEACgAAAAQADAAKAAQADAABAAoABAAAAAcACQAMAAQABwAJAAQACQAIAAwAAQAMAAgACQAHAA0ACQADAAgACAADAAEACQANAAMABgANAAcAAwANAAYADgAHAAAABwAOAAYABgAPAAMAAQADAA8AEAAGAA4ADwAGABAADwACAAEAEAACAA8AAQACAAsADgAFABAAEAAFAAIABQAOABEAAgAFABEAEQALAAIAAAARAA4ACwARAAAA"), 0.0029153249, PackedByteArray("AAABAAIAAgAFAAAABgAFAAIAAAAFAAYABgACAAEABgAHAAAAAQAAAAQABAAAAAcAAQADAAYABgADAAcAAQAEAAgACAADAAEACQAIAAQACQADAAgABwAJAAQACQAHAAMA"), 0.0074597728, PackedByteArray("AAABAAIAAQADAAIAAgADAAAAAQAEAAMABAAAAAMAAQAAAAQAAAAFAAIAAgAFAAAA")],
+"name": "KitchenKnife_MAT",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("pm87Onq2szl/aPq6mGGHunq2szl/aPq6hCaYugEPjTmTPSC8mGGHumzDs7l/aPq6QfreOfImFTkoW2I8fFXCOgEPjTmTPSC8oEi5uawYDbqyjwK8pm87OmzDs7l/aPq66ugcuqrlEbnEwl08QfreOQy8FbkoW2I8oEi5ueSgBjp/aPq6oEi5uTYSDTqyjwK86ugcuk4rEznEwl08oEi5uV2nBrp/aPq69u07OuQbjbmyjwK878uUuuQbjbmyjwK8Tlz8uaoYDbqTPSC89u07Ov0OjTmyjwK8d/yguQzyADoObJK6mGGHuuGHqTmTc5K678uUuv0OjTmyjwK8hCaYuuEbjbmTPSC8Tlz8uTgSDTqTPSC8fFXCOuEbjbmTPSC8mGGHutaUqbmTc5K6d/yguYf4ALoObJK6KmQQO2R1YTk8yPO6KmQQO0+dYbk8yPO6IIurOoAwO7nMduQ7IIurOhbQOjnMduQ7thihOGoXFLkM6mk88gz4uWq8EzmWIG088gz4uZD+ErmWIG08thihOJFNFDkM6mk8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ff52r"]
+resource_name = "Cylinder_011"
+_surfaces = [{
+"aabb": AABB(-0.0011608158, -0.00053823995, -0.009780305, 0.0033640517, 0.0010763837, 0.024253406),
+"attribute_data": PackedByteArray("Xa5lP/5a1T5TsX0/rnDVPlCSfz/qvFQ/0AVbP3i8VD8oc/Q+8LXaPYiHaT8MAQI+63lpP6i4hz41mGk/UAu1Pd0o7j5URXA+od7lOioqDz8n81s/0YcxP/yXijvmTxk/YMUeOyZzOD+4SPU6qrYNP49Z+jrSaes+f19UPzJJ9D4jBRM/LA4nPjaYaT/8n2k+B6VXP8HCHz+J1Fk/CmwtPwBS8jyUiTM/X0F0P/hs1T6SHHQ/1lM8P5w+ZT9oSzw/IfQRPxASZT42HxE/7jCDPpcm/T6sjh4+xYdpP/RvKj4b8RI/sK3zPUWpfT9o/ew9KYVxP7ykbD4nhXE/GD2bPaWTUD9L6wc/tHPYOu1GBD+foFg/RxMcP68wHTxN3yM/FEB/P95VPD8IunU//rxUP9hw+j5sRV4+lSj/PtRyAz4BXBI/GO64PTudeT8YPZs9HXltP2j97D07nXk/vKRsPmvtMT1TrAM/PDRdP+0/Bj9Xk1o/tq/9Pgd98D7oA9w+/oGlOzgywz7RozI9qrYNPxIXSD10ABg/rEdDPQ64Dj/zi2Q/Z8ghP6nbVz0NOyI/ahphP87gIz/HemM/yhsrP8N7Xz9cCyk/x3bxPsQSOj8tgvI+DoQ/P4iQdj1CdkE/jFlJPSiiRj8="),
+"format": 34359742487,
+"index_count": 192,
+"index_data": PackedByteArray("AAAVABYAFgAVAAEAFgAXAAAAAQAkABYAFwAWACUAJQAWACQAJQADABcAJAACACUAGAARAAYABgAZABgAJgAYABkAGQAIACYAGAAmABoAEQAYABAAGgAQABgAEAAbABEABQAbABAAHAAQABoAEAAcAAUABwAFABwAGgAnABwAHAAoAAcAKAAcACcAJwAEACgAKQAqAB8AKQAdACoAHQArACoAKwAeACoAIAAsAA8ALQAgAA8ALQAPAC4ALwAPACwALAAwAC8ADgAwACwAIAAxACwALAAhAA4AIQAsADEAMQANACEAEgAyADMAMwAiABIAEgAiADQAMwAyAAsACwAJADMAIwALADIAMgA1ACMAFAAjADUAEwAyABIAEwA1ADIANAA2ABIAEwASADYANgA0ADcANwA4ADYAEwA2ADgAOAA3AAoACgATADgAOQATAAoANQATADkACgA6ADkAOQA7ADUAOwA5ADoANQA7ABQAOgA8ADsAFAA7ADwAPAAMABQA"),
+"lods": [0.0014420466, PackedByteArray("AAAVABYAFgAVAAEAFgAXAAAAAQACABYAFwAWAAIAAgADABcAGAARAAYABgAZABgACAAYABkAGAAIABoAEQAYABAAGgAQABgAEAAbABEABQAbABAAHAAQABoAEAAcAAUAGgAEABwABwAFABwAHAAEAAcAHQAeAB8AIAAhAA8AIQAOAA8AIAANACEAEgALAAkACQAiABIAEwALABIAEwASACIAEwAjAAsAEwAiAAoAEwAUACMAFAATAAoACgAMABQA"), 0.0029153249, PackedByteArray("AAABAAIAAgADAAAAEAARAAYAEAAFABEABgAIABAABwAFABAAEAAIAAQAEAAEAAcAEgALAAkACQAKABIAEwALABIAEwASAAoAEwAUAAsAFAATAAoACgAMABQADQAOAA8A"), 0.0074597728, PackedByteArray("AAABAAIAAgADAAAABAAFAAYABwAFAAQABgAIAAQACQAKAAsACgAMAAsADQAOAA8A")],
+"material": SubResource("StandardMaterial3D_m1l6a"),
+"name": "KitchenKnife_MAT",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 61,
+"vertex_data": PackedByteArray("pm87Onq2szl/aPq6mGGHunq2szl/aPq6hCaYugEPjTmTPSC8fFXCOgEPjTmTPSC8hCaYugEPjTmTPSC8mGGHumzDs7l/aPq6pm87Onq2szl/aPq6mGGHunq2szl/aPq6fFXCOgEPjTmTPSC8mGGHunq2szl/aPq6QfreOfImFTkoW2I8mGGHumzDs7l/aPq6pm87Onq2szl/aPq6mGGHunq2szl/aPq6pm87Onq2szl/aPq6QfreOfImFTkoW2I8oEi5uawYDbqyjwK8pm87OmzDs7l/aPq66ugcuqrlEbnEwl08QfreOQy8FbkoW2I8pm87OmzDs7l/aPq6oEi5ueSgBjp/aPq6oEi5uTYSDTqyjwK89u07Ov0OjTmyjwK89u07OuQbjbmyjwK89u07Ov0OjTmyjwK8Tlz8uaoYDbqTPSC8oEi5uV2nBrp/aPq678uUuuQbjbmyjwK8Tlz8uaoYDbqTPSC8fFXCOgEPjTmTPSC8hCaYugEPjTmTPSC86ugcuk4rEznEwl08oEi5ueSgBjp/aPq66ugcuk4rEznEwl08oEi5uV2nBrp/aPq678uUuv0OjTmyjwK8Tlz8uTgSDTqTPSC8fFXCOuEbjbmTPSC8hCaYuuEbjbmTPSC878uUuv0OjTmyjwK8hCaYuuEbjbmTPSC8Tlz8uTgSDTqTPSC8fFXCOuEbjbmTPSC8d/yguQzyADoObJK68gz4uWq8EzmWIG08thihOJFNFDkM6mk8IIurOhbQOjnMduQ7KmQQO2R1YTk8yPO6mGGHuuGHqTmTc5K6mGGHutaUqbmTc5K6mGGHuuGHqTmTc5K68gz4uWq8EzmWIG08d/yguYf4ALoObJK68gz4uZD+ErmWIG08thihOJFNFDkM6mk8thihOGoXFLkM6mk8IIurOoAwO7nMduQ7IIurOhbQOjnMduQ7KmQQO0+dYbk8yPO6KmQQO2R1YTk8yPO6vbp43Ugm79a2OFy3fkfFmy0irc7ASCWnutlSyUsuKuYtIq3Oh0yCxbY4okgkgcnAvbp43YSNVMy2OFy364JcwLrZUsmqpCjItjhct8l9G73hsx20VlL9xrY4okjehaa9vbp43YvWkaW2OFy3/n94vr26eN1/i/bM4bMdtI9sgrW3eIoI136xwL66hiK/ixuzGj/sRmd+2sbYs9lLImpHyb66hiKvtZjAB3lA+fEGoLy3eHT3gAdSvGK8s7gERareYrxLRypszb9ivLO4Zm7yvqRBnAZqc9alB3m+BsR+6b8lNhhLFINMv6RBnAaqhyikutlSyW+5f5EtIq3OIEoojiM/HLlDhdi8B3lA+RGAHsAjPxy5NZR4xgd5vga7kl+/JTbmtBhKi5qkQWL55QvqubrZrDYGhXmkLSJRMcNiO60lNua01H6+vS0iUTFQnO6apEFi+a031YO62aw2AF23nNN8jPtZgFm/61z5qBWiLqzwnbCxeWaeqom/47ihef670Ncs0DWhu81/Oxe5A4EEvns760YdhX2/fzsXuUuCx77rXPmoecaB18t8egTQjGvA6VwJV2KM+t3wnbCxWzIA3umdTE5Jc37aib8bR5h4bcOJv+O4rW6pwtDX0i/kpEa00Ncs0FO6fLc=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4lphl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhhke"]
+albedo_texture = ExtResource("11_ssoy3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uge0f"]
 size = Vector3(1.2563477, 0.3581543, 0.576416)
@@ -262,19 +306,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.032657e-09, 0)
 transform = Transform3D(1.0000005, 0, 0, 0, 1.0000007, -5.684342e-14, 0, 5.684342e-14, 1.0000007, 4.058442e-05, 0, 8.234754e-05)
 shape = SubResource("BoxShape3D_ff52r")
 
-[node name="Vehicle" type="Node3D" parent="RailHouseScene" unique_id=1457381826]
-transform = Transform3D(-0.9222145, 0, -0.3866788, 0, 1, 0, 0.3866788, 0, -0.9222145, 6.9669614, 0, 17.522509)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="RailHouseScene/Vehicle" unique_id=1503328071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9113059, 1.728468, -2.3527143)
-use_collision = true
-size = Vector3(6.005432, 2.8775024, 2.4110107)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="RailHouseScene/Vehicle" unique_id=1454988394]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0220885, 1.1091518, -2.3527143)
-use_collision = true
-size = Vector3(8.541466, 1.6388702, 2.4110107)
-
 [node name="Corridoor" type="Node3D" parent="RailHouseScene" unique_id=466250499]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.195367, 0, 1.4556196)
 visible = false
@@ -330,16 +361,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008791237, 2.831337e-05, 1.
 transform = Transform3D(1, 0, 0, 0, 0.9999996, 0, 0, 0, 1, 0.00268446, 0.00049940497, 0)
 shape = SubResource("BoxShape3D_lqded")
 
-[node name="knife" type="CSGBox3D" parent="Interactable" unique_id=1511696525 groups=["interactable"]]
-transform = Transform3D(0.6620709, 0, -0.74944127, 0, 1, 0, 0.74944127, 0, 0.6620709, 19.757605, 0.10185194, -13.420586)
-size = Vector3(1.5227051, 0.37097168, 0.61279297)
+[node name="knife" type="Node3D" parent="Interactable" unique_id=1612713085 groups=["interactable"]]
+transform = Transform3D(0.7514504, 0, -0.85061586, 0, 1.135, 0, 0.85061586, 0, 0.7514504, 19.757605, -0.26539588, -13.420586)
 script = ExtResource("2_u4wd2")
 interact_text = "pickup knife"
 objective_name = "grab the knife"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Interactable/knife" unique_id=1767178186]
+[node name="kitchenKnife" type="MeshInstance3D" parent="Interactable/knife" unique_id=1507844229]
+transform = Transform3D(-24.0401, 7.4866257, 96.77823, -20.391514, -97.86679, 2.5055177, 94.90133, -19.13221, 25.05392, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ff52r")
+surface_material_override/0 = SubResource("StandardMaterial3D_fhhke")
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Interactable/knife/StaticBody3D" unique_id=316315400]
+[node name="StaticBody3D" type="StaticBody3D" parent="Interactable/knife/kitchenKnife" unique_id=1767178186]
+transform = Transform3D(0.0001333672, -0.009999112, 1.1714292e-09, -1.8626451e-09, -3.204346e-10, -0.010000001, 0.009999111, 0.0001333666, -9.313226e-10, 0, 0, 0)
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Interactable/knife/kitchenKnife/StaticBody3D" unique_id=316315400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12817478, -0.01940918, -0.010135651)
 shape = SubResource("BoxShape3D_uge0f")
 
