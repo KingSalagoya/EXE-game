@@ -30,4 +30,8 @@ func take_damage(damage: int, knockback: Vector3 = Vector3.ZERO) -> void:
 					GameManager.request_objective_completed.emit("kill enemies")
 				owner_character.queue_free()
 			else:
-				get_tree().quit()
+				GameManager.unlock_achievement.emit("You DIED!")
+				get_tree().paused = true
+				await get_tree().create_timer(1).timeout
+				get_tree().paused = false
+				get_tree().reload_current_scene()
