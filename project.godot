@@ -58,6 +58,8 @@ import/blender/enabled=false
 interactable="Put this for interactable items"
 Enemy=""
 Player=""
+grass=""
+concrete=""
 
 [input]
 
