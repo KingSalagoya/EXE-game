@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv7hmgq4r8712"
-path.s3tc="res://.godot/imported/Godot_Setup.png-27e73ca089f326608f166547c0c02f96.s3tc.ctex"
+uid="uid://r2s2ijd0bv7y"
+path.s3tc="res://.godot/imported/Tree_Pine.png-3492da9e4130b2c39dad435fc315dd21.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/animations/Godot_Setup.png"
-dest_files=["res://.godot/imported/Godot_Setup.png-27e73ca089f326608f166547c0c02f96.s3tc.ctex"]
+source_file="res://assets/textures/textures/Tree_Pine.png"
+dest_files=["res://.godot/imported/Tree_Pine.png-3492da9e4130b2c39dad435fc315dd21.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv7hmgq4r8712"
-path.s3tc="res://.godot/imported/Godot_Setup.png-27e73ca089f326608f166547c0c02f96.s3tc.ctex"
+uid="uid://bgx8kkhfdtl3"
+path.s3tc="res://.godot/imported/Tree_Birch.png-183f3b76fe77da297e27f2058f0b3eef.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/animations/Godot_Setup.png"
-dest_files=["res://.godot/imported/Godot_Setup.png-27e73ca089f326608f166547c0c02f96.s3tc.ctex"]
+source_file="res://assets/textures/textures/Tree_Birch.png"
+dest_files=["res://.godot/imported/Tree_Birch.png-183f3b76fe77da297e27f2058f0b3eef.s3tc.ctex"]
 
 [params]
 
