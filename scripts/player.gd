@@ -153,6 +153,7 @@ func _physics_process(delta: float) -> void:
 		handle_movement()
 		handle_head_bob(delta)
 		move_and_slide()
+	else: AudioManager.toggle_footsteps_pause(true)
 
 func handle_jump(delta: float) -> void:
 	if not is_on_floor():

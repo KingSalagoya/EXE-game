@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpakvn1j64v86" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c8i1q1xahaol6" path="res://scenes/player.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dqj5wfj0bcur7" path="res://scenes/levels/level_test.tscn" id="3_choun"]
+[ext_resource type="PackedScene" uid="uid://dbef7ovwfqemw" path="res://scenes/levels/home.tscn" id="3_choun"]
 [ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="4_85g3d"]
 [ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://rvtqbuwa5w53" path="res://scripts/user_interface.gd" id="4_tefeu"]
@@ -26,6 +26,11 @@ background_mode = 2
 sky = SubResource("Sky_choun")
 tonemap_mode = 2
 ssao_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.024048269, 0.03226694, 0.06242825, 1)
+fog_density = 1.0
+fog_depth_curve = 0.17677684
 
 [sub_resource type="Animation" id="Animation_choun"]
 length = 0.001
@@ -859,6 +864,7 @@ stretch_shrink = 3
 [node name="SubViewport" type="SubViewport" parent="GameViewport" unique_id=794923005]
 handle_input_locally = false
 snap_2d_vertices_to_pixel = true
+audio_listener_enable_3d = true
 size = Vector2i(640, 360)
 render_target_update_mode = 4
 
@@ -875,7 +881,7 @@ damage = 5
 
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
 
-[node name="LevelTest" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=1181721314 instance=ExtResource("3_choun")]
+[node name="Home" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=1172181076 instance=ExtResource("3_choun")]
 
 [node name="Cinamatic" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1467429672]
 

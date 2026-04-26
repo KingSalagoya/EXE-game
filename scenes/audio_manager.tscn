@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://b4ftfrw1rgy" path="res://assets/sfx/wake-up/man-waking-up-from-sleep.mp3" id="9_oucy0"]
 [ext_resource type="AudioStream" uid="uid://dtvlitstwq5bk" path="res://assets/sfx/yawn/male-yawning.mp3" id="10_cuol6"]
 [ext_resource type="AudioStream" uid="uid://pejtj1x4fiwk" path="res://assets/sfx/footsteps/concrete-footsteps.mp3" id="13_2y2jw"]
+[ext_resource type="AudioStream" uid="uid://vi7oubw5wfc5" path="res://assets/sfx/floraphonic-electric-shock-short-circuit-4-204986.mp3" id="13_2y5yn"]
 [ext_resource type="AudioStream" uid="uid://bm4olc2iddi0w" path="res://assets/sfx/footsteps/footsteps-dirt-gravel.mp3" id="14_2y5yn"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_if78k"]
@@ -58,6 +59,7 @@ audio_one_shot_scene = ExtResource("2_02gw7")
 audio_one_shot_clips = Dictionary[String, AudioStream]({
 "door close": SubResource("AudioStreamRandomizer_if78k"),
 "door open": SubResource("AudioStreamRandomizer_ic5jq"),
+"electric": ExtResource("13_2y5yn"),
 "stab": SubResource("AudioStreamOggVorbis_oucy0"),
 "wake up": ExtResource("9_oucy0"),
 "walk hallway": SubResource("AudioStreamRandomizer_8igv3"),
