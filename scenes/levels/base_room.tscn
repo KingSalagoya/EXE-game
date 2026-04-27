@@ -454,7 +454,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
-"values": [Vector3(2.8421706e-14, 0, 0), Vector3(5.1315926e-08, 1.4777004e-07, -0.66847855)]
+"values": [Vector3(0, 0, 1.2112585), Vector3(5.1315926e-08, 1.4777004e-07, -0.66847855)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -466,7 +466,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
-"values": [Vector3(2.8421706e-14, 0, 0), Vector3(1.0509322e-07, -1.9765561e-07, 0.97736686)]
+"values": [Vector3(0, 0, -1.0960667), Vector3(1.0509322e-07, -1.9765561e-07, 0.97736686)]
 }
 
 [sub_resource type="Animation" id="Animation_qvc4m"]
@@ -482,7 +482,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
-"values": [Vector3(1.0509322e-07, -1.9765561e-07, 0.97736686), Vector3(0, 0, 0)]
+"values": [Vector3(1.0509322e-07, -1.9765561e-07, 0.97736686), Vector3(0, 0, -1.0960667)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -494,7 +494,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
-"values": [Vector3(5.1315926e-08, 1.4777004e-07, -0.66847855), Vector3(0, 0, 0)]
+"values": [Vector3(5.1315926e-08, 1.4777004e-07, -0.66847855), Vector3(0, 0, 1.2112585)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hva3l"]
@@ -840,5 +840,6 @@ spot_angle = 56.249996
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=810829630]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.442703, 1.7869306, -3.2810435)
 stream = ExtResource("31_ww1ku")
+volume_db = -4.0
 max_distance = 35.0
 parameters/looping = true

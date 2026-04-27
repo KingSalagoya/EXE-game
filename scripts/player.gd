@@ -170,8 +170,9 @@ func handle_movement() -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		if velocity.z > 0: playeranimations.play("main-character/running")
-		elif velocity.z < 0: playeranimations.play("main-character/running-backwards")
+		playeranimations.play("main-character/running-backwards")
+		#if velocity.z > 0: playeranimations.play("main-character/running")
+		#elif velocity.z < 0: playeranimations.play("main-character/running-backwards")
 		AudioManager.toggle_footsteps_pause(false)
 	else:
 		playeranimations.play("main-character/idle")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ctcek4uqt4wh0"
+path="res://.godot/imported/opening-door (2).ogg-d039da53b213b1718cf7d7eb1d46ed5a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/intreactions/opening-door (2).ogg"
+dest_files=["res://.godot/imported/opening-door (2).ogg-d039da53b213b1718cf7d7eb1d46ed5a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

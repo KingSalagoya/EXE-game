@@ -57,6 +57,8 @@ var dialogue_line: DialogueLine:
 ## A cooldown timer for delaying the balloon hide when encountering a mutation.
 var mutation_cooldown: Timer = Timer.new()
 
+var typing_sfx_on_cooldown: bool = false
+
 ## The base balloon anchor
 @onready var balloon: Control = %Balloon
 
@@ -94,6 +96,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_instance_valid(dialogue_line):
 		progress.visible = not dialogue_label.is_typing and dialogue_line.responses.size() == 0 and not dialogue_line.has_tag("voice")
+
 
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -220,7 +223,8 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func unhandled_input(text: String) -> void:
 	if text == "jump":
 		if dialogue_label and dialogue_label.is_typing:
-			dialogue_label.skip_typing()
+			pass
+			#dialogue_label.skip_typing()
 		elif dialogue_label and dialogue_line != null:
 			next(dialogue_line.next_id)
 	pass
