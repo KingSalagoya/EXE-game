@@ -20,7 +20,6 @@ albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 emission_enabled = true
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8768l"]
-load_path = "res://.godot/imported/Seamless-Wood-Texture-3-1024x768.jpg-b1d51958d789b0f0c2c2a5879db6688b.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_285tx"]
 resource_name = "Material.030"

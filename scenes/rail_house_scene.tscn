@@ -305,7 +305,7 @@ shadow_mesh = SubResource("ArrayMesh_4b8kg")
 
 [node name="RailHouseScene" unique_id=1957032565 instance=ExtResource("1_wiq44")]
 
-[node name="electricity_box" parent="." index="0" unique_id=858232816 node_paths=PackedStringArray("ANIM_PLAYER") groups=["interactable"]]
+[node name="electricity_box" parent="." index="0" unique_id=471100482 node_paths=PackedStringArray("ANIM_PLAYER") groups=["interactable"]]
 transform = Transform3D(99.868225, 1.1573889e-07, -5.1324654, 5.1324663, -4.50721e-06, 99.86821, -1.15738914e-07, -100.00001, -4.50721e-06, 0, 0.5924448, 0)
 script = ExtResource("2_4arla")
 ANIM_PLAYER = NodePath("electricbox_anim")
@@ -329,7 +329,7 @@ libraries/ = SubResource("AnimationLibrary_c05f3")
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 9.156672, 0, 6.1580405)
 mesh = ExtResource("2_668kv")
 
-[node name="ground" parent="." index="4" unique_id=478921301]
+[node name="ground" parent="." index="4" unique_id=906218374]
 transform = Transform3D(-4.3711393e-06, -100.00001, -1.1920929e-05, 0, -1.1920929e-05, 100.00001, -100.000015, 4.371139e-06, 5.210804e-13, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ground" index="0" unique_id=878013388 groups=["grass"]]
@@ -358,7 +358,7 @@ shape = SubResource("BoxShape3D_dq35g")
 transform = Transform3D(-4.3713e-08, 1.0000024, 1.1920956e-07, -1.0000399, -4.3711392e-08, -1.1920929e-07, -1.1921432e-07, -1.1920928e-07, 1, 0.18525445, -0.10394927, -3.2014214e-08)
 shape = SubResource("BoxShape3D_c05f3")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="house" parent_id_path=PackedInt32Array(1680067118) index="0" unique_id=1482316637]
+[node name="StaticBody3D" type="StaticBody3D" parent="house" parent_id_path=PackedInt32Array(903488568) index="0" unique_id=1482316637]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house/StaticBody3D" index="0" unique_id=90525756]
 shape = SubResource("ConvexPolygonShape3D_4arla")
@@ -396,7 +396,7 @@ shape = SubResource("ConvexPolygonShape3D_dmdb3")
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="house/StaticBody3D" index="11" unique_id=700058712]
 shape = SubResource("ConvexPolygonShape3D_2d3eo")
 
-[node name="telephone towers" parent="." index="8" unique_id=1855565743]
+[node name="telephone towers" parent="." index="8" unique_id=1357928668]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -6.577074, -5.244071, -14.343113)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="telephone towers" index="0" unique_id=1232410550]
@@ -406,7 +406,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.00
 transform = Transform3D(1.0000005, 0, 0, 0, 1.0000007, -9.947598e-14, 0, 9.947598e-14, 1.0000007, 0, 0, 0)
 shape = SubResource("CylinderShape3D_kkehc")
 
-[node name="telephone towers_001" parent="." index="9" unique_id=599014369]
+[node name="telephone towers_001" parent="." index="9" unique_id=904766686]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -6.577074, -5.244071, -30.908522)
 mesh = ExtResource("4_b2fm2")
 
@@ -417,10 +417,10 @@ transform = Transform3D(1.0000004, 0, 0, 0, -4.371141e-08, 1.0000004, 0, -1.0000
 transform = Transform3D(1.0000005, 0, 0, 0, 1.0000007, -9.947598e-14, 0, 9.947598e-14, 1.0000007, 0, 0, 0)
 shape = SubResource("CylinderShape3D_kkehc")
 
-[node name="wires" parent="." index="10" unique_id=1085951899]
+[node name="wires" parent="." index="10" unique_id=1499760186]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -6.577074, -5.244071, -14.343113)
 
-[node name="wires2" parent="." index="11" unique_id=1873443576]
+[node name="wires2" parent="." index="11" unique_id=249612306]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -0.3740969, -0.9316752, -14.042934)
 
 [node name="Models" type="Node3D" parent="." index="12" unique_id=19478504]

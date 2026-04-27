@@ -26,7 +26,6 @@ func _process(_delta: float) -> void:
 func spawn_enemies() -> void:
 	for i in range(1):
 		var e = enemy.instantiate()
-		enemy_holder.add_child(e)
 		GameManager.update_player_count.emit(2)
 		e.global_position = Vector3(-39.677, -2.256, 22.989)
 		e.character = e.CHARACTER.boss
@@ -34,13 +33,14 @@ func spawn_enemies() -> void:
 		e.damage = 1
 		e.knockback_force = 16.0
 		spawn_enemies_count += 1
+		enemy_holder.add_child(e)
 		await get_tree().create_timer(1).timeout
 
 func spawn_friend() -> void:
 	var friend_scene = FRIEND.instantiate()
-	add_child(friend_scene)
 	friend_scene.global_position = Vector3(0, 4, 0)
 	friend_spawned = true
+	add_child(friend_scene)
 
 func unlock_achievement(achievement: String) -> void:
 	match achievement:
