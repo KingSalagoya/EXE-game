@@ -24,6 +24,7 @@ func interact() -> void:
 func _objective_collected(_name: String) -> void:
 	#print("HIII")
 	if _name == objective_name and interacted:
+		AudioManager.play_audio_one_shot("pickup")
 		match _name:
 			"collect wood":
 				GameManager.inventory.wood += 1

@@ -43,7 +43,7 @@ signal paused_typing(duration: float)
 @export var seconds_per_pause_step: float = 0.3
 
 var _already_mutated_indices: PackedInt32Array = []
-
+var typing_sfx_on_cooldown: bool = false
 
 ## The current line of dialogue.
 var dialogue_line:
@@ -86,7 +86,10 @@ func _process(delta: float) -> void:
 			# Make sure any mutations at the end of the line get run
 			_mutate_inline_mutations(get_total_character_count())
 			is_typing = false
-
+	
+	#if current_text != text:
+		#current_text = text
+		#AudioManager.play_audio_one_shot("type")
 
 ## Sets the label's text from the current dialogue line. Override if you want
 ## to do something more interesting in your subclass.
@@ -137,7 +140,7 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 		_last_mutation_index = visible_characters
 		_mutate_inline_mutations(visible_characters)
 		if _is_awaiting_mutation: return
-
+	play_sfx()
 	# Pause on characters like "."
 	var waiting_seconds: float = seconds_per_pause_step if _should_auto_pause() else 0
 	if _last_wait_index != visible_characters and waiting_seconds > 0:
@@ -225,3 +228,10 @@ func _should_auto_pause() -> bool:
 		return false
 
 	return parsed_text[visible_characters - 1] in pause_at_characters.split()
+
+func play_sfx() -> void:
+	if not typing_sfx_on_cooldown:
+		typing_sfx_on_cooldown = true
+		AudioManager.play_audio_one_shot("type")
+		await(get_tree().create_timer(0.125).timeout)
+		typing_sfx_on_cooldown = false
