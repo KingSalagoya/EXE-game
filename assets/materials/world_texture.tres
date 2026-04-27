@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bf6cxqerttwgv"]
+
+[ext_resource type="Texture2D" uid="uid://8t7q5b0x6su5" path="res://assets/textures/textures/world_texture.png" id="1_p3ytq"]
+
+[resource]
+resource_name = "bima "
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_p3ytq")

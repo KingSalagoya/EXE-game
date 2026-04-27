@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0p4mh2c3nsln"
+path="res://.godot/imported/drawer close.mp3-c337e8dc1803c35ece7b5a5033dec52a.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/intreactions/drawer close.mp3"
+dest_files=["res://.godot/imported/drawer close.mp3-c337e8dc1803c35ece7b5a5033dec52a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

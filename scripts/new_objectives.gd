@@ -8,7 +8,7 @@ extends Node
 	#"enter the house": 0,
 	#"open door": 0,
 	"stab": 0,
-	#"pick walkie-talkie": 0,
+	"pick walkie-talkie": 0,
 	"open drawer": 0,
 	"grab dvd": 0,
 	"insert dvd": 0,
