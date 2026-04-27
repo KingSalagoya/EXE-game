@@ -40,6 +40,13 @@ albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
 [node name="screen" parent="BaseRoom/Props/monitor" parent_id_path=PackedInt32Array(1582295487, 1327782251) index="0" unique_id=1620209071]
 mesh = SubResource("QuadMesh_3h8c4")
 
+[node name="SpotLight3D" parent="BaseRoom/Lighting" parent_id_path=PackedInt32Array(1582295487, 147508855) index="1" unique_id=1984971645]
+light_energy = 1.0
+
+[node name="bulb" type="OmniLight3D" parent="BaseRoom/Lighting" parent_id_path=PackedInt32Array(1582295487, 147508855) index="3" unique_id=2066641028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.425, 2, -3.684133)
+light_energy = 0.2
+
 [node name="AudioStreamPlayer3D" parent="BaseRoom" index="4" unique_id=810829630]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.442703, 1.7869306, -71.55354)
 stream = ExtResource("2_eyqxf")
