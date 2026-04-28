@@ -20,6 +20,16 @@ func play_music(audio_name:String, from_position: float = 0.0, restart: bool = f
 	active_music_stream.bus = "music"
 	active_music_stream.play(from_position)
 
+func handle_music_pause(audio_name: String, state: bool) -> void:
+	active_music_stream = music_clips.get_node(audio_name)
+	active_music_stream.stream_paused = state
+
+func activate_music() -> void:
+	for child in music_clips.get_children():
+		if child is AudioStreamPlayer:
+			play_music(child.name)
+			handle_music_pause(child.name, false)
+
 func play_audio_one_shot(audio_name: String, pos: Vector3 = Vector3.ZERO, volume_db: float = 0.0, from_position: float = 0.0) -> AudioOneShot:
 	if audio_one_shot_clips.has(audio_name) == false: return
 	var audio_one_shot: AudioOneShot = audio_one_shot_scene.instantiate()

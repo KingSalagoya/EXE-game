@@ -17,6 +17,8 @@ func _ready() -> void:
 	GameManager.spawn_friend.connect(spawn_friend)
 	#spawn_friend()
 	
+	AudioManager.handle_music_pause("wind", false)
+	
 	#await get_tree().create_timer(1).timeout
 	#GameManager.unlock_achievement.emit("forest")
 	#await get_tree().create_timer(1).timeout
