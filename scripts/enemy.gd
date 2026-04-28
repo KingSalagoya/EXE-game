@@ -27,6 +27,9 @@ func apply_knockback(force: Vector3) -> void:
 	knockback_velocity = force
 
 func _ready() -> void:
+	if character == CHARACTER.boss:
+		$AttackableArea/CollisionShape3D.scale = Vector3(5, 5, 5)
+	
 	animation_multiplier = randf_range(0.8, 1.2)
 	target_path = target_path_str
 	if target_path.is_empty():
@@ -98,9 +101,9 @@ func _handle_movement(delta: float) -> void:
 func _on_attackable_area_body_entered(body: CharacterBody3D) -> void:
 	if body == target:
 		attackable = true
-		print("attackable")
+		#print("attackable")
 
 func _on_attackable_area_body_exited(body: CharacterBody3D) -> void:
 	if body == target:
 		attackable = false
-		print("unattackable")
+		#print("unattackable")

@@ -11,16 +11,15 @@ albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_4ra3w"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mykxq"]
 height = 13.708008
-radius = 54.421387
+radius = 9.478516
 
 [node name="Friend" type="CharacterBody3D" unique_id=221704819 groups=["Enemy"]]
 script = ExtResource("1_mykxq")
-SPEED = 5
+SPEED = 8
 hp = 20
 damage = 500
-target_path_str = "<null>"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=816245651]
 mesh = SubResource("CapsuleMesh_8tegq")
@@ -50,9 +49,9 @@ shape = SubResource("CapsuleShape3D_md0e3")
 
 [node name="AttackableArea" type="Area3D" parent="." unique_id=1656667283]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackableArea" unique_id=623856641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8803711, 0)
-shape = SubResource("CylinderShape3D_4ra3w")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackableArea" unique_id=235584636]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.8803711, 0)
+shape = SubResource("CylinderShape3D_mykxq")
 
 [connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="hit_box" to="." method="_on_hit_box_body_exited"]

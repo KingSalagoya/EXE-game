@@ -92,6 +92,7 @@ func _special_objectives(_name: String) -> void:
 			%Player.SPEED = 5
 		"kill enemies":
 			GameManager.spawn_boss_enemy.emit()
+			await get_tree().create_timer(10).timeout
 			GameManager.spawn_friend.emit()
 			GameManager.update_npc_objective.emit()
 		"kill boss enemy":
@@ -100,6 +101,7 @@ func _special_objectives(_name: String) -> void:
 			Player.look_at(Vector3(friend.global_position.x, Player.global_position.y, friend.global_position.z), Vector3.UP)
 			friend.look_at(Vector3(Player.global_position.x, friend.global_position.y, Player.global_position.z), Vector3.UP)
 			
+			await get_tree().create_timer(3).timeout
 			GameManager.chat_dialogue.emit(1)
 
 func _handle_special_area(_name: String) -> void:
