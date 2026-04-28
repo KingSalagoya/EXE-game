@@ -159,8 +159,8 @@ func handle_jump(delta: float) -> void:
 	if not is_on_floor():
 		velocity += Vector3(0, GRAVITY, 0) * delta
 
-	#if Input.is_action_just_pressed("jump") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump") and is_on_floor() GameManager.can_jump:
+		velocity.y = JUMP_VELOCITY
 
 
 func handle_movement() -> void:

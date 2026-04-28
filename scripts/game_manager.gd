@@ -39,6 +39,7 @@ extends Node
 
 var can_toggle_chat: bool = false
 var can_move: bool = true
+var can_jump: bool = false
 var can_interact: bool = true
 var current_objective: String = ""
 var current_objective_clone: String = ""

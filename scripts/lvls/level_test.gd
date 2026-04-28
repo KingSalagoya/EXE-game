@@ -10,6 +10,8 @@ var spawn_enemies_count: int = 0
 var friend_spawned: bool = false
 
 func _ready() -> void:
+	GameManager.can_jump = true
+	
 	GameManager.unlock_achievement.connect(unlock_achievement)
 	GameManager.spawn_boss_enemy.connect(spawn_enemies)
 	GameManager.spawn_friend.connect(spawn_friend)
