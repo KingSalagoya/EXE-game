@@ -14,6 +14,12 @@ func handle_audio_values() -> void:
 	sfx_value = $Panels/Options/Options/Audio/sfx2/HSlider.value
 	music_value = $Panels/Options/Options/Audio/music2/HSlider.value
 	
+	var music_bus_index = AudioServer.get_bus_index("music")
+	AudioServer.set_bus_volume_db(music_bus_index, music_value)
+	
+	var sfx_bus_index = AudioServer.get_bus_index("sfx")
+	AudioServer.set_bus_volume_db(sfx_bus_index, sfx_value)
+	
 	print("Music: " , music_value , "   |   SFX: " , sfx_value)
 
 func change_panel(panel_name: String) -> void:
