@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Lucid_Petary_FULL_SONG_MusicGPT.mp3-156f8a3cc
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
