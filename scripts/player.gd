@@ -159,7 +159,7 @@ func handle_jump(delta: float) -> void:
 	if not is_on_floor():
 		velocity += Vector3(0, GRAVITY, 0) * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor() GameManager.can_jump:
+	if Input.is_action_just_pressed("jump") and is_on_floor() and GameManager.can_jump:
 		velocity.y = JUMP_VELOCITY
 
 
@@ -205,7 +205,7 @@ func handle_footstep_sound() -> void:
 				match groups:
 					"grass": 
 						AudioManager.change_footsteps("grass", 20)
-						print("hiagain")
+						#print("hiagain")
 					"concrete": AudioManager.change_footsteps("concrete")
 
 #endregion
