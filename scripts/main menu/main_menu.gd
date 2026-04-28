@@ -4,13 +4,23 @@ extends Control
 
 const starting_level: PackedScene = preload("res://scenes/main.tscn")
 
+var sfx_value: float
+var music_value: float
+
 func _ready() -> void:
 	change_panel("Main")
+
+func handle_audio_values() -> void:
+	sfx_value = $Panels/Options/Options/Audio/sfx2/HSlider.value
+	music_value = $Panels/Options/Options/Audio/music2/HSlider.value
+	
+	print("Music: " , music_value , "   |   SFX: " , sfx_value)
 
 func change_panel(panel_name: String) -> void:
 	for i in panels.get_children():
 		if i.name == panel_name: i.visible = true
 		else: i.visible = false
+	handle_audio_values()
 
 func start_game() -> void:
 	get_tree().change_scene_to_packed(starting_level)
