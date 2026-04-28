@@ -76,6 +76,15 @@ _subresources={
 }
 },
 "meshes": {
+"Landscape_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/edited/world_collider.res",
+"save_to_file/path": "uid://7uacdllj083h"
+},
 "Landscape_002": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -84,6 +93,24 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://assets/models/edited/land.res",
 "save_to_file/path": "uid://cbounuwge251t"
+},
+"Landscape_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/edited/tree_path1.res",
+"save_to_file/path": "uid://bc2lb4vhpotm3"
+},
+"Landscape_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/edited/tree_path2.res",
+"save_to_file/path": "uid://du0i4rt61e8ga"
 },
 "Plane": {
 "generate/lightmap_uv": 0,
