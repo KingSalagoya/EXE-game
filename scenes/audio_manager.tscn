@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://bpk3op86q0a3t" path="res://assets/sfx/intreactions/drawer open.mp3" id="22_thanh"]
 [ext_resource type="AudioStream" uid="uid://c0p4mh2c3nsln" path="res://assets/sfx/intreactions/drawer close.mp3" id="23_nplbh"]
 [ext_resource type="AudioStream" uid="uid://dax4eksb0eyl5" path="res://assets/sfx/ambients/soundreality-wind-blowing-457954.mp3" id="26_nplbh"]
+[ext_resource type="AudioStream" uid="uid://s6uqq6t44ya4" path="res://assets/sfx/ambients/Lucid_Petary_FULL_SONG_MusicGPT.mp3" id="27_24ib7"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_if78k"]
 random_pitch = 1.005793
@@ -107,6 +108,9 @@ footsteps_clips = Dictionary[String, AudioStream]({
 
 [node name="wind" type="AudioStreamPlayer" parent="MusicClips" unique_id=1698594919]
 stream = ExtResource("26_nplbh")
+
+[node name="horror_theme_song" type="AudioStreamPlayer" parent="MusicClips" unique_id=2002921762]
+stream = ExtResource("27_24ib7")
 
 [node name="OneShots" type="Node" parent="." unique_id=70827441]
 

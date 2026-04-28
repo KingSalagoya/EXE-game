@@ -11,6 +11,8 @@ var active_music_stream: AudioStreamPlayer
 @export var audio_one_shot_clips: Dictionary[String, AudioStream]
 @export var footsteps_clips: Dictionary[String, AudioStream]
 
+func _ready() -> void:
+	activate_music()
 
 func play_music(audio_name:String, from_position: float = 0.0, restart: bool = false) -> void:
 	if !restart and active_music_stream and active_music_stream.name == audio_name:
@@ -28,7 +30,7 @@ func activate_music() -> void:
 	for child in music_clips.get_children():
 		if child is AudioStreamPlayer:
 			play_music(child.name)
-			handle_music_pause(child.name, false)
+			handle_music_pause(child.name, true)
 
 func play_audio_one_shot(audio_name: String, pos: Vector3 = Vector3.ZERO, volume_db: float = 0.0, from_position: float = 0.0) -> AudioOneShot:
 	if audio_one_shot_clips.has(audio_name) == false: return
