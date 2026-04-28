@@ -11,9 +11,9 @@
 [ext_resource type="ArrayMesh" uid="uid://bx0y65v3efogy" path="res://assets/models/edited/humans/alucard.res" id="8_etyiu"]
 [ext_resource type="Script" uid="uid://bsmsli5rf25td" path="res://scripts/interacts/npc.gd" id="9_1igac"]
 [ext_resource type="ArrayMesh" uid="uid://by7txulajfrgu" path="res://assets/models/edited/birch_tree1.res" id="10_ac4xd"]
-[ext_resource type="ArrayMesh" uid="uid://q2ycm23kse3a" path="res://assets/models/edited/tree_path1.res" id="11_cgfwo"]
+[ext_resource type="ArrayMesh" uid="uid://bc2lb4vhpotm3" path="res://assets/models/edited/tree_path1.res" id="11_cgfwo"]
 [ext_resource type="ArrayMesh" uid="uid://35w016uflu4v" path="res://assets/models/edited/birch_tree2.res" id="11_xs82q"]
-[ext_resource type="ArrayMesh" uid="uid://c3qp3bu75l6oc" path="res://assets/models/edited/tree_path2.res" id="12_etyiu"]
+[ext_resource type="ArrayMesh" uid="uid://du0i4rt61e8ga" path="res://assets/models/edited/tree_path2.res" id="12_etyiu"]
 [ext_resource type="ArrayMesh" uid="uid://2ke600rw4va0" path="res://assets/models/edited/birch_tree3.res" id="12_setwa"]
 [ext_resource type="ArrayMesh" uid="uid://c30toqffygfug" path="res://assets/models/edited/pine_tree1.res" id="13_40n0v"]
 [ext_resource type="ArrayMesh" uid="uid://djchqcepswkap" path="res://assets/models/edited/pine_res2.res" id="14_og6kw"]
@@ -137,19 +137,22 @@ transform = Transform3D(0.9997499, 0.0054995418, 0.021357894, -0.00894466, 0.986
 shape = SubResource("BoxShape3D_vwklc")
 
 [node name="VillageHouse" parent="Models/Navigation" unique_id=550441762 instance=ExtResource("3_gv6ix")]
-transform = Transform3D(95.523705, 29.584148, 1.2931642e-06, 0, -4.371139e-06, 100, 29.584148, -95.523705, -4.175474e-06, -16.006672, 0.4168048, -46.625008)
+transform = Transform3D(95.523705, 29.584148, 1.2931642e-06, 0, -4.371139e-06, 100, 29.584148, -95.523705, -4.175474e-06, -16.006672, 0.52130914, -46.625008)
 
 [node name="VillageHouse2" parent="Models/Navigation" unique_id=1457785841 instance=ExtResource("3_gv6ix")]
-transform = Transform3D(-13.5058365, 99.083755, 4.3310883e-06, -3.3683237e-13, -4.3711384e-06, 99.99999, 99.083755, 13.5058365, 5.903595e-07, 30.752216, 0.0973196, -22.266191)
+transform = Transform3D(-13.5058365, 99.083755, 4.3310883e-06, -3.3683237e-13, -4.3711384e-06, 99.99999, 99.083755, 13.5058365, 5.903595e-07, 30.752216, 0.7533598, -22.266191)
 
 [node name="VillageHouse3" parent="Models/Navigation" unique_id=156103510 instance=ExtResource("3_gv6ix")]
-transform = Transform3D(-84.87593, 52.87791, 2.3113666e-06, -3.3285202e-13, -4.371139e-06, 99.99999, 52.87791, 84.87593, 3.7100458e-06, 67.67319, 0.04035282, -53.079018)
+transform = Transform3D(-84.87593, 52.87791, 2.3113666e-06, -3.3285202e-13, -4.371139e-06, 99.99999, 52.87791, 84.87593, 3.7100458e-06, 67.67319, 0.08553314, -53.079018)
 
 [node name="VillageHouse4" parent="Models/Navigation" unique_id=1137951409 instance=ExtResource("3_gv6ix")]
-transform = Transform3D(-56.191013, 82.71984, 3.615798e-06, 1.4798395e-13, -4.3711393e-06, 100.00001, 82.71984, 56.191013, 2.4561884e-06, 35.93084, 0.86733246, -70.885506)
+transform = Transform3D(-56.191013, 82.71984, 3.615798e-06, 1.4798395e-13, -4.3711393e-06, 100.00001, 82.71984, 56.191013, 2.4561884e-06, 35.32146, 0.86733246, -70.11542)
 
 [node name="VillageHouse5" parent="Models/Navigation" unique_id=947661920 instance=ExtResource("3_gv6ix")]
 transform = Transform3D(8.106875, -99.67084, -4.356752e-06, 6.4848355e-14, -4.3711398e-06, 100.00001, -99.67084, -8.106875, -3.543631e-07, -55.221844, 1.5809436, 66.35444)
+
+[node name="VillageHouse6" parent="Models/Navigation" unique_id=2091190989 instance=ExtResource("3_gv6ix")]
+transform = Transform3D(8.106875, -99.67084, -4.356752e-06, 6.4848355e-14, -4.3711398e-06, 100.00001, -99.67084, -8.106875, -3.543631e-07, -0.89221233, -19.545305, 30.244965)
 
 [node name="Water" type="MeshInstance3D" parent="Models" unique_id=1596321527]
 transform = Transform3D(1.9999999, -2.9802322e-08, -5.9604645e-08, 2.9802322e-08, 1.9999998, 0, 5.9604645e-08, -2.9802322e-08, 1.9999998, 1.1920929e-07, -2.459474, 1.1920929e-07)
