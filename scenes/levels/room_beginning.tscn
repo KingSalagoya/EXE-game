@@ -12,7 +12,7 @@
 [ext_resource type="Animation" uid="uid://cfqiwfkq5v7ri" path="res://assets/animations/res/turn_left.res" id="10_fuvq3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fuvq3"]
-viewport_path = NodePath("PCTable/monitor/screen/SubViewport")
+viewport_path = NodePath("Props/monitor/screen/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tol24"]
 resource_local_to_scene = true
