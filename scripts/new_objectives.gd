@@ -5,7 +5,7 @@ extends Node
 	#"place the note on the window": 0,
 	#"grab the knife": 0,
 	#"cut the telephone line": 0,
-	"enter the house": 0,
+	#"enter the house": 0,
 	#"open door": 0,
 	#"stab": 0,
 	#"pick walkie-talkie": 0,
@@ -15,7 +15,7 @@ extends Node
 	#"speak with wizard 1": 0,
 	#"collect wood": 3,
 	#"speak with wizard 2": 0,
-	"kill enemies": 6,
+	"kill enemies": 1,
 	"kill boss enemy": 0,
 	"speak with wizard 3": 0
 }
