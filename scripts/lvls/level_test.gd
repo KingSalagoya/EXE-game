@@ -18,6 +18,7 @@ func _ready() -> void:
 	#spawn_friend()
 	
 	AudioManager.handle_music_pause("wind", false)
+	AudioManager.handle_music_pause("horror_theme_song", false)
 	
 	#await get_tree().create_timer(1).timeout
 	#GameManager.unlock_achievement.emit("forest")
