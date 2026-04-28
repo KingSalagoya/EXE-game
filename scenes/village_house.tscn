@@ -16,4 +16,4 @@ shape = SubResource("ConcavePolygonShape3D_xrrvp")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=636881519]
 transform = Transform3D(0.020000001, -9.313226e-10, 2.7755576e-17, 9.313226e-10, 0.020000001, -2.220446e-16, -5.551115e-17, 1.110223e-16, 0.02, 0.0032081455, 0.010975152, 0.022597644)
-omni_range = 9.282786
+omni_range = 15.0

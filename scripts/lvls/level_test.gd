@@ -14,10 +14,11 @@ func _ready() -> void:
 	GameManager.spawn_boss_enemy.connect(spawn_enemies)
 	GameManager.spawn_friend.connect(spawn_friend)
 	#spawn_friend()
-	await get_tree().create_timer(1).timeout
-	GameManager.unlock_achievement.emit("forest")
-	await get_tree().create_timer(1).timeout
-	GameManager.unlock_achievement.emit("graveyard")
+	
+	#await get_tree().create_timer(1).timeout
+	#GameManager.unlock_achievement.emit("forest")
+	#await get_tree().create_timer(1).timeout
+	#GameManager.unlock_achievement.emit("graveyard")
 
 func _process(_delta: float) -> void:
 	if objectives.current_objective_name == "kill enemies" and spawn_enemies_count <= 5:
