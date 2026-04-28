@@ -1,0 +1,41 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://vtw251ulhoxs"]
+
+[ext_resource type="Shader" uid="uid://bqxi4ibsjhfb0" path="res://scenes/water.gdshader" id="1_mlyr4"]
+
+[sub_resource type="Gradient" id="Gradient_es4qh"]
+offsets = PackedFloat32Array(0.117256634, 0.78097343)
+colors = PackedColorArray(0.36809862, 0.23214042, 0.76084274, 0.38039216, 0.223452, 0.5048745, 0.8011771, 0.38431373)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s0ovu"]
+frequency = 0.009
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nxmka"]
+noise = SubResource("FastNoiseLite_s0ovu")
+color_ramp = SubResource("Gradient_es4qh")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8883n"]
+frequency = 0.0166
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_es4qh"]
+noise = SubResource("FastNoiseLite_8883n")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vkcgd"]
+frequency = 0.0066
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yvmk3"]
+noise = SubResource("FastNoiseLite_vkcgd")
+seamless = true
+in_3d_space = true
+as_normal_map = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mlyr4")
+shader_parameter/water_color = Color(0, 0, 0, 1)
+shader_parameter/normal_tex = SubResource("NoiseTexture2D_yvmk3")
+shader_parameter/color_tex = SubResource("NoiseTexture2D_nxmka")
+shader_parameter/normal_speed = Vector2(-0.03, 0.02)
+shader_parameter/noise_img = SubResource("NoiseTexture2D_es4qh")
+shader_parameter/wave_height = 0.335
+shader_parameter/wave_speed = 0.8

@@ -7,3 +7,4 @@ resource_name = "bima "
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.93697846, 0.9719202, 0.98829836, 1)
 albedo_texture = ExtResource("1_p3ytq")
+metallic_specular = 0.0
