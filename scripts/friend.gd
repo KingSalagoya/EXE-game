@@ -27,25 +27,27 @@ var chasable: bool = false
 
 func apply_knockback(force: Vector3) -> void:
 	knockback_velocity = force
-
+	
 func _ready() -> void:
+	call_deferred("_find_nodes")
+
+func _find_nodes() -> void:
 	target_path = target_path_str
 	if target_path.is_empty():
-		push_error("enemy_path is not set!")
+		print("boss enemy_path is not set!")
 		return
 	target = get_node_or_null(target_path)
 	if target == null:
-		push_error("Could not find enemy at path: " + str(target_path))
+		print("Could not find boss enemy at path: ", target_path_str)
 		return
-
 
 	player_path = player_path_str
 	if player_path.is_empty():
-		push_error("enemy_path is not set!")
+		print("player_path is not set!")
 		return
 	player = get_node_or_null(player_path)
 	if player == null:
-		push_error("Could not find enemy at path: " + str(player_path))
+		print("Could not find player at path: ", player_path_str)
 		return
 	
 
@@ -55,8 +57,7 @@ func _physics_process(delta: float) -> void:
 
 	if chasable:
 		_handle_movement(delta)
-
-	move_and_slide()
+		move_and_slide()
 
 func _handle_movement(delta: float) -> void:
 	if target == null:
@@ -71,6 +72,7 @@ func _handle_movement(delta: float) -> void:
 		return
 
 	navigation_agent.set_target_position(target.global_position)
+	look_at(target.global_position)
 
 	if not navigation_agent.is_target_reachable():
 		# print("Warning: Target not reachable. Falling back to direct movement.")
@@ -78,9 +80,11 @@ func _handle_movement(delta: float) -> void:
 		dir.y = 0
 		if dir.length() > 0.1:
 			dir = dir.normalized()
+			#animation_player.play("zombie/zombie_running")
 			velocity.x = dir.x * SPEED
 			velocity.z = dir.z * SPEED
 		else:
+			#animation_player.play("zombie/zombie_idle")
 			velocity.x = 0
 			velocity.z = 0
 		move_and_slide()
@@ -110,8 +114,8 @@ func _on_attackable_area_body_exited(body: CharacterBody3D) -> void:
 
 func _on_hit_box_body_entered(body: CharacterBody3D) -> void:
 	if body == player:
-		HitBox.attackable = false
+		$hit_box.attackable = false
 
 func _on_hit_box_body_exited(body: CharacterBody3D) -> void:
 	if body == player:
-		HitBox.attackable = true
+		$hit_box.attackable = true

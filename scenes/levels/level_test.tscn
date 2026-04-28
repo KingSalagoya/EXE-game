@@ -8,7 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cdqm1najs7th1" path="res://assets/models/edited/bridge.res" id="4_uh3ll"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="6_uh3ll"]
 [ext_resource type="Script" uid="uid://bsmsli5rf25td" path="res://scripts/interacts/npc.gd" id="7_4lw2e"]
-[ext_resource type="ArrayMesh" uid="uid://sxklp3bcjb04" path="res://assets/models/edited/humans/alucard.res" id="7_bqmi1"]
+[ext_resource type="ArrayMesh" uid="uid://bx0y65v3efogy" path="res://assets/models/edited/humans/alucard.res" id="7_bqmi1"]
 [ext_resource type="ArrayMesh" uid="uid://by7txulajfrgu" path="res://assets/models/edited/birch_tree1.res" id="10_bc127"]
 [ext_resource type="ArrayMesh" uid="uid://35w016uflu4v" path="res://assets/models/edited/birch_tree2.res" id="11_dl0q5"]
 [ext_resource type="ArrayMesh" uid="uid://2ke600rw4va0" path="res://assets/models/edited/birch_tree3.res" id="12_eanp0"]

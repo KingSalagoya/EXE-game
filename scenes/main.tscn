@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpakvn1j64v86" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c8i1q1xahaol6" path="res://scenes/player.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dbef7ovwfqemw" path="res://scenes/levels/home.tscn" id="3_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://dqj5wfj0bcur7" path="res://scenes/levels/level_test.tscn" id="3_ya4ey"]
 [ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="4_85g3d"]
 [ext_resource type="Texture2D" uid="uid://dp4i05dvdd5rd" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/kitchenKnife_TEX.png" id="4_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="4_jyhfs"]
@@ -989,7 +989,7 @@ damage = 5
 
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
 
-[node name="Home" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=1172181076 instance=ExtResource("3_ya4ey")]
+[node name="LevelTest" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=1181721314 instance=ExtResource("3_ya4ey")]
 
 [node name="Cinamatic" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1467429672]
 
@@ -1002,7 +1002,7 @@ transform = Transform3D(1, 0, 0, 0, 0.98657113, -0.1633258, 0, 0.1633258, 0.9865
 visible = false
 
 [node name="knife" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot" unique_id=1717204905]
-transform = Transform3D(0.8764338, 0.03437036, 0.48029056, -0.16550659, 0.9581788, 0.23344359, -0.45218515, -0.2840906, 0.8454642, 0.22, -0.005, -0.72)
+transform = Transform3D(0.87643385, 0.034370366, 0.48029047, -0.16550659, 0.9581788, 0.23344365, -0.45218506, -0.28409067, 0.8454643, 0.22, -0.005, -0.72)
 visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot/knife" unique_id=1101515992]

@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "hero": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/materials/mc.tres",
+"use_external/fallback_path": "res://assets/materials/people/mc.tres",
 "use_external/path": "uid://c2a3kywdwhawx"
 }
 }
