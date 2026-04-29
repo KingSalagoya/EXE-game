@@ -12,29 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b1gmh1y6ojj4j" path="res://scenes/main_menu.tscn" id="8_choun"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
-sky_top_color = Color(0.0010405213, 0.0010404979, 0.009608173, 1)
-sky_horizon_color = Color(0.076398365, 0.031221468, 0.19683838, 1)
-ground_bottom_color = Color(0, 0, 0.007843138, 1)
-ground_horizon_color = Color(0.07450981, 0.03137255, 0.19607843, 1)
-sun_curve = 0.029421885
-
-[sub_resource type="Sky" id="Sky_choun"]
-sky_material = SubResource("ProceduralSkyMaterial_8cj0n")
-
-[sub_resource type="Environment" id="Environment_yqjtg"]
-background_mode = 2
-sky = SubResource("Sky_choun")
-ambient_light_source = 2
-ambient_light_color = Color(0.17211533, 0.1721153, 0.1721153, 1)
-tonemap_mode = 2
-ssao_enabled = true
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.024048269, 0.03226694, 0.06242825, 1)
-fog_density = 1.0
-fog_depth_curve = 0.17677684
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1l6a"]
 resource_name = "KitchenKnife_MAT"
 vertex_color_use_as_albedo = true
@@ -980,9 +957,6 @@ render_target_update_mode = 4
 
 [node name="GameEnviroment" type="Node3D" parent="GameViewport/SubViewport" unique_id=577782268]
 unique_name_in_owner = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1520878319]
-environment = SubResource("Environment_yqjtg")
 
 [node name="Player" parent="GameViewport/SubViewport/GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
 unique_name_in_owner = true

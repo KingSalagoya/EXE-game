@@ -176,7 +176,7 @@ func handle_movement() -> void:
 		playeranimations.play("main-character/running-backwards")
 
 		if lower_climb_check.is_colliding():
-			print(lower_climb_check.get_collider().get_parent().name)
+			#print(lower_climb_check.get_collider().get_parent().name)
 			if not upper_climb_check.is_colliding():
 				velocity.y = JUMP_VELOCITY/3
 		#if velocity.z > 0: playeranimations.play("main-character/running")
@@ -212,7 +212,7 @@ func handle_footstep_sound() -> void:
 			for groups in ground.get_groups():
 				match groups:
 					"grass": 
-						AudioManager.change_footsteps("grass", 20)
+						AudioManager.change_footsteps("grass", 30)
 						#print("hiagain")
 					"concrete": AudioManager.change_footsteps("concrete")
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://danakcb8vhmv5"
-path="res://.godot/imported/grass_and_rock_collision.fbx-95c15883f91838997611066378a61ab1.scn"
+uid="uid://ckjrj5ex6s4wo"
+path="res://.godot/imported/garssrock.fbx-8c8337373da0a7798e0c72924a5d51be.scn"
 
 [deps]
 
-source_file="res://assets/models/grass_and_rock_collision.fbx"
-dest_files=["res://.godot/imported/grass_and_rock_collision.fbx-95c15883f91838997611066378a61ab1.scn"]
+source_file="res://assets/models/garssrock.fbx"
+dest_files=["res://.godot/imported/garssrock.fbx-8c8337373da0a7798e0c72924a5d51be.scn"]
 
 [params]
 
@@ -46,16 +46,16 @@ _subresources={
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://assets/models/edited/rock_collision.res",
-"save_to_file/path": "uid://dmwmd1hbt0y63"
+"save_to_file/path": "uid://b38ogn0wlh7bn"
 },
-"Landscape_004": {
+"Landscape_002": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://assets/models/edited/grass_collision.res",
-"save_to_file/path": "uid://dfd87ipumca16"
+"save_to_file/path": "uid://cdjne1f8vhikk"
 }
 }
 }
