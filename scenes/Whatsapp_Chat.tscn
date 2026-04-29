@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b520mxra380m5"]
+
+[ext_resource type="Texture2D" uid="uid://onq4t57nh37m" path="res://assets/textures/smoky_clouds.jpg" id="1_8oa2c"]
+[ext_resource type="Script" uid="uid://cpokitsfhksv7" path="res://scripts/whatsapp_chat.gd" id="1_imsos"]
+[ext_resource type="Texture2D" uid="uid://b7a071esetslu" path="res://assets/textures/clouds.jpeg" id="3_42qkv"]
+[ext_resource type="Texture2D" uid="uid://cl5ck63h4yi3x" path="res://assets/textures/2009-WhatsApp/whatsapp_chat_1.png" id="3_sbx3q"]
+
+[node name="WhatsAppChatUI" type="Control" unique_id=725516722]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_imsos")
+
+[node name="SmokyClouds" type="Sprite2D" parent="." unique_id=274235154]
+modulate = Color(0.31431612, 0.31431612, 0.3143161, 1)
+position = Vector2(961, 541.50006)
+scale = Vector2(1.5949999, 0.8974999)
+texture = ExtResource("1_8oa2c")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2018368253]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.0
+offset_top = -515.0
+offset_right = 292.0
+offset_bottom = 521.129
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sbx3q")
+
+[node name="Clouds" type="Sprite2D" parent="." unique_id=755780450]
+position = Vector2(969.5, 541.5)
+scale = Vector2(6.5250835, 6.5416665)
+texture = ExtResource("3_42qkv")
+
+[node name="Instruction_Label" type="Label" parent="." unique_id=886590094]
+modulate = Color(1, 1, 1, 0.3137255)
+layout_mode = 0
+offset_left = 1324.0
+offset_top = 986.0
+offset_right = 1840.0
+offset_bottom = 1050.0
+theme_override_font_sizes/font_size = 46
+text = "Press Enter to continue"
+
+[node name="year_label" type="Label" parent="." unique_id=1404727478]
+modulate = Color(0.73300546, 0.7330054, 0.7330054, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -766.0
+offset_top = -136.5
+offset_right = 766.0
+offset_bottom = 136.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 200
+text = "17 YEARS AGO..."
