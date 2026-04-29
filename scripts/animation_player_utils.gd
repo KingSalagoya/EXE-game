@@ -25,3 +25,7 @@ func play_with_temp_length(anim_name: String, length: float, forward: bool):
 	await self.animation_finished
 	print("played: " + anim_name)
 	anim.length = original_length
+
+
+func release_ending() -> void:
+	GameManager.release_ending.emit()

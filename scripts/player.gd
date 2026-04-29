@@ -15,6 +15,7 @@ var t_bob: float = 0.0
 @onready var main_camera: Camera3D = $CameraHolder/MainCamera
 @onready var graphics: MeshInstance3D = %Graphics
 @onready var interactor: RayCast3D = $CameraHolder/MainCamera/Interactor
+@onready var flashlight: SpotLight3D = $CameraHolder/MainCamera/flashlight
 
 @onready var playeranimations: AnimationPlayer = %Graphics/hero/playeranimations
 
@@ -39,9 +40,14 @@ var load_data: Dictionary = Dictionary()
 var recording_loaded: bool = false
 var prev_ground
 
+var can_use_flashlight: bool = false
+
 var knockback_velocity := Vector3.ZERO
 
 func _ready() -> void:
+	flashlight.visible = false
+	GameManager.release_ending.connect(enable_flashlight)
+	GameManager.paralize_coords.connect(paralize_coords)
 	pass
 	#AudioManager.change_footsteps("concrete")
 
@@ -108,12 +114,12 @@ func handle_recording_movement():
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and not can_use_flashlight:
 		camera_holder.rotate_y(-event.relative.x * SENSITIVITY)
 		#graphics.rotate_y(-event.relative.x * SENSITIVITY)
 		main_camera.rotate_x(-event.relative.y * SENSITIVITY)
 		main_camera.rotation.x = clamp(main_camera.rotation.x, deg_to_rad(-70), deg_to_rad(70))
-	elif event.is_action_pressed("attack"):
+	elif event.is_action_pressed("attack") and not can_use_flashlight:
 		if interactor.is_colliding():
 			var target = interactor.get_collider()
 			while target != null and target is Node:
@@ -133,12 +139,10 @@ func _unhandled_input(event: InputEvent) -> void:
 						hb.take_damage(damage, direction * knockback_force)
 					break
 				target = target.get_parent()
-
+	if Input.is_action_just_pressed("flashlight") and can_use_flashlight:
+		toggle_flashlight()
 
 func _physics_process(delta: float) -> void:
-	if GameManager.torch: $CameraHolder/MainCamera/Torch.show()
-	else: $CameraHolder/MainCamera/Torch.hide()
-	
 	handle_recording_movement()
 	handle_footstep_sound()
 	
@@ -214,5 +218,22 @@ func handle_footstep_sound() -> void:
 					"grass": AudioManager.change_footsteps("grass", 30)
 					"concrete": AudioManager.change_footsteps("concrete")
 					"wood": AudioManager.change_footsteps("wood")
+
+func enable_flashlight() -> void:
+	GameManager.can_move = false
+	GameManager.can_jump = false
+	can_use_flashlight = true
+
+func toggle_flashlight() -> void:
+	GameManager.update_flashlight_counters.emit()
+	await get_tree().create_timer(0.08).timeout
+	flashlight.visible = true
+	await get_tree().create_timer(3.0).timeout
+	flashlight.visible = false
+
+
+func paralize_coords(pos: Vector3, rot: Vector3) -> void:
+	global_position = pos
+	main_camera.global_rotation = rot
 
 #endregion

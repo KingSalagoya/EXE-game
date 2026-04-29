@@ -10,15 +10,16 @@ extends Node
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
 @onready var main_menu: Control = $"UiViewport/SubViewport/UserInterface/MarginContainer/Main Menu"
 
+var flashlight_counters: int = 1
 
 const ROOM_BEGINNING = preload("res://scenes/levels/room_beginning.tscn")
 const ROOM_DREAM = preload("res://scenes/levels/room_dream.tscn")
 const ROOM_END = preload("res://scenes/levels/room_end.tscn")
 const LEVEL_TEST = preload("res://scenes/levels/level_test.tscn")
 
-
-
 const room_one_dialogue: DialogueResource = preload("res://dialogue/room#1.dialogue")
+
+
 
 func _enter_tree() -> void:
 	GameManager.handle_exit.connect(exit_game)
@@ -28,6 +29,7 @@ func _enter_tree() -> void:
 	GameManager.change_scene.connect(_change_level)
 	GameManager.play_cinamatic.connect(_play_cinamatic)
 	GameManager.special_area_entered.connect(_handle_special_area)
+	GameManager.update_flashlight_counters.connect(update_flashlight_counters)
 
 func _ready() -> void:
 	%UserInterface.visible = true
@@ -156,5 +158,9 @@ func set_spawn_point(_position: Vector3, _rotation: Vector3) -> void:
 		#%Player/CameraHolder/MainCamera.global_rotation.y = _rotation.y
 		%Player/CameraHolder.global_rotation.y = _rotation.y
 		#%Player/Graphics.global_rotation.y = -_rotation.y
+
+func update_flashlight_counters() -> void:
+	cinamatics_player.play("flashlight " + str(flashlight_counters))
+	flashlight_counters += 1
 
 #endregion

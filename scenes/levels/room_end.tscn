@@ -5,6 +5,8 @@
 [ext_resource type="ArrayMesh" uid="uid://4nduufs21dhr" path="res://assets/models/edited/paper.res" id="2_13l4f"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="2_75wyd"]
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="3_13l4f"]
+[ext_resource type="Script" uid="uid://glhkvobms6b7" path="res://scripts/end_player_paralize.gd" id="4_ekr2e"]
+[ext_resource type="AudioStream" uid="uid://c622p4udt5owo" path="res://assets/sfx/ambients/cursed_churchbyfronbodi.mp3" id="6_1jc2x"]
 
 [sub_resource type="Animation" id="Animation_13l4f"]
 length = 0.001
@@ -68,10 +70,22 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../AudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_1jc2x"]
 resource_name = "lights_out"
-length = 11.0
+length = 18.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -140,6 +154,42 @@ tracks/4/keys = {
 "method": &"play_sfx"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../AudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/6/type = "animation"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../InteractAnimations")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": PackedStringArray("door_open"),
+"times": PackedFloat32Array(15)
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../../SpecialAnimationPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(18),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"release_ending"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_75wyd"]
 resource_name = "window_open"
@@ -173,16 +223,16 @@ _data = {
 &"window_open": SubResource("Animation_75wyd")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xjeod"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5iet6"]
 viewport_path = NodePath("Props/BaseHouse/monitor/screen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75wyd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekr2e"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_xjeod")
+albedo_texture = SubResource("ViewportTexture_5iet6")
 
-[sub_resource type="QuadMesh" id="QuadMesh_13l4f"]
+[sub_resource type="QuadMesh" id="QuadMesh_vsebn"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_75wyd")
+material = SubResource("StandardMaterial3D_ekr2e")
 size = Vector2(0.8, 0.55)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f8fxg"]
@@ -202,7 +252,7 @@ script = ExtResource("1_13l4f")
 [node name="BaseRoom" parent="." unique_id=1582295487 instance=ExtResource("1_xjeod")]
 
 [node name="screen" parent="BaseRoom/Props/BaseHouse/monitor" parent_id_path=PackedInt32Array(1582295487, 1327782251) index="0" unique_id=1620209071]
-mesh = SubResource("QuadMesh_13l4f")
+mesh = SubResource("QuadMesh_vsebn")
 
 [node name="window-frame" parent="BaseRoom/InteractiveObjects" parent_id_path=PackedInt32Array(1582295487, 1946952695) index="3" unique_id=634038937 node_paths=PackedStringArray("ANIM_PLAYER")]
 ANIM_PLAYER = NodePath("../../../SpecialAnimationPlayer")
@@ -213,6 +263,11 @@ ONE_TIME = true
 
 [node name="SpawnPoint" parent="." unique_id=524540920 instance=ExtResource("2_75wyd")]
 transform = Transform3D(-4.371137e-08, 0, 0.99999976, 0, 0.9999999, 0, -0.9999999, 0, -4.3711378e-08, -0.37424672, 1.7881393e-07, 1.8433499)
+
+[node name="game_end" parent="." unique_id=252435785 instance=ExtResource("2_75wyd")]
+transform = Transform3D(0.81812954, 0.0919805, -0.5676295, 0, 0.9871239, 0.15995668, 0.57503366, -0.1308653, 0.8075953, -0.8703053, 0.0023643374, 1.8643122)
+visible = false
+script = ExtResource("4_ekr2e")
 
 [node name="Items" type="Node3D" parent="." unique_id=2120466619]
 
@@ -241,5 +296,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00027288427, 0.00076566683
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Items/paper2/StaticBody3D" unique_id=924095844]
 transform = Transform3D(1.0000005, 0, 0, 0, 1.0000007, -5.684342e-14, 0, 5.684342e-14, 1.0000007, 0, 0, 0.002256913)
 shape = SubResource("BoxShape3D_75wyd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=464511627]
+stream = ExtResource("6_1jc2x")
+volume_db = -5.0
+
+[node name="omni" type="OmniLight3D" parent="." unique_id=277450498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.425, 2, -3.9481263)
+visible = false
+light_energy = 0.5
+omni_range = 2.5044923
 
 [editable path="BaseRoom"]

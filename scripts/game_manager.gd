@@ -1,7 +1,11 @@
 extends Node
 
+#Gamestate
 @warning_ignore("unused_signal") signal start_game
 @warning_ignore("unused_signal") signal end_game
+@warning_ignore("unused_signal") signal release_ending
+@warning_ignore("unused_signal") signal update_flashlight_counters
+@warning_ignore("unused_signal") signal paralize_coords (coords: Vector3, rotation: Vector3)
 
 #Objectives
 @warning_ignore("unused_signal") signal request_objective_completed (objective_name: String)
@@ -34,6 +38,7 @@ extends Node
 #Special Areas
 @warning_ignore("unused_signal") signal special_area_entered (area_id: String)
 
+#SpawnPoint
 @warning_ignore("unused_signal") signal request_spawn_point()
 @warning_ignore("unused_signal") signal recieve_spawn_point(_position: Vector3, _rotation: Vector3)
 
@@ -51,7 +56,6 @@ var needed_woods: int = 3
 
 #endregion
 
-var torch: bool = false
 
 var encounterd_objectives: Array[String] = []
 

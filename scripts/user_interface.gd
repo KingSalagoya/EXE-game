@@ -10,12 +10,14 @@ extends Control
 @onready var player_count_label: Label = $MarginContainer/HUD/Player_Count_Label
 
 var stored_objective_label: String
+var ending_label: bool = false
 
 func _enter_tree() -> void:
 	GameManager.update_interact_label.connect(update_interact_label)
 	GameManager.update_objective_label.connect(update_objective_text)
 	GameManager.unlock_achievement.connect(update_achievement_label)
 	GameManager.update_player_count.connect(update_player_count_label)
+	GameManager.release_ending.connect(ending)
 
 func _ready() -> void:
 	#set_chat_mode("off")
@@ -30,6 +32,12 @@ func update_interact_label(text: String) -> void:
 	else: interact_label.show()
 	#text = "Press E to " + text
 	interact_label.text = text
+
+func ending() -> void:
+	GameManager.update_interact_label.disconnect(update_interact_label)
+	update_interact_label("Press F to toggle flashlight")
+	await get_tree().create_timer(3).timeout
+	ending_label = true
 
 func update_player_count_label(count: int) -> void:
 	if count <= 0 : player_count_label.hide()
@@ -61,6 +69,11 @@ func update_objective_text(text: String) -> void:
 	update_objective_label()
 	#objective_label.text = text
 
+func _physics_process(delta: float) -> void:
+	if ending_label:
+		pass
+		#update_interact_label("Press F to toggle flashlight")
+		await get_tree().create_timer(2).timeout
 func update_objective_label() -> void:
 	if stored_objective_label == "" : objective_label.hide()
 	else: objective_label.show()
