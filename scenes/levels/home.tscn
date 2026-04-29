@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="9_8768l"]
 [ext_resource type="Texture2D" uid="uid://dp4i05dvdd5rd" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/kitchenKnife_TEX.png" id="11_ssoy3"]
 [ext_resource type="AudioStream" uid="uid://dax4eksb0eyl5" path="res://assets/sfx/ambients/soundreality-wind-blowing-457954.mp3" id="13_ff52r"]
+[ext_resource type="Environment" uid="uid://c0a3l54fomaqg" path="res://assets/special_data/default_enviroment.tres" id="15_5tm82"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ff52r"]
 size = Vector3(0.016520394, 0.00201374, 0.015460307)
@@ -318,3 +319,13 @@ volume_db = -12.0
 autoplay = true
 bus = &"music"
 parameters/looping = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=798297123]
+transform = Transform3D(-0.6804218, -0.5297561, 0.5063444, -0.265995, 0.8223678, 0.50294924, -0.6828417, 0.2075326, -0.70046943, 0, 14.541733, 0)
+visible = false
+light_color = Color(0.9132109, 0.91955924, 0.89593536, 1)
+light_energy = 0.75
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=655424754]
+environment = ExtResource("15_5tm82")
