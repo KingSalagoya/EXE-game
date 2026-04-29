@@ -522,3 +522,9 @@ mesh = ExtResource("28_m1ao7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Graveyard/graves/Cube015/StaticBody3D" unique_id=1469052604]
 shape = SubResource("ConcavePolygonShape3D_ucpcs")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Graveyard" unique_id=320436248]
+transform = Transform3D(0.01, 0, 8.6736174e-19, 0, 0.010000001, 9.730037e-17, -1.3010426e-18, -9.70056e-17, 0.01, -0.072356224, 0.05130887, 0.016709808)
+light_negative = true
+omni_range = 25.959
+omni_attenuation = -10.0
