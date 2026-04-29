@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://bpk3op86q0a3t" path="res://assets/sfx/intreactions/drawer open.mp3" id="22_thanh"]
 [ext_resource type="AudioStream" uid="uid://c0p4mh2c3nsln" path="res://assets/sfx/intreactions/drawer close.mp3" id="23_nplbh"]
 [ext_resource type="AudioStream" uid="uid://cuf731fkam5nj" path="res://assets/sfx/intreactions/car_and_final_note.mp3" id="24_2agnf"]
+[ext_resource type="AudioStream" uid="uid://c37vd63uhd8ba" path="res://assets/sfx/intreactions/switch_off.mp3" id="25_yt2vs"]
 [ext_resource type="AudioStream" uid="uid://dreyyseneb7bv" path="res://assets/sfx/footsteps/dragon-studio-footsteps-on-wood-397989.mp3" id="26_kr8a2"]
 [ext_resource type="AudioStream" uid="uid://dax4eksb0eyl5" path="res://assets/sfx/ambients/soundreality-wind-blowing-457954.mp3" id="26_nplbh"]
 [ext_resource type="AudioStream" uid="uid://s6uqq6t44ya4" path="res://assets/sfx/ambients/Lucid_Petary_FULL_SONG_MusicGPT.mp3" id="27_24ib7"]
@@ -97,6 +98,7 @@ audio_one_shot_clips = Dictionary[String, AudioStream]({
 "electric": ExtResource("13_2y5yn"),
 "pickup": SubResource("AudioStreamRandomizer_cuol6"),
 "stab": SubResource("AudioStreamOggVorbis_oucy0"),
+"switch off": ExtResource("25_yt2vs"),
 "type": SubResource("AudioStreamRandomizer_yt2vs"),
 "wake up": ExtResource("9_oucy0"),
 "walk hallway": SubResource("AudioStreamRandomizer_8igv3"),
