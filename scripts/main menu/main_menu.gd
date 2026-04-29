@@ -11,6 +11,21 @@ var music_value: float
 
 func _ready() -> void:
 	change_panel("Main")
+	
+	setup_audio_values()
+
+func setup_audio_values() -> void:
+	sfx_value = $Panels/Options/Options/Audio/sfx2/HSlider.max_value
+	music_value = $Panels/Options/Options/Audio/music2/HSlider.max_value
+	
+	var music_bus_index = AudioServer.get_bus_index("music")
+	AudioServer.set_bus_volume_db(music_bus_index, music_value)
+	
+	var sfx_bus_index = AudioServer.get_bus_index("sfx")
+	AudioServer.set_bus_volume_db(sfx_bus_index, sfx_value)
+	
+	$Panels/Options/Options/Audio/sfx2/HSlider.value = sfx_value
+	$Panels/Options/Options/Audio/music2/HSlider.value = music_value
 
 func handle_audio_values() -> void:
 	sfx_value = $Panels/Options/Options/Audio/sfx2/HSlider.value
