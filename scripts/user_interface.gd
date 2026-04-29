@@ -38,6 +38,8 @@ func update_player_count_label(count: int) -> void:
 	player_count_label.text = text
 
 func update_achievement_label(achievement: String, is_achievement: bool = true) -> void:
+	if not is_instance_valid(achievement_label):
+		return
 	if achievement == "" : achievement_label.hide()
 	else: achievement_label.show()
 	var text
