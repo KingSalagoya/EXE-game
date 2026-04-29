@@ -1,0 +1,187 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://8s6b1ox4u4mr"
+path="res://.godot/imported/Graveyard.fbx-19979ca370993d0548c95ea40129e2a4.scn"
+
+[deps]
+
+source_file="res://assets/models/downloaded/graveyard-assets-low-poly-style/source/Graveyard.fbx"
+dest_files=["res://.godot/imported/Graveyard.fbx-19979ca370993d0548c95ea40129e2a4.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Material.res",
+"use_external/path": "uid://b8vo5ixol0ld8"
+},
+"Material.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Material.001.res",
+"use_external/path": "uid://di2t43t6aiker"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Material.002.res",
+"use_external/path": "uid://08oxifm82m87"
+},
+"Material.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Material.003.res",
+"use_external/path": "uid://ddmkkqwcluifm"
+},
+"Material.008": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Material.008.res",
+"use_external/path": "uid://bbkiwfnt3mqv0"
+},
+"Material.010": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Material.010.res",
+"use_external/path": "uid://dsnnsfkfwyfe5"
+}
+},
+"meshes": {
+"CUText": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/arch.res",
+"save_to_file/path": "uid://b60ceabk7ah1y"
+},
+"Cube": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube.res",
+"save_to_file/path": "uid://bwc8v6hffkmkb"
+},
+"Cube_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_002.res",
+"save_to_file/path": "uid://lldn5cpqhayn"
+},
+"Cube_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_003.res",
+"save_to_file/path": "uid://c0k2kdx8k6qgf"
+},
+"Cube_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_005.res",
+"save_to_file/path": "uid://c2qljxuljnjg1"
+},
+"Cube_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_007.res",
+"save_to_file/path": "uid://dsth8ndvru7s5"
+},
+"Cube_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_008.res",
+"save_to_file/path": "uid://0mnks7hn3hmo"
+},
+"Cube_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_009.res",
+"save_to_file/path": "uid://8n4hk77nbydm"
+},
+"Cube_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_010.res",
+"save_to_file/path": "uid://cd8hdd3yydvpx"
+},
+"Cube_014": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_014.res",
+"save_to_file/path": "uid://cypkwssja1ghv"
+},
+"Cylinder": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Cylinder.res",
+"save_to_file/path": "uid://dwkll7864m64x"
+},
+"Sphere": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/models/downloaded/graveyard-assets-low-poly-style/Sphere.res",
+"save_to_file/path": "uid://cf32uf3kvs18x"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
