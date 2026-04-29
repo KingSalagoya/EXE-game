@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ccpiiqvau8ym2" path="res://scenes/levels/base_room.tscn" id="1_ajufy"]
 [ext_resource type="Script" uid="uid://dvvn8o370cbf2" path="res://scripts/interacts/special_area.gd" id="1_ukwrm"]
 [ext_resource type="AudioStream" uid="uid://ddb1sjn1a12ca" path="res://assets/sfx/ambients/cursed_church_improved.mp3" id="2_eyqxf"]
-[ext_resource type="ArrayMesh" uid="uid://c6vv1ecbm71di" path="res://assets/models/edited/door_frame.res" id="2_tol24"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="3_eyqxf"]
 [ext_resource type="Script" uid="uid://dal4jm8np30kc" path="res://scripts/interacts/interact_cinamatic.gd" id="3_fknfx"]
 [ext_resource type="Material" uid="uid://c2a3kywdwhawx" path="res://assets/materials/people/mc.tres" id="6_3h8c4"]
@@ -12,16 +11,16 @@
 [ext_resource type="Animation" uid="uid://bpge0ytcocqld" path="res://assets/animations/res/running-backwards.res" id="9_e86dl"]
 [ext_resource type="Animation" uid="uid://cfqiwfkq5v7ri" path="res://assets/animations/res/turn_left.res" id="10_fuvq3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_e86dl"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_fuvq3"]
 viewport_path = NodePath("Props/monitor/screen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1qgqq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tol24"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_e86dl")
+albedo_texture = SubResource("ViewportTexture_fuvq3")
 
-[sub_resource type="QuadMesh" id="QuadMesh_jtb62"]
+[sub_resource type="QuadMesh" id="QuadMesh_e86dl"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_1qgqq")
+material = SubResource("StandardMaterial3D_tol24")
 size = Vector2(0.8, 0.55)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8j031"]
@@ -148,10 +147,7 @@ _data = {
 [node name="BaseRoom" parent="." unique_id=1582295487 instance=ExtResource("1_ajufy")]
 
 [node name="screen" parent="BaseRoom/Props/monitor" parent_id_path=PackedInt32Array(1582295487, 1327782251) index="0" unique_id=1620209071]
-mesh = SubResource("QuadMesh_jtb62")
-
-[node name="door_frame" parent="BaseRoom/InteractiveObjects" parent_id_path=PackedInt32Array(1582295487, 1946952695) index="1" unique_id=283678531]
-mesh = ExtResource("2_tol24")
+mesh = SubResource("QuadMesh_e86dl")
 
 [node name="SpotLight3D" parent="BaseRoom/Lighting" parent_id_path=PackedInt32Array(1582295487, 147508855) index="1" unique_id=1984971645]
 light_energy = 1.5

@@ -1,4 +1,4 @@
-[gd_resource type="Environment" format=3 uid="uid://khmco8uxw758"]
+[gd_resource type="Environment" format=3 uid="uid://c0a3l54fomaqg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
 sky_top_color = Color(0.0010405213, 0.0010404979, 0.009608173, 1)
@@ -13,12 +13,9 @@ sky_material = SubResource("ProceduralSkyMaterial_8cj0n")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_choun")
-ambient_light_source = 2
-ambient_light_color = Color(0.17211533, 0.1721153, 0.1721153, 1)
 tonemap_mode = 2
 ssao_enabled = true
 fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.024048269, 0.03226694, 0.06242825, 1)
-fog_density = 1.0
-fog_depth_curve = 0.17677684
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.0541
+fog_depth_curve = 0.08537776
