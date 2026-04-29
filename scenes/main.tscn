@@ -279,6 +279,9 @@ tracks/7/keys = {
 "values": [Vector3(-0.41846108, -2.8953452, -0.117360085), Vector3(-0.41846108, -2.8953452, -0.117360085), Vector3(0.0065108743, -2.9169707, -0.014088799), Vector3(0.006510876, -0.21895365, -0.014088798)]
 }
 
+[sub_resource type="Animation" id="Animation_0ld40"]
+resource_name = "its_just_a_game"
+
 [sub_resource type="Animation" id="Animation_trceg"]
 resource_name = "play_computer"
 length = 10.0
@@ -664,7 +667,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_jbj1t"]
 resource_name = "wake_up_2"
-length = 5.0
+length = 7.085
 tracks/0/type = "animation"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -762,14 +765,44 @@ tracks/7/keys = {
 "values": [Vector3(-1.9960499, 1.6705537, 2.286246), Vector3(-1.9960499, 1.9011612, 2.286246), Vector3(-1.9960499, 1.7911518, 2.286246), Vector3(-1.3982501, 2.2343078, 1.7558165), Vector3(-1.3982501, 2.2343078, 1.7558165), Vector3(-1.3982501, 2.2343078, 1.7558165)]
 }
 
+[sub_resource type="Animation" id="Animation_gqmmt"]
+resource_name = "you are a liar"
+length = 15.0
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../LevelHolder/RoomEnd/SpecialAnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("lights_out"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%CinamaticsPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(11),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["door open", 0.0, 0.0],
+"method": &"play_sfx"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eb6dy"]
 _data = {
 &"RESET": SubResource("Animation_choun"),
 &"die": SubResource("Animation_muem4"),
+&"its_just_a_game": SubResource("Animation_0ld40"),
 &"play_computer": SubResource("Animation_trceg"),
 &"stab": SubResource("Animation_a8y0u"),
 &"wake up": SubResource("Animation_ya4ey"),
-&"wake_up_2": SubResource("Animation_jbj1t")
+&"wake_up_2": SubResource("Animation_jbj1t"),
+&"you are a liar": SubResource("Animation_gqmmt")
 }
 
 [sub_resource type="Gradient" id="Gradient_o6xl0"]
@@ -971,7 +1004,7 @@ damage = 5
 [node name="Cinamatic" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1467429672]
 
 [node name="CinamaticCamera" type="Camera3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic" unique_id=810135207]
-transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
 [node name="knife_pivot" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera" unique_id=574641702]

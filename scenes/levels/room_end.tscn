@@ -1,19 +1,218 @@
 [gd_scene format=3 uid="uid://wmnlkqpwiqgu"]
 
+[ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="1_13l4f"]
 [ext_resource type="PackedScene" uid="uid://ccpiiqvau8ym2" path="res://scenes/levels/base_room.tscn" id="1_xjeod"]
+[ext_resource type="ArrayMesh" uid="uid://4nduufs21dhr" path="res://assets/models/edited/paper.res" id="2_13l4f"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="2_75wyd"]
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="3_13l4f"]
+
+[sub_resource type="Animation" id="Animation_13l4f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Props/RailHouseScene/Lights/OmniLight3D3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Props/RailHouseScene/Lights/OmniLight3D4:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Props/RailHouseScene/Lights/OmniLight3D2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Lighting:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1jc2x"]
+resource_name = "lights_out"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Props/RailHouseScene/Lights/OmniLight3D3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Props/RailHouseScene/Lights/OmniLight3D4:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Props/RailHouseScene/Lights/OmniLight3D2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Lighting:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../SpecialAnimationPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3, 5, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": ["switch off", 0.0, 0.0],
+"method": &"play_sfx"
+}, {
+"args": ["switch off", 0.0, 0.0],
+"method": &"play_sfx"
+}, {
+"args": ["switch off", 0.0, 0.0],
+"method": &"play_sfx"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_75wyd"]
+resource_name = "window_open"
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../InteractAnimations")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("window_open"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D/CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_13l4f"]
+_data = {
+&"RESET": SubResource("Animation_13l4f"),
+&"lights_out": SubResource("Animation_1jc2x"),
+&"window_open": SubResource("Animation_75wyd")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xjeod"]
+viewport_path = NodePath("Props/BaseHouse/monitor/screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75wyd"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_xjeod")
+
+[sub_resource type="QuadMesh" id="QuadMesh_13l4f"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_75wyd")
+size = Vector2(0.8, 0.55)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f8fxg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f8fxg"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_75wyd"]
+size = Vector3(0.007036268, 0.0060273847, 0.00598237)
+
 [node name="RoomEnd" type="Node3D" unique_id=1284998890]
+
+[node name="SpecialAnimationPlayer" type="AnimationPlayer" parent="." unique_id=2063094745]
+root_node = NodePath("../BaseRoom/InteractiveObjects/window-frame")
+libraries/ = SubResource("AnimationLibrary_13l4f")
+script = ExtResource("1_13l4f")
 
 [node name="BaseRoom" parent="." unique_id=1582295487 instance=ExtResource("1_xjeod")]
 
+[node name="screen" parent="BaseRoom/Props/BaseHouse/monitor" parent_id_path=PackedInt32Array(1582295487, 1327782251) index="0" unique_id=1620209071]
+mesh = SubResource("QuadMesh_13l4f")
+
+[node name="window-frame" parent="BaseRoom/InteractiveObjects" parent_id_path=PackedInt32Array(1582295487, 1946952695) index="3" unique_id=634038937 node_paths=PackedStringArray("ANIM_PLAYER")]
+ANIM_PLAYER = NodePath("../../../SpecialAnimationPlayer")
+INTERACT_TEXT = "loo?k ou?side"
+OBJECTIVE = "loo?k ou?side"
+ACCES_ONLY_WHEN_RELATED_OBJECTIVE = true
+ONE_TIME = true
+
 [node name="SpawnPoint" parent="." unique_id=524540920 instance=ExtResource("2_75wyd")]
-transform = Transform3D(-0.9999999, 0, -8.742276e-08, 0, 0.9999999, 0, 8.742276e-08, 0, -0.99999976, -0.6228658, 1.7881393e-07, -0.2916059)
+transform = Transform3D(-4.371137e-08, 0, 0.99999976, 0, 0.9999999, 0, -0.9999999, 0, -4.3711378e-08, -0.37424672, 1.7881393e-07, 1.8433499)
 
 [node name="Items" type="Node3D" parent="." unique_id=2120466619]
 
@@ -28,3 +227,19 @@ objective_name = "pick walkie-talkie"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Items/WalkieTalkie/StaticBody3D" unique_id=1777152071]
 shape = SubResource("BoxShape3D_f8fxg")
+
+[node name="paper2" type="MeshInstance3D" parent="Items" unique_id=2010464092 groups=["interactable"]]
+transform = Transform3D(100, 0, 0, 0, -2.3841858e-05, 99.99999, 0, -99.99999, -2.3841858e-05, -0.07779831, 1.4101893, 4.0949497)
+mesh = ExtResource("2_13l4f")
+script = ExtResource("3_13l4f")
+interact_text = "take no#?e??"
+objective_name = "read t#e no#?e??"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Items/paper2" unique_id=140525197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00027288427, 0.00076566683, 0.0005001399)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Items/paper2/StaticBody3D" unique_id=924095844]
+transform = Transform3D(1.0000005, 0, 0, 0, 1.0000007, -5.684342e-14, 0, 5.684342e-14, 1.0000007, 0, 0, 0.002256913)
+shape = SubResource("BoxShape3D_75wyd")
+
+[editable path="BaseRoom"]

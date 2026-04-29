@@ -13,6 +13,7 @@ extends Node
 
 const ROOM_BEGINNING = preload("res://scenes/levels/room_beginning.tscn")
 const ROOM_DREAM = preload("res://scenes/levels/room_dream.tscn")
+const ROOM_END = preload("res://scenes/levels/room_end.tscn")
 const LEVEL_TEST = preload("res://scenes/levels/level_test.tscn")
 
 
@@ -104,6 +105,16 @@ func _special_objectives(_name: String) -> void:
 			
 			await get_tree().create_timer(3).timeout
 			GameManager.chat_dialogue.emit(1)
+		"atone":
+			_change_level(ROOM_END)
+			cinamatics_player.play("wake_up_2")
+			await get_tree().create_timer(10).timeout
+			AudioManager.play_audio_one_shot("car stop", Vector3.ZERO, 10)
+			await get_tree().create_timer(15).timeout
+			GameManager.request_objective_completed.emit("chill")
+		"read t#e no#?e??":
+			AudioManager.play_audio_one_shot("electric")
+			cinamatics_player.play("you are a liar")
 
 func _handle_special_area(_name: String) -> void:
 	match _name:

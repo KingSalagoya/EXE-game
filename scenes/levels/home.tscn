@@ -295,7 +295,7 @@ shape = SubResource("BoxShape3D_lqded")
 transform = Transform3D(0.7514504, 0, -0.85061586, 0, 1.135, 0, 0.85061586, 0, 0.7514504, 19.757605, -0.26539588, -13.420586)
 script = ExtResource("2_u4wd2")
 interact_text = "pickup knife"
-objective_name = "grab the knife"
+objective_name = "atone"
 
 [node name="kitchenKnife" type="MeshInstance3D" parent="Interactable/knife" unique_id=1507844229]
 transform = Transform3D(-24.0401, 7.4866257, 96.77823, -20.391514, -97.86679, 2.5055177, 94.90133, -19.13221, 25.05392, 0, 0, 0)
