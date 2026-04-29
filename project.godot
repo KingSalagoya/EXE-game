@@ -15,6 +15,10 @@ run/main_scene="uid://b1gmh1y6ojj4j"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/textures/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://c72eo1aelum1v"
+
 [autoload]
 
 GameManager="*uid://cpd6uhpyj8aut"
@@ -60,6 +64,7 @@ Enemy=""
 Player=""
 grass=""
 concrete=""
+wood=""
 
 [input]
 

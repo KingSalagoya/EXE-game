@@ -211,9 +211,8 @@ func handle_footstep_sound() -> void:
 		if ground != null:
 			for groups in ground.get_groups():
 				match groups:
-					"grass": 
-						AudioManager.change_footsteps("grass", 30)
-						#print("hiagain")
+					"grass": AudioManager.change_footsteps("grass", 30)
 					"concrete": AudioManager.change_footsteps("concrete")
+					"wood": AudioManager.change_footsteps("wood")
 
 #endregion
