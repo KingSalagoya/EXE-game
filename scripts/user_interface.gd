@@ -37,10 +37,19 @@ func update_player_count_label(count: int) -> void:
 	var text = "Players online:  " + str(count)
 	player_count_label.text = text
 
-func update_achievement_label(achievement: String) -> void:
+func update_achievement_label(achievement: String, is_achievement: bool = true) -> void:
 	if achievement == "" : achievement_label.hide()
 	else: achievement_label.show()
-	var text = "New Zone Unlocked: " + achievement.to_upper()
+	var text
+	if is_achievement:
+		text = "New Zone Unlocked: " + achievement.to_upper()
+		achievement_label.modulate.r = 255
+		achievement_label.modulate.g = 255
+	else:
+		text =  achievement.to_upper()
+		if "DIED" in text:
+			achievement_label.modulate.r = 0
+			achievement_label.modulate.g = 0
 	achievement_label.text = text
 	await get_tree().create_timer(3).timeout
 	GameManager.unlock_achievement.emit("")
