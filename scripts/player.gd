@@ -20,6 +20,9 @@ var t_bob: float = 0.0
 
 @onready var footsteps_detector: RayCast3D = $FootstepsDetector
 
+@onready var upper_climb_check: RayCast3D = $CameraHolder/upper_climb_check
+@onready var lower_climb_check: RayCast3D = $CameraHolder/lower_climb_check
+
 
 @export var hp: int = 20
 @export var damage:int = 10
@@ -171,6 +174,11 @@ func handle_movement() -> void:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		playeranimations.play("main-character/running-backwards")
+
+		if lower_climb_check.is_colliding():
+			print(lower_climb_check.get_collider().get_parent().name)
+			if not upper_climb_check.is_colliding():
+				velocity.y = JUMP_VELOCITY/3
 		#if velocity.z > 0: playeranimations.play("main-character/running")
 		#elif velocity.z < 0: playeranimations.play("main-character/running-backwards")
 		AudioManager.toggle_footsteps_pause(false)
