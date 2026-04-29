@@ -37,6 +37,7 @@ func ending() -> void:
 	GameManager.update_interact_label.disconnect(update_interact_label)
 	update_interact_label("Press F to toggle flashlight")
 	await get_tree().create_timer(3).timeout
+	update_interact_label("")
 	ending_label = true
 
 func update_player_count_label(count: int) -> void:
