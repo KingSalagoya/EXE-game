@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cyre2l60h5tyq" path="res://scripts/new_objectives.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b1gmh1y6ojj4j" path="res://scenes/main_menu.tscn" id="8_choun"]
+[ext_resource type="PackedScene" uid="uid://dc7uu85p2v35i" path="res://scenes/options_menu.tscn" id="10_eb6dy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1l6a"]
 resource_name = "KitchenKnife_MAT"
@@ -1126,6 +1127,19 @@ layout_mode = 2
 [node name="Main Menu" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=135534202 instance=ExtResource("8_choun")]
 visible = false
 layout_mode = 2
+
+[node name="Options Menu" parent="UiViewport/SubViewport/UserInterface" unique_id=1653389777 instance=ExtResource("10_eb6dy")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -1.0
+offset_top = 9.0
+offset_right = 1921.0
+offset_bottom = 1081.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Dialogue" parent="UiViewport/SubViewport/UserInterface" unique_id=1434168376 instance=ExtResource("7_o6xl0")]
 visible = false
