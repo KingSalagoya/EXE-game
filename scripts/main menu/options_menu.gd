@@ -10,7 +10,19 @@ var sfx_value: float
 var music_value: float
 
 func _ready() -> void:
-	change_panel("Main")
+	GameManager.handle_exit.connect(handle_exit)
+	
+	setup_audio_values()
+
+func setup_audio_values() -> void:
+	var music_bus_index = AudioServer.get_bus_index("music")
+	sfx_value = AudioServer.get_bus_volume_db(music_bus_index)
+	
+	var sfx_bus_index = AudioServer.get_bus_index("sfx")
+	music_value = AudioServer.get_bus_volume_db(sfx_bus_index)
+	
+	$Panels/Options/Options/Audio/sfx2/HSlider.value = sfx_value
+	$Panels/Options/Options/Audio/music2/HSlider.value = music_value
 
 func handle_audio_values() -> void:
 	sfx_value = $Panels/Options/Options/Audio/sfx2/HSlider.value
@@ -24,15 +36,14 @@ func handle_audio_values() -> void:
 	
 	print("Music: " , music_value , "   |   SFX: " , sfx_value)
 
-func change_panel(panel_name: String) -> void:
-	for i in panels.get_children():
-		if i.name == panel_name: i.visible = true
-		else: i.visible = false
-	handle_audio_values()
-
-func start_game() -> void:
-	get_tree().change_scene_to_packed(starting_level)
-	GameManager.start_game.emit()
-
 func quit() -> void:
 	get_tree().quit()
+
+func handle_exit() -> void:
+	if visible:
+		hide()
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		handle_audio_values()
+	else:
+		show()
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)

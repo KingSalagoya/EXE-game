@@ -8,6 +8,7 @@ extends Node
 
 @onready var ui: Control = %UserInterface
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
+@onready var main_menu: Control = $"UiViewport/SubViewport/UserInterface/MarginContainer/Main Menu"
 
 
 const ROOM_BEGINNING = preload("res://scenes/levels/room_beginning.tscn")
@@ -42,7 +43,7 @@ func _process(_delta: float) -> void:
 		$UiViewport.mouse_filter = Control.MOUSE_FILTER_PASS
 
 func exit_game() -> void:
-	get_tree().quit()
+	pass
 
 #region main_situations
 func _special_objectives(_name: String) -> void:
