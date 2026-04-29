@@ -32,3 +32,19 @@ Rail: (Yawwwn) Im Getting Sle..epy....
 
 
 => END
+
+~ whatsapp
+
+Rail: It's not my fault...
+
+=> END
+
+~ wake_up_2
+
+Rail: W..Was that a dream? Jesus Christ. I nearly had a heart attack.
+Rail: I must go to relax now. Or I might drift off again.
+
+do AudioManager.play_audio_one_shot("car stop", Vector3.ZERO, 10)
+do GameManager.request_objective_completed.emit("chill")
+
+=> END

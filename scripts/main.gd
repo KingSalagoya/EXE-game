@@ -111,9 +111,7 @@ func _special_objectives(_name: String) -> void:
 			_change_level(ROOM_END)
 			cinamatics_player.play("wake_up_2")
 			await get_tree().create_timer(10).timeout
-			AudioManager.play_audio_one_shot("car stop", Vector3.ZERO, 10)
-			await get_tree().create_timer(1).timeout
-			GameManager.request_objective_completed.emit("chill")
+			GameManager.handle_dialogue.emit(room_one_dialogue, "wake_up_2")
 		"read t#e no#?e??":
 			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper.show()
 			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/NewspaperWithoutLetters.show()

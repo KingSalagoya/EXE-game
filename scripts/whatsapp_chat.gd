@@ -6,6 +6,7 @@ extends Control
 @onready var clouds: Sprite2D = $Clouds
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+const ROOM_1 = preload("uid://cb257hgwfgufx")
 const WHATSAPP_CHAT_2 = preload("uid://d2dy8fqpj4dps")
 
 var read_chat_1: bool = false
@@ -42,4 +43,4 @@ func _unhandled_input(_event: InputEvent) -> void:
 			read_chat_1 = true
 			can_change = true
 		else:
-			get_tree().quit()
+			GameManager.handle_dialogue.emit(ROOM_1, "whatsapp")
