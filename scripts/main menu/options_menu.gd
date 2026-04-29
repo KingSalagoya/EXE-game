@@ -36,9 +36,6 @@ func handle_audio_values() -> void:
 	
 	print("Music: " , music_value , "   |   SFX: " , sfx_value)
 
-func quit() -> void:
-	get_tree().quit()
-
 func handle_exit() -> void:
 	if visible:
 		hide()
@@ -47,3 +44,6 @@ func handle_exit() -> void:
 	else:
 		show()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+
+func _on_exit_pressed() -> void:
+	handle_exit()
