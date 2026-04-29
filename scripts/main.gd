@@ -19,7 +19,7 @@ const LEVEL_TEST = preload("res://scenes/levels/level_test.tscn")
 
 const room_one_dialogue: DialogueResource = preload("res://dialogue/room#1.dialogue")
 
-
+var can_throw: bool = false
 
 func _enter_tree() -> void:
 	GameManager.handle_exit.connect(exit_game)
@@ -112,11 +112,25 @@ func _special_objectives(_name: String) -> void:
 			cinamatics_player.play("wake_up_2")
 			await get_tree().create_timer(10).timeout
 			AudioManager.play_audio_one_shot("car stop", Vector3.ZERO, 10)
-			await get_tree().create_timer(15).timeout
+			await get_tree().create_timer(1).timeout
 			GameManager.request_objective_completed.emit("chill")
 		"read t#e no#?e??":
+			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper.show()
+			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/NewspaperWithoutLetters.show()
+			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/NewspaperWithoutLetters2.show()
+			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/Label.show()
+			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/newsani.play("newspaper")
+			can_throw = true
+		"...":
 			AudioManager.play_audio_one_shot("electric")
 			cinamatics_player.play("you are a liar")
+
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Enter") and can_throw:
+		if $UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper:
+			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper.queue_free()
+			can_throw = false
+			GameManager.request_objective_completed.emit("...")
 
 func _handle_special_area(_name: String) -> void:
 	match _name:

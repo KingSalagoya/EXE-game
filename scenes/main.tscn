@@ -12,7 +12,10 @@
 [ext_resource type="Script" uid="uid://6bh43noutcuk" path="res://scripts/puppet.gd" id="6_jkv2x"]
 [ext_resource type="Script" uid="uid://cyre2l60h5tyq" path="res://scripts/new_objectives.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://dcd4uei5h45qe" path="res://assets/textures/jumpscare/newspaper/newspaper_without_letters.png" id="7_trceg"]
+[ext_resource type="Texture2D" uid="uid://bn0indc2byoxt" path="res://assets/textures/jumpscare/newspaper/final_newspaper.png" id="8_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://b1gmh1y6ojj4j" path="res://scenes/main_menu.tscn" id="8_choun"]
+[ext_resource type="FontFile" uid="uid://bacn8mekru541" path="res://assets/fonts/Undead Pixel 8.ttf" id="9_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dc7uu85p2v35i" path="res://scenes/options_menu.tscn" id="10_eb6dy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1l6a"]
@@ -1015,6 +1018,67 @@ _data = {
 &"you are a liar": SubResource("Animation_gqmmt")
 }
 
+[sub_resource type="Animation" id="Animation_yc10j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewspaperWithoutLetters2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jscy8"]
+resource_name = "newspaper"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewspaperWithoutLetters2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.1, 4.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8.866667, 9.066667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pm3ni"]
+_data = {
+&"RESET": SubResource("Animation_yc10j"),
+&"newspaper": SubResource("Animation_jscy8")
+}
+
 [sub_resource type="Gradient" id="Gradient_o6xl0"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(0, 0, 0, 1)
@@ -1283,6 +1347,38 @@ theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
+
+[node name="Newspaper" type="Control" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=6484418]
+visible = false
+layout_mode = 2
+
+[node name="NewspaperWithoutLetters" type="Sprite2D" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper" unique_id=26283277]
+visible = false
+position = Vector2(896, 510)
+scale = Vector2(0.8695651, 0.86956507)
+texture = ExtResource("7_trceg")
+
+[node name="NewspaperWithoutLetters2" type="Sprite2D" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper" unique_id=1652587275]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(896, 510)
+scale = Vector2(0.8695651, 0.86956507)
+texture = ExtResource("8_a8y0u")
+
+[node name="Label" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper" unique_id=1566212203]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 639.0
+offset_top = 982.0
+offset_right = 1139.0
+offset_bottom = 1014.0
+theme_override_fonts/font = ExtResource("9_jkv2x")
+theme_override_font_sizes/font_size = 32
+text = "Press Enter to throw away..."
+
+[node name="newsani" type="AnimationPlayer" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper" unique_id=634873732]
+libraries/ = SubResource("AnimationLibrary_pm3ni")
 
 [node name="HUD" type="Control" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=1158560208]
 layout_mode = 2
