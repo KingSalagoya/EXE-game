@@ -484,7 +484,7 @@ shape = SubResource("BoxShape3D_vwklc")
 transform = Transform3D(95.523705, 29.584148, 1.2931642e-06, 0, -4.371139e-06, 100, 29.584148, -95.523705, -4.175474e-06, -16.006672, 0.7294302, -46.625008)
 
 [node name="VillageHouse2" parent="Models/Navigation" unique_id=1457785841 instance=ExtResource("3_gv6ix")]
-transform = Transform3D(-13.5058365, 99.083755, 4.3310883e-06, -3.3683237e-13, -4.3711384e-06, 99.99999, 99.083755, 13.5058365, 5.903595e-07, 30.752216, 0.8088784, -22.266191)
+transform = Transform3D(-13.5058365, 99.083755, 4.3310883e-06, -3.3683237e-13, -4.3711384e-06, 99.99999, 99.083755, 13.5058365, 5.903595e-07, 30.752216, 0.6254635, -22.266191)
 
 [node name="VillageHouse3" parent="Models/Navigation" unique_id=156103510 instance=ExtResource("3_gv6ix")]
 transform = Transform3D(-84.87593, 52.87791, 2.3113666e-06, -3.3285202e-13, -4.371139e-06, 99.99999, 52.87791, 84.87593, 3.7100458e-06, 67.67319, 0.04035282, -53.079018)
@@ -827,8 +827,7 @@ pete_model = NodePath("../door_frame/Pete")
 SECOND_ANIM_NAME = "door_close_special"
 
 [node name="Pete" parent="Models/Navigation/VillageHouse6/door_frame" parent_id_path=PackedInt32Array(182901976, 435954689) index="2" unique_id=1254348797 instance=ExtResource("8_l85x4")]
-transform = Transform3D(-0.009998024, 0.00016256506, -0.00011437468, -0.00012737658, -0.0008226545, 0.0099652875, 0.00015259167, 0.009964774, 0.00082456344, -0.0017887875, 0.0066526085, -0.018863365)
-visible = false
+transform = Transform3D(-0.013997234, 0.00022759111, -0.00016012439, -0.00017832738, -0.0011517167, 0.013951399, 0.00021362785, 0.013950682, 0.0011543887, 0.0063077994, 0.035843745, -0.019289628)
 
 [node name="Water" type="MeshInstance3D" parent="Models" unique_id=1596321527]
 transform = Transform3D(1.9999999, -2.9802322e-08, -5.9604645e-08, 2.9802322e-08, 1.9999998, 0, 5.9604645e-08, -2.9802322e-08, 1.9999998, 1.1920929e-07, -2.459474, 1.1920929e-07)
