@@ -19,6 +19,7 @@ const ROOM_BEGINNING = preload("res://scenes/levels/room_beginning.tscn")
 const ROOM_DREAM = preload("res://scenes/levels/room_dream.tscn")
 const ROOM_END = preload("res://scenes/levels/room_end.tscn")
 const LEVEL_TEST = preload("res://scenes/levels/level_test.tscn")
+const LEVEL_MAZE = preload("res://scenes/levels/maze.tscn")
 
 const room_one_dialogue: DialogueResource = preload("res://dialogue/room#1.dialogue")
 
@@ -78,10 +79,6 @@ func _special_objectives(_name: String) -> void:
 			GameManager.can_move = true
 		"grab dvd":
 			GameManager.handle_dialogue.emit(room_one_dialogue, "grab_dvd")
-		"open door":
-			pass
-		"collect wood":
-			pass
 		"insert dvd":
 			GameManager.can_move = false
 			cinamatics_player.play("play_computer")
@@ -98,6 +95,10 @@ func _special_objectives(_name: String) -> void:
 			blink_anim.play("blink")
 			GameManager.update_player_count.emit(1)
 			%Player.SPEED = 5
+		"open door":
+			pass
+		"collect wood":
+			pass
 		"kill enemies":
 			GameManager.spawn_boss_enemy.emit()
 			await get_tree().create_timer(10).timeout
@@ -111,6 +112,8 @@ func _special_objectives(_name: String) -> void:
 			
 			await get_tree().create_timer(3).timeout
 			GameManager.chat_dialogue.emit(1)
+		"seek the underwater house":
+			_change_level(LEVEL_MAZE)
 		"atone":
 			_change_level(ROOM_END)
 			cinamatics_player.play("wake_up_2")
