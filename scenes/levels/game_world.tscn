@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c8qrpp8ux2f52" path="res://assets/textures/textures/internal_ground_ao_texture.jpeg" id="7_0i3fa"]
 [ext_resource type="PackedScene" uid="uid://blwbxhogbdelp" path="res://scenes/enemy.tscn" id="7_cgfwo"]
 [ext_resource type="ArrayMesh" uid="uid://bx0y65v3efogy" path="res://assets/models/edited/humans/alucard.res" id="8_etyiu"]
+[ext_resource type="PackedScene" uid="uid://cw7y1a6cgudqo" path="res://scenes/pete.tscn" id="8_l85x4"]
 [ext_resource type="Script" uid="uid://bsmsli5rf25td" path="res://scripts/interacts/npc.gd" id="9_1igac"]
 [ext_resource type="ArrayMesh" uid="uid://by7txulajfrgu" path="res://assets/models/edited/birch_tree1.res" id="10_ac4xd"]
 [ext_resource type="ArrayMesh" uid="uid://bc2lb4vhpotm3" path="res://assets/models/edited/tree_path1.res" id="11_cgfwo"]
@@ -33,6 +34,7 @@
 [ext_resource type="ArrayMesh" uid="uid://8n4hk77nbydm" path="res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_009.res" id="26_l85x4"]
 [ext_resource type="ArrayMesh" uid="uid://cd8hdd3yydvpx" path="res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_010.res" id="27_u24ib"]
 [ext_resource type="ArrayMesh" uid="uid://cypkwssja1ghv" path="res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_014.res" id="28_m1ao7"]
+[ext_resource type="Texture2D" uid="uid://fy3k46ymidol" path="res://assets/textures/textures/wood_roof.jpg" id="29_0i3fa"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4st6c"]
 cell_height = 0.75
@@ -271,6 +273,27 @@ instance_count = 10
 mesh = ExtResource("13_40n0v")
 buffer = PackedFloat32Array(0, 0.011, 4.8082527e-10, 0.18601319, -0.011, 0, 0, 0.7617117, 0, -4.8082527e-10, 0.011, 0, 0, -0.011, -4.8082527e-10, 0.44690636, 0.0109999785, -9.540161e-13, 2.1825344e-05, 0.72211516, -2.1825344e-05, -4.808243e-10, 0.0109999785, 5.4533266e-05, 0.011, 0, 0, -0.5044247, 0, 0.011, 4.8082527e-10, 0.7098006, 0, -4.8082527e-10, 0.011, 0, -0.011, 0, 0, -0.34015477, 0, -0.011, -4.8082527e-10, 0.74848324, 0, -4.8082527e-10, 0.011, 0, 0, 0.011, 4.8082527e-10, 0.43286487, -0.011, 0, 0, 0.7538635, 0, -4.8082527e-10, 0.011, 0, -7.165539e-05, -0.0109583195, -0.0009539919, -0.045765474, 0.010969101, 3.6013897e-11, -0.0008239019, 0.32200882, 0.00082077994, -0.00095667917, 0.010927538, 0.0073080445, 0.010994461, -1.5256504e-11, 0.00034902812, 0.64303464, 1.3850207e-06, 0.010999913, -4.362797e-05, 0.37450093, -0.00034902536, 4.364995e-05, 0.010994375, 0.0009941407, 1.6586077e-05, 0.010996885, 0.0002613052, 0.17220283, -0.010977908, -3.045865e-11, 0.0006968127, 0.50898004, 0.00069661526, -0.00026183104, 0.010974798, 0.004027391, -0.010998617, 7.627811e-12, -0.00017450395, -0.08176008, -5.191273e-06, -0.010995132, 0.0003271945, 0.47171742, -0.00017442674, 0.00032723567, 0.010993749, 0.0029725356, 0.010992281, 1.8010544e-11, -0.00041203323, -0.1289486, 4.3895216e-05, 0.010937401, 0.0011710434, 0.5990805, 0.00040968836, -0.0011718657, 0.010929726, -0.003971567)
 
+[sub_resource type="MultiMesh" id="MultiMesh_l85x4"]
+transform_format = 1
+instance_count = 6
+mesh = ExtResource("14_og6kw")
+buffer = PackedFloat32Array(-0.011, 3.2782554e-09, 2.9595278e-16, -0.72751683, -3.2782554e-09, -0.011, -9.616505e-10, 0.6870172, 9.358573e-18, -9.616505e-10, 0.011, 3.0030478e-08, -0.011, 3.2782554e-09, 2.9595278e-16, -0.6224145, -3.2782554e-09, -0.011, -9.616505e-10, 0.7854808, 9.358573e-18, -9.616505e-10, 0.011, 3.4334455e-08, 3.2782554e-09, 0.011, 4.808253e-10, -0.7064649, -0.011, 3.2782554e-09, -4.8082505e-10, 0.67781943, -4.808252e-10, -4.808252e-10, 0.011, 2.962843e-08, 3.2782554e-09, 0.011, 4.808253e-10, -0.6076635, -0.011, 3.2782554e-09, -4.8082505e-10, 0.7763423, -4.808252e-10, -4.8082516e-10, 0.011, 3.3935e-08, -0.011, 3.2782554e-09, 2.9595278e-16, -0.7784617, -3.2782554e-09, -0.011, -9.616505e-10, 0.7040862, 9.358573e-18, -9.616505e-10, 0.011, 3.0776587e-08, 3.2782554e-09, 0.011, 4.808253e-10, -0.6679558, -0.011, 3.2782554e-09, -4.8082505e-10, 0.6273263, -4.808252e-10, -4.808252e-10, 0.011, 2.7421304e-08)
+
+[sub_resource type="MultiMesh" id="MultiMesh_u24ib"]
+transform_format = 1
+instance_count = 10
+mesh = ExtResource("13_40n0v")
+buffer = PackedFloat32Array(2.4586915e-09, 0.011, 4.808252e-10, -0.7742234, -0.011, 2.4586915e-09, -4.808252e-10, 0.10445984, -4.808253e-10, -4.808251e-10, 0.011, 4.566085e-09, 2.4586915e-09, 0.011, 4.808252e-10, -0.7401917, -0.011, 2.4586915e-09, -4.808252e-10, 0.24211226, -4.808253e-10, -4.808251e-10, 0.011, 1.0583064e-08, -0.011, 2.6226044e-09, -4.8471623e-17, -0.79339415, -2.6226044e-09, -0.011, -9.616505e-10, 0.21480691, -2.77747e-16, -9.616505e-10, 0.011, 9.389509e-09, -0.011, 2.6226044e-09, -4.8471623e-17, -0.78297114, -2.6226044e-09, -0.011, -9.616505e-10, 0.3854809, -2.77747e-16, -9.616505e-10, 0.011, 1.6849906e-08, -0.011, 2.6226044e-09, -4.8471623e-17, -0.7600485, -2.6226044e-09, -0.011, -9.616505e-10, 0.31569117, -2.77747e-16, -9.616505e-10, 0.011, 1.3799301e-08, -0.011, 2.6226044e-09, -4.847164e-17, -0.77335185, -2.6226044e-09, -0.011, -9.616505e-10, 0.23569602, -2.77747e-16, -9.616505e-10, 0.011, 1.0302601e-08, 2.4586915e-09, 0.011, 4.808252e-10, -0.7112124, -0.011, 2.4586915e-09, -4.808252e-10, 0.20245276, -4.808253e-10, -4.808251e-10, 0.011, 8.849493e-09, -0.011, 2.6226044e-09, -4.8471623e-17, -0.7550156, -2.6226044e-09, -0.011, -9.616505e-10, 0.52873474, -2.77747e-16, -9.616505e-10, 0.011, 2.3111731e-08, 2.4586915e-09, 0.011, 4.808252e-10, -0.6966132, -0.011, 2.4586915e-09, -4.808252e-10, 0.21974376, -4.808253e-10, -4.808251e-10, 0.011, 9.605306e-09, -0.011, 2.6226044e-09, -4.8471623e-17, -0.73333716, -2.6226044e-09, -0.011, -9.616505e-10, 0.3282726, -2.77747e-16, -9.616505e-10, 0.011, 1.43492525e-08)
+
+[sub_resource type="MultiMesh" id="MultiMesh_m1ao7"]
+transform_format = 1
+instance_count = 6
+mesh = ExtResource("13_40n0v")
+buffer = PackedFloat32Array(0.009121669, 0.006147777, 2.6872785e-10, -0.23039937, -0.006147777, 0.009121669, -8.21045e-11, 0.60995513, -2.6872785e-10, -8.210446e-11, 0.011000001, 2.6661986e-08, -0.0061477767, 0.009121669, 3.987209e-10, -0.3792258, -0.009121669, -0.0061477767, -7.4955325e-10, 0.77357966, -3.987208e-10, -7.4955314e-10, 0.011000001, 3.3814246e-08, 0.0091216685, 0.006147777, 2.687278e-10, -0.2048558, -0.006147777, 0.0091216685, -8.21045e-11, 0.539341, -2.6872785e-10, -8.210438e-11, 0.011, 2.3575343e-08, 0.0091216685, 0.006147777, 2.6872782e-10, -0.31097612, -0.006147777, 0.0091216685, -8.21045e-11, 0.6676005, -2.6872785e-10, -8.210442e-11, 0.011, 2.9181749e-08, -0.0061477767, 0.009121669, 3.987209e-10, -0.38891616, -0.009121669, -0.0061477767, -7.4955325e-10, 0.77100235, -3.987208e-10, -7.4955314e-10, 0.011000001, 3.3701586e-08, -0.0061477767, 0.009121669, 3.987209e-10, -0.47407913, -0.009121669, -0.0061477767, -7.4955325e-10, 0.6309922, -3.987208e-10, -7.4955314e-10, 0.011000001, 2.7581548e-08)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fgdnr"]
+size = Vector2(9.995, 14.94)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmnvc"]
 resource_name = "Material.003"
 vertex_color_use_as_albedo = true
@@ -361,6 +384,14 @@ size = Vector3(0.008269196, 0.3389489, 0.020862192)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oimxv"]
 size = Vector3(0.008269196, 0.3389489, 0.020862192)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uutgk"]
+resource_name = "Material.025"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("29_0i3fa")
+uv1_scale = Vector3(0.235, 0.235, 0.235)
+uv1_triplanar = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_csni8"]
 data = PackedVector3Array(-0.3535534, -1, -0.35355335, -0.5, -1, -4.371139e-08, 0, -1, 0, -0.5, -1, -4.371139e-08, -0.3535534, -1, -0.35355335, -0.3535534, 1, -0.35355335, 5.9624403e-09, -1, -0.5, -0.3535534, -1, -0.35355335, 0, -1, 0, -0.3535534, -1, -0.35355335, 5.9624403e-09, -1, -0.5, 5.9624403e-09, 1, -0.5, -0.5, -1, -4.371139e-08, -0.35355338, -1, 0.35355338, 0, -1, 0, -0.35355338, -1, 0.35355338, -0.5, -1, -4.371139e-08, -0.5, 1, -4.371139e-08, -0.35355338, -1, 0.35355338, -2.1855694e-08, -1, 0.5, 0, -1, 0, -2.1855694e-08, -1, 0.5, -0.35355338, -1, 0.35355338, -0.35355338, 1, 0.35355338, -0.3535534, 1, -0.35355335, -0.5, 1, -4.371139e-08, -0.5, -1, -4.371139e-08, -0.5, 1, -4.371139e-08, -0.3535534, 1, -0.35355335, 0, 1, 0, 5.9624403e-09, 1, -0.5, -0.3535534, 1, -0.35355335, -0.3535534, -1, -0.35355335, -0.3535534, 1, -0.35355335, 5.9624403e-09, 1, -0.5, 0, 1, 0, -0.5, 1, -4.371139e-08, -0.35355338, 1, 0.35355338, -0.35355338, -1, 0.35355338, -0.35355338, 1, 0.35355338, -0.5, 1, -4.371139e-08, 0, 1, 0, -0.35355338, 1, 0.35355338, -2.1855694e-08, 1, 0.5, -2.1855694e-08, -1, 0.5, -2.1855694e-08, 1, 0.5, -0.35355338, 1, 0.35355338, 0, 1, 0, 0.35355332, -1, -0.35355344, 5.9624403e-09, -1, -0.5, 0, -1, 0, 5.9624403e-09, -1, -0.5, 0.35355332, -1, -0.35355344, 0.35355332, 1, -0.35355344, 0.5, -1, 0, 0.35355332, -1, -0.35355344, 0, -1, 0, 0.35355332, -1, -0.35355344, 0.5, -1, 0, 0.5, 1, 0, -2.1855694e-08, -1, 0.5, 0.35355338, -1, 0.35355338, 0, -1, 0, 0.35355338, -1, 0.35355338, -2.1855694e-08, -1, 0.5, -2.1855694e-08, 1, 0.5, 0.35355338, -1, 0.35355338, 0.5, -1, 0, 0, -1, 0, 0.5, -1, 0, 0.35355338, -1, 0.35355338, 0.35355338, 1, 0.35355338, 0.35355332, 1, -0.35355344, 5.9624403e-09, 1, -0.5, 5.9624403e-09, -1, -0.5, 5.9624403e-09, 1, -0.5, 0.35355332, 1, -0.35355344, 0, 1, 0, 0.5, 1, 0, 0.35355332, 1, -0.35355344, 0.35355332, -1, -0.35355344, 0.35355332, 1, -0.35355344, 0.5, 1, 0, 0, 1, 0, -2.1855694e-08, 1, 0.5, 0.35355338, 1, 0.35355338, 0.35355338, -1, 0.35355338, 0.35355338, 1, 0.35355338, -2.1855694e-08, 1, 0.5, 0, 1, 0, 0.35355338, 1, 0.35355338, 0.5, 1, 0, 0.5, -1, 0, 0.5, 1, 0, 0.35355338, 1, 0.35355338, 0, 1, 0)
@@ -464,22 +495,23 @@ transform = Transform3D(-56.191013, 82.71984, 3.615798e-06, 1.4798395e-13, -4.37
 [node name="VillageHouse5" parent="Models/Navigation" unique_id=947661920 instance=ExtResource("3_gv6ix")]
 transform = Transform3D(8.106875, -99.67084, -4.356752e-06, 6.4848355e-14, -4.3711398e-06, 100.00001, -99.67084, -8.106875, -3.543631e-07, -55.221844, 1.5809436, 66.35444)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Models/Navigation/VillageHouse5" unique_id=2023898098]
-transform = Transform3D(0.010000001, -5.2386895e-10, 6.938894e-18, 5.2386895e-10, 0.010000001, 9.345823e-17, -3.469447e-17, 8.868774e-17, 0.009999998, -0.08618468, 0.02035293, 0.029360894)
-light_energy = 0.5
-omni_range = 8.34649
-
-[node name="table" parent="Models/Navigation/VillageHouse5" index="3" unique_id=616119417]
+[node name="table" parent="Models/Navigation/VillageHouse5" index="2" unique_id=616119417]
 transform = Transform3D(0.79999995, 0, -2.220446e-16, 0, 0.79999995, 2.1094237e-15, 0, 1.8735014e-15, 0.7999999, -0.05438161, -0.004423231, 0)
 
-[node name="Paper" parent="Models/Navigation/VillageHouse5" index="6" unique_id=1165767086 node_paths=PackedStringArray("corpse", "door_anim")]
+[node name="Paper" parent="Models/Navigation/VillageHouse5" index="5" unique_id=1165767086 node_paths=PackedStringArray("corpse", "door_anim", "sun")]
 transform = Transform3D(-1.7484551e-07, 0, -4, 2.2470914e-13, 4, 0, 3.9999979, -1.0069723e-13, -1.7484541e-07, -0.06324977, 0.032855242, 0.02199997)
 type = "corpse"
 corpse = NodePath("../corpse/rig")
 door_anim = NodePath("../door_frame/DoorAnim")
+sun = NodePath("../../../../Other/Sun")
 
 [node name="StaticBody3D" parent="Models/Navigation/VillageHouse5/Paper" index="2" unique_id=2001235067]
 transform = Transform3D(1, 7.993606e-15, 1.4210855e-14, -1.3322676e-15, 1, 2.2351742e-08, 3.5527137e-15, -2.2351742e-08, 1, 0, -0.00013488531, 0.0016587526)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Models/Navigation/VillageHouse5" unique_id=2023898098]
+transform = Transform3D(0.010000001, -5.2386895e-10, 6.938894e-18, 5.2386895e-10, 0.010000001, 9.345823e-17, -3.469447e-17, 8.868774e-17, 0.009999998, -0.08618468, 0.02035293, 0.029360894)
+light_energy = 0.5
+omni_range = 8.34649
 
 [node name="corpse" type="Node3D" parent="Models/Navigation/VillageHouse5" unique_id=1742307692]
 transform = Transform3D(-0.000659266, -5.784437e-17, 0.01998913, 0.01998913, -8.7422697e-10, 0.000659266, 8.737526e-10, 0.01999998, 2.8817396e-11, -0.029500425, -0.027789295, 0.029239323)
@@ -776,6 +808,28 @@ skeleton = NodePath("..")
 [node name="VillageHouse6" parent="Models/Navigation" unique_id=182901976 instance=ExtResource("3_gv6ix")]
 transform = Transform3D(8.861469, -99.40706, -6.3014374, -11.604183, -7.3135414, 99.05481, -98.92836, -8.046485, -12.18347, -1.3725551, -18.812342, 26.464642)
 
+[node name="OmniLight3D" parent="Models/Navigation/VillageHouse6" index="0" unique_id=636881519]
+light_color = Color(1, 0.53, 0.53, 1)
+
+[node name="OmniLight3D2" parent="Models/Navigation/VillageHouse6" index="1" unique_id=666952150]
+transform = Transform3D(1, -4.656612e-08, 2.7755567e-15, 4.656612e-08, 1, -1.3877788e-14, -2.775556e-15, 1.3877788e-14, 1, 0.06507134, -0.048581608, 0.017419616)
+light_color = Color(1, 0.86, 0.86, 1)
+light_energy = 0.75
+light_bake_mode = 1
+
+[node name="Paper" parent="Models/Navigation/VillageHouse6" index="5" unique_id=1165767086 node_paths=PackedStringArray("door_anim", "pete_model")]
+type = "underwater"
+door_anim = NodePath("../door_frame/DoorAnim")
+underwater_objective_name = "seek the underwater house "
+pete_model = NodePath("../door_frame/Pete")
+
+[node name="door" parent="Models/Navigation/VillageHouse6/door_frame" parent_id_path=PackedInt32Array(182901976, 435954689) index="0" unique_id=159964814]
+SECOND_ANIM_NAME = "door_close_special"
+
+[node name="Pete" parent="Models/Navigation/VillageHouse6/door_frame" parent_id_path=PackedInt32Array(182901976, 435954689) index="2" unique_id=1254348797 instance=ExtResource("8_l85x4")]
+transform = Transform3D(-0.009998024, 0.00016256506, -0.00011437468, -0.00012737658, -0.0008226545, 0.0099652875, 0.00015259167, 0.009964774, 0.00082456344, -0.0017887875, 0.0066526085, -0.018863365)
+visible = false
+
 [node name="Water" type="MeshInstance3D" parent="Models" unique_id=1596321527]
 transform = Transform3D(1.9999999, -2.9802322e-08, -5.9604645e-08, 2.9802322e-08, 1.9999998, 0, 5.9604645e-08, -2.9802322e-08, 1.9999998, 1.1920929e-07, -2.459474, 1.1920929e-07)
 material_override = SubResource("ShaderMaterial_b3nq0")
@@ -814,12 +868,24 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 19.2
 mesh = ExtResource("15_rtjbx")
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Models/Trees" unique_id=488947525]
-transform = Transform3D(50, 1.1920929e-05, 5.2108036e-13, 0, -2.1855694e-06, 50, 1.1920929e-05, -50, -2.1855694e-06, 0, 0, 0)
+transform = Transform3D(50, 1.1920929e-05, 5.2108036e-13, 0, -2.1855694e-06, 50, 1.1920929e-05, -50, -2.1855694e-06, 0, -0.06, 0)
 multimesh = SubResource("MultiMesh_1igac")
 
 [node name="MultiMeshInstance3D2" type="MultiMeshInstance3D" parent="Models/Trees" unique_id=812705653]
-transform = Transform3D(50, 1.1920929e-05, 5.2108036e-13, 0, -2.1855694e-06, 50, 1.1920929e-05, -50, -2.1855694e-06, 0, 0, 0)
+transform = Transform3D(50, 1.1920929e-05, 5.2108036e-13, 0, -2.1855694e-06, 50, 1.1920929e-05, -50, -2.1855694e-06, 0, -0.06, 0)
 multimesh = SubResource("MultiMesh_ac4xd")
+
+[node name="MultiMeshInstance3D3" type="MultiMeshInstance3D" parent="Models/Trees" unique_id=1619967956]
+transform = Transform3D(50, 1.1920929e-05, 5.2108036e-13, 0, -2.1855694e-06, 50, 1.1920929e-05, -50, -2.1855694e-06, 0, -0.06, 0)
+multimesh = SubResource("MultiMesh_l85x4")
+
+[node name="MultiMeshInstance3D4" type="MultiMeshInstance3D" parent="Models/Trees" unique_id=123381323]
+transform = Transform3D(50, 1.1920929e-05, 5.2108036e-13, 0, -2.1855694e-06, 50, 1.1920929e-05, -50, -2.1855694e-06, 0, -0.06, 0)
+multimesh = SubResource("MultiMesh_u24ib")
+
+[node name="MultiMeshInstance3D5" type="MultiMeshInstance3D" parent="Models/Trees" unique_id=642941426]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, -0.725, 0)
+multimesh = SubResource("MultiMesh_m1ao7")
 
 [node name="tree_path1" type="MeshInstance3D" parent="Models/Trees" unique_id=1654762089]
 transform = Transform3D(50, 1.1920929e-05, 5.2108036e-13, 0, -2.1855694e-06, 50, 1.1920929e-05, -50, -2.1855694e-06, 0, 0, 0)
@@ -830,6 +896,11 @@ mesh = ExtResource("11_cgfwo")
 transform = Transform3D(50, 1.1920929e-05, 5.2108036e-13, 0, -2.1855694e-06, 50, 1.1920929e-05, -50, -2.1855694e-06, 0, 0, 0)
 visible = false
 mesh = ExtResource("12_etyiu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Models/Trees" unique_id=929721125]
+transform = Transform3D(0.55888903, 0, 0.82924247, 0, 1, 0, -0.82924247, 0, 0.55888903, -15.454312, 0, -31.14433)
+visible = false
+mesh = SubResource("PlaneMesh_fgdnr")
 
 [node name="Graveyard" type="Node3D" parent="Models" unique_id=1959988643]
 transform = Transform3D(0.46948484, -49.997795, -2.1854732e-06, 0, -2.1855697e-06, 50.000004, -49.9978, -0.4694848, -2.0521833e-08, 33.8323, 1.9625139, 27.793951)
@@ -1052,8 +1123,10 @@ shape = SubResource("BoxShape3D_oimxv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.124813, -49.39119)
 
 [node name="wood1" type="CSGCylinder3D" parent="Woods" unique_id=1254814240 groups=["interactable"]]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.967569, -1.56789, 0.59283257)
+transform = Transform3D(9.452686e-09, 0.21625221, -0.9763375, 1, -4.371139e-08, -1.5095819e-15, -4.2677073e-08, -0.9763375, -0.21625221, -72.28171, -3.7883396, -23.41874)
+material_override = SubResource("StandardMaterial3D_uutgk")
 script = ExtResource("6_gv6ix")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Woods/wood1" unique_id=1439812639]
 
@@ -1061,8 +1134,10 @@ script = ExtResource("6_gv6ix")
 shape = SubResource("ConcavePolygonShape3D_csni8")
 
 [node name="wood2" type="CSGCylinder3D" parent="Woods" unique_id=1470017629 groups=["interactable"]]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.9334686, -1.56789, 2.8616219)
+transform = Transform3D(4.3503668e-08, 0.9952478, 0.09737447, 1, -4.371139e-08, -1.5095819e-15, 4.256373e-09, 0.09737447, -0.9952478, -61.626644, -3.783198, -24.156342)
+material_override = SubResource("StandardMaterial3D_uutgk")
 script = ExtResource("6_gv6ix")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Woods/wood2" unique_id=1824313404]
 
@@ -1070,12 +1145,36 @@ script = ExtResource("6_gv6ix")
 shape = SubResource("ConcavePolygonShape3D_7xxxh")
 
 [node name="wood3" type="CSGCylinder3D" parent="Woods" unique_id=2100600999 groups=["interactable"]]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.581814, -1.56789, 4.423758)
+transform = Transform3D(2.303916e-08, 0.52707446, -0.84981906, 1, -4.371139e-08, 0, -3.7146776e-08, -0.84981906, -0.52707446, -52.491394, -3.8140697, -21.131012)
+material_override = SubResource("StandardMaterial3D_uutgk")
 script = ExtResource("6_gv6ix")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Woods/wood3" unique_id=615736015]
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/wood3/StaticBody3D" unique_id=517878681]
+shape = SubResource("ConcavePolygonShape3D_cwh7x")
+
+[node name="wood4" type="CSGCylinder3D" parent="Woods" unique_id=285356908 groups=["interactable"]]
+transform = Transform3D(2.303916e-08, 0.52707446, -0.84981906, 1, -4.371139e-08, 0, -3.7146776e-08, -0.84981906, -0.52707446, -72.6499, -3.9255033, 1.1111221)
+material_override = SubResource("StandardMaterial3D_uutgk")
+script = ExtResource("6_gv6ix")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Woods/wood4" unique_id=1598813229]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/wood4/StaticBody3D" unique_id=755890777]
+shape = SubResource("ConcavePolygonShape3D_cwh7x")
+
+[node name="wood5" type="CSGCylinder3D" parent="Woods" unique_id=1601838906 groups=["interactable"]]
+transform = Transform3D(2.303916e-08, 0.52707446, -0.84981906, 1, -4.371139e-08, 0, -3.7146776e-08, -0.84981906, -0.52707446, -73.23449, -4.3805256, 19.833736)
+material_override = SubResource("StandardMaterial3D_uutgk")
+script = ExtResource("6_gv6ix")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Woods/wood5" unique_id=1018628912]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Woods/wood5/StaticBody3D" unique_id=1008550876]
 shape = SubResource("ConcavePolygonShape3D_cwh7x")
 
 [node name="Enemy_Holder" type="Node3D" parent="." unique_id=1365265452]
@@ -1175,10 +1274,11 @@ shape = SubResource("ConcavePolygonShape3D_jmnvc")
 [node name="SpawnPoint" parent="Other" unique_id=524540920 instance=ExtResource("5_gb76e")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999998, 6.852051, 3.59805, -11.401497)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Other" unique_id=113420305]
+[node name="Sun" type="DirectionalLight3D" parent="Other" unique_id=113420305]
 transform = Transform3D(-0.6804218, -0.5297561, 0.5063444, -0.265995, 0.8223678, 0.50294924, -0.6828417, 0.2075326, -0.70046943, 0, 14.541733, 0)
 light_color = Color(0.9132109, 0.91955924, 0.89593536, 1)
 light_energy = 0.75
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Other" unique_id=1029332007]
@@ -1190,3 +1290,4 @@ light_color = Color(0, 0, 0, 1)
 omni_range = 40.51328
 
 [editable path="Models/Navigation/VillageHouse5"]
+[editable path="Models/Navigation/VillageHouse6"]

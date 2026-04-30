@@ -8,7 +8,7 @@ extends Node
 
 @onready var ui: Control = %UserInterface
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
-@onready var main_menu: Control = $"UiViewport/SubViewport/UserInterface/MarginContainer/Main Menu"
+#@onready var main_menu: Control = $"UiViewport/SubViewport/UserInterface/MarginContainer/Main Menu"
 
 var flashlight_counters: int = 1
 

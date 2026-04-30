@@ -22,7 +22,7 @@ extends Node
 	"grab dvd": 0,
 	"insert dvd": 0,
 	"speak with wizard 1": 0,
-	"collect wood": 3,
+	"collect wood": 5,
 	"speak with wizard 2": 0,
 	"kill enemies": 1,
 	"kill boss enemy": 0,
