@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cpakvn1j64v86" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c8i1q1xahaol6" path="res://scenes/player.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://cw7y1a6cgudqo" path="res://scenes/pete.tscn" id="3_a8y0u"]
+[ext_resource type="PackedScene" path="res://scenes/pete.tscn" id="3_a8y0u"]
 [ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="4_85g3d"]
 [ext_resource type="Texture2D" uid="uid://dp4i05dvdd5rd" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/kitchenKnife_TEX.png" id="4_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://rvtqbuwa5w53" path="res://scripts/user_interface.gd" id="4_tefeu"]
-[ext_resource type="PackedScene" uid="uid://dwy6b1f4mo8dq" path="res://scenes/levels/game_world.tscn" id="5_muem4"]
+[ext_resource type="PackedScene" uid="uid://baagym8vrmwab" path="res://scenes/levels/maze.tscn" id="5_muem4"]
 [ext_resource type="Theme" uid="uid://ca62n5ve5nsxc" path="res://assets/styles/horror_default.tres" id="5_tipki"]
-[ext_resource type="Script" uid="uid://6bh43noutcuk" path="res://scripts/puppet.gd" id="6_jkv2x"]
+[ext_resource type="Script" path="res://scripts/puppet.gd" id="6_jkv2x"]
 [ext_resource type="Script" uid="uid://cyre2l60h5tyq" path="res://scripts/new_objectives.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dcd4uei5h45qe" path="res://assets/textures/jumpscare/newspaper/newspaper_without_letters.png" id="7_trceg"]
@@ -1223,7 +1223,7 @@ script = ExtResource("6_jkv2x")
 
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
 
-[node name="GameWorld" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=754255985 instance=ExtResource("5_muem4")]
+[node name="Maze" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=31652223 instance=ExtResource("5_muem4")]
 
 [node name="Cinamatic" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1467429672]
 
@@ -1324,6 +1324,36 @@ text = "Press Enter to throw away..."
 
 [node name="newsani" type="AnimationPlayer" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper" unique_id=634873732]
 libraries/ = SubResource("AnimationLibrary_pm3ni")
+
+[node name="Notes" type="Control" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=685030390]
+visible = false
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Notes" unique_id=181900910]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -484.0
+offset_top = -145.0
+offset_right = 484.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "“Thank you, ARU, for telling me his deepest darkest secret.”"
+
+[node name="Label" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Notes" unique_id=1146860832]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 673.0
+offset_right = 1185.0
+offset_bottom = 705.0
+theme_override_fonts/font = ExtResource("9_jkv2x")
+theme_override_font_sizes/font_size = 32
+text = "Press Enter to continue..."
 
 [node name="HUD" type="Control" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=1158560208]
 layout_mode = 2

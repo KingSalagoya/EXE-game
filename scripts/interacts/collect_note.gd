@@ -4,16 +4,17 @@ extends Node3D
 @export_enum("corpse", "underwater", "normal") var type : String = "normal"
 @export var delete: bool = true
 
+
 @export_category("Corpse")
 @export var corpse: Node3D
 @export var door_anim: AnimationPlayer
 @export_category("Underwater")
 @export var underwater_objective_name: String
 
+
 #USELESS VARIABLES BUT NECESSARY TO RUN
 var OBJECTIVE
 var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = false
-
 
 func interact() -> void:
 	_objective_collected()
@@ -28,7 +29,7 @@ func interact() -> void:
 		queue_free()
 
 func _objective_collected() -> void:
-	GameManager.inventory.set("notes", GameManager.inventory.get("notes") +1)
+	GameManager.inventory.notes += 1
 	GameManager.diary_note_collected.emit()
 
 func _corpse() -> void:

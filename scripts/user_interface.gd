@@ -9,9 +9,12 @@ extends Control
 @onready var sub_objective_label: Label = $MarginContainer/HUD/SubObjectiveLabel
 @onready var achievement_label: Label = $MarginContainer/HUD/AchievementLabel
 @onready var player_count_label: Label = $MarginContainer/HUD/Player_Count_Label
+@onready var note_display: TextEdit = $MarginContainer/Notes/TextEdit
+@onready var notes: Control = $MarginContainer/Notes
 
 var stored_objective_label: String
 var ending_label: bool = false
+var should_hide_note: bool = false
 
 func _enter_tree() -> void:
 	GameManager.update_interact_label.connect(update_interact_label)
@@ -21,6 +24,7 @@ func _enter_tree() -> void:
 	GameManager.release_ending.connect(ending)
 	GameManager.diary_note_collected.connect(update_sub_objective)
 	GameManager.activate_sub_objective.connect(activate_sub_objectives)
+	GameManager.display_note.connect(display_notes)
 
 func _ready() -> void:
 	activate_sub_objectives()
@@ -30,6 +34,12 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Toggle Chat Visibility"): toggle_chat_display()
+	
+	if should_hide_note:
+		if Input.is_action_just_pressed("Enter"):
+			notes.hide()
+			GameManager.can_move = true
+			should_hide_note = false
 
 
 func update_interact_label(text: String) -> void:
@@ -75,7 +85,7 @@ func update_objective_text(text: String) -> void:
 	update_objective_label()
 	#objective_label.text = text
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if ending_label:
 		pass
 		#update_interact_label("Press F to toggle flashlight")
@@ -128,5 +138,28 @@ func activate_sub_objectives(state: bool = false) -> void:
 		sub_objective_label.show()
 	else:
 		sub_objective_label.hide()
+
+func display_notes() -> void:
+	note_display.text = ""
+	match GameManager.inventory.notes:
+		1:
+			note_display.text = """'Do you know what ARU told me about PETE?'
+			'OMG, I knew it.'"""
+		2:
+			note_display.text = """ARU, you broke his trust."""
+		3:
+			note_display.text = """'I knew PETE was a freak'
+			'Thank you, ARU, for telling me his deepest darkest secret.'"""
+		4:
+			note_display.text = """Oh, it’s not your fault. It is Pete’s fault."""
+		5:
+			note_display.text = """'Stella Told Me That.'
+			'Oh, that is a perfect reason to bully him.'"""
+		6:
+			note_display.text = """'I thought Pete was a good guy.'
+			'Pete. Such a loser.'"""
+	notes.show()
+	GameManager.can_move = false
+	should_hide_note = true
 
 #endregion
