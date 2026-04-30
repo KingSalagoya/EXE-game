@@ -132,6 +132,8 @@ func _special_objectives(_name: String) -> void:
 			cinamatics_player.play("you are a liar")
 		"find the phone":
 			GameManager.add_scene.emit(ROOM_BEGINNING, true)
+			GameManager.handle_torch.emit(false)
+			GameManager.can_toggle_torch = false
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Enter") and can_throw:
