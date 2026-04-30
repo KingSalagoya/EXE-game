@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://rvtqbuwa5w53" path="res://scripts/user_interface.gd" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dwy6b1f4mo8dq" path="res://scenes/levels/game_world.tscn" id="5_muem4"]
 [ext_resource type="Theme" uid="uid://ca62n5ve5nsxc" path="res://assets/styles/horror_default.tres" id="5_tipki"]
-[ext_resource type="Script" path="res://scripts/puppet.gd" id="6_jkv2x"]
+[ext_resource type="Script" uid="uid://6bh43noutcuk" path="res://scripts/puppet.gd" id="6_jkv2x"]
 [ext_resource type="Script" uid="uid://cyre2l60h5tyq" path="res://scripts/new_objectives.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dcd4uei5h45qe" path="res://assets/textures/jumpscare/newspaper/newspaper_without_letters.png" id="7_trceg"]

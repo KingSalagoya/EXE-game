@@ -276,7 +276,7 @@ func jumpscares() -> void:
 		if GameManager.jumpscare_pete.visible == false or pete: return
 		pete = true
 		AudioManager.play_audio_one_shot("jumpscare l", Vector3.ZERO, 15)
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.2).timeout
 		GameManager.jumpscare_pete.visible = false
 		await get_tree().create_timer(1).timeout
 

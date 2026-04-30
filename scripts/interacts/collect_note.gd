@@ -22,6 +22,8 @@ var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = false
 func _ready() -> void:
 	if pete_model:
 		GameManager.jumpscare_pete = pete_model
+	if corpse:
+		GameManager.corpse = corpse
 
 func interact() -> void:
 	_objective_collected()
@@ -46,10 +48,11 @@ func _objective_collected() -> void:
 
 func _corpse() -> void:
 	corpse.visible = false
-	AudioManager.handle_music_pause("horror_theme_song", true)
-	AudioManager.handle_music_pause("wind", true)
+	AudioManager.stop_all_muisc()
 	sun.light_energy = 0.3
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.7).timeout
+	AudioManager.play_audio_one_shot("running away")
+	await get_tree().create_timer(0.3).timeout
 	door_anim.play("door_open")
 	queue_free()
 
