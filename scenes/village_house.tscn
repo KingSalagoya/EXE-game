@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c323qenmqfw3a" path="res://scripts/interacts/collect_note.gd" id="3_2gukv"]
 [ext_resource type="ArrayMesh" uid="uid://4nduufs21dhr" path="res://assets/models/edited/paper.res" id="4_g5crf"]
 [ext_resource type="Material" uid="uid://c4yp30jd4ylac" path="res://assets/materials/dark_wood.tres" id="5_ny82v"]
-[ext_resource type="ArrayMesh" uid="uid://ibnf64nlnl40" path="res://assets/models/edited/door_frame.res" id="6_0cs77"]
+[ext_resource type="ArrayMesh" uid="uid://juw40o08ch1l" path="res://assets/models/edited/door_frame.res" id="6_0cs77"]
 [ext_resource type="Material" uid="uid://bmqt4umr22203" path="res://assets/materials/dark_wood2.tres" id="7_didbg"]
 [ext_resource type="ArrayMesh" uid="uid://brjc37kv67h57" path="res://assets/models/edited/door.res" id="8_v75ds"]
 [ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="9_shnp8"]

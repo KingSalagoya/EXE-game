@@ -31,6 +31,7 @@ func interact() -> void:
 		door_anim.play("RESET")
 		_underwater()
 	else:
+		GameManager.display_note.emit()
 		queue_free()
 
 func _objective_collected() -> void:
