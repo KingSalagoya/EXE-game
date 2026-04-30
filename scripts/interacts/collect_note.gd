@@ -3,21 +3,17 @@ extends Node
 @export var interact_text = "pickup wood"
 @export var delete: bool = true
 
-var interacted: bool = false
+var hi : Dictionary[String,int] = {"hi": 1}
 
 #USELESS VARIABLES BUT NECESSARY TO RUN
 var OBJECTIVE
-var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = true
-
-func _enter_tree() -> void:
-	GameManager.diary_note_collected.connect(_objective_collected)
+var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = false
 
 
 func interact() -> void:
-	interacted = true
-	GameManager.diary_note_collected.emit()
+	_objective_collected()
 	queue_free()
-	interacted = false
 
-func _objective_collected(_name: String) -> void:
-	GameManager.inventory.notes += 1
+func _objective_collected() -> void:
+	GameManager.inventory.set("notes", GameManager.inventory.get("notes") +1)
+	GameManager.diary_note_collected.emit()

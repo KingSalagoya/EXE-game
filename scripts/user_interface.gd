@@ -114,8 +114,8 @@ func set_chat_mode(state: String) -> void:
 #region sub_objectives
 
 func update_sub_objective() -> void:
-	if GameManager.inventory.notes < 6:
-		sub_objective_label.text = "Sub Objective: Collect Mystery Notes (" + str(GameManager.inventory.notes) + "/6)"
+	if GameManager.inventory.get("notes") < 6:
+		sub_objective_label.text = "Sub Objective: Collect Mystery Notes (" + str(GameManager.inventory.get("notes")) + "/6)"
 	elif GameManager.collected_all_notes == false:
 		sub_objective_label.text = "Sub Objective Completed!"
 		await get_tree().create_timer(1).timeout
