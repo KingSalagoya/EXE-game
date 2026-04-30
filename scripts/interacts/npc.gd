@@ -5,7 +5,9 @@ extends Node3D
 
 @export var LIST_OF_NPC_OBJECTIVES: Dictionary[String, int] = {
 	"unlock forest": 1,
-	"unlock graveyard": 1
+	"unlock graveyard": 1,
+	"unlock underwater": 1,
+	"unlock bridge": 1
 }
 
 const NPC_Dialogue = preload("uid://croffpocd4445")

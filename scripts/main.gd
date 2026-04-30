@@ -115,6 +115,8 @@ func _special_objectives(_name: String) -> void:
 			
 			await get_tree().create_timer(3).timeout
 			GameManager.chat_dialogue.emit(1)
+			
+			
 		"seek the underwater house":
 			_change_level(LEVEL_MAZE)
 		"run":
@@ -203,6 +205,8 @@ func end_game() -> void:
 
 #endregion
 
+const NPC = preload("uid://croffpocd4445")
+
 func show_half_news() -> void:
 	$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper.show()
 	$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/TextureRect.show()
@@ -211,3 +215,4 @@ func show_half_news() -> void:
 	$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper.hide()
 	$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/TextureRect.hide()
 	GameManager.can_move = true
+	GameManager.handle_dialogue.emit(NPC, "confusion")
