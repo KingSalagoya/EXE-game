@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://b4ftfrw1rgy" path="res://assets/sfx/wake-up/man-waking-up-from-sleep.mp3" id="9_oucy0"]
 [ext_resource type="AudioStream" uid="uid://dtvlitstwq5bk" path="res://assets/sfx/yawn/male-yawning.mp3" id="10_cuol6"]
 [ext_resource type="AudioStream" uid="uid://pejtj1x4fiwk" path="res://assets/sfx/footsteps/concrete-footsteps.mp3" id="13_2y2jw"]
-[ext_resource type="AudioStream" path="res://assets/sfx/floraphonic-electric-shock-short-circuit-4-204986.mp3" id="13_2y5yn"]
+[ext_resource type="AudioStream" uid="uid://vi7oubw5wfc5" path="res://assets/sfx/intreactions/floraphonic-electric-shock-short-circuit-4-204986.mp3" id="13_2y5yn"]
 [ext_resource type="AudioStream" uid="uid://bm4olc2iddi0w" path="res://assets/sfx/footsteps/footsteps-dirt-gravel.mp3" id="14_2y5yn"]
 [ext_resource type="AudioStream" uid="uid://pd38g58fye8p" path="res://assets/sfx/intreactions/freesound_community-item-pickup-37089.mp3" id="14_oucy0"]
 [ext_resource type="AudioStream" uid="uid://ckabyt76kjwr0" path="res://assets/sfx/text/typerwriter1.mp3" id="15_f6jxr"]
@@ -32,7 +32,8 @@
 [ext_resource type="AudioStream" uid="uid://dax4eksb0eyl5" path="res://assets/sfx/ambients/soundreality-wind-blowing-457954.mp3" id="26_nplbh"]
 [ext_resource type="AudioStream" uid="uid://s6uqq6t44ya4" path="res://assets/sfx/ambients/Lucid_Petary_FULL_SONG_MusicGPT.mp3" id="27_24ib7"]
 [ext_resource type="AudioStream" uid="uid://cs0wrxfvtqepo" path="res://assets/sfx/intreactions/jumpscare2.mp3" id="27_n1t8p"]
-[ext_resource type="AudioStream" path="res://assets/sfx/music-scary.mp3" id="30_2fqsb"]
+[ext_resource type="AudioStream" uid="uid://pt141aae7l5n" path="res://assets/sfx/footsteps/fadeout_running.mp3" id="28_n1t8p"]
+[ext_resource type="AudioStream" uid="uid://bh541jy2mdqfe" path="res://assets/sfx/ambients/music-scary.mp3" id="30_2fqsb"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_if78k"]
 random_pitch = 1.005793
@@ -102,6 +103,7 @@ audio_one_shot_clips = Dictionary[String, AudioStream]({
 "jumpscare h": ExtResource("26_1y43m"),
 "jumpscare l": ExtResource("27_n1t8p"),
 "pickup": SubResource("AudioStreamRandomizer_cuol6"),
+"running away": ExtResource("28_n1t8p"),
 "stab": SubResource("AudioStreamOggVorbis_oucy0"),
 "switch off": ExtResource("25_yt2vs"),
 "type": SubResource("AudioStreamRandomizer_yt2vs"),

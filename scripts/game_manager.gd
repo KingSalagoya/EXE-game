@@ -64,6 +64,7 @@ var current_objective_clone: String = ""
 
 #Jumpscaremodels
 var jumpscare_pete: Node3D
+var corpse: Node3D
 
 #region npc_vars
 
