@@ -11,6 +11,7 @@ var friend_spawned: bool = false
 
 func _ready() -> void:
 	GameManager.can_jump = true
+	GameManager.activate_sub_objective.emit(true)
 	
 	GameManager.unlock_achievement.connect(unlock_achievement)
 	GameManager.spawn_boss_enemy.connect(spawn_enemies)

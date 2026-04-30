@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://b28vw2ajrsm7" path="res://assets/models/edited/village_house_1.res" id="1_5ygqp"]
 [ext_resource type="ArrayMesh" uid="uid://cyjfb5x4i0vdo" path="res://assets/models/edited/g_wood_table.res" id="2_yico5"]
-[ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="3_2gukv"]
+[ext_resource type="Script" uid="uid://c323qenmqfw3a" path="res://scripts/interacts/collect_note.gd" id="3_2gukv"]
 [ext_resource type="ArrayMesh" uid="uid://4nduufs21dhr" path="res://assets/models/edited/paper.res" id="4_g5crf"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yico5"]
