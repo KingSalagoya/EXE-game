@@ -91,7 +91,7 @@ shadow_mesh = SubResource("ArrayMesh_4lphl")
 albedo_texture = ExtResource("11_ssoy3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uge0f"]
-size = Vector3(1.2563477, 0.3581543, 0.576416)
+size = Vector3(2.0183105, 1.195343, 1.170166)
 
 [sub_resource type="Animation" id="Animation_w18ys"]
 length = 0.001
@@ -306,7 +306,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fhhke")
 transform = Transform3D(0.0001333672, -0.009999112, 1.1714292e-09, -1.8626451e-09, -3.204346e-10, -0.010000001, 0.009999111, 0.0001333666, -9.313226e-10, 0, 0, 0)
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Interactable/knife/kitchenKnife/StaticBody3D" unique_id=316315400]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12817478, -0.01940918, -0.010135651)
+transform = Transform3D(1, -3.7550926e-06, 5.2154064e-08, 0, 0.9999904, 1.4528632e-07, 0, -3.5390258e-08, 0.99999964, 0.2528162, -0.027629852, 0.28674173)
 shape = SubResource("BoxShape3D_uge0f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=245251069]

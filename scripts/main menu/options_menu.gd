@@ -1,7 +1,7 @@
 extends Control
 
 @onready var panels: MarginContainer = $Panels
-@onready var main: Control = $Panels/Main
+#@onready var main: Control = $Panels/Main
 @onready var options: Control = $Panels/Options
 
 const starting_level: PackedScene = preload("res://scenes/main.tscn")
@@ -46,4 +46,4 @@ func handle_exit() -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 func _on_exit_pressed() -> void:
-	handle_exit()
+	get_tree().quit()

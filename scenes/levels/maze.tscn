@@ -343,10 +343,12 @@ transform = Transform3D(0.001221668, 0, 0.9999992, 0, 1, 0, -0.9999992, 0, 0.001
 use_collision = true
 size = Vector3(66.891205, 5.496582, 1)
 
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=747598114]
 libraries/ = SubResource("AnimationLibrary_6tw5y")
 
 [node name="UiViewport" type="SubViewportContainer" parent="." unique_id=115820319]
+
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -389,3 +391,5 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_mboyv")
 theme_override_font_sizes/font_size = 48
 text = "Press F to turn on the torch..."
+
+
