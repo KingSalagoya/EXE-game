@@ -54,6 +54,8 @@ extends Node
 
 @warning_ignore("unused_signal") signal show_half_news()
 
+@warning_ignore("unused_signal") signal black_bg(state: bool)
+
 var can_toggle_chat: bool = false
 var can_toggle_torch: bool = false
 var can_move: bool = true
