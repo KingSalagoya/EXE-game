@@ -225,10 +225,12 @@ func enable_flashlight() -> void:
 	can_use_flashlight = true
 
 func toggle_flashlight() -> void:
+	AudioManager.play_audio_one_shot("switch off")
 	GameManager.update_flashlight_counters.emit()
 	await get_tree().create_timer(0.08).timeout
 	flashlight.visible = true
 	await get_tree().create_timer(3.0).timeout
+	AudioManager.play_audio_one_shot("switch off")
 	flashlight.visible = false
 
 
