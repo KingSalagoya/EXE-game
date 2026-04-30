@@ -37,7 +37,7 @@ Rail: (Yawwwn) Im Getting Sle..epy....
 
 Rail: It's not my fault...
 
-#do GameManager.add_scene.emit(WHATSAPP_CHAT, false)
+do GameManager.request_objective_completed.emit("atone")
 
 => END
 
