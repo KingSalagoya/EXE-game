@@ -16,6 +16,10 @@ extends Node
 @warning_ignore("unused_signal") signal update_player_count(count: int)
 @warning_ignore("unused_signal") signal update_npc_objective
 
+@warning_ignore("unused_signal") signal diary_note_collected
+@warning_ignore("unused_signal") signal activate_sub_objective(state: bool)
+
+
 #Labels
 @warning_ignore("unused_signal") signal update_interact_label(text: String)
 @warning_ignore("unused_signal") signal update_objective_label(text: String)
@@ -56,13 +60,14 @@ var needed_woods: int = 3
 
 #endregion
 
-
+var collected_all_notes: bool = false
 var encounterd_objectives: Array[String] = []
 
 var inventory:Dictionary [String, int] = {
 	"wood": 0,
 	"dvd": 0,
-	"walkie_talkie": 0
+	"walkie_talkie": 0,
+	"notes": 0
 }
 
 #region dialogue_manager

@@ -14,7 +14,6 @@ func _enter_tree() -> void:
 	OBJECTIVE = objective_name
 	GameManager.request_objective_completed.connect(_objective_collected)
 
-
 func interact() -> void:
 	interacted = true
 	GameManager.request_objective_completed.emit(objective_name)

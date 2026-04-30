@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cpakvn1j64v86" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c8i1q1xahaol6" path="res://scenes/player.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://cw7y1a6cgudqo" path="res://scenes/pete.tscn" id="3_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://dbef7ovwfqemw" path="res://scenes/levels/home.tscn" id="3_ya4ey"]
+[ext_resource type="PackedScene" path="res://scenes/pete.tscn" id="3_a8y0u"]
 [ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="4_85g3d"]
 [ext_resource type="Texture2D" uid="uid://dp4i05dvdd5rd" path="res://assets/models/downloaded/retro-psx-like-horror-melee-weapons-pack/source/Simple Horror Melee Weapons Pack/kitchenKnife_TEX.png" id="4_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://3lwoniapqd6h" path="res://scenes/Chat UI.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://rvtqbuwa5w53" path="res://scripts/user_interface.gd" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dwy6b1f4mo8dq" path="res://scenes/levels/game_world.tscn" id="5_muem4"]
 [ext_resource type="Theme" uid="uid://ca62n5ve5nsxc" path="res://assets/styles/horror_default.tres" id="5_tipki"]
-[ext_resource type="Script" uid="uid://6bh43noutcuk" path="res://scripts/puppet.gd" id="6_jkv2x"]
+[ext_resource type="Script" path="res://scripts/puppet.gd" id="6_jkv2x"]
 [ext_resource type="Script" uid="uid://cyre2l60h5tyq" path="res://scripts/new_objectives.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dcd4uei5h45qe" path="res://assets/textures/jumpscare/newspaper/newspaper_without_letters.png" id="7_trceg"]
@@ -310,58 +310,58 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_yc10j"]
 resource_name = "flashlight 0"
-length = 0.1
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Pete:visible")
+tracks/0/path = NodePath("NewspaperWithoutLetters2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Pete:position")
+tracks/1/path = NodePath("Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(1.0301883, 0, -4.5813704)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_jscy8"]
-resource_name = "flashlight 1"
-length = 0.1
+resource_name = "newspaper"
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Pete:visible")
+tracks/0/path = NodePath("NewspaperWithoutLetters2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 3.1, 4.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Pete:position")
+tracks/1/path = NodePath("Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 8.866667, 9.066667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(1.0301883, 0, -4.5813704)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_pm3ni"]
@@ -1018,61 +1018,6 @@ _data = {
 &"you are a liar": SubResource("Animation_gqmmt")
 }
 
-[sub_resource type="Animation" id="Animation_yc10j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NewspaperWithoutLetters2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_jscy8"]
-resource_name = "newspaper"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NewspaperWithoutLetters2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.1, 4.9666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 8.866667, 9.066667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pm3ni"]
 _data = {
 &"RESET": SubResource("Animation_yc10j"),
@@ -1278,7 +1223,7 @@ script = ExtResource("6_jkv2x")
 
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
 
-[node name="Home" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=1172181076 instance=ExtResource("3_ya4ey")]
+[node name="GameWorld" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=754255985 instance=ExtResource("5_muem4")]
 
 [node name="Cinamatic" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1467429672]
 
@@ -1451,15 +1396,30 @@ theme = ExtResource("5_tipki")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="SubObjectiveLabel" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/HUD" unique_id=1370220344]
+modulate = Color(1, 1, 1, 0.3137255)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -275.0
+offset_top = 58.0
+offset_right = 5.0
+offset_bottom = 92.0
+grow_horizontal = 0
+mouse_filter = 1
+theme = ExtResource("5_tipki")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Player_Count_Label" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/HUD" unique_id=358244141]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -280.0
-offset_top = 66.0
-offset_bottom = 100.0
+offset_top = 201.0
+offset_bottom = 235.0
 grow_horizontal = 0
 mouse_filter = 1
 theme = ExtResource("5_tipki")

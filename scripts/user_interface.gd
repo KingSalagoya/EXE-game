@@ -6,6 +6,7 @@ extends Control
 
 @onready var interact_label: Label = $MarginContainer/HUD/InteractLabel
 @onready var objective_label: Label = $MarginContainer/HUD/ObjectiveLabel
+@onready var sub_objective_label: Label = $MarginContainer/HUD/SubObjectiveLabel
 @onready var achievement_label: Label = $MarginContainer/HUD/AchievementLabel
 @onready var player_count_label: Label = $MarginContainer/HUD/Player_Count_Label
 
@@ -18,8 +19,12 @@ func _enter_tree() -> void:
 	GameManager.unlock_achievement.connect(update_achievement_label)
 	GameManager.update_player_count.connect(update_player_count_label)
 	GameManager.release_ending.connect(ending)
+	GameManager.diary_note_collected.connect(update_sub_objective)
+	GameManager.activate_sub_objective.connect(activate_sub_objectives)
 
 func _ready() -> void:
+	activate_sub_objectives()
+	update_sub_objective()
 	#set_chat_mode("off")
 	pass
 
@@ -75,6 +80,7 @@ func _physics_process(delta: float) -> void:
 		pass
 		#update_interact_label("Press F to toggle flashlight")
 		await get_tree().create_timer(2).timeout
+
 func update_objective_label() -> void:
 	if stored_objective_label == "" : objective_label.hide()
 	else: objective_label.show()
@@ -104,3 +110,23 @@ func set_chat_mode(state: String) -> void:
 			chat_ui.hide()
 			msg_box.show()
 			chat_history.modulate.a = 1.0
+
+#region sub_objectives
+
+func update_sub_objective() -> void:
+	if GameManager.inventory.notes < 6:
+		sub_objective_label.text = "Sub Objective: Collect Mystery Notes (" + str(GameManager.inventory.notes) + "/6)"
+	elif GameManager.collected_all_notes == false:
+		sub_objective_label.text = "Sub Objective Completed!"
+		await get_tree().create_timer(1).timeout
+		sub_objective_label.text = ""
+		sub_objective_label.hide()
+		GameManager.collected_all_notes = true
+
+func activate_sub_objectives(state: bool = false) -> void:
+	if state:
+		sub_objective_label.show()
+	else:
+		sub_objective_label.hide()
+
+#endregion
