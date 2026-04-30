@@ -6,6 +6,7 @@ extends Node
 @warning_ignore("unused_signal") signal release_ending
 @warning_ignore("unused_signal") signal update_flashlight_counters
 @warning_ignore("unused_signal") signal paralize_coords (coords: Vector3, rotation: Vector3)
+@warning_ignore("unused_signal") signal unlock_sword
 
 #Objectives
 @warning_ignore("unused_signal") signal request_objective_completed (objective_name: String)
@@ -38,6 +39,7 @@ extends Node
 @warning_ignore("unused_signal") signal spawn_friend ()
 
 @warning_ignore("unused_signal") signal handle_exit ()
+
 
 #Special Areas
 @warning_ignore("unused_signal") signal special_area_entered (area_id: String)

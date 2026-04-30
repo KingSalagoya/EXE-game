@@ -23,12 +23,15 @@ var t_bob: float = 0.0
 
 @onready var upper_climb_check: RayCast3D = $CameraHolder/upper_climb_check
 @onready var lower_climb_check: RayCast3D = $CameraHolder/lower_climb_check
+@onready var sword: MeshInstance3D = $CameraHolder/Graphics/hero/rig/Skeleton3D/sword/sword
 
 
 @export var hp: int = 20
 @export var damage:int = 10
 @export var knockback_force: float = 8.0
 @export var is_player: bool = true
+
+
 
 # Player movement recording
 var rec_count: int = 0
@@ -42,12 +45,16 @@ var prev_ground
 
 var can_use_flashlight: bool = false
 
+var unlocked_sword: bool = true
+var is_attacking: bool = false
 var knockback_velocity := Vector3.ZERO
 
 func _ready() -> void:
 	flashlight.visible = false
+	sword.visible = true
 	GameManager.release_ending.connect(enable_flashlight)
 	GameManager.paralize_coords.connect(paralize_coords)
+	GameManager.unlock_sword.connect(unlock_sword)
 	pass
 	#AudioManager.change_footsteps("concrete")
 
@@ -119,7 +126,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		#graphics.rotate_y(-event.relative.x * SENSITIVITY)
 		main_camera.rotate_x(-event.relative.y * SENSITIVITY)
 		main_camera.rotation.x = clamp(main_camera.rotation.x, deg_to_rad(-70), deg_to_rad(70))
-	elif event.is_action_pressed("attack") and not can_use_flashlight:
+	elif event.is_action_pressed("attack") and not can_use_flashlight and unlocked_sword and not is_attacking:
+		is_attacking = true
+		playeranimations.play("main-character/attack")
 		if interactor.is_colliding():
 			var target = interactor.get_collider()
 			while target != null and target is Node:
@@ -139,6 +148,8 @@ func _unhandled_input(event: InputEvent) -> void:
 						hb.take_damage(damage, direction * knockback_force)
 					break
 				target = target.get_parent()
+		await get_tree().create_timer(0.5).timeout
+		is_attacking = false
 	if Input.is_action_just_pressed("flashlight") and can_use_flashlight:
 		toggle_flashlight()
 
@@ -169,6 +180,9 @@ func handle_jump(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor() and GameManager.can_jump:
 		velocity.y = JUMP_VELOCITY
 
+func unlock_sword() -> void:
+	unlocked_sword = true
+	sword.visible = true
 
 func handle_movement() -> void:
 	var input_dir := Input.get_vector("left", "right", "up", "down")
@@ -177,7 +191,7 @@ func handle_movement() -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		playeranimations.play("main-character/running-backwards")
+		if not is_attacking: playeranimations.play("main-character/running-backwards")
 
 		if lower_climb_check.is_colliding():
 			#print(lower_climb_check.get_collider().get_parent().name)
@@ -187,7 +201,7 @@ func handle_movement() -> void:
 		#elif velocity.z < 0: playeranimations.play("main-character/running-backwards")
 		AudioManager.toggle_footsteps_pause(false)
 	else:
-		playeranimations.play("main-character/idle")
+		if not is_attacking: playeranimations.play("main-character/idle")
 		AudioManager.toggle_footsteps_pause(true)
 		velocity.x = 0.0
 		velocity.z = 0.0
@@ -232,7 +246,6 @@ func toggle_flashlight() -> void:
 	await get_tree().create_timer(3.0).timeout
 	AudioManager.play_audio_one_shot("switch off")
 	flashlight.visible = false
-
 
 func paralize_coords(pos: Vector3, rot: Vector3) -> void:
 	global_position = pos
