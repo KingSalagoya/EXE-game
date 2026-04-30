@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://dreyyseneb7bv" path="res://assets/sfx/footsteps/dragon-studio-footsteps-on-wood-397989.mp3" id="26_kr8a2"]
 [ext_resource type="AudioStream" uid="uid://dax4eksb0eyl5" path="res://assets/sfx/ambients/soundreality-wind-blowing-457954.mp3" id="26_nplbh"]
 [ext_resource type="AudioStream" uid="uid://s6uqq6t44ya4" path="res://assets/sfx/ambients/Lucid_Petary_FULL_SONG_MusicGPT.mp3" id="27_24ib7"]
+[ext_resource type="AudioStream" uid="uid://bh541jy2mdqfe" path="res://assets/sfx/music-scary.mp3" id="30_2fqsb"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_if78k"]
 random_pitch = 1.005793
@@ -117,6 +118,9 @@ stream = ExtResource("26_nplbh")
 parameters/looping = true
 
 [node name="nothing" type="AudioStreamPlayer" parent="MusicClips" unique_id=1945304120]
+
+[node name="scary_music" type="AudioStreamPlayer" parent="MusicClips" unique_id=131973122]
+stream = ExtResource("30_2fqsb")
 
 [node name="horror_theme_song" type="AudioStreamPlayer" parent="MusicClips" unique_id=2002921762]
 stream = ExtResource("27_24ib7")
