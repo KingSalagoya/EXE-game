@@ -22,6 +22,7 @@ const LEVEL_TEST = preload("res://scenes/levels/level_test.tscn")
 const LEVEL_MAZE = preload("res://scenes/levels/maze.tscn")
 
 const room_one_dialogue: DialogueResource = preload("res://dialogue/room#1.dialogue")
+const GAME_WORLD = preload("uid://dwy6b1f4mo8dq")
 
 var can_throw: bool = false
 
@@ -89,7 +90,7 @@ func _special_objectives(_name: String) -> void:
 			blink_anim.play_backwards("blink")
 			await get_tree().create_timer(3).timeout
 			cinamatics_player.play("RESET")
-			_change_level(LEVEL_TEST)
+			_change_level(GAME_WORLD)
 			ui.set_chat_mode("on")
 			GameManager.can_toggle_chat = true
 			GameManager.can_move = true
