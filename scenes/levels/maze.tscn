@@ -1,9 +1,50 @@
 [gd_scene format=3 uid="uid://baagym8vrmwab"]
 
+[ext_resource type="FontFile" uid="uid://dvduoeoa45h66" path="res://assets/fonts/DoubleHomicide.ttf" id="1_mboyv"]
+[ext_resource type="Script" uid="uid://b2jyd5dlmk8s" path="res://scenes/levels/maze.gd" id="1_xyp5l"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3biw"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_mboyv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xyp5l"]
+resource_name = "instruction"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6tw5y"]
+_data = {
+&"RESET": SubResource("Animation_mboyv"),
+&"instruction": SubResource("Animation_xyp5l")
+}
+
 [node name="Maze" type="Node3D" unique_id=31652223]
+script = ExtResource("1_xyp5l")
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=1397339589]
 transform = Transform3D(73.07104, 0, 0, 0, 1, 0, 0, 0, 69.900604, 0, -0.24664307, 0)
@@ -301,3 +342,22 @@ size = Vector3(23.661865, 5.496582, 1)
 transform = Transform3D(0.001221668, 0, 0.9999992, 0, 1, 0, -0.9999992, 0, 0.001221668, -36.34514, 2.248291, -1.1943288)
 use_collision = true
 size = Vector3(66.891205, 5.496582, 1)
+
+[node name="Label" type="Label" parent="." unique_id=2044992925]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -33.5
+offset_right = 337.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_mboyv")
+theme_override_font_sizes/font_size = 48
+text = "Press F to turn on the torch..."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=747598114]
+libraries/ = SubResource("AnimationLibrary_6tw5y")

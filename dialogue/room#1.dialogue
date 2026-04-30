@@ -37,6 +37,8 @@ Rail: (Yawwwn) Im Getting Sle..epy....
 
 Rail: It's not my fault...
 
+#do GameManager.add_scene.emit(WHATSAPP_CHAT, false)
+
 => END
 
 ~ wake_up_2

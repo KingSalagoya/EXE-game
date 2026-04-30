@@ -17,7 +17,7 @@ func _enter_tree() -> void:
 func interact() -> void:
 	interacted = true
 	GameManager.request_objective_completed.emit(objective_name)
-	queue_free()
+	#queue_free()
 	interacted = false
 
 func _objective_collected(_name: String) -> void:
