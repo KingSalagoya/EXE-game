@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dpi6j310qqjev" path="res://assets/textures/textures/hard_cloth.jpg" id="3_y4r1p"]
 [ext_resource type="Script" uid="uid://b6afotnygprho" path="res://scripts/hit_box.gd" id="4_dqkch"]
 [ext_resource type="Animation" uid="uid://d2p8vn2vpu0gg" path="res://assets/animations/res/running.res" id="4_y4r1p"]
-[ext_resource type="Animation" uid="uid://bmq2lg6n4i25m" path="res://assets/animations/res/attack.res" id="5_3v2ag"]
+[ext_resource type="Animation" uid="uid://cn5udjwox2beg" path="res://assets/animations/res/attack.res" id="5_3v2ag"]
 [ext_resource type="Animation" uid="uid://bpge0ytcocqld" path="res://assets/animations/res/running-backwards.res" id="5_d2wvv"]
 [ext_resource type="Animation" uid="uid://cfqiwfkq5v7ri" path="res://assets/animations/res/turn_left.res" id="7_ur7pv"]
 
