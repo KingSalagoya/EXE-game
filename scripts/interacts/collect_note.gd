@@ -18,7 +18,6 @@ extends Node3D
 #USELESS VARIABLES BUT NECESSARY TO RUN
 var OBJECTIVE
 var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = false
-var underwater_interacted:bool = false
 
 func interact() -> void:
 	_objective_collected()
@@ -28,7 +27,6 @@ func interact() -> void:
 	if type == "corpse":
 		_corpse()
 	elif type == "underwater":
-		underwater_interacted = true
 		pete_model.visible = true
 		door_anim.play("RESET")
 		_underwater()
@@ -50,6 +48,6 @@ func _corpse() -> void:
 	queue_free()
 
 func _underwater() -> void:
-	if not underwater_interacted: return
+	await get_tree().create_timer(2).timeout
 	GameManager.request_objective_completed.emit(underwater_objective_name)
 	queue_free()
