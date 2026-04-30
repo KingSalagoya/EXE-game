@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://g0nm6hts5hi4"]
+
+[ext_resource type="Texture2D" uid="uid://b1p3iqpimg27b" path="res://assets/textures/textures/scary.png" id="1_dhp2x"]
+
+[resource]
+albedo_color = Color(1, 0.85, 0.85, 1)
+albedo_texture = ExtResource("1_dhp2x")
+metallic_specular = 0.0
+roughness = 0.0

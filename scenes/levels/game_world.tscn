@@ -5,10 +5,11 @@
 [ext_resource type="Shader" uid="uid://bqxi4ibsjhfb0" path="res://scenes/water.gdshader" id="2_7y55x"]
 [ext_resource type="PackedScene" uid="uid://bnx2djkmq5geb" path="res://scenes/village_house.tscn" id="3_gv6ix"]
 [ext_resource type="ArrayMesh" uid="uid://cdqm1najs7th1" path="res://assets/models/edited/bridge.res" id="3_hyc8p"]
-[ext_resource type="Material" uid="uid://d0pjfhsiviqqy" path="res://assets/materials/car.tres" id="5_asihc"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="5_gb76e"]
+[ext_resource type="ArrayMesh" uid="uid://cyjfb5x4i0vdo" path="res://assets/models/edited/g_wood_table.res" id="5_u24ib"]
 [ext_resource type="Texture2D" uid="uid://brr7cwn4sk84y" path="res://assets/textures/textures/man_t256.png" id="6_gpfi5"]
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="6_gv6ix"]
+[ext_resource type="Material" uid="uid://dsmqnh0aopvdi" path="res://assets/materials/wire.tres" id="6_u24ib"]
 [ext_resource type="Texture2D" uid="uid://c8qrpp8ux2f52" path="res://assets/textures/textures/internal_ground_ao_texture.jpeg" id="7_0i3fa"]
 [ext_resource type="PackedScene" uid="uid://blwbxhogbdelp" path="res://scenes/enemy.tscn" id="7_cgfwo"]
 [ext_resource type="ArrayMesh" uid="uid://bx0y65v3efogy" path="res://assets/models/edited/humans/alucard.res" id="8_etyiu"]
@@ -87,9 +88,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tehxm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l85x4"]
-albedo_color = Color(1, 0.63, 0.63, 1)
+albedo_color = Color(0.71621233, 0, 0.18101433, 1)
 albedo_texture = ExtResource("6_gpfi5")
 metallic_specular = 0.0
+roughness = 0.0
 ao_enabled = true
 ao_texture = ExtResource("7_0i3fa")
 
@@ -508,6 +510,18 @@ sun = NodePath("../../../../Other/Sun")
 [node name="StaticBody3D" parent="Models/Navigation/VillageHouse5/Paper" index="2" unique_id=2001235067]
 transform = Transform3D(1, 7.993606e-15, 1.4210855e-14, -1.3322676e-15, 1, 2.2351742e-08, 3.5527137e-15, -2.2351742e-08, 1, 0, -0.00013488531, 0.0016587526)
 
+[node name="table2" type="MeshInstance3D" parent="Models/Navigation/VillageHouse5" unique_id=1231930943]
+transform = Transform3D(0.6812643, -0.4193789, -1.8331637e-08, 0.4193789, 0.6812643, -5.190083e-09, 1.8331635e-08, -5.1900897e-09, 0.79999954, 0.0023555756, 0.010920197, 0)
+mesh = ExtResource("5_u24ib")
+
+[node name="table3" type="MeshInstance3D" parent="Models/Navigation/VillageHouse5" unique_id=1382058415]
+transform = Transform3D(0.6345669, -0.39562035, 0.28426874, 0.4155806, 0.68319666, 0.02312149, -0.25419867, 0.12933066, 0.74743253, 0.03001529, 0.059415013, 1.8626451e-09)
+mesh = ExtResource("5_u24ib")
+
+[node name="table4" type="MeshInstance3D" parent="Models/Navigation/VillageHouse5" unique_id=1952236466]
+transform = Transform3D(0.3639121, -0.17450388, 0.69073516, 0.42731056, 0.67409116, -0.05482853, -0.57006395, 0.39388952, 0.3998461, -0.04102415, 0.05363688, 1.8626451e-09)
+mesh = ExtResource("5_u24ib")
+
 [node name="OmniLight3D3" type="OmniLight3D" parent="Models/Navigation/VillageHouse5" unique_id=2023898098]
 transform = Transform3D(0.010000001, -5.2386895e-10, 6.938894e-18, 5.2386895e-10, 0.010000001, 9.345823e-17, -3.469447e-17, 8.868774e-17, 0.009999998, -0.08618468, 0.02035293, 0.029360894)
 light_energy = 0.5
@@ -518,7 +532,7 @@ transform = Transform3D(-0.000659266, -5.784437e-17, 0.01998913, 0.01998913, -8.
 
 [node name="Icosphere" type="MeshInstance3D" parent="Models/Navigation/VillageHouse5/corpse" unique_id=1061979967]
 transform = Transform3D(9.880994, -5.9604645e-08, -7.1054274e-15, 6.0351097e-21, -1.1779063e-06, 9.880993, -5.9604645e-08, -9.880993, -1.1779063e-06, 0.016134262, 1.4588132, 0.0514946)
-material_override = ExtResource("5_asihc")
+material_override = ExtResource("6_u24ib")
 mesh = SubResource("ArrayMesh_0i3fa")
 
 [node name="rig" type="Node3D" parent="Models/Navigation/VillageHouse5/corpse" unique_id=1569117156]
@@ -820,14 +834,12 @@ light_bake_mode = 1
 [node name="Paper" parent="Models/Navigation/VillageHouse6" index="5" unique_id=1165767086 node_paths=PackedStringArray("door_anim", "pete_model")]
 type = "underwater"
 door_anim = NodePath("../door_frame/DoorAnim")
-underwater_objective_name = "seek the underwater house "
+underwater_objective_name = "seek the underwater house"
 pete_model = NodePath("../door_frame/Pete")
 
-[node name="door" parent="Models/Navigation/VillageHouse6/door_frame" parent_id_path=PackedInt32Array(182901976, 435954689) index="0" unique_id=159964814]
-SECOND_ANIM_NAME = "door_close_special"
-
 [node name="Pete" parent="Models/Navigation/VillageHouse6/door_frame" parent_id_path=PackedInt32Array(182901976, 435954689) index="2" unique_id=1254348797 instance=ExtResource("8_l85x4")]
-transform = Transform3D(-0.013997234, 0.00022759111, -0.00016012439, -0.00017832738, -0.0011517167, 0.013951399, 0.00021362785, 0.013950682, 0.0011543887, 0.0063077994, 0.035843745, -0.019289628)
+transform = Transform3D(0.0068276403, 0.0025025192, 0.018631175, 0.018790271, -0.0014945939, -0.00668519, 0.00055581087, 0.019786447, -0.0028613782, 0.01770667, -0.09163113, -0.02033934)
+visible = false
 
 [node name="Water" type="MeshInstance3D" parent="Models" unique_id=1596321527]
 transform = Transform3D(1.9999999, -2.9802322e-08, -5.9604645e-08, 2.9802322e-08, 1.9999998, 0, 5.9604645e-08, -2.9802322e-08, 1.9999998, 1.1920929e-07, -2.459474, 1.1920929e-07)

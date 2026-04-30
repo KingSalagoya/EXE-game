@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cw7y1a6cgudqo"]
 
 [ext_resource type="Material" uid="uid://c2a3kywdwhawx" path="res://assets/materials/people/mc.tres" id="1_4sb4x"]
+[ext_resource type="Material" uid="uid://g0nm6hts5hi4" path="res://assets/materials/scary.tres" id="1_j2g6s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2g6s"]
 albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
@@ -351,6 +352,12 @@ bones/31/rotation = Quaternion(0, 0, 0, 1)
 bones/31/scale = Vector3(1, 1, 1)
 
 [node name="male_player" type="MeshInstance3D" parent="Graphics/hero/rig/Skeleton3D" unique_id=166819924]
+material_override = ExtResource("1_j2g6s")
 mesh = SubResource("ArrayMesh_qa25l")
 skin = SubResource("Skin_4paql")
 skeleton = NodePath("..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1368166079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11581774, 1.891716, -0.36047006)
+light_energy = 1.52
+omni_range = 0.6024728
