@@ -13,13 +13,18 @@ const WHATSAPP_CHAT_2 = preload("uid://d2dy8fqpj4dps")
 var read_chat_1: bool = false
 var can_change: bool = false
 
-func _ready() -> void:
+func on_ready() -> void:
 	instruction_label.hide()
 	year_label.hide()
+	texture_rect.hide()
 	
 	play_animation()
 
 func play_animation() -> void:
+	animation_player.play("fade_in")
+	await animation_player.animation_finished
+	
+	texture_rect.show()
 	await get_tree().create_timer(1).timeout
 	year_label.show()
 	await get_tree().create_timer(2).timeout
@@ -35,15 +40,16 @@ func show_instruction() -> void:
 	can_change = true
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Enter") and can_change:
-		if !read_chat_1:
-			can_change = false
-			texture_rect.texture = WHATSAPP_CHAT_2
-			instruction_label.hide()
-			show_instruction()
-			read_chat_1 = true
-			can_change = true
-		else:
-			GameManager.handle_dialogue.emit(ROOM_1, "whatsapp")
-			await get_tree().create_timer(3).timeout
-			GameManager.add_scene.emit(WHATSAPP_CHAT, false)
+	if can_change:
+		if Input.is_action_just_pressed("Enter"):
+			if !read_chat_1:
+				can_change = false
+				texture_rect.texture = WHATSAPP_CHAT_2
+				instruction_label.hide()
+				show_instruction()
+				read_chat_1 = true
+			else:
+				can_change = false
+				GameManager.handle_dialogue.emit(ROOM_1, "whatsapp")
+				await get_tree().create_timer(3).timeout
+				GameManager.add_scene.emit(WHATSAPP_CHAT, false)

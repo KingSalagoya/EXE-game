@@ -8,7 +8,10 @@ extends Node
 
 @onready var ui: Control = %UserInterface
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
-#@onready var main_menu: Control = $"UiViewport/SubViewport/UserInterface/MarginContainer/Main Menu"
+
+@onready var main_menu: Control = $"UiViewport/SubViewport/UserInterface/MarginContainer/Main Menu"
+@onready var whats_app_chat_ui: Control = $UiViewport/SubViewport/UserInterface/WhatsAppChatUI
+
 
 var flashlight_counters: int = 1
 
@@ -123,6 +126,8 @@ func _special_objectives(_name: String) -> void:
 		"...":
 			AudioManager.play_audio_one_shot("electric")
 			cinamatics_player.play("you are a liar")
+		"find the phone":
+			GameManager.add_scene.emit(ROOM_BEGINNING, true)
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Enter") and can_throw:
@@ -156,13 +161,12 @@ func _change_level(new_scene: PackedScene) -> void:
 	level_holder.add_child(new_level)
 	GameManager.request_spawn_point.emit()
 
-func add_level(new_scene: PackedScene, should_add: bool = true) -> void:
+func add_level(_new_scene: PackedScene, should_add: bool = true) -> void:
 	if should_add:
-		var new_level = new_scene.instantiate()
-		level_holder.add_child(new_level)
+		whats_app_chat_ui.visible = true
+		whats_app_chat_ui.on_ready()
 	else:
-		var prev_level = level_holder.get_child(-1)
-		prev_level.queue_free()
+		whats_app_chat_ui.visible = false
 
 func _play_cinamatic(anim_name: String) -> void:
 	if cinamatics_player.has_animation(anim_name):

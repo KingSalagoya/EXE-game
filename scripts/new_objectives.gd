@@ -1,32 +1,36 @@
 extends Node
 
 @export var LIST_OF_OBJECTIVES: Dictionary[String, int] = {
+#beginning
+	#"climb the ladder": 0,
+	#"place the note on the window": 0,
+	#"grab the knife": 0,
+	#"cut the telephone line": 0,
+	#"enter the house": 0,
+	#"open door": 0,
+	#"stab": 0,
+#room_1
+	#"pick walkie-talkie": 0,
+	#"open drawer": 0,
+	#"grab dvd": 0,
+	#"insert dvd": 0,
+#game_world
+	#"speak with wizard 1": 0,
+	#"collect wood": 3,
+	#"speak with wizard 2": 0,
+	#"kill enemies": 1,
+	#"kill boss enemy": 0,
+	#"speak with wizard 3": 0,
 #maze_part
 	"run": 0,
 	"find the phone": 0,
-	#"climb the ladder": 0,
-	#"place the note on the window": 0,
+#ending
 	"atone": 0,
 	"chill": 0,
 	"loo?k ou?side": 0,
 	"read t#e no#?e??": 0,
 	"...": 0,
 	"???": 0,
-	"grab the knife": 0,
-	"cut the telephone line": 0,
-	"enter the house": 0,
-	"open door": 0,
-	"stab": 0,
-	"pick walkie-talkie": 0,
-	"open drawer": 0,
-	"grab dvd": 0,
-	"insert dvd": 0,
-	"speak with wizard 1": 0,
-	"collect wood": 5,
-	"speak with wizard 2": 0,
-	"kill enemies": 1,
-	"kill boss enemy": 0,
-	"speak with wizard 3": 0
 }
 
 var objective_names_list: Array[String] # The 0 Objective is the current objective here

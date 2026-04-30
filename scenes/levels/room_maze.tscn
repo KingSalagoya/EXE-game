@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://djd1tvwb3umu1" path="res://assets/models/downloaded/cell-phone/textures/celu_color.jpg" id="2_2kqdy"]
 [ext_resource type="AudioStream" uid="uid://ddb1sjn1a12ca" path="res://assets/sfx/ambients/cursed_church_improved.mp3" id="2_v6ijh"]
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="3_onqp7"]
+[ext_resource type="Script" uid="uid://sp25cnldegr7" path="res://scripts/interacts/interact_animation.gd" id="3_ur1nf"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="4_onqp7"]
 [ext_resource type="Script" uid="uid://dal4jm8np30kc" path="res://scripts/interacts/interact_cinamatic.gd" id="5_ur1nf"]
 [ext_resource type="Material" uid="uid://c2a3kywdwhawx" path="res://assets/materials/people/mc.tres" id="6_x7tru"]
@@ -13,16 +14,16 @@
 [ext_resource type="Animation" uid="uid://bpge0ytcocqld" path="res://assets/animations/res/running-backwards.res" id="9_btsmm"]
 [ext_resource type="Animation" uid="uid://cfqiwfkq5v7ri" path="res://assets/animations/res/turn_left.res" id="10_tet25"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rydya"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_x7tru"]
 viewport_path = NodePath("Props/monitor/screen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6ijh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dwvo"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_rydya")
+albedo_texture = SubResource("ViewportTexture_x7tru")
 
-[sub_resource type="QuadMesh" id="QuadMesh_2kqdy"]
+[sub_resource type="QuadMesh" id="QuadMesh_bcr1j"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_v6ijh")
+material = SubResource("StandardMaterial3D_8dwvo")
 size = Vector2(0.8, 0.55)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onqp7"]
@@ -232,16 +233,35 @@ script = ExtResource("1_onqp7")
 visible = false
 
 [node name="screen" parent="BaseRoom/Props/BaseHouse/monitor" parent_id_path=PackedInt32Array(1582295487, 1327782251) index="0" unique_id=1620209071]
-mesh = SubResource("QuadMesh_2kqdy")
+mesh = SubResource("QuadMesh_bcr1j")
 
 [node name="cupboard drawer" parent="BaseRoom/InteractiveObjects" parent_id_path=PackedInt32Array(1582295487, 1946952695) index="0" unique_id=289970962]
-script = null
+ANIM_NAME = "open"
+INTERACT_TEXT = ""
+OBJECTIVE = ""
+SECOND_ANIM_NAME = "close"
+SECOND_INTERACT_TEXT = "close"
+
+[node name="dvd" parent="BaseRoom/InteractiveObjects/cupboard drawer" index="0" unique_id=197350656]
+interact_text = ""
 
 [node name="pc" parent="BaseRoom/InteractiveObjects" parent_id_path=PackedInt32Array(1582295487, 1946952695) index="2" unique_id=1960319697]
-script = null
+script = ExtResource("3_ur1nf")
+TOGGLE = true
+ANIM_NAME = "open"
+INTERACT_TEXT = "open"
+OBJECTIVE = ""
+ONE_TIME = false
+SECOND_ANIM_NAME = "close"
+SECOND_INTERACT_TEXT = "close"
+TOGGLE_OBJECTIVE = ""
 
 [node name="window-frame" parent="BaseRoom/InteractiveObjects" parent_id_path=PackedInt32Array(1582295487, 1946952695) index="3" unique_id=634038937]
-script = null
+ANIM_NAME = "open"
+INTERACT_TEXT = ""
+ACCES_ONLY_WHEN_RELATED_OBJECTIVE = true
+SECOND_ANIM_NAME = "close"
+SECOND_INTERACT_TEXT = "close"
 
 [node name="celular" type="MeshInstance3D" parent="BaseRoom/InteractiveObjects" parent_id_path=PackedInt32Array(1582295487, 1946952695) index="4" unique_id=1875626093 groups=["interactable"]]
 transform = Transform3D(-1.6020733, -1.0727304, -1.2787946e-07, 0, -2.2984084e-07, 1.9280443, -1.0727377, 1.6020625, 1.9098077e-07, -1.6565018, 1.4117739, 1.2016742)
@@ -250,7 +270,6 @@ mesh = SubResource("ArrayMesh_rydya")
 script = ExtResource("3_onqp7")
 interact_text = "interact"
 objective_name = "find the phone"
-delete = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BaseRoom/InteractiveObjects/celular" unique_id=1595712632]
 
