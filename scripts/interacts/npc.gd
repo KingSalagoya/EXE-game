@@ -70,6 +70,9 @@ func _check_objective_completed(objective: String) -> void:
 		"unlock graveyard":
 			if GameManager.current_objective == "speak to wizard again":
 				_update_current_objective()
+				print("HIFKAAA")
+				await get_tree().create_timer(5).timeout
+				queue_free()
 		"unlock bridge":
 			if corpse_seen and GameManager.current_objective == "wizard":
 				_update_current_objective()
@@ -84,5 +87,6 @@ func _play_dialogue(objective: String) -> void:
 			GameManager.handle_dialogue.emit(NPC_Dialogue, "unlock_graveyard")
 
 func _corpse_seen() -> void:
+	queue_free()
 	corpse_seen = true
 	GameManager.request_objective_completed.emit("check other side of the bridge")
