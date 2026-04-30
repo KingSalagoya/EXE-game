@@ -116,6 +116,8 @@ footsteps_clips = Dictionary[String, AudioStream]({
 stream = ExtResource("26_nplbh")
 parameters/looping = true
 
+[node name="nothing" type="AudioStreamPlayer" parent="MusicClips" unique_id=1945304120]
+
 [node name="horror_theme_song" type="AudioStreamPlayer" parent="MusicClips" unique_id=2002921762]
 stream = ExtResource("27_24ib7")
 volume_db = -15.0
