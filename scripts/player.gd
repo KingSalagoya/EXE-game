@@ -25,6 +25,8 @@ var t_bob: float = 0.0
 @onready var lower_climb_check: RayCast3D = $CameraHolder/lower_climb_check
 @onready var sword: MeshInstance3D = $CameraHolder/Graphics/hero/rig/Skeleton3D/sword/sword
 
+#Jumpscare Entities
+@onready var under_water_scare: Node3D = $"../../VillageHouse6/door_frame/Pete"
 
 @export var hp: int = 20
 @export var damage:int = 10
@@ -48,6 +50,10 @@ var can_use_flashlight: bool = false
 var unlocked_sword: bool = true
 var is_attacking: bool = false
 var knockback_velocity := Vector3.ZERO
+
+#jumpscarelist
+var pete: bool = false
+var corpse: bool = false
 
 func _ready() -> void:
 	flashlight.visible = false
@@ -161,6 +167,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	handle_recording_movement()
 	handle_footstep_sound()
+	jumpscares()
 	
 	if knockback_velocity.length() > 0.1:
 		knockback_velocity = knockback_velocity.lerp(Vector3.ZERO, delta * 5.0)
@@ -263,5 +270,17 @@ func handle_torch(state: bool) -> void:
 
 func toggle_torch() -> void:
 	flashlight.visible = !flashlight.visible
+
+func jumpscares() -> void:
+	if GameManager.jumpscare_pete != null and main_camera.is_position_in_frustum(GameManager.jumpscare_pete.global_position):
+		if GameManager.jumpscare_pete.visible == false or pete: return
+		pete = true
+		AudioManager.play_audio_one_shot("jumpscare l", Vector3.ZERO, 15)
+		await get_tree().create_timer(1).timeout
+		GameManager.jumpscare_pete.visible = false
+		await get_tree().create_timer(1).timeout
+
+		GameManager.request_objective_completed.emit("seek the underwater house")
+
 
 #endregion

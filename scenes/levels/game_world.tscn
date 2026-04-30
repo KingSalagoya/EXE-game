@@ -838,6 +838,7 @@ underwater_objective_name = "seek the underwater house"
 pete_model = NodePath("../door_frame/Pete")
 
 [node name="Pete" parent="Models/Navigation/VillageHouse6/door_frame" parent_id_path=PackedInt32Array(182901976, 435954689) index="2" unique_id=1254348797 instance=ExtResource("8_l85x4")]
+unique_name_in_owner = true
 transform = Transform3D(0.0068276403, 0.0025025192, 0.018631175, 0.018790271, -0.0014945939, -0.00668519, 0.00055581087, 0.019786447, -0.0028613782, 0.01770667, -0.09163113, -0.02033934)
 visible = false
 

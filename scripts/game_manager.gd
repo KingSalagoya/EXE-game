@@ -62,6 +62,9 @@ var can_interact: bool = true
 var current_objective: String = ""
 var current_objective_clone: String = ""
 
+#Jumpscaremodels
+var jumpscare_pete: Node3D
+
 #region npc_vars
 
 var has_spoke: bool = false

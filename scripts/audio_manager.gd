@@ -32,6 +32,10 @@ func activate_music() -> void:
 			play_music(child.name)
 			handle_music_pause(child.name, true)
 
+func stop_all_muisc() -> void:
+	for i in music_clips.get_children():
+		i.stream_paused = true
+
 func play_audio_one_shot(audio_name: String, pos: Vector3 = Vector3.ZERO, volume_db: float = 0.0, from_position: float = 0.0) -> AudioOneShot:
 	if audio_one_shot_clips.has(audio_name) == false: return
 	var audio_one_shot: AudioOneShot = audio_one_shot_scene.instantiate()

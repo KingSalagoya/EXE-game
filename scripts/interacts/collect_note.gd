@@ -15,9 +15,13 @@ extends Node3D
 @export var pete_model: Node3D
 
 
+
 #USELESS VARIABLES BUT NECESSARY TO RUN
 var OBJECTIVE
 var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = false
+func _ready() -> void:
+	if pete_model:
+		GameManager.jumpscare_pete = pete_model
 
 func interact() -> void:
 	_objective_collected()
@@ -51,5 +55,4 @@ func _corpse() -> void:
 
 func _underwater() -> void:
 	await get_tree().create_timer(2).timeout
-	GameManager.request_objective_completed.emit(underwater_objective_name)
 	queue_free()

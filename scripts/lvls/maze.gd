@@ -6,9 +6,7 @@ const ROOM_MAZE = preload("uid://cltj3uclqhk5g")
 var wait_time: int = 5
 
 func _ready() -> void:
-	AudioManager.handle_music_pause("horror_theme_song", true)
-	AudioManager.handle_music_pause("wind", true)
-	AudioManager.handle_music_pause("wind", true)
+	AudioManager.stop_all_muisc()
 	AudioManager.play_music("scary_music")
 
 	GameManager.handle_torch.emit(false)
