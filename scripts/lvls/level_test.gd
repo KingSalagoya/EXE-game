@@ -63,3 +63,9 @@ func unlock_achievement(achievement: String) -> void:
 		"graveyard":
 			if $Boundaries/graveyard:
 				$Boundaries/graveyard.queue_free()
+		"underwater":
+			if $Boundaries/underwater:
+				$Boundaries/underwater.queue_free()
+		"bridge":
+			if $Boundaries/bridge:
+				$Boundaries/bridge.queue_free()

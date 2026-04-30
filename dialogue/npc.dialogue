@@ -3,10 +3,9 @@
 if not GameManager.has_spoke:
 	Salagoya: [[Hey|Hi|Hello]], @Rail! You look some knida familiar to me, have u been here earlier?
 	Salagoya: Just kidding,nvm. Lemme offer you the first official quest.
-	Salagoya: Go grab some wood and I will offer you a nice nice weapon in exchange...
-	
-	set GameManager.has_spoke = true
 	do GameManager.unlock_achievement.emit("forest")
+	Salagoya: Go grab some wood and I will offer you a nice nice weapon in exchange...
+	set GameManager.has_spoke = true
 	do GameManager.request_objective_completed.emit("speak with wizard 1")
 
 else:
@@ -24,5 +23,31 @@ Salagoya: Amazing! You got all the wood. Here is that weapon I promised!
 Salagoya: Go, have fun killing enemies...
 do GameManager.unlock_achievement.emit("graveyard")
 do GameManager.request_objective_completed.emit("speak with wizard 2")
+
+=> END
+
+~ unlock_underwater
+
+Salagoya: Impressive, Very Impressive I thought you're nothing but a lia- ahem*  here is the key to the bridge, this will unlock the gate to #@$&?????!#(?(Gibberish).
+
+do GameManager.unlock_achievement.emit("underwater")
+
+Salagoya: It's time to face your past isn't it?
+
+=> END
+
+~ underwater_confusion
+
+Rail: If XEON KNIGHT is shut down, how the hell am I playing it?
+do GameManager.unlock_achievement.emit("bridge")
+Rail: ...
+
+~ confusion
+
+Rail: Wait a second, if he died, who am I playing with???
+
+#do GameManager.unlock_achievement.emit("bridge")
+
+Rail: What is going on here?
 
 => END

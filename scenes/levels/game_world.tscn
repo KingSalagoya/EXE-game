@@ -16,9 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://cw7y1a6cgudqo" path="res://scenes/pete.tscn" id="8_l85x4"]
 [ext_resource type="Script" uid="uid://bsmsli5rf25td" path="res://scripts/interacts/npc.gd" id="9_1igac"]
 [ext_resource type="ArrayMesh" uid="uid://by7txulajfrgu" path="res://assets/models/edited/birch_tree1.res" id="10_ac4xd"]
-[ext_resource type="ArrayMesh" uid="uid://bc2lb4vhpotm3" path="res://assets/models/edited/tree_path1.res" id="11_cgfwo"]
+[ext_resource type="ArrayMesh" uid="uid://q2ycm23kse3a" path="res://assets/models/edited/tree_path1.res" id="11_cgfwo"]
 [ext_resource type="ArrayMesh" uid="uid://35w016uflu4v" path="res://assets/models/edited/birch_tree2.res" id="11_xs82q"]
-[ext_resource type="ArrayMesh" uid="uid://du0i4rt61e8ga" path="res://assets/models/edited/tree_path2.res" id="12_etyiu"]
+[ext_resource type="ArrayMesh" uid="uid://c3qp3bu75l6oc" path="res://assets/models/edited/tree_path2.res" id="12_etyiu"]
 [ext_resource type="ArrayMesh" uid="uid://2ke600rw4va0" path="res://assets/models/edited/birch_tree3.res" id="12_setwa"]
 [ext_resource type="ArrayMesh" uid="uid://c30toqffygfug" path="res://assets/models/edited/pine_tree1.res" id="13_40n0v"]
 [ext_resource type="ArrayMesh" uid="uid://djchqcepswkap" path="res://assets/models/edited/pine_res2.res" id="14_og6kw"]
@@ -1272,6 +1272,28 @@ material = SubResource("StandardMaterial3D_7xlwv")
 transform = Transform3D(0.79432976, 0, -0.6074868, 0, 1, 0, 0.6074868, 0, 0.79432976, -85.1995, -6.094487, 26.776436)
 use_collision = true
 size = Vector3(1, 18.188965, 76.35155)
+material = SubResource("StandardMaterial3D_7xlwv")
+
+[node name="bridge" type="Node3D" parent="Boundaries" unique_id=1116033290]
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Boundaries/bridge" unique_id=402715778]
+transform = Transform3D(-0.6533811, 0, -0.75702924, 0, 1, 0, 0.75702924, 0, -0.6533811, -9.427862, -0.9500942, 42.280136)
+use_collision = true
+size = Vector3(1, 6.2974243, 5.895382)
+material = SubResource("StandardMaterial3D_7xlwv")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Boundaries/bridge" unique_id=892059844]
+transform = Transform3D(-0.6533811, 0, -0.75702924, 0, 1, 0, 0.75702924, 0, -0.6533811, -30.456991, -4.563732, 69.50905)
+use_collision = true
+size = Vector3(1, 8.531036, 5.895382)
+material = SubResource("StandardMaterial3D_7xlwv")
+
+[node name="underwater" type="Node3D" parent="Boundaries" unique_id=681455422]
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Boundaries/underwater" unique_id=825800992]
+transform = Transform3D(-0.098390125, -0.03143584, -0.9946514, 0.14352679, 0.9886027, -0.04544223, 0.9847435, -0.14723016, -0.09275683, 3.8791537, -21.28614, 70.92876)
+use_collision = true
+size = Vector3(1, 4.2875443, 2.8788567)
 material = SubResource("StandardMaterial3D_7xlwv")
 
 [node name="NPC" type="Node3D" parent="." unique_id=419087429]
