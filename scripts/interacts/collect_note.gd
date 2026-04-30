@@ -25,10 +25,12 @@ func interact() -> void:
 	collider.disabled = true
 
 	if type == "corpse":
+		GameManager.show_half_news.emit()
 		_corpse()
 	elif type == "underwater":
 		pete_model.visible = true
 		door_anim.play("RESET")
+		GameManager.display_note.emit(false)
 		_underwater()
 	else:
 		GameManager.display_note.emit()

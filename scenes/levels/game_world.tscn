@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c8qrpp8ux2f52" path="res://assets/textures/textures/internal_ground_ao_texture.jpeg" id="7_0i3fa"]
 [ext_resource type="PackedScene" uid="uid://blwbxhogbdelp" path="res://scenes/enemy.tscn" id="7_cgfwo"]
 [ext_resource type="ArrayMesh" uid="uid://bx0y65v3efogy" path="res://assets/models/edited/humans/alucard.res" id="8_etyiu"]
-[ext_resource type="PackedScene" path="res://scenes/pete.tscn" id="8_l85x4"]
+[ext_resource type="PackedScene" uid="uid://cw7y1a6cgudqo" path="res://scenes/pete.tscn" id="8_l85x4"]
 [ext_resource type="Script" uid="uid://bsmsli5rf25td" path="res://scripts/interacts/npc.gd" id="9_1igac"]
 [ext_resource type="ArrayMesh" uid="uid://by7txulajfrgu" path="res://assets/models/edited/birch_tree1.res" id="10_ac4xd"]
 [ext_resource type="ArrayMesh" uid="uid://q2ycm23kse3a" path="res://assets/models/edited/tree_path1.res" id="11_cgfwo"]

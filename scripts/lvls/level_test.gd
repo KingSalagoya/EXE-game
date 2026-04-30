@@ -38,7 +38,7 @@ func spawn_enemies() -> void:
 	for i in range(1):
 		var e = enemy.instantiate()
 		GameManager.update_player_count.emit(2)
-		e.global_position = Vector3(-39.677, -2.256, 22.989)
+		e.global_position = Vector3(39.11, 4, 103.6)
 		e.character = e.CHARACTER.boss
 		e.hp = 1000
 		e.damage = 1
@@ -50,7 +50,7 @@ func spawn_enemies() -> void:
 func spawn_friend() -> void:
 	await get_tree().create_timer(1).timeout
 	var friend_scene = FRIEND.instantiate()
-	friend_scene.global_position = Vector3(5.457, 3.598, -66.2)
+	friend_scene.global_position = Vector3(45.68, 4, 77.98)
 	friend_spawned = true
 	add_child(friend_scene)
 

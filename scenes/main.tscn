@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://rvtqbuwa5w53" path="res://scripts/user_interface.gd" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dwy6b1f4mo8dq" path="res://scenes/levels/game_world.tscn" id="5_muem4"]
 [ext_resource type="Theme" uid="uid://ca62n5ve5nsxc" path="res://assets/styles/horror_default.tres" id="5_tipki"]
-[ext_resource type="Script" uid="uid://6bh43noutcuk" path="res://scripts/puppet.gd" id="6_jkv2x"]
+[ext_resource type="Script" path="res://scripts/puppet.gd" id="6_jkv2x"]
 [ext_resource type="Script" uid="uid://cyre2l60h5tyq" path="res://scripts/new_objectives.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dcd4uei5h45qe" path="res://assets/textures/jumpscare/newspaper/newspaper_without_letters.png" id="7_trceg"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b520mxra380m5" path="res://scenes/Whatsapp_Chat.tscn" id="9_dp3eg"]
 [ext_resource type="FontFile" uid="uid://bacn8mekru541" path="res://assets/fonts/Undead Pixel 8.ttf" id="9_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dc7uu85p2v35i" path="res://scenes/options_menu.tscn" id="10_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://c1l444g6y0xlw" path="res://assets/textures/jumpscare/newspaper/final_newspaper_half.png" id="12_0ld40"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1l6a"]
 resource_name = "KitchenKnife_MAT"
@@ -1322,6 +1323,15 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(896, 510)
 scale = Vector2(0.8695651, 0.86956507)
 texture = ExtResource("8_a8y0u")
+
+[node name="TextureRect" type="TextureRect" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper" unique_id=701811082]
+visible = false
+layout_mode = 0
+offset_left = 369.0
+offset_top = 203.0
+offset_right = 1453.9185
+offset_bottom = 800.0
+texture = ExtResource("12_0ld40")
 
 [node name="Label" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper" unique_id=1566212203]
 visible = false
