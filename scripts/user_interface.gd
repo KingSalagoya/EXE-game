@@ -139,25 +139,25 @@ func activate_sub_objectives(state: bool = false) -> void:
 	else:
 		sub_objective_label.hide()
 
-func display_notes() -> void:
+func display_notes(normal_note: bool = true) -> void:
 	note_display.text = ""
-	match GameManager.inventory.notes:
-		1:
-			note_display.text = """'Do you know what ARU told me about PETE?'
-			'OMG, I knew it.'"""
-		2:
-			note_display.text = """ARU, you broke his trust."""
-		3:
-			note_display.text = """'I knew PETE was a freak'
-			'Thank you, ARU, for telling me his deepest darkest secret.'"""
-		4:
-			note_display.text = """Oh, it’s not your fault. It is Pete’s fault."""
-		5:
-			note_display.text = """'Stella Told Me That.'
-			'Oh, that is a perfect reason to bully him.'"""
-		6:
-			note_display.text = """'I thought Pete was a good guy.'
-			'Pete. Such a loser.'"""
+	if normal_note:
+		match GameManager.inventory.notes:
+			1:
+				note_display.text = """'Do you know what ARU told me about PETE?'
+				'OMG, I knew it.'"""
+			2:
+				note_display.text = """'I knew PETE was a freak'
+				'Thank you, ARU, for telling me his deepest darkest secret.'"""
+			3:
+				note_display.text = """'Stella Told Me That.'
+				'Oh, that is a perfect reason to bully him.'"""
+			4:
+				note_display.text = """'I thought Pete was a good guy.'
+				'Pete. Such a loser.'"""
+	else:
+		note_display.text = """The OG RPG game, 'XEON KNIGHT'
+		has been officially shut down in 2015!"""
 	notes.show()
 	GameManager.can_move = false
 	should_hide_note = true

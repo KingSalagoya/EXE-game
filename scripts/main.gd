@@ -35,6 +35,7 @@ func _enter_tree() -> void:
 	GameManager.special_area_entered.connect(_handle_special_area)
 	GameManager.update_flashlight_counters.connect(update_flashlight_counters)
 	GameManager.add_scene.connect(add_level)
+	GameManager.show_half_news.connect(show_half_news)
 
 func _ready() -> void:
 	%UserInterface.visible = true
@@ -192,3 +193,12 @@ func update_flashlight_counters() -> void:
 	flashlight_counters += 1
 
 #endregion
+
+func show_half_news() -> void:
+	$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper.show()
+	$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/TextureRect.show()
+	GameManager.can_move = false
+	await get_tree().create_timer(3).timeout
+	$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper.hide()
+	$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/TextureRect.hide()
+	GameManager.can_move = true
