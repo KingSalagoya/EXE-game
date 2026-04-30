@@ -24,6 +24,7 @@ func _enter_tree() -> void:
 	GameManager.release_ending.connect(ending)
 	GameManager.diary_note_collected.connect(update_sub_objective)
 	GameManager.activate_sub_objective.connect(activate_sub_objectives)
+	GameManager.display_note.connect(display_notes)
 
 func _ready() -> void:
 	activate_sub_objectives()
@@ -139,7 +140,7 @@ func activate_sub_objectives(state: bool = false) -> void:
 		sub_objective_label.hide()
 
 func display_notes() -> void:
-	note_display.texy = ""
+	note_display.text = ""
 	match GameManager.inventory.notes:
 		1:
 			note_display.text = """'Do you know what ARU told me about PETE?'
@@ -147,15 +148,15 @@ func display_notes() -> void:
 		2:
 			note_display.text = """ARU, you broke his trust."""
 		3:
-			note_display.texy = """'I knew PETE was a freak'
+			note_display.text = """'I knew PETE was a freak'
 			'Thank you, ARU, for telling me his deepest darkest secret.'"""
 		4:
-			note_display.texy = """Oh, it’s not your fault. It is Pete’s fault."""
+			note_display.text = """Oh, it’s not your fault. It is Pete’s fault."""
 		5:
-			note_display.texy = """'Stella Told Me That.'
+			note_display.text = """'Stella Told Me That.'
 			'Oh, that is a perfect reason to bully him.'"""
 		6:
-			note_display.texy = """'I thought Pete was a good guy.'
+			note_display.text = """'I thought Pete was a good guy.'
 			'Pete. Such a loser.'"""
 	notes.show()
 	GameManager.can_move = false
