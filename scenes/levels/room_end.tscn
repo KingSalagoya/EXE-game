@@ -5,7 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://4nduufs21dhr" path="res://assets/models/edited/paper.res" id="2_13l4f"]
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="2_75wyd"]
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="3_13l4f"]
-[ext_resource type="Script" path="res://scripts/end_player_paralize.gd" id="4_ekr2e"]
+[ext_resource type="Script" uid="uid://glhkvobms6b7" path="res://scripts/end_player_paralize.gd" id="4_ekr2e"]
 [ext_resource type="AudioStream" uid="uid://c622p4udt5owo" path="res://assets/sfx/ambients/cursed_churchbyfronbodi.mp3" id="6_1jc2x"]
 
 [sub_resource type="Animation" id="Animation_13l4f"]
@@ -256,6 +256,7 @@ mesh = SubResource("QuadMesh_vsebn")
 
 [node name="window-frame" parent="BaseRoom/InteractiveObjects" parent_id_path=PackedInt32Array(1582295487, 1946952695) index="3" unique_id=634038937 node_paths=PackedStringArray("ANIM_PLAYER")]
 ANIM_PLAYER = NodePath("../../../SpecialAnimationPlayer")
+TOGGLE = false
 INTERACT_TEXT = "loo?k ou?side"
 OBJECTIVE = "loo?k ou?side"
 ACCES_ONLY_WHEN_RELATED_OBJECTIVE = true

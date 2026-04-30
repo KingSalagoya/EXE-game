@@ -5,6 +5,7 @@ var FRIEND = preload("res://scenes/friend.tscn")
 
 @onready var objectives: Node = $"../../../../../Objectives"
 @onready var enemy_holder: Node3D = $Enemy_Holder
+@onready var game_enviroment: Node3D = %GameEnviroment
 
 var spawn_enemies_count: int = 0
 var friend_spawned: bool = false
@@ -41,6 +42,7 @@ func spawn_enemies() -> void:
 		e.global_position = Vector3(39.11, 4, 103.6)
 		e.character = e.CHARACTER.boss
 		e.hp = 30
+		e.scale = Vector3(2,2,2)
 		e.damage = 1
 		e.knockback_force = 16.0
 		spawn_enemies_count += 1
@@ -50,10 +52,10 @@ func spawn_enemies() -> void:
 func spawn_friend() -> void:
 	await get_tree().create_timer(1).timeout
 	var friend_scene = FRIEND.instantiate()
-	friend_scene.global_position = Vector3(39.11, 4, 103.6)
+	friend_scene.global_position = Vector3(-1.519, 0.079, -25.929)
 	#(45.68, 4, 77.98)
 	friend_spawned = true
-	add_child(friend_scene)
+	game_enviroment.add_child(friend_scene)
 
 func unlock_achievement(achievement: String) -> void:
 	match achievement:

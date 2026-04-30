@@ -6,8 +6,8 @@ extends Node3D
 @export var LIST_OF_NPC_OBJECTIVES: Dictionary[String, int] = {
 	"unlock forest": 1,
 	"unlock graveyard": 1,
+	"unlock bridge": 1,
 	"unlock underwater": 1,
-	"unlock bridge": 1
 }
 
 const NPC_Dialogue = preload("uid://croffpocd4445")
@@ -15,6 +15,7 @@ const NPC_Dialogue = preload("uid://croffpocd4445")
 var interact_text: String
 
 var has_spoke: bool = false
+var corpse_seen:bool = false
 
 var objective_names_list: Array[String]
 var objective_amounts_list: Array[int]
@@ -25,6 +26,7 @@ var current_completed_amount: int = 0
 
 func _enter_tree() -> void:
 	GameManager.update_npc_objective.connect(_update_current_objective)
+	GameManager.corpse_seen.connect(_corpse_seen)
 
 func _ready() -> void:
 	interact_text = INTERACT_TEXT
@@ -66,7 +68,11 @@ func _check_objective_completed(objective: String) -> void:
 			if GameManager.inventory.wood >= 3:
 				_update_current_objective()
 		"unlock graveyard":
-			pass
+			if GameManager.current_objective == "speak to wizard again":
+				_update_current_objective()
+		"unlock bridge":
+			if corpse_seen and GameManager.current_objective == "wizard":
+				_update_current_objective()
 	_play_dialogue(current_objective_name)
 
 func _play_dialogue(objective: String) -> void:
@@ -76,3 +82,7 @@ func _play_dialogue(objective: String) -> void:
 			GameManager.handle_dialogue.emit(NPC_Dialogue, "unlock_forest")
 		"unlock graveyard":
 			GameManager.handle_dialogue.emit(NPC_Dialogue, "unlock_graveyard")
+
+func _corpse_seen() -> void:
+	corpse_seen = true
+	GameManager.request_objective_completed.emit("check other side of the bridge")

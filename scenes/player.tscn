@@ -12,8 +12,9 @@
 [ext_resource type="Animation" uid="uid://bpge0ytcocqld" path="res://assets/animations/res/running-backwards.res" id="5_d2wvv"]
 [ext_resource type="Animation" uid="uid://cfqiwfkq5v7ri" path="res://assets/animations/res/turn_left.res" id="7_ur7pv"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
-height = 2.9936523
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d2wvv"]
+radius = 0.6269531
+height = 2.920288
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8vuu"]
 albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
@@ -187,13 +188,17 @@ _data = {
 &"turn_left": ExtResource("7_ur7pv")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
+radius = 3.802246
+height = 7.604492
+
 [node name="Player" type="CharacterBody3D" unique_id=367521465 groups=["Player"]]
 script = ExtResource("1_3vyb7")
 damage = 800
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=1553874400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4968262, 0)
-shape = SubResource("CapsuleShape3D_3vyb7")
+shape = SubResource("CapsuleShape3D_d2wvv")
 
 [node name="CameraHolder" type="Node3D" parent="." unique_id=553807674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.441775, 0)
@@ -534,8 +539,8 @@ owner_character = NodePath("..")
 metadata/_custom_type_script = "uid://dwn0122urv1dt"
 
 [node name="Collider" type="CollisionShape3D" parent="hurt_box" unique_id=1366437850]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4968262, 0)
-shape = SubResource("CapsuleShape3D_3vyb7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4830933, 0)
+shape = SubResource("CapsuleShape3D_d2wvv")
 
 [node name="hit_box" type="Area3D" parent="." unique_id=1801271959 node_paths=PackedStringArray("owner_character")]
 script = ExtResource("4_dqkch")

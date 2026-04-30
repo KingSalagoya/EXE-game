@@ -54,6 +54,7 @@ func _corpse() -> void:
 	AudioManager.play_audio_one_shot("running away")
 	await get_tree().create_timer(0.3).timeout
 	door_anim.play("door_open")
+	GameManager.corpse_seen.emit()
 	queue_free()
 
 func _underwater() -> void:

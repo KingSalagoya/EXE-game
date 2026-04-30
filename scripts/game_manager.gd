@@ -7,7 +7,7 @@ extends Node
 @warning_ignore("unused_signal") signal update_flashlight_counters
 @warning_ignore("unused_signal") signal paralize_coords (coords: Vector3, rotation: Vector3)
 @warning_ignore("unused_signal") signal unlock_sword
-
+@warning_ignore("unused_signal") signal corpse_seen
 #Objectives
 @warning_ignore("unused_signal") signal request_objective_completed (objective_name: String)
 @warning_ignore("unused_signal") signal objective_completed (objective_name: String)
@@ -63,6 +63,10 @@ var can_jump: bool = false
 var can_interact: bool = true
 var current_objective: String = ""
 var current_objective_clone: String = ""
+
+var friend: Node3D
+var player: Node3D
+var boss_enemy: Node3D
 
 #Jumpscaremodels
 var jumpscare_pete: Node3D
