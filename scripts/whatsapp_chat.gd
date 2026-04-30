@@ -50,6 +50,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 				read_chat_1 = true
 			else:
 				can_change = false
-				GameManager.handle_dialogue.emit(ROOM_1, "whatsapp")
+				#GameManager.handle_dialogue.emit(ROOM_1, "whatsapp")
 				await get_tree().create_timer(3).timeout
+				GameManager.black_bg.emit(true)
+				GameManager.display_note.emit(false, false)
+				GameManager.black_bg.emit(true)
 				GameManager.add_scene.emit(WHATSAPP_CHAT, false)

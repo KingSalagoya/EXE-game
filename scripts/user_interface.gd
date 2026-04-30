@@ -15,6 +15,7 @@ extends Control
 var stored_objective_label: String
 var ending_label: bool = false
 var should_hide_note: bool = false
+var should_hide_bg: bool = false
 
 func _enter_tree() -> void:
 	GameManager.update_interact_label.connect(update_interact_label)
@@ -25,6 +26,7 @@ func _enter_tree() -> void:
 	GameManager.diary_note_collected.connect(update_sub_objective)
 	GameManager.activate_sub_objective.connect(activate_sub_objectives)
 	GameManager.display_note.connect(display_notes)
+	GameManager.black_bg.connect(black_bg_visibility)
 
 func _ready() -> void:
 	activate_sub_objectives()
@@ -38,9 +40,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	if should_hide_note:
 		if Input.is_action_just_pressed("Enter"):
 			notes.hide()
+			if should_hide_bg:
+				$Black_BG.hide()
+				should_hide_bg = false
 			GameManager.can_move = true
+			GameManager.request_objective_completed.emit("atone")
 			should_hide_note = false
-
 
 func update_interact_label(text: String) -> void:
 	if text == "" : interact_label.hide()
@@ -139,7 +144,7 @@ func activate_sub_objectives(state: bool = false) -> void:
 	else:
 		sub_objective_label.hide()
 
-func display_notes(normal_note: bool = true) -> void:
+func display_notes(normal_note: bool = true, game_note: bool = true) -> void:
 	note_display.text = ""
 	if normal_note:
 		match GameManager.inventory.notes:
@@ -155,11 +160,20 @@ func display_notes(normal_note: bool = true) -> void:
 			4:
 				note_display.text = """'I thought Pete was a good guy.'
 				'Pete. Such a loser.'"""
-	else:
+	elif game_note:
 		note_display.text = """The OG RPG game, 'XEON KNIGHT'
 		has been officially shut down in 2015!"""
+	else:
+		note_display.text = """YOU BROKE MY TRUST. YOU HAVE BEEN TELLING YOURSELF
+THAT IT IS NOT YOUR FAULT. YOU KNOW IT WAS YOUR FAULT.
+BUT STILL YOU LIE TO YOURSELF.  YOUR WHOLE LIFE IS A LIE."""
+		print("displayed")
+		should_hide_bg = true
 	notes.show()
 	GameManager.can_move = false
 	should_hide_note = true
+
+func black_bg_visibility(state: bool = false) -> void:
+	$Black_BG.visible = state
 
 #endregion
