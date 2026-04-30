@@ -102,7 +102,7 @@ func _special_objectives(_name: String) -> void:
 			pass
 		"kill enemies":
 			GameManager.spawn_boss_enemy.emit()
-			await get_tree().create_timer(10).timeout
+			await get_tree().create_timer(5).timeout
 			GameManager.spawn_friend.emit()
 			GameManager.update_npc_objective.emit()
 		"kill boss enemy":

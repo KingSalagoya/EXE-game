@@ -1,6 +1,14 @@
 extends Node
 
 @export var LIST_OF_OBJECTIVES: Dictionary[String, int] = {
+#game_world
+	#"explore the town": 0,
+	#"collect wood": 5,
+	#"speak with wizard": 0,
+	"kill enemies": 5,
+	"kill boss enemy": 0,
+	#"speak with wizard 3": 0,
+	"seek the underwater house" : 0,
 #beginning
 	"climb the ladder": 0,
 	"place the note on the window": 0,
@@ -14,14 +22,6 @@ extends Node
 	"open drawer": 0,
 	"grab dvd": 0,
 	"insert dvd": 0,
-#game_world
-	#"explore the town": 0,
-	#"collect wood": 5,
-	#"speak with wizard": 0,
-	#"kill enemies": 5,
-	#"kill boss enemy": 0,
-	#"speak with wizard 3": 0,
-	"seek the underwater house" : 0,
 #maze_part
 	"run": 0,
 	"find the phone": 0,
