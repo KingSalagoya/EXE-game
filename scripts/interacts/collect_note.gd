@@ -9,7 +9,6 @@ var hi : Dictionary[String,int] = {"hi": 1}
 var OBJECTIVE
 var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = false
 
-
 func interact() -> void:
 	_objective_collected()
 	queue_free()

@@ -17,6 +17,7 @@ extends Node
 @warning_ignore("unused_signal") signal update_npc_objective
 
 @warning_ignore("unused_signal") signal diary_note_collected
+@warning_ignore("unused_signal") signal display_note
 @warning_ignore("unused_signal") signal activate_sub_objective(state: bool)
 
 

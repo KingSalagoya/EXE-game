@@ -1325,6 +1325,36 @@ text = "Press Enter to throw away..."
 [node name="newsani" type="AnimationPlayer" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper" unique_id=634873732]
 libraries/ = SubResource("AnimationLibrary_pm3ni")
 
+[node name="Notes" type="Control" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=685030390]
+visible = false
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Notes" unique_id=181900910]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -484.0
+offset_top = -145.0
+offset_right = 484.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "“Thank you, ARU, for telling me his deepest darkest secret.”"
+
+[node name="Label" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Notes" unique_id=1146860832]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 673.0
+offset_right = 1185.0
+offset_bottom = 705.0
+theme_override_fonts/font = ExtResource("9_jkv2x")
+theme_override_font_sizes/font_size = 32
+text = "Press Enter to continue..."
+
 [node name="HUD" type="Control" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=1158560208]
 layout_mode = 2
 mouse_filter = 1
