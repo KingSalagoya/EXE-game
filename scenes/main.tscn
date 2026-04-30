@@ -209,6 +209,18 @@ tracks/11/keys = {
 "update": 0,
 "values": [Vector3(1.0301883, 0, -4.5813704)]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Pete/OmniLight3D:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_muem4"]
 resource_name = "die"
@@ -424,7 +436,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_og1vs"]
 resource_name = "flashlight 4"
-length = 0.1
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -432,10 +444,10 @@ tracks/0/path = NodePath("../Pete:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [false, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -444,10 +456,46 @@ tracks/1/path = NodePath("../Pete:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(1.3190603, 0, -2.5619617)]
+"values": [Vector3(1.3190603, 0, -2.5619617), Vector3(-0.2506507, 0, 1.0344825)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Pete/OmniLight3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%CinamaticsPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["jumpscare h", 10.0, 0.0],
+"method": &"play_sfx"
+}]
+}
+tracks/4/type = "animation"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%GameEnviroment/../../../UiViewport/SubViewport/Blink/blink_anim")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": PackedStringArray("shut"),
+"times": PackedFloat32Array(4)
 }
 
 [sub_resource type="Animation" id="Animation_2wyq8"]
@@ -1231,6 +1279,9 @@ transform = Transform3D(-0.8396197, 0.017061524, -0.5429064, 0, 0.99950653, 0.03
 visible = false
 script = ExtResource("6_jkv2x")
 
+[node name="OmniLight3D" parent="GameViewport/SubViewport/GameEnviroment/Pete" index="1" unique_id=1368166079]
+visible = false
+
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
 
 [node name="Home" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=1172181076 instance=ExtResource("5_0ld40")]
@@ -1560,3 +1611,5 @@ libraries/ = SubResource("AnimationLibrary_choun")
 
 [node name="Objectives" type="Node" parent="." unique_id=1653358236]
 script = ExtResource("6_tefeu")
+
+[editable path="GameViewport/SubViewport/GameEnviroment/Pete"]

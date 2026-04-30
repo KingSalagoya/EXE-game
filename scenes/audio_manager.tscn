@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://s6uqq6t44ya4" path="res://assets/sfx/ambients/Lucid_Petary_FULL_SONG_MusicGPT.mp3" id="27_24ib7"]
 [ext_resource type="AudioStream" uid="uid://cs0wrxfvtqepo" path="res://assets/sfx/intreactions/jumpscare2.mp3" id="27_n1t8p"]
 [ext_resource type="AudioStream" uid="uid://pt141aae7l5n" path="res://assets/sfx/footsteps/fadeout_running.mp3" id="28_n1t8p"]
+[ext_resource type="AudioStream" uid="uid://coouivvqwisu6" path="res://assets/sfx/intreactions/dragon-studio-dramatic-whoosh-swing-487667.mp3" id="29_bne8e"]
 [ext_resource type="AudioStream" uid="uid://bh541jy2mdqfe" path="res://assets/sfx/ambients/music-scary.mp3" id="30_2fqsb"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_if78k"]
@@ -109,6 +110,7 @@ audio_one_shot_clips = Dictionary[String, AudioStream]({
 "type": SubResource("AudioStreamRandomizer_yt2vs"),
 "wake up": ExtResource("9_oucy0"),
 "walk hallway": SubResource("AudioStreamRandomizer_8igv3"),
+"woosh": ExtResource("29_bne8e"),
 "yawn": ExtResource("10_cuol6")
 })
 footsteps_clips = Dictionary[String, AudioStream]({
