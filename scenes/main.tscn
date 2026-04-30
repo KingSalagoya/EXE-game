@@ -1216,6 +1216,7 @@ unique_name_in_owner = true
 [node name="Player" parent="GameViewport/SubViewport/GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
 unique_name_in_owner = true
 transform = Transform3D(-0.9982819, 0, 0.058592025, 0, 1, 0, -0.058592025, 0, -0.9982819, -1.5194426, 0.07901597, -25.9291)
+hp = 40
 damage = 5
 
 [node name="Pete" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1254348797 instance=ExtResource("3_a8y0u")]
