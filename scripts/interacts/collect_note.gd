@@ -18,7 +18,7 @@ func interact() -> void:
 		queue_free()
 
 func _objective_collected() -> void:
-	GameManager.inventory.set("notes", GameManager.inventory.get("notes") +1)
+	GameManager.inventory.notes += 1
 	GameManager.diary_note_collected.emit()
 	await get_tree().create_timer(0.1).timeout
 	GameManager.display_note.emit()
