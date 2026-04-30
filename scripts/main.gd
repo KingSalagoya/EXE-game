@@ -114,6 +114,8 @@ func _special_objectives(_name: String) -> void:
 			GameManager.chat_dialogue.emit(1)
 		"seek the underwater house":
 			_change_level(LEVEL_MAZE)
+		"run":
+			AudioManager.stop_all_muisc()
 		"atone":
 			_change_level(ROOM_END)
 			cinamatics_player.play("wake_up_2")
