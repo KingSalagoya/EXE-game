@@ -47,7 +47,7 @@ var prev_ground
 
 var can_use_flashlight: bool = false
 
-var unlocked_sword: bool = true
+var unlocked_sword: bool = false
 var is_attacking: bool = false
 var knockback_velocity := Vector3.ZERO
 
@@ -57,7 +57,7 @@ var corpse: bool = false
 
 func _ready() -> void:
 	flashlight.visible = false
-	sword.visible = true
+	sword.visible = false
 	GameManager.release_ending.connect(enable_flashlight)
 	GameManager.paralize_coords.connect(paralize_coords)
 	GameManager.unlock_sword.connect(unlock_sword)

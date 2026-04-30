@@ -4,6 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="2_f8fxg"]
 [ext_resource type="Script" uid="uid://c2grr4e66qd8d" path="res://scripts/interacts/interact_collect.gd" id="3_m0ox0"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_m0ox0"]
+viewport_path = NodePath("Props/BaseHouse/monitor/screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22p55"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_m0ox0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a35vm"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_22p55")
+size = Vector2(0.8, 0.55)
+
 [sub_resource type="BoxMesh" id="BoxMesh_f8fxg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f8fxg"]
@@ -11,6 +23,12 @@
 [node name="RoomDream" type="Node3D" unique_id=1284998890]
 
 [node name="BaseRoom" parent="." unique_id=1582295487 instance=ExtResource("1_xj7gt")]
+
+[node name="car" parent="BaseRoom/Props/RailHouseScene" parent_id_path=PackedInt32Array(1582295487, 1957032565) index="6" unique_id=1348801364]
+visible = false
+
+[node name="screen" parent="BaseRoom/Props/BaseHouse/monitor" parent_id_path=PackedInt32Array(1582295487, 1327782251) index="0" unique_id=1620209071]
+mesh = SubResource("QuadMesh_a35vm")
 
 [node name="SpawnPoint" parent="." unique_id=524540920 instance=ExtResource("2_f8fxg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999998, -0.6228658, 1.7881393e-07, -0.2916059)
@@ -28,3 +46,5 @@ objective_name = "pick walkie-talkie"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Items/WalkieTalkie/StaticBody3D" unique_id=1777152071]
 shape = SubResource("BoxShape3D_f8fxg")
+
+[editable path="BaseRoom"]
