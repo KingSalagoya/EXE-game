@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dcd4uei5h45qe" path="res://assets/textures/jumpscare/newspaper/newspaper_without_letters.png" id="7_trceg"]
 [ext_resource type="Texture2D" uid="uid://bn0indc2byoxt" path="res://assets/textures/jumpscare/newspaper/final_newspaper.png" id="8_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://b1gmh1y6ojj4j" path="res://scenes/main_menu.tscn" id="8_choun"]
+[ext_resource type="PackedScene" uid="uid://b520mxra380m5" path="res://scenes/Whatsapp_Chat.tscn" id="9_dp3eg"]
 [ext_resource type="FontFile" uid="uid://bacn8mekru541" path="res://assets/fonts/Undead Pixel 8.ttf" id="9_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dc7uu85p2v35i" path="res://scenes/options_menu.tscn" id="10_eb6dy"]
 
@@ -1024,19 +1025,19 @@ _data = {
 &"newspaper": SubResource("Animation_jscy8")
 }
 
-[sub_resource type="Gradient" id="Gradient_o6xl0"]
+[sub_resource type="Gradient" id="Gradient_0ld40"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_tipki"]
-gradient = SubResource("Gradient_o6xl0")
+gradient = SubResource("Gradient_0ld40")
 width = 1920
 height = 535
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o6xl0"]
-gradient = SubResource("Gradient_o6xl0")
+gradient = SubResource("Gradient_0ld40")
 width = 1920
 height = 535
 fill_to = Vector2(0, 0)
@@ -1280,6 +1281,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("4_tefeu")
+
+[node name="WhatsAppChatUI" parent="UiViewport/SubViewport/UserInterface" unique_id=725516722 instance=ExtResource("9_dp3eg")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -13.0
+offset_top = -5.0
+offset_right = 1915.0
+offset_bottom = 1093.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="UiViewport/SubViewport/UserInterface" unique_id=602167923]
 layout_mode = 1

@@ -23,7 +23,8 @@ var one_time: bool = false
 
 func _enter_tree() -> void:
 	interact_text = INTERACT_TEXT
-	ANIM_PLAYER.animation_finished.connect(_anim_finished)
+	if ANIM_PLAYER:
+		ANIM_PLAYER.animation_finished.connect(_anim_finished)
 
 func interact() -> void:
 	if not check_security(): return
