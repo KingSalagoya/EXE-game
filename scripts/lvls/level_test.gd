@@ -11,7 +11,6 @@ var friend_spawned: bool = false
 
 func _ready() -> void:
 	GameManager.can_jump = true
-	GameManager.activate_sub_objective.emit(true)
 	
 	GameManager.unlock_achievement.connect(unlock_achievement)
 	GameManager.spawn_boss_enemy.connect(spawn_enemies)
@@ -23,8 +22,9 @@ func _ready() -> void:
 	
 	#await get_tree().create_timer(1).timeout
 	#GameManager.unlock_achievement.emit("forest")
-	#await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1).timeout
 	GameManager.unlock_achievement.emit("graveyard")
+	GameManager.activate_sub_objective.emit(true)
 
 func _process(_delta: float) -> void:
 	if objectives.current_objective_name == "kill enemies" and spawn_enemies_count <= 5:
