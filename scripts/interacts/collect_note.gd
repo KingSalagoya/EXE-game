@@ -12,10 +12,11 @@ var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = true
 func _enter_tree() -> void:
 	GameManager.diary_note_collected.connect(_objective_collected)
 
-
 func interact() -> void:
 	interacted = true
 	GameManager.diary_note_collected.emit()
+	await get_tree().create_timer(0.1).timeout
+	GameManager.display_note.emit()
 	queue_free()
 	interacted = false
 
