@@ -108,14 +108,15 @@ func _special_objectives(_name: String) -> void:
 			GameManager.spawn_friend.emit()
 			GameManager.update_npc_objective.emit()
 		"kill boss enemy":
-			var friend = $GameViewport/SubViewport/GameEnviroment/LevelHolder/LevelTest/Friend
-			var Player = %Player
-			Player.look_at(Vector3(friend.global_position.x, Player.global_position.y, friend.global_position.z), Vector3.UP)
-			friend.look_at(Vector3(Player.global_position.x, friend.global_position.y, Player.global_position.z), Vector3.UP)
+			var friend = GameManager.friend
+			var player = GameManager.player
+			player.look_at(Vector3(friend.global_position.x, player.global_position.y, friend.global_position.z), Vector3.UP)
+			friend.look_at(Vector3(player.global_position.x, friend.global_position.y, player.global_position.z), Vector3.UP)
 			
 			await get_tree().create_timer(3).timeout
 			GameManager.chat_dialogue.emit(1)
-			
+		"speak with wizard":
+			GameManager.unlock_sword.emit()
 			
 		"seek the underwater house":
 			_change_level(LEVEL_MAZE)

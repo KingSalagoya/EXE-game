@@ -16,9 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://cw7y1a6cgudqo" path="res://scenes/pete.tscn" id="8_l85x4"]
 [ext_resource type="Script" uid="uid://bsmsli5rf25td" path="res://scripts/interacts/npc.gd" id="9_1igac"]
 [ext_resource type="ArrayMesh" uid="uid://by7txulajfrgu" path="res://assets/models/edited/birch_tree1.res" id="10_ac4xd"]
-[ext_resource type="ArrayMesh" uid="uid://q2ycm23kse3a" path="res://assets/models/edited/tree_path1.res" id="11_cgfwo"]
+[ext_resource type="ArrayMesh" uid="uid://bc2lb4vhpotm3" path="res://assets/models/edited/tree_path1.res" id="11_cgfwo"]
 [ext_resource type="ArrayMesh" uid="uid://35w016uflu4v" path="res://assets/models/edited/birch_tree2.res" id="11_xs82q"]
-[ext_resource type="ArrayMesh" uid="uid://c3qp3bu75l6oc" path="res://assets/models/edited/tree_path2.res" id="12_etyiu"]
+[ext_resource type="ArrayMesh" uid="uid://du0i4rt61e8ga" path="res://assets/models/edited/tree_path2.res" id="12_etyiu"]
 [ext_resource type="ArrayMesh" uid="uid://2ke600rw4va0" path="res://assets/models/edited/birch_tree3.res" id="12_setwa"]
 [ext_resource type="ArrayMesh" uid="uid://c30toqffygfug" path="res://assets/models/edited/pine_tree1.res" id="13_40n0v"]
 [ext_resource type="ArrayMesh" uid="uid://djchqcepswkap" path="res://assets/models/edited/pine_res2.res" id="14_og6kw"]
@@ -1244,19 +1244,16 @@ material = SubResource("StandardMaterial3D_7xlwv")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="Boundaries/graveyard" unique_id=125723891]
 transform = Transform3D(-0.18916404, 0, -0.9819455, 0, 1, 0, 0.9819455, 0, -0.18916404, 70.67481, -14.187381, 73.786606)
-use_collision = true
 size = Vector3(1, 34.374756, 20.297226)
 material = SubResource("StandardMaterial3D_7xlwv")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="Boundaries/graveyard" unique_id=307134945]
 transform = Transform3D(-0.917824, 0, 0.39698792, 0, 1, 0, -0.39698792, 0, -0.917824, 55.60757, -14.187381, 83.54051)
-use_collision = true
 size = Vector3(1, 34.374756, 26.435234)
 material = SubResource("StandardMaterial3D_7xlwv")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Boundaries/graveyard" unique_id=1574810329]
 transform = Transform3D(-0.5681597, 0, 0.8229185, 0, 1, 0, -0.8229185, 0, -0.5681597, 25.343813, -14.187381, 114.502464)
-use_collision = true
 size = Vector3(1, 34.374756, 60.150723)
 material = SubResource("StandardMaterial3D_7xlwv")
 

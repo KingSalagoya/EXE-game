@@ -11,11 +11,8 @@ enum CHARACTER {friend}
 @export var hp: int = 10
 @export var damage: int = 1
 
-@export var target_path: NodePath
-@export var target_path_str: String = "/root/Main/GameViewport/SubViewport/GameEnviroment/LevelHolder/LevelTest/Enemy_Holder/Enemy"
-
-@export var player_path: NodePath
-@export var player_path_str: String = "/root/Main/GameViewport/SubViewport/GameEnviroment/Player"
+var BOSS_ENEMY: Node3D
+var PLAYER: Node3D
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var HitBox: hit_box = $hit_box
@@ -27,28 +24,33 @@ var chasable: bool = false
 
 func apply_knockback(force: Vector3) -> void:
 	knockback_velocity = force
-	
+
+func _enter_tree() -> void:
+	GameManager.friend = self
+
 func _ready() -> void:
+	PLAYER = GameManager.player
+	BOSS_ENEMY = GameManager.boss_enemy
 	call_deferred("_find_nodes")
 
-func _find_nodes() -> void:
-	target_path = target_path_str
-	if target_path.is_empty():
-		print("boss enemy_path is not set!")
-		return
-	target = get_node_or_null(target_path)
-	if target == null:
-		print("Could not find boss enemy at path: ", target_path_str)
-		return
+#func _find_nodes() -> void:
+#	target_path = target_path_str
+#	if target_path.is_empty():
+	#	print("boss enemy_path is not set!")
+	#	return
+#	target = get_node_or_null(target_path)
+#	if target == null:
+#		print("Could not find boss enemy at path: ", target_path_str)
+#		return
 
-	player_path = player_path_str
-	if player_path.is_empty():
-		print("player_path is not set!")
-		return
-	player = get_node_or_null(player_path)
-	if player == null:
-		print("Could not find player at path: ", player_path_str)
-		return
+#	player_path = player_path_str
+#	if player_path.is_empty():
+#		print("player_path is not set!")
+#		return
+#	player = get_node_or_null(player_path)
+#	if player == null:
+#		print("Could not find player at path: ", player_path_str)
+#		return
 	
 
 func _physics_process(delta: float) -> void:

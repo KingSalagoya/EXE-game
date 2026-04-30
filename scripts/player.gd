@@ -56,6 +56,7 @@ var pete: bool = false
 var corpse: bool = false
 
 func _ready() -> void:
+	GameManager.player = self
 	flashlight.visible = false
 	sword.visible = true
 	GameManager.release_ending.connect(enable_flashlight)
