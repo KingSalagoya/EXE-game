@@ -76,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010606867, -0.00074025977,
 shape = SubResource("BoxShape3D_yico5")
 
 [node name="Paper" type="Node3D" parent="." unique_id=1165767086]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.14037132, 0.038, 0.022)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.038, 0.022)
 
 [node name="Graphics" type="MeshInstance3D" parent="Paper" unique_id=1234414054 groups=["interactable"]]
 transform = Transform3D(1, 0, 8.351872e-23, 0, 1, 0, -8.351872e-23, 0, 1, 0.00027288683, -0.0007656701, -0.0005001277)
