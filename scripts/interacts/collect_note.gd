@@ -1,5 +1,6 @@
 extends Node
 
+@export var interact_text = "pickup wood"
 @export var delete: bool = true
 
 var interacted: bool = false
