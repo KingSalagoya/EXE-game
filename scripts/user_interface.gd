@@ -153,7 +153,7 @@ func display_notes(normal_note: bool = true, game_note: bool = true) -> void:
 				'OMG, I knew it.'"""
 			2:
 				note_display.text = """'I knew PETE was a freak'
-				'Thank you, ARU, for telling me his deepest darkest secret.'"""
+'Thank you, RAIL, for telling me his deepest darkest secret.'"""
 			3:
 				note_display.text = """'Stella Told Me That.'
 				'Oh, that is a perfect reason to bully him.'"""
