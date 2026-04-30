@@ -1,6 +1,9 @@
 extends Node
 
 @export var LIST_OF_OBJECTIVES: Dictionary[String, int] = {
+#maze_part
+	"run": 0,
+	"find the phone": 0,
 	#"climb the ladder": 0,
 	#"place the note on the window": 0,
 	"atone": 0,

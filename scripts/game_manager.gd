@@ -32,6 +32,7 @@ extends Node
 @warning_ignore("unused_signal") signal dialogue_finished
 
 @warning_ignore("unused_signal") signal change_scene (level: String)
+@warning_ignore("unused_signal") signal add_scene (level: String, should_add: bool)
 @warning_ignore("unused_signal") signal unhandled_input (input: String)
 
 @warning_ignore("unused_signal") signal unlock_achievement (achievement: String)
@@ -47,7 +48,10 @@ extends Node
 @warning_ignore("unused_signal") signal request_spawn_point()
 @warning_ignore("unused_signal") signal recieve_spawn_point(_position: Vector3, _rotation: Vector3)
 
+@warning_ignore("unused_signal") signal handle_torch(state: bool)
+
 var can_toggle_chat: bool = false
+var can_toggle_torch: bool = false
 var can_move: bool = true
 var can_jump: bool = false
 var can_interact: bool = true

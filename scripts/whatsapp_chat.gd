@@ -6,6 +6,7 @@ extends Control
 @onready var clouds: Sprite2D = $Clouds
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+const WHATSAPP_CHAT = preload("uid://b520mxra380m5")
 const ROOM_1 = preload("uid://cb257hgwfgufx")
 const WHATSAPP_CHAT_2 = preload("uid://d2dy8fqpj4dps")
 
@@ -44,3 +45,5 @@ func _unhandled_input(_event: InputEvent) -> void:
 			can_change = true
 		else:
 			GameManager.handle_dialogue.emit(ROOM_1, "whatsapp")
+			await get_tree().create_timer(3).timeout
+			GameManager.add_scene.emit(WHATSAPP_CHAT, false)

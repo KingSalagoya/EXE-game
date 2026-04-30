@@ -50,6 +50,7 @@ func _ready() -> void:
 	GameManager.paralize_coords.connect(paralize_coords)
 	pass
 	#AudioManager.change_footsteps("concrete")
+	GameManager.handle_torch.connect(handle_torch)
 
 #region recording
 func do_record():
@@ -141,6 +142,10 @@ func _unhandled_input(event: InputEvent) -> void:
 				target = target.get_parent()
 	if Input.is_action_just_pressed("flashlight") and can_use_flashlight:
 		toggle_flashlight()
+	
+	if GameManager.can_toggle_torch:
+		if Input.is_action_just_pressed("flashlight"):
+			toggle_torch()
 
 func _physics_process(delta: float) -> void:
 	handle_recording_movement()
@@ -237,5 +242,13 @@ func toggle_flashlight() -> void:
 func paralize_coords(pos: Vector3, rot: Vector3) -> void:
 	global_position = pos
 	main_camera.global_rotation = rot
+
+# this part is done  by Rush, don't touch without asking...
+
+func handle_torch(state: bool) -> void:
+	flashlight.visible = state
+
+func toggle_torch() -> void:
+	flashlight.visible = !flashlight.visible
 
 #endregion

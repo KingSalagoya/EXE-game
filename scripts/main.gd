@@ -30,6 +30,7 @@ func _enter_tree() -> void:
 	GameManager.play_cinamatic.connect(_play_cinamatic)
 	GameManager.special_area_entered.connect(_handle_special_area)
 	GameManager.update_flashlight_counters.connect(update_flashlight_counters)
+	GameManager.add_scene.connect(add_level)
 
 func _ready() -> void:
 	%UserInterface.visible = true
@@ -154,6 +155,14 @@ func _change_level(new_scene: PackedScene) -> void:
 	var new_level = new_scene.instantiate()
 	level_holder.add_child(new_level)
 	GameManager.request_spawn_point.emit()
+
+func add_level(new_scene: PackedScene, should_add: bool = true) -> void:
+	if should_add:
+		var new_level = new_scene.instantiate()
+		level_holder.add_child(new_level)
+	else:
+		var prev_level = level_holder.get_child(-1)
+		prev_level.queue_free()
 
 func _play_cinamatic(anim_name: String) -> void:
 	if cinamatics_player.has_animation(anim_name):
