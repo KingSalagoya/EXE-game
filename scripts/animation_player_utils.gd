@@ -29,3 +29,6 @@ func play_with_temp_length(anim_name: String, length: float, forward: bool):
 
 func release_ending() -> void:
 	GameManager.release_ending.emit()
+
+func cretids() -> void:
+	GameManager.end_game.emit()

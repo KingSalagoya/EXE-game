@@ -36,6 +36,7 @@ func _enter_tree() -> void:
 	GameManager.update_flashlight_counters.connect(update_flashlight_counters)
 	GameManager.add_scene.connect(add_level)
 	GameManager.show_half_news.connect(show_half_news)
+	GameManager.end_game.connect(end_game)
 
 func _ready() -> void:
 	%UserInterface.visible = true
@@ -195,6 +196,9 @@ func set_spawn_point(_position: Vector3, _rotation: Vector3) -> void:
 func update_flashlight_counters() -> void:
 	cinamatics_player.play("flashlight " + str(flashlight_counters))
 	flashlight_counters += 1
+
+func end_game() -> void:
+	get_tree().change_scene_to_file("res://scenes/credits_menu.tscn")
 
 #endregion
 

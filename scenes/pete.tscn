@@ -358,6 +358,6 @@ skin = SubResource("Skin_4paql")
 skeleton = NodePath("..")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1368166079]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11581774, 1.891716, -0.36047006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07009904, 2.364457, -0.63507473)
 light_energy = 1.52
-omni_range = 0.6024728
+omni_range = 2.6393738

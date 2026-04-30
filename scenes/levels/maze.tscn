@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://baagym8vrmwab"]
 
 [ext_resource type="FontFile" uid="uid://dvduoeoa45h66" path="res://assets/fonts/DoubleHomicide.ttf" id="1_mboyv"]
-[ext_resource type="Script" path="res://scenes/levels/maze.gd" id="1_xyp5l"]
+[ext_resource type="Script" uid="uid://b2jyd5dlmk8s" path="res://scripts/lvls/maze.gd" id="1_xyp5l"]
 [ext_resource type="Texture2D" uid="uid://r8n2agm0u706" path="res://assets/textures/textures/dark_wood3.jpg" id="2_6tw5y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdru8"]
