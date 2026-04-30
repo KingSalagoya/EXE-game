@@ -20,7 +20,7 @@ extends Node
 	"speak with wizard": 0,
 	"kill enemies": 5,
 	"kill boss enemy": 0,
-	"speak to wizard again": 0,
+	"talk": 0,
 	"check other side of the bridge": 0,
 	"wizard": 0,
 	"seek the underwater house" : 0,

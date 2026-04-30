@@ -36,6 +36,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cd8hdd3yydvpx" path="res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_010.res" id="27_u24ib"]
 [ext_resource type="ArrayMesh" uid="uid://cypkwssja1ghv" path="res://assets/models/downloaded/graveyard-assets-low-poly-style/Cube_014.res" id="28_m1ao7"]
 [ext_resource type="Texture2D" uid="uid://fy3k46ymidol" path="res://assets/textures/textures/wood_roof.jpg" id="29_0i3fa"]
+[ext_resource type="Script" uid="uid://dqhp68swameua" path="res://scenes/levels/special_wizard.gd" id="36_m1ao7"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4st6c"]
 cell_height = 0.75
@@ -1305,6 +1306,18 @@ script = ExtResource("9_1igac")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93924975, 0.9914665, -0.861084)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Wizard/StaticBody3D" unique_id=1290349487]
+shape = SubResource("ConcavePolygonShape3D_jmnvc")
+
+[node name="Wizard2" type="MeshInstance3D" parent="NPC" unique_id=91626504 groups=["interactable"]]
+transform = Transform3D(1.3190174, 0, -1.1500847, 0, 1.75, 0, 1.1500847, 0, 1.3190174, -15.5197935, 1.5616198, -6.807296)
+visible = false
+mesh = ExtResource("8_etyiu")
+script = ExtResource("36_m1ao7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NPC/Wizard2" unique_id=207736203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93924975, 0.9914665, -0.861084)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/Wizard2/StaticBody3D" unique_id=1241926193]
 shape = SubResource("ConcavePolygonShape3D_jmnvc")
 
 [node name="Other" type="Node3D" parent="." unique_id=647787060]

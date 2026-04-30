@@ -32,6 +32,8 @@ func chat_dialogue(msg_array: Array):
 	GameManager.can_move = true
 	chat_ui.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	GameManager.request_objective_completed.emit("talk")
+	GameManager.unlock_achievement.emit("bridge")
 
 func _send_msg(usrnm: String, msg: String):
 	var clean_msg = msg
@@ -78,5 +80,5 @@ var first_dialogue: Array = [
 	#"RAIL: Uh ... yeah ... um ... BTW, that is a nice dagger you have. The one with the wolf head. Where did you get it, dude?",
 	#"PETE: Oh, I found it in a shack nearby. Bro, the good thing about this game? There is loot everywhere.",
 	#"RAIL: I also want a dagger like that. Is there anymore?",
-	"PETE: Yes, in the shack. Go get it. I’ll wait."
+	"PETE: Yes, in the shack. Go get it. I’ll wait. here key"
 ]

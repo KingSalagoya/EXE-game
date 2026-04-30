@@ -12,6 +12,7 @@ var friend_spawned: bool = false
 
 func _ready() -> void:
 	GameManager.can_jump = true
+	GameManager.corpse_seen.connect(seen_corpse)
 	
 	GameManager.unlock_achievement.connect(unlock_achievement)
 	GameManager.spawn_boss_enemy.connect(spawn_enemies)
@@ -71,3 +72,8 @@ func unlock_achievement(achievement: String) -> void:
 		"bridge":
 			if $Boundaries/bridge:
 				$Boundaries/bridge.queue_free()
+
+func seen_corpse() -> void:
+	$NPC/Wizard2.visible = true
+	GameManager.request_objective_completed.emit("check other side of the bridge")
+	pass

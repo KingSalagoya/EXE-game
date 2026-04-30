@@ -125,8 +125,10 @@ func _special_objectives(_name: String) -> void:
 		"atone":
 			_change_level(ROOM_END)
 			cinamatics_player.play("wake_up_2")
-			await get_tree().create_timer(10).timeout
+			await get_tree().create_timer(9).timeout
 			GameManager.handle_dialogue.emit(room_one_dialogue, "wake_up_2")
+			#await get_tree().create_timer(13).timeout
+			#GameManager.request_objective_completed.emit("chill")
 		"read t#e no#?e??":
 			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper.show()
 			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/NewspaperWithoutLetters.show()
