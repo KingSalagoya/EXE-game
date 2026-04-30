@@ -12,12 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://c8qrpp8ux2f52" path="res://assets/textures/textures/internal_ground_ao_texture.jpeg" id="7_0i3fa"]
 [ext_resource type="PackedScene" uid="uid://blwbxhogbdelp" path="res://scenes/enemy.tscn" id="7_cgfwo"]
 [ext_resource type="ArrayMesh" uid="uid://bx0y65v3efogy" path="res://assets/models/edited/humans/alucard.res" id="8_etyiu"]
-[ext_resource type="PackedScene" uid="uid://cw7y1a6cgudqo" path="res://scenes/pete.tscn" id="8_l85x4"]
+[ext_resource type="PackedScene" path="res://scenes/pete.tscn" id="8_l85x4"]
 [ext_resource type="Script" uid="uid://bsmsli5rf25td" path="res://scripts/interacts/npc.gd" id="9_1igac"]
 [ext_resource type="ArrayMesh" uid="uid://by7txulajfrgu" path="res://assets/models/edited/birch_tree1.res" id="10_ac4xd"]
-[ext_resource type="ArrayMesh" uid="uid://bc2lb4vhpotm3" path="res://assets/models/edited/tree_path1.res" id="11_cgfwo"]
+[ext_resource type="ArrayMesh" uid="uid://q2ycm23kse3a" path="res://assets/models/edited/tree_path1.res" id="11_cgfwo"]
 [ext_resource type="ArrayMesh" uid="uid://35w016uflu4v" path="res://assets/models/edited/birch_tree2.res" id="11_xs82q"]
-[ext_resource type="ArrayMesh" uid="uid://du0i4rt61e8ga" path="res://assets/models/edited/tree_path2.res" id="12_etyiu"]
+[ext_resource type="ArrayMesh" uid="uid://c3qp3bu75l6oc" path="res://assets/models/edited/tree_path2.res" id="12_etyiu"]
 [ext_resource type="ArrayMesh" uid="uid://2ke600rw4va0" path="res://assets/models/edited/birch_tree3.res" id="12_setwa"]
 [ext_resource type="ArrayMesh" uid="uid://c30toqffygfug" path="res://assets/models/edited/pine_tree1.res" id="13_40n0v"]
 [ext_resource type="ArrayMesh" uid="uid://djchqcepswkap" path="res://assets/models/edited/pine_res2.res" id="14_og6kw"]
@@ -1250,9 +1250,15 @@ material = SubResource("StandardMaterial3D_7xlwv")
 [node name="forest" type="Node3D" parent="Boundaries" unique_id=1965542834]
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="Boundaries/forest" unique_id=1932213008]
-transform = Transform3D(0.45903724, 0, -0.88841707, 0, 1, 0, 0.88841707, 0, 0.45903724, -6.607895, 1.499999, -15.969482)
+transform = Transform3D(0.45903724, 0, -0.88841707, 0, 1, 0, 0.88841707, 0, 0.45903724, -36.3205, -6.0944853, -9.73127)
 use_collision = true
-size = Vector3(1, 3, 84.49982)
+size = Vector3(1, 18.188965, 94.77093)
+material = SubResource("StandardMaterial3D_7xlwv")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Boundaries/forest" unique_id=1163608015]
+transform = Transform3D(0.79432976, 0, -0.6074868, 0, 1, 0, 0.6074868, 0, 0.79432976, -85.1995, -6.094487, 26.776436)
+use_collision = true
+size = Vector3(1, 18.188965, 76.35155)
 material = SubResource("StandardMaterial3D_7xlwv")
 
 [node name="NPC" type="Node3D" parent="." unique_id=419087429]
