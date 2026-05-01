@@ -10,7 +10,7 @@ extends Node
 @onready var chat_ui: Control = $UiViewport/SubViewport/UserInterface/MarginContainer/ChatUI
 
 @onready var main_menu: Control = $"UiViewport/SubViewport/UserInterface/MarginContainer/Main Menu"
-@onready var whats_app_chat_ui: Control = $UiViewport/SubViewport/UserInterface/WhatsAppChatUI
+@onready var whatsapp_chat_ui: Control = $UiViewport/SubViewport/WhatsAppChatUI
 
 
 var flashlight_counters: int = 1
@@ -93,6 +93,7 @@ func _special_objectives(_name: String) -> void:
 			cinamatics_player.play("RESET")
 			_change_level(GAME_WORLD)
 			ui.set_chat_mode("on")
+			GameManager.chat_dialogue.emit(2)
 			GameManager.can_toggle_chat = true
 			GameManager.can_move = true
 			blink_anim.play("blink")
@@ -101,17 +102,20 @@ func _special_objectives(_name: String) -> void:
 		"open door":
 			pass
 		"collect wood":
-			pass
+			GameManager.chat_dialogue.emit(3)
+			GameManager.update_player_count.emit(2)
 		"kill enemies":
 			GameManager.spawn_boss_enemy.emit()
 			await get_tree().create_timer(5).timeout
 			GameManager.spawn_friend.emit()
 			GameManager.update_npc_objective.emit()
 		"kill boss enemy":
-			var friend = GameManager.friend
+			#var friend = GameManager.friend
 			var player = GameManager.player
-			player.look_at(Vector3(friend.global_position.x, player.global_position.y, friend.global_position.z), Vector3.UP)
-			friend.look_at(Vector3(player.global_position.x, friend.global_position.y, player.global_position.z), Vector3.UP)
+			player.unlocked_sword = false
+			player.sword.visible = false
+			#player.look_at(Vector3(friend.global_position.x, player.global_position.y, friend.global_position.z), Vector3.UP)
+			#friend.look_at(Vector3(player.global_position.x, friend.global_position.y, player.global_position.z), Vector3.UP)
 			
 			await get_tree().create_timer(3).timeout
 			GameManager.chat_dialogue.emit(1)
@@ -119,16 +123,25 @@ func _special_objectives(_name: String) -> void:
 			GameManager.unlock_sword.emit()
 			
 		"seek the underwater house":
+			GameManager.update_player_count.emit(0)
 			_change_level(LEVEL_MAZE)
 		"run":
 			AudioManager.stop_all_muisc()
+		"find the phone":
+			whatsapp_chat_ui.visible = true
+			whatsapp_chat_ui.play_animation()
+			#GameManager.add_scene.emit(ROOM_BEGINNING, true)
+			GameManager.handle_torch.emit(false)
+			GameManager.can_toggle_torch = false
 		"atone":
 			_change_level(ROOM_END)
 			cinamatics_player.play("wake_up_2")
-			await get_tree().create_timer(9).timeout
+			await get_tree().create_timer(10).timeout
 			GameManager.handle_dialogue.emit(room_one_dialogue, "wake_up_2")
-			#await get_tree().create_timer(13).timeout
-			#GameManager.request_objective_completed.emit("chill")
+			await get_tree().create_timer(5).timeout
+			AudioManager.play_audio_one_shot("car stop", Vector3.ZERO, 10)
+			await get_tree().create_timer(13).timeout
+			GameManager.request_objective_completed.emit("chill")
 		"read t#e no#?e??":
 			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper.show()
 			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper/NewspaperWithoutLetters.show()
@@ -139,10 +152,7 @@ func _special_objectives(_name: String) -> void:
 		"...":
 			AudioManager.play_audio_one_shot("electric")
 			cinamatics_player.play("you are a liar")
-		"find the phone":
-			GameManager.add_scene.emit(ROOM_BEGINNING, true)
-			GameManager.handle_torch.emit(false)
-			GameManager.can_toggle_torch = false
+
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Enter") and can_throw:
@@ -178,10 +188,10 @@ func _change_level(new_scene: PackedScene) -> void:
 
 func add_level(_new_scene: PackedScene, should_add: bool = true) -> void:
 	if should_add:
-		whats_app_chat_ui.visible = true
-		whats_app_chat_ui.on_ready()
+		whatsapp_chat_ui.visible = true
+		whatsapp_chat_ui.on_ready()
 	else:
-		whats_app_chat_ui.visible = false
+		whatsapp_chat_ui.visible = false
 
 func _play_cinamatic(anim_name: String) -> void:
 	if cinamatics_player.has_animation(anim_name):

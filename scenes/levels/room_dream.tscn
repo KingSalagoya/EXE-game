@@ -28,6 +28,7 @@ size = Vector2(0.8, 0.55)
 visible = false
 
 [node name="screen" parent="BaseRoom/Props/BaseHouse/monitor" parent_id_path=PackedInt32Array(1582295487, 1327782251) index="0" unique_id=1620209071]
+visible = false
 mesh = SubResource("QuadMesh_a35vm")
 
 [node name="SpawnPoint" parent="." unique_id=524540920 instance=ExtResource("2_f8fxg")]

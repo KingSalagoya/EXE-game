@@ -35,6 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://pt141aae7l5n" path="res://assets/sfx/footsteps/fadeout_running.mp3" id="28_n1t8p"]
 [ext_resource type="AudioStream" uid="uid://coouivvqwisu6" path="res://assets/sfx/intreactions/dragon-studio-dramatic-whoosh-swing-487667.mp3" id="29_bne8e"]
 [ext_resource type="AudioStream" uid="uid://bh541jy2mdqfe" path="res://assets/sfx/ambients/music-scary.mp3" id="30_2fqsb"]
+[ext_resource type="AudioStream" uid="uid://s8n1j8ujbbsa" path="res://assets/sfx/glitch_upwards.mp3" id="30_c6r4u"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_if78k"]
 random_pitch = 1.005793
@@ -101,6 +102,7 @@ audio_one_shot_clips = Dictionary[String, AudioStream]({
 "drawer close": ExtResource("23_nplbh"),
 "drawer open": ExtResource("22_thanh"),
 "electric": ExtResource("13_2y5yn"),
+"glitch": ExtResource("30_c6r4u"),
 "jumpscare h": ExtResource("26_1y43m"),
 "jumpscare l": ExtResource("27_n1t8p"),
 "pickup": SubResource("AudioStreamRandomizer_cuol6"),

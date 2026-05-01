@@ -67,6 +67,7 @@ func update_player_count_label(count: int) -> void:
 	player_count_label.text = text
 
 func update_achievement_label(achievement: String, is_achievement: bool = true) -> void:
+	if GameManager.graveyard_unlocked and achievement == "graveyard": return
 	if not is_instance_valid(achievement_label):
 		return
 	if achievement == "" : achievement_label.hide()
@@ -152,17 +153,19 @@ func display_notes(normal_note: bool = true, game_note: bool = true) -> void:
 				note_display.text = """'Do you know what ARU told me about PETE?'
 				'OMG, I knew it.'"""
 			2:
-				note_display.text = """'I knew PETE was a freak'
-'Thank you, RAIL, for telling me his deepest darkest secret.'"""
-			3:
-				note_display.text = """'Stella Told Me That.'
-				'Oh, that is a perfect reason to bully him.'"""
+				note_display.text = """'What me a friend with him??
+				Not at all lol, lemme tell you
+				one of his darkest secr---"""
 			4:
-				note_display.text = """'I thought Pete was a good guy.'
-				'Pete. Such a loser.'"""
+				note_display.text = """'Everyone is being mean to me,
+				 But at least you stay my side. right?' 'dont worry,
+				 You are my best friend ofc'"""
+			3:
+				note_display.text = """'Hes a Stupid loser who belives everything
+				i says loll'"""
 	elif game_note:
-		note_display.text = """The OG RPG game, 'XEON KNIGHT'
-		has been officially shut down in 2015!"""
+		note_display.text = """Gamers.Com The Hit 90s MMORPG game, 'XEON KNIGHT'
+		has been officially shut down in 2015! due to server breakdown!"""
 	else:
 		note_display.text = """YOU BROKE MY TRUST. YOU HAVE BEEN TELLING YOURSELF
 THAT IT IS NOT YOUR FAULT. YOU KNOW IT WAS YOUR FAULT.

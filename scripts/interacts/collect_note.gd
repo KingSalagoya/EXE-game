@@ -26,19 +26,22 @@ func _ready() -> void:
 		GameManager.corpse = corpse
 
 func interact() -> void:
-	_objective_collected()
 	visible = false
 	collider.disabled = true
 
 	if type == "corpse":
 		GameManager.show_half_news.emit()
+		_objective_collected()
 		_corpse()
 	elif type == "underwater":
 		pete_model.visible = true
 		door_anim.play("RESET")
 		GameManager.display_note.emit(false)
+		GameManager.collected_all_notes = true
+		_objective_collected()
 		_underwater()
 	else:
+		_objective_collected()
 		GameManager.display_note.emit()
 		queue_free()
 

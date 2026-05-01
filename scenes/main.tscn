@@ -11,7 +11,7 @@
 [ext_resource type="Theme" uid="uid://ca62n5ve5nsxc" path="res://assets/styles/horror_default.tres" id="5_tipki"]
 [ext_resource type="Script" uid="uid://6bh43noutcuk" path="res://scripts/puppet.gd" id="6_jkv2x"]
 [ext_resource type="Script" uid="uid://cyre2l60h5tyq" path="res://scripts/new_objectives.gd" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://dwy6b1f4mo8dq" path="res://scenes/levels/game_world.tscn" id="7_jscy8"]
+[ext_resource type="PackedScene" uid="uid://dbef7ovwfqemw" path="res://scenes/levels/home.tscn" id="6_yc10j"]
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dcd4uei5h45qe" path="res://assets/textures/jumpscare/newspaper/newspaper_without_letters.png" id="7_trceg"]
 [ext_resource type="Texture2D" uid="uid://bn0indc2byoxt" path="res://assets/textures/jumpscare/newspaper/final_newspaper.png" id="8_a8y0u"]
@@ -420,36 +420,8 @@ tracks/1/keys = {
 "values": [Vector3(0.9234059, 0, -3.5576582)]
 }
 
-[sub_resource type="Animation" id="Animation_y6deb"]
-resource_name = "flashlight 3"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Pete:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Pete:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.3190603, 0, -2.5619617)]
-}
-
 [sub_resource type="Animation" id="Animation_og1vs"]
-resource_name = "flashlight 4"
+resource_name = "flashlight 3"
 length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -458,7 +430,7 @@ tracks/0/path = NodePath("../Pete:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 2.83),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -470,10 +442,10 @@ tracks/1/path = NodePath("../Pete:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(1.3190603, 0, -2.5619617), Vector3(-0.2506507, 0, 1.0344825)]
+"values": [Vector3(1.3190603, 0, -2.5619617), Vector3(0.9234059, 0, -3.5576582), Vector3(-0.2506507, 0, 1.0344825)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -513,6 +485,34 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "clips": PackedStringArray("shut"),
 "times": PackedFloat32Array(4)
+}
+
+[sub_resource type="Animation" id="Animation_y6deb"]
+resource_name = "flashlight 33"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pete:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Pete:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.3190603, 0, -2.5619617)]
 }
 
 [sub_resource type="Animation" id="Animation_2wyq8"]
@@ -590,8 +590,8 @@ tracks/2/path = NodePath("%GameEnviroment/../../../UiViewport/SubViewport/Blink/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"clips": PackedStringArray("blink_once"),
-"times": PackedFloat32Array(0)
+"clips": PackedStringArray("blink_once", "shut"),
+"times": PackedFloat32Array(0, 8.933333)
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -809,9 +809,12 @@ tracks/12/path = NodePath("CinamaticsPlayer")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(7.6666665),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(6.83, 7.6666665),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": ["jumpscare l", 0.0, 0.0],
+"method": &"play_sfx"
+}, {
 "args": ["stab", 0.0, 2.23],
 "method": &"play_sfx"
 }]
@@ -953,7 +956,8 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_jbj1t"]
 resource_name = "wake_up_2"
-length = 7.085
+length = 8.085
+step = 1.0
 tracks/0/type = "animation"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -961,8 +965,8 @@ tracks/0/path = NodePath("%GameEnviroment/../../../UiViewport/SubViewport/Blink/
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": PackedStringArray("blink", "blink_once"),
-"times": PackedFloat32Array(0, 5.766667)
+"clips": PackedStringArray("black", "blink", "blink_once"),
+"times": PackedFloat32Array(0, 1, 6.766667)
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -971,7 +975,7 @@ tracks/1/path = NodePath("CinamaticCamera:current")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 6.2),
+"times": PackedFloat32Array(1, 7.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -983,7 +987,7 @@ tracks/2/path = NodePath("%Player:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 6.2),
+"times": PackedFloat32Array(1, 7.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -995,7 +999,7 @@ tracks/3/path = NodePath("CinamaticCamera:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 6.2),
+"times": PackedFloat32Array(1, 7.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1007,7 +1011,7 @@ tracks/4/path = NodePath("%UserInterface/MarginContainer/HUD/Point:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 6.2),
+"times": PackedFloat32Array(1, 7.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -1019,7 +1023,7 @@ tracks/5/path = NodePath("CinamaticsPlayer")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": ["wake up", 0.0, 0.0],
@@ -1033,7 +1037,7 @@ tracks/6/path = NodePath("CinamaticCamera:rotation")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 1.01, 1.67, 3.72, 4.27, 5),
+"times": PackedFloat32Array(1, 2.01, 2.67, 4.7200003, 5.27, 6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.6878012, -0.07534565, 1.8127823), Vector3(-0.8570207, -0.08895328, 1.8322111), Vector3(-0.9515263, 0.078091376, 1.8467185), Vector3(-0.43109632, 1.6423548, 0), Vector3(-0.5009095, 1.6441002, 0), Vector3(-0.43109632, 1.6423548, 0)]
@@ -1045,7 +1049,7 @@ tracks/7/path = NodePath("CinamaticCamera:position")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 1.01, 1.67, 3.72, 4.27, 5),
+"times": PackedFloat32Array(1, 2.01, 2.67, 4.7200003, 5.27, 6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-1.9960499, 1.6705537, 2.286246), Vector3(-1.9960499, 1.9011612, 2.286246), Vector3(-1.9960499, 1.7911518, 2.286246), Vector3(-1.3982501, 2.2343078, 1.7558165), Vector3(-1.3982501, 2.2343078, 1.7558165), Vector3(-1.3982501, 2.2343078, 1.7558165)]
@@ -1086,8 +1090,8 @@ _data = {
 &"flashlight 0": SubResource("Animation_yc10j"),
 &"flashlight 1": SubResource("Animation_jscy8"),
 &"flashlight 2": SubResource("Animation_pm3ni"),
-&"flashlight 3": SubResource("Animation_y6deb"),
-&"flashlight 4": SubResource("Animation_og1vs"),
+&"flashlight 3": SubResource("Animation_og1vs"),
+&"flashlight 33": SubResource("Animation_y6deb"),
 &"flashlight 5": SubResource("Animation_2wyq8"),
 &"its_just_a_game": SubResource("Animation_0ld40"),
 &"play_computer": SubResource("Animation_trceg"),
@@ -1152,6 +1156,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vxglm"]
+resource_name = "black"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiViewport/SubViewport/Blink/Up:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1.16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UiViewport/SubViewport/Blink/Down:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1.16)]
 }
 
 [sub_resource type="Animation" id="Animation_85g3d"]
@@ -1269,6 +1301,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_choun"]
 _data = {
 &"RESET": SubResource("Animation_tipki"),
+&"black": SubResource("Animation_vxglm"),
 &"blink": SubResource("Animation_85g3d"),
 &"blink_once": SubResource("Animation_eb6dy"),
 &"fast_blink": SubResource("Animation_jkv2x"),
@@ -1316,7 +1349,7 @@ visible = false
 
 [node name="LevelHolder" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1454569192]
 
-[node name="GameWorld" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=754255985 instance=ExtResource("7_jscy8")]
+[node name="Home" parent="GameViewport/SubViewport/GameEnviroment/LevelHolder" unique_id=1172181076 instance=ExtResource("6_yc10j")]
 
 [node name="Cinamatic" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment" unique_id=1467429672]
 
@@ -1330,7 +1363,7 @@ transform = Transform3D(1, 0, 0, 0, 0.98657113, -0.1633258, 0, 0.1633258, 0.9865
 visible = false
 
 [node name="knife" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot" unique_id=1717204905]
-transform = Transform3D(0.87643385, 0.03437035, 0.48029047, -0.16550659, 0.9581788, 0.23344368, -0.45218506, -0.28409067, 0.8454643, 0.22, -0.005, -0.72)
+transform = Transform3D(0.8764338, 0.03437036, 0.48029056, -0.16550659, 0.9581788, 0.23344359, -0.45218515, -0.2840906, 0.8454642, 0.22, -0.005, -0.72)
 visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot/knife" unique_id=1101515992]
@@ -1373,18 +1406,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("4_tefeu")
-
-[node name="WhatsAppChatUI" parent="UiViewport/SubViewport/UserInterface" unique_id=725516722 instance=ExtResource("9_dp3eg")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -13.0
-offset_top = -5.0
-offset_right = 1915.0
-offset_bottom = 1093.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="Black_BG" type="TextureRect" parent="UiViewport/SubViewport/UserInterface" unique_id=1352876178]
 visible = false
@@ -1469,11 +1490,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 
 [node name="Label" type="Label" parent="UiViewport/SubViewport/UserInterface/MarginContainer/Notes" unique_id=1146860832]
-layout_mode = 0
-offset_left = 685.0
-offset_top = 673.0
-offset_right = 1185.0
-offset_bottom = 705.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 163.0
+offset_right = 250.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("9_jkv2x")
 theme_override_font_sizes/font_size = 32
 text = "Press Enter to continue..."
@@ -1542,7 +1570,8 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -280.0
-offset_bottom = 34.0
+offset_top = 2.0
+offset_bottom = 36.0
 grow_horizontal = 0
 mouse_filter = 1
 theme = ExtResource("5_tipki")
@@ -1571,8 +1600,8 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -280.0
-offset_top = 201.0
-offset_bottom = 235.0
+offset_top = 127.0
+offset_bottom = 161.0
 grow_horizontal = 0
 mouse_filter = 1
 theme = ExtResource("5_tipki")
@@ -1604,6 +1633,10 @@ visible = false
 will_block_other_input = false
 next_action = &"jump"
 skip_action = &"jump"
+
+[node name="WhatsAppChatUI" parent="UiViewport/SubViewport" unique_id=725516722 instance=ExtResource("9_dp3eg")]
+visible = false
+mouse_filter = 1
 
 [node name="Blink" type="Control" parent="UiViewport/SubViewport" unique_id=560574064]
 layout_mode = 3

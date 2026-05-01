@@ -3,7 +3,7 @@ extends Node3D
 const WHATSAPP_CHAT = preload("uid://b520mxra380m5")
 const ROOM_MAZE = preload("uid://cltj3uclqhk5g")
 
-var wait_time: int = 5
+var wait_time: int = 15
 
 func _ready() -> void:
 	GameManager.handle_torch.emit(false)

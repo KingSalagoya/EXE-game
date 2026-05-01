@@ -12,7 +12,10 @@ func _decide_msg(num) -> void:
 	match num:
 		1:
 			chat_dialogue(first_dialogue)
-
+		2:
+			$"../VBoxContainer/chat history".text += "Rail Joined The Game" + "\n"
+		3:
+			$"../VBoxContainer/chat history".text += "PETE Joined The Game" + "\n"
 func chat_dialogue(msg_array: Array):
 	GameManager.can_move = false
 	chat_ui.show()
@@ -64,13 +67,17 @@ func _send_msg(usrnm: String, msg: String):
 
 var first_dialogue: Array = [
 	"PETE: Hi",
-	#"RAIL: PETE? Are you PETE EVANS?",
-	#"PETE: Yes, how do u know?",
-	#"RAIL: I’m ARU RAIL. Can U remember? We were in the same class 17 years ago!",
-	#"PETE: ARU! Wow! After all this time! I missed you, man. Bro, where did u find this game?",
-	#"RAIL: I found it inside my cupboard. I didn’t even know what this game was until I played it. I miss good old days.",
-	#"PETE: Me too. BTW How are U? OMG. I miss oldtimes. So how are U?",
-	#"RAIL: Never been better.lol.",
+	"RAIL: PETE? Are you PETE EVANS?",
+	"PETE: Yes, how do u know?",
+	"RAIL: I’m ARU RAIL. Can U remember? We were in the same class 17 years ago!",
+	"PETE: ARU! Wow! After all this time! I missed you, man. Bro, where did u find this game?",
+	"RAIL: I found it inside my cupboard. I didn’t even know what this game was until I played it. I miss good old days.",
+	"PETE: Me too. BTW How are U? OMG. I miss oldtimes. So how are U?",
+	"RAIL: Never been better lol.",
+	"RAIL: Btw Where are you? I cant see you anywhere??.",
+	"PETE: Oh dont mind me, im on a distant quest. I waited whole this time for that",
+	"RAIL: Oh lemme give you the key to the bridge, be sure to unlock everything before i arrive",
+	"PETE: Oh okie dokie",
 	#"PETE: Same here. BTW, you didn’t tell anyone my secret right?",
 	# Suddenly everything starts to echo....
 	#"RAIL: N-no ... I didn’t. You can trust me.",
@@ -80,5 +87,13 @@ var first_dialogue: Array = [
 	#"RAIL: Uh ... yeah ... um ... BTW, that is a nice dagger you have. The one with the wolf head. Where did you get it, dude?",
 	#"PETE: Oh, I found it in a shack nearby. Bro, the good thing about this game? There is loot everywhere.",
 	#"RAIL: I also want a dagger like that. Is there anymore?",
-	"PETE: Yes, in the shack. Go get it. I’ll wait. here key"
+	#"PETE: Yes, in the shack. Go get it. I’ll wait. here key"
+]
+
+var second_dialogue: Array = [
+	":RAIL :: Joined The Game"
+]
+
+var third_dialogue: Array = [
+	":PETE :: Joined The Game",
 ]
