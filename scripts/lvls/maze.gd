@@ -3,15 +3,15 @@ extends Node3D
 const WHATSAPP_CHAT = preload("uid://b520mxra380m5")
 const ROOM_MAZE = preload("uid://cltj3uclqhk5g")
 
-var wait_time: int = 5
+var wait_time: float = 15
 
 func _ready() -> void:
 	AudioManager.stop_all_muisc()
 	AudioManager.play_music("scary_music")
 
+	GameManager.can_toggle_torch = true
 	GameManager.handle_torch.emit(false)
 	$AnimationPlayer.play("instruction")
-	GameManager.can_toggle_torch = true
 	change_scene()
 
 func change_scene() -> void:

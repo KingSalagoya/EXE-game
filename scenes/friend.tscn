@@ -360,6 +360,7 @@ skin = SubResource("Skin_w4v4f")
 skeleton = NodePath("..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=816245651]
+visible = false
 mesh = SubResource("CapsuleMesh_8tegq")
 surface_material_override/0 = SubResource("StandardMaterial3D_7p1mj")
 

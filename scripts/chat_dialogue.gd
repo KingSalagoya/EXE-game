@@ -76,8 +76,8 @@ var first_dialogue: Array = [
 	"RAIL: Never been better lol.",
 	"RAIL: Btw Where are you? I cant see you anywhere??.",
 	"PETE: Oh dont mind me, im on a distant quest. I waited whole this time for that",
-	"RAIL: Oh lemme give you the key to the bridge, be sure to unlock everything before i arrive",
-	"PETE: Oh okie dokie",
+	"PETE: Oh lemme give you the key to the bridge, be sure to unlock everything before i arrive",
+	"RAIL: Oh okie dokie",
 	#"PETE: Same here. BTW, you didn’t tell anyone my secret right?",
 	# Suddenly everything starts to echo....
 	#"RAIL: N-no ... I didn’t. You can trust me.",
