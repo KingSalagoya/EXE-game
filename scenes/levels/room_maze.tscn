@@ -306,7 +306,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.442703, 1.7869306, -3.17788
 visible = false
 stream = ExtResource("2_v6ijh")
 unit_size = 2.02
-autoplay = true
 max_distance = 53.0
 
 [node name="SpecialAreas" type="Node3D" parent="." unique_id=419169634]

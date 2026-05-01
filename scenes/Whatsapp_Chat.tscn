@@ -4,44 +4,231 @@
 [ext_resource type="Script" uid="uid://cpokitsfhksv7" path="res://scripts/whatsapp_chat.gd" id="1_imsos"]
 [ext_resource type="Texture2D" uid="uid://b7a071esetslu" path="res://assets/textures/clouds.jpeg" id="3_42qkv"]
 [ext_resource type="Texture2D" uid="uid://cl5ck63h4yi3x" path="res://assets/textures/2009-WhatsApp/whatsapp_chat_1.png" id="3_sbx3q"]
+[ext_resource type="FontFile" uid="uid://d2t2nfujh0i7g" path="res://assets/fonts/Undead Pixel 11.ttf" id="5_ebby4"]
+[ext_resource type="FontFile" uid="uid://dvduoeoa45h66" path="res://assets/fonts/DoubleHomicide.ttf" id="5_l2q5w"]
+[ext_resource type="Script" uid="uid://ck5vlger3bswc" path="res://scripts/animation_player_utils.gd" id="6_fb2n4"]
 
 [sub_resource type="Animation" id="Animation_l2q5w"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("year_label:modulate")
+tracks/0/path = NodePath("TextureRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.73300546, 0.7330054, 0.7330054, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Clouds:modulate")
+tracks/1/path = NodePath("Instruction_Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
+tracks/2/path = NodePath("TextureRect:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_sbx3q")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("year_label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("year_label:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Was it really fun talking
+Behind my Back?"]
+}
+
+[sub_resource type="Animation" id="Animation_ebby4"]
+resource_name = "ani1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Instruction_Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.43529412)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("year_label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_pdmj8"]
+resource_name = "ani2"
+length = 17.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.49999994, 1.1999999, 4.61),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Instruction_Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.43529412), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_sbx3q")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("year_label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5, 15.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("year_label:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.8, 8.1, 11.1, 12.1, 13.066667, 14.066667, 15.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["You Lied Rail", "Was it that fun talking
+Behind my Back?", "", "Hahhahhahhaha", "Hahhahhahhaha
+Hahhahhahhaha
+Hahhahhahhaha
+", "Hahhahhahhaha
+Hahhahhahhaha
+Hahhahhahhaha
+Hahhahhahhaha
+Hahhahhahhaha
+Hahhahhahhaha
+Hahhahhahhaha", "Hahhahhahhaha Hahhahhahhaha
+Hahhahhahhaha Hahhahhahhaha
+Hahhahhahhaha Hahhahhahhaha
+Hahhahhahhaha Hahhahhahhaha
+Hahhahhahhaha Hahhahhahhaha
+Hahhahhahhaha Hahhahhahhaha
+Hahhahhahhaha Hahhahhahhaha"]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(5.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["glitch", 5.0, 0.0],
+"method": &"play_sfx"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_fb2n4"]
@@ -82,7 +269,7 @@ tracks/1/path = NodePath("Clouds:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(0.06666666, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -91,12 +278,13 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l2q5w"]
 _data = {
 &"RESET": SubResource("Animation_l2q5w"),
+&"ani1": SubResource("Animation_ebby4"),
+&"ani2": SubResource("Animation_pdmj8"),
 &"fade_in": SubResource("Animation_fb2n4"),
 &"year_glitch": SubResource("Animation_sbx3q")
 }
 
 [node name="WhatsAppChatUI" type="Control" unique_id=725516722]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -127,19 +315,38 @@ grow_vertical = 2
 texture = ExtResource("3_sbx3q")
 
 [node name="Clouds" type="Sprite2D" parent="." unique_id=755780450]
+visible = false
 position = Vector2(969.5, 541.5)
 scale = Vector2(6.5250835, 6.5416665)
 texture = ExtResource("3_42qkv")
 
 [node name="Instruction_Label" type="Label" parent="." unique_id=886590094]
-modulate = Color(1, 1, 1, 0.3137255)
-layout_mode = 0
-offset_left = 1324.0
-offset_top = 986.0
-offset_right = 1840.0
-offset_bottom = 1050.0
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -578.0
+offset_top = -114.0
+offset_right = -62.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_ebby4")
 theme_override_font_sizes/font_size = 46
 text = "Press Enter to continue"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1242331758]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
 
 [node name="year_label" type="Label" parent="." unique_id=1404727478]
 modulate = Color(0.73300546, 0.7330054, 0.7330054, 1)
@@ -155,8 +362,12 @@ offset_right = 766.0
 offset_bottom = 136.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_l2q5w")
 theme_override_font_sizes/font_size = 200
-text = "17 YEARS AGO..."
+text = "Was it really fun talking
+Behind my Back?"
+horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2118923307]
 libraries/ = SubResource("AnimationLibrary_l2q5w")
+script = ExtResource("6_fb2n4")

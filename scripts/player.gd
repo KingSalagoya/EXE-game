@@ -47,7 +47,7 @@ var prev_ground
 
 var can_use_flashlight: bool = false
 
-var unlocked_sword: bool = true
+var unlocked_sword: bool = false
 var is_attacking: bool = false
 var knockback_velocity := Vector3.ZERO
 
@@ -58,7 +58,7 @@ var corpse: bool = false
 func _ready() -> void:
 	GameManager.player = self
 	flashlight.visible = false
-	sword.visible = true
+	sword.visible = false
 	GameManager.release_ending.connect(enable_flashlight)
 	GameManager.paralize_coords.connect(paralize_coords)
 	GameManager.unlock_sword.connect(unlock_sword)
@@ -137,6 +137,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("attack") and not can_use_flashlight and unlocked_sword and not is_attacking:
 		is_attacking = true
 		playeranimations.play("main-character/attack")
+		AudioManager.play_audio_one_shot("slash")
 		if interactor.is_colliding():
 			var target = interactor.get_collider()
 			while target != null and target is Node:

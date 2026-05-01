@@ -11,6 +11,7 @@ var ACCES_ONLY_WHEN_RELATED_OBJECTIVE = true
 
 func _enter_tree() -> void:
 	visible = false
+	$StaticBody3D/CollisionShape3D.disabled == false
 	OBJECTIVE = objective_name
 
 func interact() -> void:
@@ -20,8 +21,9 @@ func interact() -> void:
 	GameManager.unlock_achievement.emit("underwater")
 	#queue_free()
 	interacted = false
+	await get_tree().create_timer(2).timeout
 	queue_free()
 
 
 func _physics_process(_delta: float) -> void:
-	$StaticBody3D/CollisionShape3D.disabled != visible
+	$StaticBody3D/CollisionShape3D.disabled == !visible

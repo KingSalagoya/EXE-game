@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://baagym8vrmwab"]
 
 [ext_resource type="FontFile" uid="uid://dvduoeoa45h66" path="res://assets/fonts/DoubleHomicide.ttf" id="1_mboyv"]
-
 [ext_resource type="Script" uid="uid://b2jyd5dlmk8s" path="res://scripts/lvls/maze.gd" id="1_xyp5l"]
 [ext_resource type="Texture2D" uid="uid://r8n2agm0u706" path="res://assets/textures/textures/dark_wood3.jpg" id="2_6tw5y"]
 
@@ -410,5 +409,7 @@ theme_override_constants/margin_bottom = 30
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_mboyv")
-theme_override_font_sizes/font_size = 48
-text = "Press F to turn on the torch..."
+theme_override_font_sizes/font_size = 24
+text = "
+
+Press F to turn on the torch..."

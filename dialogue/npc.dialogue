@@ -4,17 +4,17 @@ if not GameManager.has_spoke:
 	Wizard: [[Hey|Hi|Hello]], Hello Adventurer! Welcome to the world of Xeon Knight. Your Adventures about to begin
 	Wizard: Wait ... its yo- 
 	Wizard: ...
-	Wizard: Nevermind, Lemme offer you the first official quest.
+	Wizard: Nevermind, Lemme offer you the first official quest. goto the forest in the direction im facing
 	do GameManager.unlock_achievement.emit("forest")
 	Wizard: Go grab some wood and I will offer you a nice nice weapon in exchange...
 	set GameManager.has_spoke = true
 	do GameManager.request_objective_completed.emit("explore the town")
 
 else:
-	%2 Wizard: Still empty-handed, I see. The forest won’t gather itself.
-	%3 Wizard: Just a little more and you’ll have enough. Don’t stop now.
-	%3 Wizard: You’ve made some progress, but it’s not quite enough yet.
-	%2 Wizard: Head back into the forest and gather more.
+	%2 Wizard: Still empty-handed, I see. The forest won’t gather itself. Forest is in the direction im facing
+	%3 Wizard: Just a little more and you’ll have enough. Don’t stop now. Forest is in the direction im facing
+	%3 Wizard: You’ve made some progress, but it’s not quite enough yet. Forest is in the direction im facing
+	%2 Wizard: Head back into the forest and gather more. Forest is in the direction im facing
 
 => END 
 
@@ -46,11 +46,10 @@ do GameManager.unlock_achievement.emit("bridge")
 Rail: ...
 
 ~ confusion
-
 Rail: Wait a second, if he died, who am I playing with???
 
 #do GameManager.unlock_achievement.emit("bridge")
 
-Rail: What is going on here?
+Rail: Something is not right
 
 => END

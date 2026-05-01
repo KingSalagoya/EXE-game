@@ -21,7 +21,6 @@ extends Node
 @warning_ignore("unused_signal") signal display_note
 @warning_ignore("unused_signal") signal activate_sub_objective(state: bool)
 
-
 #Labels
 @warning_ignore("unused_signal") signal update_interact_label(text: String)
 @warning_ignore("unused_signal") signal update_objective_label(text: String)
@@ -71,6 +70,7 @@ var boss_enemy: Node3D
 #Jumpscaremodels
 var jumpscare_pete: Node3D
 var corpse: Node3D
+var graveyard_unlocked: bool = false
 
 #region npc_vars
 

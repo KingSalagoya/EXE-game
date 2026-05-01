@@ -5,6 +5,12 @@
 [ext_resource type="Script" uid="uid://bn717v6x76l7k" path="res://scripts/chat_dialogue.gd" id="3_r4b0e"]
 [ext_resource type="FontFile" uid="uid://bacn8mekru541" path="res://assets/fonts/Undead Pixel 8.ttf" id="4_mjhe2"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mjhe2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hsif0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxiwf"]
+
 [node name="ChatUI" type="Control" unique_id=952464027]
 layout_mode = 3
 anchors_preset = 15
@@ -25,26 +31,10 @@ script = ExtResource("3_r4b0e")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1417162747]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -360.0
 offset_right = 732.0
-grow_vertical = 0
+offset_bottom = 360.0
 theme_override_constants/separation = 10
 alignment = 2
-
-[node name="chat history" type="TextEdit" parent="VBoxContainer" unique_id=413722450]
-modulate = Color(1, 1, 1, 0.654902)
-custom_minimum_size = Vector2(0, 300)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_mjhe2")
-theme_override_font_sizes/font_size = 30
-text = "Welcome to XEON KNIGHT!
-
-"
-editable = false
-wrap_mode = 1
 
 [node name="msg box" type="LineEdit" parent="VBoxContainer" unique_id=1730372733]
 custom_minimum_size = Vector2(400, 0)
@@ -53,3 +43,16 @@ theme_override_fonts/font = ExtResource("4_mjhe2")
 theme_override_font_sizes/font_size = 30
 placeholder_text = "Press 'T' to chat... [Press Enter to send]"
 clear_button_enabled = true
+
+[node name="chat history" type="TextEdit" parent="VBoxContainer" unique_id=413722450]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_mjhe2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mjhe2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hsif0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_xxiwf")
+text = "Welcome to XEON KNIGHT!
+"
+editable = false
+wrap_mode = 1

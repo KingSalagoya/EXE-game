@@ -56,7 +56,7 @@ func spawn_friend() -> void:
 	friend_scene.global_position = Vector3(-1.519, 0.079, -25.929)
 	#(45.68, 4, 77.98)
 	friend_spawned = true
-	game_enviroment.add_child(friend_scene)
+	add_child(friend_scene)
 
 func unlock_achievement(achievement: String) -> void:
 	match achievement:
@@ -65,6 +65,7 @@ func unlock_achievement(achievement: String) -> void:
 				$Boundaries/forest.queue_free()
 		"graveyard":
 			if $Boundaries/graveyard:
+				GameManager.graveyard_unlocked = true
 				$Boundaries/graveyard.queue_free()
 		"underwater":
 			if $Boundaries/underwater:

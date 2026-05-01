@@ -264,12 +264,12 @@ size = Vector3(0.014065795, 0.023946665, 0.015890427)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7fe3k"]
 size = Vector3(0.01225104, 0.009769892, 0.013782582)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ihcos"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_kdmcf"]
 viewport_path = NodePath("Props/BaseHouse/monitor/screen/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n875q"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ihcos")
+albedo_texture = SubResource("ViewportTexture_kdmcf")
 
 [sub_resource type="QuadMesh" id="QuadMesh_qm0gl"]
 resource_local_to_scene = true
@@ -616,6 +616,18 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_7dqbv"]
 resource_name = "insert_dvd"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Props/BaseHouse/monitor/screen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_jn645"]
 resource_name = "window_close"
