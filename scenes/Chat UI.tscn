@@ -47,6 +47,7 @@ clear_button_enabled = true
 [node name="chat history" type="TextEdit" parent="VBoxContainer" unique_id=413722450]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("4_mjhe2")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mjhe2")

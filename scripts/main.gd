@@ -45,8 +45,6 @@ func _ready() -> void:
 	GameManager.request_spawn_point.emit()
 	blink_anim.play("blink")
 	ui.set_chat_mode("off")
-	
-	GameManager.request_objective_completed.emit("seek the underwater house")
 
 func _process(_delta: float) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
