@@ -271,7 +271,7 @@ func handle_torch(state: bool) -> void:
 	flashlight.visible = state
 
 func toggle_torch() -> void:
-	flashlight.visible = false
+	flashlight.visible = !flashlight.visible
 
 func jumpscares() -> void:
 	if GameManager.jumpscare_pete != null and main_camera.is_position_in_frustum(GameManager.jumpscare_pete.global_position):

@@ -74,6 +74,7 @@ material = SubResource("StandardMaterial3D_cdru8")
 
 [node name="Walls" type="CSGCombiner3D" parent="." unique_id=665355943]
 material_override = SubResource("StandardMaterial3D_2bysa")
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Walls" unique_id=102892736]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.320567, 2.248291, 1.7936546)

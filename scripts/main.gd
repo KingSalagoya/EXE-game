@@ -44,8 +44,9 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GameManager.request_spawn_point.emit()
 	blink_anim.play("blink")
-	
 	ui.set_chat_mode("off")
+	
+	GameManager.request_objective_completed.emit("seek the underwater house")
 
 func _process(_delta: float) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -119,10 +120,12 @@ func _special_objectives(_name: String) -> void:
 			
 			await get_tree().create_timer(3).timeout
 			GameManager.chat_dialogue.emit(1)
+			ui.toggle_chat_display()
 		"speak with wizard":
 			GameManager.unlock_sword.emit()
 			
 		"seek the underwater house":
+			await get_tree().create_timer(2).timeout
 			GameManager.update_player_count.emit(0)
 			_change_level(LEVEL_MAZE)
 		"run":
