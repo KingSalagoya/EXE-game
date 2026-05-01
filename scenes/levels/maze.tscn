@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://dvduoeoa45h66" path="res://assets/fonts/DoubleHomicide.ttf" id="1_mboyv"]
 [ext_resource type="Script" uid="uid://b2jyd5dlmk8s" path="res://scripts/lvls/maze.gd" id="1_xyp5l"]
 [ext_resource type="Texture2D" uid="uid://r8n2agm0u706" path="res://assets/textures/textures/dark_wood3.jpg" id="2_6tw5y"]
+[ext_resource type="PackedScene" uid="uid://bcf3qla672j7s" path="res://scenes/spawn_point.tscn" id="4_cdru8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdru8"]
 resource_name = "Material.025"
@@ -59,16 +60,40 @@ _data = {
 &"instruction": SubResource("Animation_xyp5l")
 }
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cdru8"]
+sky_top_color = Color(0.0010405213, 0.0010404979, 0.009608173, 1)
+sky_horizon_color = Color(0.076398365, 0.031221468, 0.19683838, 1)
+ground_bottom_color = Color(0, 0, 0.007843138, 1)
+ground_horizon_color = Color(0.07450981, 0.03137255, 0.19607843, 1)
+sun_curve = 0.029421885
+
+[sub_resource type="Sky" id="Sky_2bysa"]
+sky_material = SubResource("ProceduralSkyMaterial_cdru8")
+
+[sub_resource type="Environment" id="Environment_yfxod"]
+background_mode = 2
+sky = SubResource("Sky_2bysa")
+ambient_light_color = Color(0.17211533, 0.1721153, 0.1721153, 1)
+tonemap_mode = 2
+ssao_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.043391474, 0.05609805, 0.09740765, 1)
+fog_density = 1.0
+fog_depth_curve = 0.049036592
+fog_depth_end = 73.5
+
 [node name="Maze" type="Node3D" unique_id=31652223]
 script = ExtResource("1_xyp5l")
 
-[node name="Floor" type="CSGBox3D" parent="." unique_id=1397339589]
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1397339589 groups=["wood"]]
 transform = Transform3D(73.07104, 0, 0, 0, 1, 0, 0, 0, 69.900604, 0, -0.24664307, 0)
 use_collision = true
 material = SubResource("StandardMaterial3D_cdru8")
 
 [node name="Floor2" type="CSGBox3D" parent="." unique_id=1186242646]
 transform = Transform3D(73.07104, 0, 0, 0, 1, 0, 0, 0, 69.900604, 0, 4.753357, 0)
+visible = false
 use_collision = true
 material = SubResource("StandardMaterial3D_cdru8")
 
@@ -414,3 +439,15 @@ theme_override_font_sizes/font_size = 24
 text = "
 
 Press F to turn on the torch..."
+
+[node name="SpawnPoint" parent="." unique_id=524540920 instance=ExtResource("4_cdru8")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999998, -3.6327085, 0.5447457, 5.7262163)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1734625605]
+environment = SubResource("Environment_yfxod")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=747471200]
+transform = Transform3D(-0.6804218, -0.5297561, 0.5063444, -0.265995, 0.8223678, 0.50294924, -0.6828417, 0.2075326, -0.70046943, 0, 14.541733, 0)
+light_color = Color(0.9132109, 0.91955924, 0.89593536, 1)
+light_energy = 0.25
+light_bake_mode = 1
