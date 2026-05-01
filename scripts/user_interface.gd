@@ -165,7 +165,8 @@ func display_notes(normal_note: bool = true, game_note: bool = true) -> void:
 				i says loll'"""
 	elif game_note:
 		note_display.text = """Gamers.Com The Hit 90s MMORPG game, 'XEON KNIGHT'
-		has been officially shut down in 2015! due to server breakdown!"""
+		has been officially shut down in 2015! due to server
+		breakdown!"""
 	else:
 		note_display.text = """YOU BROKE MY TRUST. YOU HAVE BEEN TELLING YOURSELF
 THAT IT IS NOT YOUR FAULT. YOU KNOW IT WAS YOUR FAULT.
