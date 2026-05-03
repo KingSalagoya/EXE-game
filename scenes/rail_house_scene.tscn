@@ -475,7 +475,7 @@ ANIM_PLAYER = NodePath("electricbox_anim")
 TOGGLE = false
 ANIM_NAME = "break"
 INTERACT_TEXT = "break"
-OBJECTIVE = "cut the telephone line"
+OBJECTIVE = "cut the power line"
 ONE_TIME = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="electricity_box" index="0" unique_id=1122762924]

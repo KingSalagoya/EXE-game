@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://bosr7krqwvhl1" path="res://dialogue/example_balloon.tscn" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dcd4uei5h45qe" path="res://assets/textures/jumpscare/newspaper/newspaper_without_letters.png" id="7_trceg"]
 [ext_resource type="Texture2D" uid="uid://bn0indc2byoxt" path="res://assets/textures/jumpscare/newspaper/final_newspaper.png" id="8_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://b1gmh1y6ojj4j" path="res://scenes/main_menu.tscn" id="8_choun"]
 [ext_resource type="Material" uid="uid://c2a3kywdwhawx" path="res://assets/materials/people/mc.tres" id="8_jscy8"]
 [ext_resource type="PackedScene" uid="uid://b520mxra380m5" path="res://scenes/Whatsapp_Chat.tscn" id="9_dp3eg"]
 [ext_resource type="FontFile" uid="uid://bacn8mekru541" path="res://assets/fonts/Undead Pixel 8.ttf" id="9_jkv2x"]
@@ -234,6 +233,18 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("8_jscy8")]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("%Player/CameraHolder/Graphics/hero:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_muem4"]
@@ -1082,6 +1093,18 @@ tracks/1/keys = {
 "method": &"play_sfx"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Player/CameraHolder/Graphics/hero:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 16.005156),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eb6dy"]
 _data = {
@@ -1333,7 +1356,6 @@ unique_name_in_owner = true
 [node name="Player" parent="GameViewport/SubViewport/GameEnviroment" unique_id=367521465 instance=ExtResource("2_jyhfs")]
 unique_name_in_owner = true
 transform = Transform3D(-0.9982819, 0, 0.058592025, 0, 1, 0, -0.058592025, 0, -0.9982819, -1.5194426, 0.07901597, -25.9291)
-hp = 40
 damage = 5
 
 [node name="male_player" parent="GameViewport/SubViewport/GameEnviroment/Player/CameraHolder/Graphics/hero/rig/Skeleton3D" parent_id_path=PackedInt32Array(367521465, 1586516261) index="1" unique_id=570384989]
@@ -1363,7 +1385,7 @@ transform = Transform3D(1, 0, 0, 0, 0.98657113, -0.1633258, 0, 0.1633258, 0.9865
 visible = false
 
 [node name="knife" type="Node3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot" unique_id=1717204905]
-transform = Transform3D(0.87643385, 0.034370374, 0.48029053, -0.16550659, 0.9581788, 0.2334436, -0.45218512, -0.28409064, 0.8454643, 0.22, -0.005, -0.72)
+transform = Transform3D(0.87643385, 0.034370366, 0.48029047, -0.16550659, 0.9581788, 0.23344365, -0.45218506, -0.28409067, 0.8454643, 0.22, -0.005, -0.72)
 visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="GameViewport/SubViewport/GameEnviroment/Cinamatic/CinamaticCamera/knife_pivot/knife" unique_id=1101515992]
@@ -1609,10 +1631,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ChatUI" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=952464027 instance=ExtResource("4_jyhfs")]
-layout_mode = 2
-
-[node name="Main Menu" parent="UiViewport/SubViewport/UserInterface/MarginContainer" unique_id=135534202 instance=ExtResource("8_choun")]
-visible = false
 layout_mode = 2
 
 [node name="Options Menu" parent="UiViewport/SubViewport/UserInterface" unique_id=1653389777 instance=ExtResource("10_eb6dy")]
