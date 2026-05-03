@@ -5,7 +5,7 @@ extends Node
 	"climb the ladder": 0,
 	"place the note on the window": 0,
 	"grab the knife": 0,
-	"cut the telephone line": 0,
+	"cut the power line": 0,
 	"enter the house": 0,
 	"open door": 0,
 	"stab": 0,

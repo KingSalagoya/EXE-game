@@ -28,7 +28,7 @@ var t_bob: float = 0.0
 #Jumpscare Entities
 @onready var under_water_scare: Node3D = $"../../VillageHouse6/door_frame/Pete"
 
-@export var hp: int = 20
+@export var hp: int = 40
 @export var damage:int = 10
 @export var knockback_force: float = 8.0
 @export var is_player: bool = true
@@ -185,12 +185,12 @@ func _physics_process(delta: float) -> void:
 		handle_movement()
 		handle_head_bob(delta)
 		move_and_slide()
+		if not is_on_floor():
+			velocity += Vector3(0, GRAVITY, 0) * delta
 	else: AudioManager.toggle_footsteps_pause(true)
 
-func handle_jump(delta: float) -> void:
-	if not is_on_floor():
-		velocity += Vector3(0, GRAVITY, 0) * delta
 
+func handle_jump(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor() and GameManager.can_jump:
 		velocity.y = JUMP_VELOCITY
 
@@ -243,7 +243,7 @@ func handle_footstep_sound() -> void:
 		if ground != null:
 			for groups in ground.get_groups():
 				match groups:
-					"grass": AudioManager.change_footsteps("grass", 30)
+					"grass": AudioManager.change_footsteps("grass", 20)
 					"concrete": AudioManager.change_footsteps("concrete")
 					"wood": AudioManager.change_footsteps("wood")
 
@@ -278,7 +278,7 @@ func jumpscares() -> void:
 		if GameManager.jumpscare_pete.visible == false or pete: return
 		pete = true
 		AudioManager.play_audio_one_shot("jumpscare l", Vector3.ZERO, 15)
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.4).timeout
 		GameManager.jumpscare_pete.visible = false
 		await get_tree().create_timer(1).timeout
 
