@@ -108,6 +108,6 @@ func _physics_process(_delta: float) -> void:
 		current_objective_clone = current_objective
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("Enter"): unhandled_input.emit("enter")
+	if event.is_action_pressed("enter"): unhandled_input.emit("enter")
 	if event.is_action_pressed("jump"): unhandled_input.emit("jump")
 	if event.is_action_pressed("exit"): handle_exit.emit()

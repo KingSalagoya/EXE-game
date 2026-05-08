@@ -12,7 +12,7 @@ func _ready() -> void:
 	msg_sent.connect($"Friend Msg Generator".generate_friend_msg)
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Enter") and msg_box.text != "":
+	if Input.is_action_just_pressed("enter") and msg_box.text != "":
 		send_msg()
 		msg_sent.emit(msg_box.text)
 
