@@ -35,7 +35,7 @@ func _ready() -> void:
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("Toggle Chat Visibility"): toggle_chat_display()
+	if event.is_action_pressed("chat"): toggle_chat_display()
 	
 	if should_hide_note:
 		if Input.is_action_just_pressed("Enter"):

@@ -156,7 +156,7 @@ func _special_objectives(_name: String) -> void:
 
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Enter") and can_throw:
+	if Input.is_action_just_pressed("enter") and can_throw:
 		if $UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper:
 			$UiViewport/SubViewport/UserInterface/MarginContainer/Newspaper.queue_free()
 			can_throw = false
