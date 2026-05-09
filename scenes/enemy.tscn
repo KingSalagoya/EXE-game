@@ -4,12 +4,17 @@
 [ext_resource type="Script" uid="uid://dwn0122urv1dt" path="res://scripts/hurt_box.gd" id="2_md0e3"]
 [ext_resource type="Script" uid="uid://b6afotnygprho" path="res://scripts/hit_box.gd" id="3_4ra3w"]
 [ext_resource type="Material" uid="uid://nnt6lqn43v5k" path="res://assets/materials/people/skeleton.tres" id="4_xwavj"]
+[ext_resource type="Animation" uid="uid://cn5udjwox2beg" path="res://assets/animations/res/attack.res" id="5_md484"]
 [ext_resource type="Animation" uid="uid://by4ylnifomgf2" path="res://assets/animations/res/zombie_idle.res" id="5_nenq2"]
 [ext_resource type="Animation" uid="uid://bx3okyyio73a1" path="res://assets/animations/res/zombie_running.res" id="6_md484"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
 radius = 0.40722656
 height = 2.8295898
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwavj"]
+radius = 1.0
+height = 3.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4ra3w"]
 height = 13.708008
@@ -105,8 +110,29 @@ bind/21/name = &"toe.R"
 bind/21/bone = -1
 bind/21/pose = Transform3D(-1, -8.1311495e-15, -1.5099569e-07, 1.8225497e-12, -1.0000061, -1.3411127e-06, -1.5099586e-07, -5.960499e-08, 1.0000001, -0.116422564, -0.07573655, -0.005328964)
 
+[sub_resource type="Animation" id="Animation_ipns3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Hitbox/CollisionShape3D2:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qclf"]
+_data = {
+&"RESET": SubResource("Animation_ipns3")
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ipns3"]
 _data = {
+&"attack": ExtResource("5_md484"),
 &"zombie_idle": ExtResource("5_nenq2"),
 &"zombie_running": ExtResource("6_md484")
 }
@@ -115,42 +141,40 @@ _data = {
 script = ExtResource("1_7p1mj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=15591395]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41479492, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4147949, 0)
 shape = SubResource("CapsuleShape3D_md0e3")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=784660603]
-
-[node name="hurt_box" type="Area3D" parent="." unique_id=184880710 node_paths=PackedStringArray("owner_character")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39156723, 0)
+[node name="Hitbox" type="Area3D" parent="." unique_id=184880710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3915672, 0)
 script = ExtResource("2_md0e3")
-owner_character = NodePath("..")
 metadata/_custom_type_script = "uid://dwn0122urv1dt"
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="hurt_box" unique_id=157826442]
-shape = SubResource("CapsuleShape3D_md0e3")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Hitbox" unique_id=157826442]
+shape = SubResource("CapsuleShape3D_xwavj")
+disabled = true
 
-[node name="hit_box" type="Area3D" parent="." unique_id=1040575142 node_paths=PackedStringArray("owner_character")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0.39156723, 0)
+[node name="HurtBox" type="Area3D" parent="." unique_id=1040575142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.415, 0)
 script = ExtResource("3_4ra3w")
-owner_character = NodePath("..")
 metadata/_custom_type_script = "uid://b6afotnygprho"
 
-[node name="CollisionShape" type="CollisionShape3D" parent="hit_box" unique_id=211387928]
+[node name="CollisionShape" type="CollisionShape3D" parent="HurtBox" unique_id=211387928]
 shape = SubResource("CapsuleShape3D_md0e3")
 
-[node name="AttackableArea" type="Area3D" parent="." unique_id=1656667283]
+[node name="DetectArea" type="Area3D" parent="." unique_id=1656667283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackableArea" unique_id=623856641]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectArea" unique_id=623856641]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8803711, 0)
 shape = SubResource("CylinderShape3D_4ra3w")
 
-[node name="skeleton" type="Node3D" parent="." unique_id=1024748566]
-transform = Transform3D(-1.655, 0, 1.4468469e-07, 0, 1.655, 0, -1.4468469e-07, 0, -1.655, 0, -1.092826, 0)
+[node name="Graphics" type="Node3D" parent="." unique_id=1024748566]
+transform = Transform3D(-1.655, 0, 1.4468469e-07, 0, 1.655, 0, -1.4468469e-07, 0, -1.655, 0, -0.014481083, 0)
 
-[node name="rig" type="Node3D" parent="skeleton" unique_id=2019343739]
-transform = Transform3D(0.94222057, 0.33355856, -0.030970827, -0.0381022, 0.19856144, 0.97934747, 0.3328194, -0.9215812, 0.19979797, 0.029274888, -0.09340942, -0.1961417)
+[node name="rig" type="Node3D" parent="Graphics" unique_id=2019343739]
+transform = Transform3D(0.4690835, 0.8791697, -0.08379255, 0.03033728, 0.07878195, 0.9964301, 0.8826326, -0.46995094, 0.010283695, 0.07213521, -0.09488525, -0.0005389172)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="skeleton/rig" unique_id=68989602]
+[node name="Skeleton3D" type="Skeleton3D" parent="Graphics/rig" unique_id=68989602]
 bones/0/name = "hips"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, -1.4210855e-14, 2.3841858e-07, 2.3278255e-07, -0.21614766, -0.9763607, 5.1533625e-08, 0.97636074, -0.21614765, 0, 0.0484343, 0.8861195)
@@ -163,28 +187,28 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 1.0732031e-07, 2.5520107e-08, -1.0732031e-07, 0.89296114, 0.45013395, 2.5520052e-08, -0.45013404, 0.89296097, -4.929721e-16, 0.132465, 2.067675e-09)
 bones/1/enabled = true
 bones/1/position = Vector3(-8.881784e-16, 0.13246499, 3.7252903e-09)
-bones/1/rotation = Quaternion(-0.17503347, -0.008544866, 0.005338485, 0.984511)
+bones/1/rotation = Quaternion(-0.023428008, 0.0007667169, -0.028632293, 0.9993152)
 bones/1/scale = Vector3(1, 1, 0.99999994)
 bones/2/name = "chest"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, -5.4351496e-08, 6.2777867e-09, 5.435149e-08, 0.97366893, -0.22796667, 6.2778427e-09, 0.22796667, 0.97366893, 3.4898433e-15, 0.1329274, -1.0912174e-08)
 bones/2/enabled = true
 bones/2/position = Vector3(3.5527137e-15, 0.1329274, -1.1175871e-08)
-bones/2/rotation = Quaternion(0.22797729, -0.01755032, 0.010987633, 0.9734463)
+bones/2/rotation = Quaternion(0.081570566, 0.013479877, -0.055934478, 0.9950055)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "neck"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, -6.5959114e-08, 9.30547e-09, 6.5959114e-08, 0.96097, -0.27665257, 9.305483e-09, 0.27665257, 0.96097, -2.4086472e-15, 0.31073633, 1.7469786e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(8.881784e-16, 0.3107364, -3.7252903e-09)
-bones/3/rotation = Quaternion(0.11193027, 0.0143777495, -0.012258647, 0.9935364)
+bones/3/rotation = Quaternion(0.26879096, 0.0064190147, 0.009761373, 0.96312773)
 bones/3/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/4/name = "head"
 bones/4/parent = 3
 bones/4/rest = Transform3D(1, 6.158063e-08, 8.09001e-09, -6.158063e-08, 0.96606797, 0.2582879, 8.090034e-09, -0.25828794, 0.9660679, -6.544577e-15, 0.111805744, -4.2150208e-09)
 bones/4/enabled = true
 bones/4/position = Vector3(-5.3290705e-15, 0.11180576, -9.313226e-09)
-bones/4/rotation = Quaternion(-0.15789792, 0.0142603265, -0.0123951845, 0.98727465)
+bones/4/rotation = Quaternion(-0.16736759, 0.007584605, 0.008885967, 0.9858254)
 bones/4/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/5/name = "jaw"
 bones/5/parent = 4
@@ -282,7 +306,7 @@ bones/18/parent = 17
 bones/18/rest = Transform3D(1, -1.9513754e-08, 1.6191063e-09, 1.9580808e-08, 0.9965755, -0.08268783, -1.1712853e-14, 0.08268784, 0.9965754, -8.434216e-09, 0.43073896, 4.5965796e-09)
 bones/18/enabled = true
 bones/18/position = Vector3(-4.9162785e-09, 0.430739, -2.4759955e-10)
-bones/18/rotation = Quaternion(0.3687559, -0.06008093, -0.027614182, 0.9271714)
+bones/18/rotation = Quaternion(0.31548256, 0.067787066, 0.023654783, 0.94621146)
 bones/18/scale = Vector3(1, 1, 0.99999994)
 bones/19/name = "foot.L"
 bones/19/parent = 18
@@ -317,7 +341,7 @@ bones/23/parent = 22
 bones/23/rest = Transform3D(1, -1.9513754e-08, 1.6191061e-09, 1.9580806e-08, 0.9965756, -0.08268783, -1.1712853e-14, 0.08268785, 0.9965754, -9.836353e-10, 0.43073896, 4.4958375e-09)
 bones/23/enabled = true
 bones/23/position = Vector3(2.5343012e-09, 0.43073896, 7.1325584e-10)
-bones/23/rotation = Quaternion(0.42874876, 0.069654875, 0.0066845217, 0.9007098)
+bones/23/rotation = Quaternion(0.30869097, -0.045444056, 0.0121574085, 0.9499984)
 bones/23/scale = Vector3(1, 1.0000001, 1)
 bones/24/name = "foot.R"
 bones/24/parent = 23
@@ -341,13 +365,21 @@ bones/26/position = Vector3(0, 0.058963507, 0)
 bones/26/rotation = Quaternion(0, 0, 0, 1)
 bones/26/scale = Vector3(1, 1, 1)
 
-[node name="skeleton" type="MeshInstance3D" parent="skeleton/rig/Skeleton3D" unique_id=1811459236]
+[node name="skeleton" type="MeshInstance3D" parent="Graphics/rig/Skeleton3D" unique_id=1811459236]
 mesh = SubResource("ArrayMesh_xnmat")
 skin = SubResource("Skin_ahhgi")
 skeleton = NodePath("..")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="skeleton" unique_id=1914869448]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Graphics" unique_id=1914869448]
+libraries/ = SubResource("AnimationLibrary_8qclf")
 libraries/zombie = SubResource("AnimationLibrary_ipns3")
 
-[connection signal="body_entered" from="AttackableArea" to="." method="_on_attackable_area_body_entered"]
-[connection signal="body_exited" from="AttackableArea" to="." method="_on_attackable_area_body_exited"]
+[node name="Timers" type="Node" parent="." unique_id=465250873]
+
+[node name="AttackCooldown" type="Timer" parent="Timers" unique_id=660016116]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="body_entered" from="DetectArea" to="." method="_on_player_detected"]
+[connection signal="body_exited" from="DetectArea" to="." method="_on_player_left"]
+[connection signal="timeout" from="Timers/AttackCooldown" to="." method="_reset_attack_cooldown"]

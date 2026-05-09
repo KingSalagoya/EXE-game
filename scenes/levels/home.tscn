@@ -222,11 +222,11 @@ transform = Transform3D(99.99999, 4.3711384e-06, 1.0421605e-12, 0, -2.3841856e-0
 mesh = ExtResource("9_58gng")
 
 [node name="window-left" type="MeshInstance3D" parent="RailHouseScene/window-frame" unique_id=1751745477]
-transform = Transform3D(-0.096714504, -0.99531287, -2.37301e-07, 0.99531287, -0.0967145, -2.614773e-07, 2.3730108e-07, -2.6147717e-07, 1.0000005, 0.008650853, -0.00015569478, 0)
+transform = Transform3D(0.73465484, 0.67844236, 1.6175309e-07, -0.67844236, 0.73465484, -6.326327e-08, -1.6175318e-07, -6.326333e-08, 1.0000004, 0.008650853, -0.00015569478, 0)
 mesh = ExtResource("4_fhhke")
 
 [node name="window-right" type="MeshInstance3D" parent="RailHouseScene/window-frame" unique_id=1471866969]
-transform = Transform3D(0.28031486, 0.9599086, 2.2886005e-07, -0.9599086, 0.28031483, -1.7158635e-07, -2.2885988e-07, -1.7158641e-07, 1.0000007, -0.008133123, 8.5003674e-05, 0)
+transform = Transform3D(0.54620475, -0.8376525, -1.9971198e-07, 0.8376525, 0.54620475, -1.0819351e-07, 1.9971203e-07, -1.08193326e-07, 1.0000008, -0.008133125, 8.5003674e-05, 0)
 mesh = ExtResource("4_58gng")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RailHouseScene/window-frame" unique_id=812769920]

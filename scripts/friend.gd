@@ -15,7 +15,7 @@ var BOSS_ENEMY: Node3D
 var PLAYER: Node3D
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
-@onready var HitBox: hit_box = $hit_box
+
 
 var attaked: bool = false
 var knockback_velocity := Vector3.ZERO
