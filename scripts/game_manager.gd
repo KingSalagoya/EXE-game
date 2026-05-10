@@ -95,7 +95,7 @@ func get_wood() -> int:
 	return inventory["wood"]
 
 func get_needed_wood() -> int:
-	return 3 - inventory["wood"]
+	return 6 - inventory["wood"]
 
 #endregion
 

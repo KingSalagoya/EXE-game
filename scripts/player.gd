@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 # Main
@@ -21,14 +22,13 @@ const SENSITIVITY: float = 0.004
 #Jumpscare Entities
 @onready var under_water_scare: Node3D = $"../../VillageHouse6/door_frame/Pete"
 
-@export var hp: int = 40
-@export var damage:int = 10
+@export var health: int = 40
 @export var knockback_force: float = 8.0
 
 
 var prev_ground
 var can_use_flashlight: bool = false
-var is_attacking: bool = false
+var attack_on_cooldown: bool = false
 var knockback_velocity := Vector3.ZERO
 
 enum lock_types {NONE, MOVE, ROTATE}
@@ -69,32 +69,36 @@ func _handle_rotation(event: InputEvent) -> void:
 		main_camera.rotation.x = clamp(main_camera.rotation.x, deg_to_rad(-70), deg_to_rad(70))
 
 func _handle_attack(event: InputEvent) -> void:
-	if event.is_action_pressed("attack") and sword.visible:
-		print("Attack!!")
+	if event.is_action_pressed("attack") and sword.visible and not attack_on_cooldown:
+		playeranimations.play("main-character/attack")
 
 func _handle_movement() -> void:
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (camera_holder.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
-	if direction and current_lock_type != lock_types.NONE:
+#movement
+	if direction and current_lock_type == lock_types.NONE:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		if not is_attacking: playeranimations.play("main-character/running-backwards")
-
+#climb small objects
 		if lower_climb_check.is_colliding():
 			if not upper_climb_check.is_colliding():
 				velocity.y = JUMP_VELOCITY/3
+#visual effects
+		if not attack_on_cooldown: playeranimations.play("main-character/running-backwards")
 		AudioManager.toggle_footsteps_pause(false)
+		_handle_footstep_sound()
+#idle
 	else:
-		if not is_attacking: playeranimations.play("main-character/idle")
-		AudioManager.toggle_footsteps_pause(true)
 		velocity.x = 0.0
 		velocity.z = 0.0
+#idle effects
+		if not attack_on_cooldown: playeranimations.play("main-character/idle")
+		AudioManager.toggle_footsteps_pause(true)
 
 func _handle_jump() -> void:
 	if current_lock_type != lock_types.NONE: return
-	if Input.is_action_just_pressed("jump") and is_on_floor() and GameManager.can_jump:
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("jump") and is_on_floor() and GameManager.can_jump:
+		#velocity.y = JUMP_VELOCITY
 
 func _handle_gravity(delta: float) -> void:
 	if not is_on_floor():
@@ -103,6 +107,10 @@ func _handle_gravity(delta: float) -> void:
 func _unlock_sword() -> void:
 	sword.visible = true
 
+func take_damage(_damage: int) -> void:
+	health -= _damage
+	if health <= 0:
+		get_tree().quit()
 
 #region other
 
@@ -159,3 +167,7 @@ func jumpscares() -> void:
 
 
 #endregion
+
+
+func _reset_attaack_cooldown() -> void:
+	attack_on_cooldown = false
